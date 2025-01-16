@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Kalam:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Great+Vibes&family=Kalam:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body style="background-color: black;">
+    
+    <center>
+      <div class="Parent-loading">
+        <div class="loader">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div class="cup"><span></span></div>
+        </div>
+      </div>
+
+        <header>
+          <nav class="navbar navbar-expand-lg fixed-top pt-4 pb-4">
+              <div id="nav_width" class="container">
+                  <img class="wow animate__animated animate__backInLeft" src="photos/logo.png" alt="Neytri Site">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i style="color: white; font-size: 30px;" class="fa-solid fa-bars-staggered"></i>
+                  </button>
+
+                <div class="wow animate__animated animate__backInRight collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul id="margin_nav" class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a style="color: rgb(196,138,68);" class="nav-link active" aria-current="page" href="day17.html">
+                        Home
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="about.html">
+                        About Us
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="menu.html">
+                        Menu
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="blog.html">
+                        Blog
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="contact.html">
+                        Contact
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+          </nav>
+        </header>
+
+
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                    <button style="background-color: white;" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button style="background-color: white;" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+                  <div class="carousel-inner">
+        
+                    <div class="carousel-item active position-relative" data-bs-interval="2000">
+                        <img src="photos/slide_1.jpg" class="wow animate__animated animate__zoomIn d-block w-100" alt="...">
+                        <div class="carousel-caption">
+                          <div class="slide_text">
+                              <div class="slide_text">
+                                  <div class="wow animate__animated animate__bounceInLeft slide_left">
+                                      <h3>Fresh Bean</h3>
+                                      <h1>
+                                        FOR GREAT COFFEE TASTE
+                                      </h1>
+                                      <button class="mt-5">Explore Menu</button>
+                                  </div>
+                                  <div class="wow animate__animated animate__bounceInRight slide_right">
+                                      <p>
+                                          Stradale is a exclusive website template specially made for Cafe and Coffe Shops. Made using only the finest coding dan design practices. Get Stradale now!
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                    
+                    <div class="carousel-item position-relative" data-bs-interval="2000">
+                      <img src="photos/slide_2.jpg" class="wow animate__animated animate__zoomIn d-block w-100" alt="...">
+                      <div class="carousel-caption">
+                        <div class="slide_text">
+                            <div class="slide_text">
+                                <div class="wow animate__animated animate__bounceInLeft slide_left">
+                                    <h3>Our Specials</h3>
+                                    <h1>
+                                        PREMIUN AUTHENTIC COFFEE
+                                    </h1>
+                                    <button class="mt-5">Explore Menu</button>
+                                </div>
+                                <div class="wow animate__animated animate__bounceInRight slide_right">
+                                    <p>
+                                        Stradale is a exclusive website template specially made for Cafe and Coffe Shops. Made using only the finest coding dan design practices. Get Stradale now!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+          <div class="row">
+            <div id="col_flex_text" class="wow animate__animated animate__backInLeft mt-5 col col-12 col-lg-6 col-sm-12">
+              <h3>This is</h3>
+              <h1>OUR STORY</h1>
+              <p class="mt-4">
+                Lorem ipsum aute enim pariatur ea culpa nulla ut laborum sint nisi laborum culpa ea enim do qui ea deserunt amet proident cillum tempor fugiat magna aliquip sed cillum ullamco sit adipisicing ut velit nulla aliqua.
+              </p>
+            </div>
+
+            <div id="col_flex" class="wow animate__animated animate__backInRight mt-5 col col-12 col-lg-6 col-sm-12">
+
+              <div class="col_flex">
+                <div class="col_img">
+                  <img src="photos/img1.jpg" alt="">
+                  <div class="flex_hover">
+                    <p>FRESH INGREDIENTS</p>
+                  </div>
+                </div>
+                <div class="col_img">
+                  <img src="photos/img2.jpg" alt="">
+                  <div class="flex_hover">
+                    <p>FRESH INGREDIENTS</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col_flex">
+                <div class="col_img">
+                  <img src="photos/img3.jpg" alt="">
+                  <div class="flex_hover">
+                    <p>FRESH INGREDIENTS</p>
+                  </div>
+                </div>
+                <div class="col_img">
+                  <img src="photos/img4.jpg" alt="">
+                  <div class="flex_hover">
+                    <p>FRESH INGREDIENTS</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div id="con_bg" class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div id="col_anim" class="mt-5 wow animate__animated animate__bounceInLeft col col-12 col-lg-6 col-sm-12">
+                <div class="col_anim_text">
+                  <h3>Special</h3>
+                  <h1>OF THE DAY</h1>
+
+                  <h4>Classic Cappuccino</h4>
+                  <p>
+                    Composed of a single espresso shot and hot milk, with the surface topped with foamed milk. Prepared with an espresso machine.
+                  </p>
+                  <button>VIEW ALL MENU</button>
+                </div>
+              </div>
+
+              <div id="col_anim" class="mt-5 wow animate__animated animate__bounceInRight col col-12 col-lg-6 col-sm-12">
+                <button class="anim_butt">
+                  <div class="count">600</div>
+                  <p>Sold Today</p>
+                </button>
+                <img src="photos/anim_img.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container mt-5">
+          <div class="row">
+            <div id="col_info" class="mt-5 wow animate__animated animate__backInLeft col col-12 col-lg-4 col-sm-12">
+              <i class="fa-solid fa-location-dot"></i>
+              <h3>Location</h3>
+              <p>08 W 36th St, New York, NY 10001</p>
+            </div>
+
+            <div id="col_info" class="mt-5 wow animate__animated animate__zoomIn col col-12 col-lg-4 col-sm-12">
+              <i class="fa-solid fa-mug-hot"></i>
+              <h3>We're Open</h3>
+              <p>Weekdays 08:00 - 22:00. Weekends 08:00 - 24:00.</p>
+            </div>
+
+            <div id="col_info" class="mt-5 wow animate__animated animate__backInRight col col-12 col-lg-4 col-sm-12">
+              <i class="fa-solid fa-envelope"></i>
+              <h3>Contact Us</h3>
+              <p>P: +1 333 1000 2000. E: contact@example.com.</p>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <div id="hover_bg" class="container-fluid mt-5">
+          <div class="container">
+            <div class="row">
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInDown col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <h3>Latest</h3>
+                  <h1>BLOG</h1>
+                </div>
+              </div>
+
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInDown hover_1 col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <p>DEC 10, 2021</p>
+                  <h2>
+                    This Will Fundamentally Change the Way You Look at Coffee
+                  </h2>
+                  <h6>ALL ABOUT COFFEE</h6>
+                </div>
+              </div>
+
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInDown hover_2 col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <p>DEC 10, 2021</p>
+                  <h2>
+                    7 Cult-Favorite Coffee Products You Should Know
+                  </h2>
+                  <h6>ALL ABOUT COFFEE</h6>
+                </div>
+              </div>
+
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInUp hover_3 col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <p>DEC 10, 2021</p>
+                  <h2>
+                    14 Unbelievable Things You Never Knew About Coffee
+                  </h2>
+                  <h6>ALL ABOUT COFFEE</h6>
+                </div>
+              </div>
+
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInUp hover_4 col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <p>DEC 10, 2021</p>
+                  <h2>
+                    The Best Type of Coffee for Every Zodiac Sign
+                  </h2>
+                  <h6>ALL ABOUT COFFEE</h6>
+                </div>
+              </div>
+
+              <div id="hover_col" class="mt-5 wow animate__animated animate__zoomInUp mb-5 hover_5 col col-12 col-lg-4 col-md-6 col-sm-12">
+                <div class="hover_text">
+                  <p>DEC 10, 2021</p>
+                  <h2>
+                    Some Feel-Good News About Coffee to Brighten Your Day
+                  </h2>
+                  <h6>ALL ABOUT COFFEE</h6>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container mt-5">
+          <div class="row">
+            <div id="slide_col" class="col col-12 mt-5 mb-5">
+              <div id="carouselExampleAutoplaying" class="carousel slide slide_border" data-bs-ride="carousel">
+                <div id="sec_border" class="carousel-inner">
+
+                  <div id="sec_border" class="wow animate__animated animate__zoomIn carousel-item active">
+                    <div id="sec_slide" class="carousel-caption">
+                      <h3>Anastasia Stone</h3>
+                      <p>administrator</p>
+                      <br>
+                      <h1>
+                        Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum.
+                      </h1>
+                    </div>
+                  </div>
+
+                  <div id="sec_border" class="wow animate__animated animate__zoomIn carousel-item">
+                    <div id="sec_slide" class="carousel-caption">
+                      <h3>Steven Rashford</h3>
+                      <p>developer</p>
+                      <br>
+                      <h1>
+                        Duis et tellus imperdiet, lacinia risus id, tincidunt ipsum. Integer euismod elit vel nibh commodo, at consequat nisl rhoncus. Aliquam tempor lorem odio, non aliquam nunc egestas in. Proin rutrum justo ac lorem pellentesque pretium.
+                      </h1>
+                    </div>
+                  </div>
+
+                  <div id="sec_border" class="wow animate__animated animate__zoomIn carousel-item">
+                    <div id="sec_slide" class="carousel-caption">
+                      <h3>Patrick James</h3>
+                      <p>manager</p>
+                      <br>
+                      <h1>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis at turpis eu faucibus. In dignissim, enim eu ornare aliquet, metus ex tempor neque, sit amet efficitur turpis lorem et odio. Nam congue in orci at facilisis
+                    </div>
+                  </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <i class="fa-solid fa-chevron-left"></i>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="blog_text" class="container mt-5">
+          <h3>Our Blog</h3>
+          <h1>Recent posts</h1>
+          <div class="row">
+            <div id="blog_col" class="mt-5 wow animate__animated animate__backInLeft col col-12 col-md-4 col-sm-12">
+
+              <div class="blog_img">
+                <img src="photos/blog_1.jpg" alt="">
+              </div>
+              <div class="blog_img_text">
+                <h2>History of coffee</h2>
+                <p>
+                  Integer maximus accumsan nunc, sit amet tempor lectus facilisis eu. Cras vel elit felis. Vestibulum convallis ipsum id aliquam varius. Etiam nec laoreet ...
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+
+            <div id="blog_col" class="mt-5 wow animate__animated animate__zoomIn col col-12 col-md-4 col-sm-12">
+              <div class="blog_img">
+                <img src="photos/blog_2.jpg" alt="">
+              </div>
+              <div class="blog_img_text">
+                <h2>About Americano coffee</h2>
+                <p>
+                  Vivamus tristique ligula quis orci malesuada tincidunt. Praesent magna purus, pharetra eu eleifend non, euismod vitae leo. Interdum et malesuada fames ac ante ...
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+
+            <div id="blog_col" class="mt-5 wow animate__animated animate__backInRight col col-12 col-md-4 col-sm-12">
+              <div class="blog_img">
+                <img src="photos/blog_3.jpg" alt="">
+              </div>
+              <div class="blog_img_text">
+                <h2>Coffee roasts guide</h2>
+                <p>
+                  In efficitur, leo non commodo lacinia, odio metus sodales purus, sed consequat lectus mi in purus. Vivamus vitae metus et nisl egestas sollicitudin. Quisque ...
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
+        <div id="con_offer" class="container mt-5 mb-5">
+          <div class="row">
+            <div id="offer_col" class="mt-5 wow animate__animated animate__bounceInLeft col col-12 col-lg-6 col-sm-12">
+              <div class="offer_text">
+                <h4>Special offer</h4>
+                <h3>Get your discount</h3>
+
+                <img src="photos/offer_1.png" alt="">
+
+                <p>
+                  Morbi malesuada dui in iaculis lacinia. Duis laoreet ut liberonec tincidunt. Maecenas a eros finibus, condimentum tortoreget, auctor nunc. Aenean a efficitur leo.
+                </p>
+                <button>GET NOW</button>
+              </div>
+            </div>
+
+            <div id="offer_col" class="mt-5 wow animate__animated animate__bounceInRight col col-12 col-lg-6 col-sm-12">
+              <div class="offer_img">
+                <img src="photos/offer_2.png" alt="">
+                <img id="offer_left" src="photos/offer_3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid mt-5">
+            <div class="row">
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInLeft col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/img1.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInLeft col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/img3.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInLeft col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/img4.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInRight col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/img2.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInRight col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/footer_5.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+              <div id="foot_img" class="wow animate__animated animate__fadeInRight col col-12 col-lg-2 col-md-4 col-sm-12">
+                <img src="photos/footer_6.jpg" alt="">
+  
+                <div class="foot_hover">
+                  <p>VIEW</p>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+
+        <footer>
+          <div id="footer_bg" class="wow animate__animated animate__zoomIn container-fluid">
+              <div class="container">
+                  <div class="row">
+                      <div id="footer_col1" class="col col-12 col-lg-4 col-md-6 col-sm-12">
+                          <img class="circle" src="photos/logo.png" alt="Neytri Site">
+                          <br><br>
+                          <p>
+                            Pellentesque congue non augue vitae pellentesque. Morbi sollicitudin eleifend rhoncus. Mauris vel nisl a massa viverra sollicitudin semper a diam
+                          </p>
+                          <br>
+                          <button>
+                            <i class="fa-brands fa-twitter"></i>
+                          </button>
+                          <button>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                          </button>
+                          <button>
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </button>
+                          <button>
+                            <i class="fa-brands fa-instagram"></i>
+                          </button>
+                      </div>
+
+                      <div id="footer_col2" class="col col-12 col-lg-4 col-md-6 col-sm-12">
+                          <h1>Contact Us</h1>
+                          <br>
+                          <div class="contact_text">
+                              <i class="fa-solid fa-location-dot"></i>
+                              <p>08 W 36th St, New York, NY 10001</p>
+                          </div>
+                          <div class="contact_text">
+                              <i class="fa-solid fa-envelope"></i>
+                              <p>mycoffee@mycoffeeshop.us</p>
+                          </div>
+                          <div class="contact_text">
+                              <i class="fa-solid fa-phone"></i>
+                              <p>+000 123 456789</p>
+                          </div>
+                      </div>
+
+                      <div id="footer_col3" class="col col-12 col-lg-4 col-md-6 col-sm-12">
+                          <h1>Join Our Cafe</h1>
+
+                          <br>
+                          <div class="footer_form">
+                              <input type="email" placeholder="Email">
+                              <button>
+                                  Subscribe
+                              </button>
+                          </div>
+                          <br>
+                          <p>We Won't Spam. We Hate It More Than You Do.</p>
+                          <br>
+                          <h1>Accepted Payments:</h1>
+                          <div class="footer_img">
+                              <img src="https://wdtmissspa.wpengine.com/wp-content/uploads/2023/09/Footer-Payoneer.svg" alt="">
+                              <img src="https://wdtmissspa.wpengine.com/wp-content/uploads/2023/09/Footer-amazon-pay.svg" alt="">
+                              <img src="https://wdtmissspa.wpengine.com/wp-content/uploads/2023/09/Footer-skrill.svg" alt="">
+                              <img src="https://wdtmissspa.wpengine.com/wp-content/uploads/2023/09/Footer-visa.svg" alt="">
+                          </div>
+                      </div>
+                  </div>
+
+                  <br><br><br>
+                  <div class="row">
+                      <div class="col">
+                          <p>
+                              Copyright ©2024 All rights reserved | This template is made with 
+                              <i style="color: rgb(196,138,68);" class="fa-solid fa-heart"></i> by 
+                              <span style="color: rgb(196,138,68); font-weight: bolder  ;">Colorlib</span>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+        </footer>
+
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script src="index.js"></script>
+
+<script>
+    new WOW().init();
+</script>
