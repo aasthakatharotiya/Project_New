@@ -7,24 +7,26 @@ export const fetchApi = createAsyncThunk("fetchApi", async () => {
     return response.data
 })
 
+// Increment quantity
 export const addQuantity = createAsyncThunk("addQuantity", async (id) => {
-    const { data } = await axios.get(`http://localhost:5000/item/${id}`)
-    const response = await axios.put(`http://localhost:5000/item/${id}`, {
-        ...data,
-        quantity: data.quantity + 1
-    })
-    return response.data
-});
-
+    const response = await axios.get(`http://localhost:5000/item/${id}`)
+    const updatedItem = {
+        ...response.data,
+        quantity: response.data.quantity + 1
+    }
+    await axios.put(`http://localhost:5000/item/${id}`, updatedItem)
+    return updatedItem
+})
 
 // Decrement quantity
 export const removeQuantity = createAsyncThunk("removeQuantity", async (id) => {
-    const { data } = await axios.get(`http://localhost:5000/item/${id}`)
-    const response = await axios.put(`http://localhost:5000/item/${id}`, {
-        ...data,
-        quantity: data.quantity - 1
-    })
-    return response.data
+    const response = await axios.get(`http://localhost:5000/item/${id}`)
+    const updatedItem = {
+        ...response.data,
+        quantity: response.data.quantity - 1
+    }
+    await axios.put(`http://localhost:5000/item/${id}`, updatedItem)
+    return updatedItem
 })
 
 // Redux slice
@@ -41,11 +43,15 @@ export const Api = createSlice({
             })
             .addCase(addQuantity.fulfilled, (state, action) => {
                 const itemIndex = state.data.findIndex((e) => e.id === action.payload.id)
-                state.data[itemIndex] = action.payload
+                if (itemIndex > -1) {
+                    state.data[itemIndex] = action.payload
+                }
             })
             .addCase(removeQuantity.fulfilled, (state, action) => {
                 const itemIndex = state.data.findIndex((e) => e.id === action.payload.id)
-                state.data[itemIndex] = action.payload
+                if (itemIndex > -1) {
+                    state.data[itemIndex] = action.payload
+                }
             })
     }
 })

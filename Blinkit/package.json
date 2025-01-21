@@ -4,6 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "json-server": "json-server --watch db.json --port 5000"
+  },
+  "scripts": {
     "dev": "concurrently \"vite\" \"npm run json-server\"",
     "json-server": "json-server --watch db.json --port 5000"
   },
