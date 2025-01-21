@@ -1,0 +1,542 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  /* border: 2px solid; */
+  /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.licdn.com/dms/image/D4D12AQH-ToAIwbCj8w/article-cover_image-shrink_600_2000/0/1695642409070?e=2147483647&v=beta&t=VZUy47wDuIequ3FQK8CdX3laju1S5799fV20CuJZ4Z4'); */
+  /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.pinimg.com/originals/be/76/6b/be766b5c02b6cc5e1f5b1e0a43d350bb.gif'); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left_div {
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+
+    .budget_main {
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      /* border: 2px solid yellow; */
+
+      .budget_border {
+        width: 50%;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+      }
+
+      h1{
+        margin-top: -10px;
+      }
+
+      h3 {
+        width: 60px;
+        height: 60px;
+        padding: 50px;
+        border-radius: 50%;
+        border: 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        margin-top: -10px;
+      }
+
+      .budget_disp_btn {
+        height: 50px;
+        padding: 0px 20px;
+        margin-top: -20px;
+        background-color: rgb(255, 0, 106);
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+    }
+
+    .budget_extra_div {
+      /* border: 2px solid red; */
+      margin-top: -55%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+
+    .add_budget_div {
+      /* border: 2px solid; */
+      /* margin-top: -42%; */
+      height: fit-content;
+      position: relative;
+      width: 100%;
+      height: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .budget_css {
+        background-color: black;
+        width: fit-content;
+        height: 95%;
+        padding: 0px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        visibility: hidden;
+
+        button {
+          height: 50px;
+          padding: 0px 20px;
+          background-color: rgb(255, 0, 106);
+          border: none;
+          border-radius: 5px;
+          font-size: 20px;
+        }
+
+        input{
+          height: 35px;
+        }
+      }
+    }
+
+    .donation_main {
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      /* border: 2px solid blue; */
+
+      .donation_border {
+        width: 50%;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+      }
+
+      h1{
+        margin-top: -10px;
+      }
+
+      h3 {
+        width: 60px;
+        height: 60px;
+        padding: 50px;
+        border-radius: 50%;
+        border: 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        margin-top: -10px;
+      }
+
+      .donation_disp_btn {
+        height: 50px;
+        padding: 0px 20px;
+        margin-top: -20px;
+        background-color: rgb(1, 147, 1);
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+    }
+
+    .donation_extra_div {
+      /* border: 2px solid red; */
+      margin-top: -55%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+
+    .add_donation_div {
+      /* border: 2px solid; */
+      /* margin-top: -42%; */
+      height: fit-content;
+      position: relative;
+      width: 100%;
+      height: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .donation_css {
+        background-color: black;
+        width: fit-content;
+        height: 95%;
+        padding: 0px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        visibility: hidden;
+
+        button {
+          height: 50px;
+          padding: 0px 20px;
+          background-color: rgb(1, 147, 1);
+          border: none;
+          border-radius: 5px;
+          font-size: 20px;
+        }
+
+        input{
+          height: 35px;
+        }
+      }
+    }
+  }
+
+  .right_div {
+    /* border: 2px solid blue; */
+    height: 100vh;
+    width: 60%;
+    /* overflow: hidden; */
+
+    .category_div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: -10px;
+
+      select {
+        width: 30%;
+        height: 40px;
+        margin-top: 7px;
+      }
+
+      button {
+        height: 40px;
+        padding: 0px 20px;
+        margin-top: 7px;
+        font-size: 18px;
+        background-color: rgb(255, 115, 0);
+        border: none;
+        border-radius: 5px;
+      }
+    }
+
+    .category_product {
+      height: fit-content;
+      /* border: 2px solid; */
+
+      .show_product {
+        height: 620px;
+        width: 100%;
+        /* border: 2px solid red; */
+        overflow: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: -10px;
+      }
+
+      .arr_product {
+        width: 45%;
+        border: 1px solid gray;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+        border-radius: 5px;
+        /* margin: 20px 20px; */
+        padding: 10px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .left_show_pr {
+          width: 50%;
+          height: 120px;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        h2{
+          font-size: 30px;
+          margin-top: 30px;
+        }
+        h3{
+          font-size: 25px;
+          margin-top: -20px;
+        }
+
+        .right_show_pr {
+          width: 50%;
+
+          h2 {
+            /* color: rgb(255, 0, 106); */
+            margin-top: -0px;
+          }
+
+          span {
+            /* color: rgb(255, 123, 0); */
+            color: rgb(255, 0, 106);
+          }
+
+          del {
+            color: gray;
+          }
+        }
+      }
+
+      .product_details {
+        display: none;
+        height: 580px;
+        margin-top: -620px;
+        width: 94.5%;
+        /* border: 2px solid pink; */
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        padding: 20px;
+        z-index: 10;
+        position: relative;
+
+        .cross {
+          width: 100%;
+          text-align: right;
+
+          button {
+            background: none;
+            border: none;
+            font-size: 30px;
+          }
+        }
+
+        .pr_detail_div {
+          border: 1px solid gray;
+          border-radius: 10px;
+          margin-top: 10px;
+          width: 50%;
+          height: 450px;
+          padding: 20px;
+          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
+          .selected_product {
+            height: 100%;
+
+            .select_pr_image {
+              width: 100%;
+              height: 50%;
+
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+
+            h1 {
+              height: 40px;
+              margin-top: -0px;
+            }
+
+            span {
+              margin-top: -20px;
+              font-size: 20px;
+              color: red;
+              /* border: 2px solid; */
+            }
+
+            h3 {
+              /* border: 2px solid; */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 20px;
+              margin-top: 10px;
+
+              span {
+                margin-top: 0px;
+                color: rgb(1, 147, 1);
+                font-size: 30px;
+              }
+
+              del {
+                color: rgb(160, 160, 160);
+              }
+            }
+
+            button {
+              /* margin-top: -20px; */
+              height: 50px;
+              padding: 0px 20px;
+              border-radius: 5px;
+              background-color: rgb(255, 0, 106);
+              border: none;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed_div {
+  width: 0%;
+  /* display: none; */
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  left: 0%;
+  top: 0%;
+  z-index: 1000;
+
+
+  #fixed_text {
+    /* display: none; */
+    visibility: hidden;
+    padding: 20px;
+    height: 100%;
+    /* border: 2px solid; */
+
+    .cross_fixed {
+      button {
+        background: none;
+        border: none;
+        font-size: 30px;
+      }
+    }
+
+    .donation {
+      /* border: 2px solid; */
+      /* margin-top: -10px; */
+
+      h3 {
+        margin-left: 340px;
+        margin-top: 140px;
+        position: absolute;
+        color: black;
+        font-weight: bolder;
+        font-size: 22px;
+        text-align: center;
+      }
+
+      .img_donation {
+        background-image: url('donation_1.png');
+        /* background-image: url('https://png.pngtree.com/png-vector/20221226/ourmid/pngtree-donation-box-and-charity-concept-png-image_6538298.png'); */
+        background-repeat: no-repeat;
+        background-size: 60% 130%;
+        background-position: 105% 70%;
+        height: 230px;
+      }
+    }
+
+    .add_to_cart_pr {
+      /* border: 1px solid blue; */
+      margin-top: 15px;
+      padding: 0px 20px;
+      height: 410px;
+      overflow: scroll;
+
+      .fix_add_cart {
+        border: 1px solid rgb(103, 103, 103);
+        border-radius: 5px;
+        width: 93%;
+        overflow: hidden;
+        padding: 17px;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .left_pr_div_fix {
+          width: 50%;
+          height: 150px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .right_pr_div_fix {
+          width: 50%;
+
+          button {
+            height: 50px;
+            padding: 0px 20px;
+            font-size: 20px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+          }
+
+          h1 {
+            width: 100%;
+            margin-top: -5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed_btn {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 20px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0%;
+}
