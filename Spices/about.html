@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – Devnoor Masala</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --clr_white: #ffffff;
+            --clr_light: #fdf9f4;
+            --clr_cream: #f5ede0;
+            --clr_red: #e8a020;
+            --clr_red2: #e03222;
+            --clr_green: #3a6b35;
+            --clr_green2: #4e8c46;
+            --clr_gold: #d4860a;
+            --clr_amber: #f0a500;
+            --clr_dark: #1e1208;
+            --clr_text: #3d2b14;
+            --clr_muted: #8c7358;
+            --clr_border: #e8d8c0;
+            --ff_display: 'Playfair Display', serif;
+            --ff_body: 'Nunito', sans-serif;
+            --ff_script: 'Dancing Script', cursive;
+            --radius_lg: 16px;
+            --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
+            --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
+            --transition: .3s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--ff_body);
+            background: var(--clr_white);
+            color: var(--clr_text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section_padding {
+            padding: 80px 0;
+        }
+
+        /* TOP BAR */
+        .top_bar {
+            background: var(--clr_red);
+            padding: 9px 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .95);
+            letter-spacing: .08em;
+        }
+
+        .top_bar_inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .top_bar_item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .top_bar_item i {
+            color: var(--clr_green);
+            font-size: 11px;
+        }
+
+        .top_bar_divider {
+            opacity: .4;
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--clr_white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .nav_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav_logo_text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav_logo_name {
+            font-family: var(--ff_script);
+            font-size: 26px;
+            color: var(--clr_red);
+            line-height: 1;
+        }
+
+        .nav_logo_sub {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--clr_green);
+        }
+
+        .nav_links {
+            display: flex;
+            gap: 26px;
+        }
+
+        .nav_links a {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--clr_text);
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav_links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr_red);
+            transition: width var(--transition);
+        }
+
+        .nav_links a:hover,
+        .nav_links a.active {
+            color: var(--clr_red);
+        }
+
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
+            width: 100%;
+        }
+
+        .nav_icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav_icon_btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_text);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .nav_icon_btn:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* PAGE HERO – ABOUT */
+        .about_hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a4d15 0%, #2d7a26 60%, #3a8a31 100%);
+            overflow: hidden;
+        }
+
+        .about_hero_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .about_hero_inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about_hero_left {
+            padding: 60px 0;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .breadcrumb a {
+            color: var(--clr_amber);
+            font-weight: 700;
+        }
+
+        .breadcrumb i {
+            font-size: 9px;
+        }
+
+        .about_hero h1 {
+            font-family: var(--ff_display);
+            font-size: clamp(36px, 5.5vw, 60px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .about_hero h1 em {
+            font-style: italic;
+            color: var(--clr_amber);
+        }
+
+        .about_hero_desc {
+            color: rgba(255, 255, 255, .8);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .about_chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .25);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 50px;
+        }
+
+        .chip i {
+            color: var(--clr_amber);
+            font-size: 11px;
+        }
+
+        .about_hero_img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .3);
+        }
+
+        .about_hero_img img {
+            width: 100%;
+            height: 420px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, .08);
+            padding: 20px;
+        }
+
+        /* STORY SECTION */
+        .story_section {
+            background: var(--clr_white);
+        }
+
+        .story_inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .story_img_wrap {
+            position: relative;
+        }
+
+        .story_img_main {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow_md);
+        }
+
+        .story_img_main img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: var(--clr_cream);
+            padding: 20px;
+        }
+
+        .story_img_float {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            width: 160px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow_md);
+            border: 4px solid var(--clr_white);
+        }
+
+        .story_img_float img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background: var(--clr_cream);
+            padding: 10px;
+        }
+
+        .story_eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(232, 160, 32, .1);
+            border: 1px solid rgba(232, 160, 32, .25);
+            color: var(--clr_red);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+        }
+
+        .story_title {
+            font-family: var(--ff_display);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            color: var(--clr_dark);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .story_title span {
+            color: var(--clr_red);
+        }
+
+        .story_body p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+
+        .story_milestones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .milestone {
+            background: var(--clr_light);
+            border-radius: 12px;
+            padding: 18px 16px;
+            border-left: 3px solid var(--clr_red);
+        }
+
+        .milestone strong {
+            display: block;
+            font-family: var(--ff_display);
+            font-size: 22px;
+            color: var(--clr_red);
+            font-weight: 900;
+        }
+
+        .milestone span {
+            font-size: 12px;
+            color: var(--clr_muted);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        /* MISSION VISION */
+        .mv_section {
+            background: var(--clr_light);
+        }
+
+        .mv_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .mv_card {
+            border-radius: var(--radius_lg);
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv_card.mission {
+            background: linear-gradient(135deg, var(--clr_red) 0%, #c07010 100%);
+        }
+
+        .mv_card.vision {
+            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
+        }
+
+        .mv_card_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .mv_icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .mv_card h3 {
+            font-family: var(--ff_display);
+            font-size: 26px;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .mv_card p {
+            color: rgba(255, 255, 255, .85);
+            font-size: 14px;
+            line-height: 1.85;
+            position: relative;
+        }
+
+        .mv_values {
+            margin-top: 50px;
+        }
+
+        .mv_values_title {
+            font-family: var(--ff_display);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: var(--clr_dark);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .mv_values_title span {
+            color: var(--clr_red);
+        }
+
+        .values_grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .value_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 28px 20px;
+            text-align: center;
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            transition: all var(--transition);
+        }
+
+        .value_card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow_md);
+            border-color: rgba(232, 160, 32, .3);
+        }
+
+        .value_icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fff0e0, #ffdecb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--clr_red);
+            margin: 0 auto 14px;
+        }
+
+        .value_card h4 {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .value_card p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+        }
+
+        /* MANUFACTURING */
+        .mfg_section {
+            background: var(--clr_white);
+        }
+
+        .mfg_inner {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .mfg_content .section_eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(58, 107, 53, .1);
+            border: 1px solid rgba(58, 107, 53, .2);
+            color: var(--clr_green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .mfg_title {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .mfg_title span {
+            color: var(--clr_green);
+        }
+
+        .mfg_content p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .mfg_address {
+            background: var(--clr_light);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 3px solid var(--clr_green);
+            margin-top: 20px;
+        }
+
+        .mfg_address h4 {
+            font-family: var(--ff_display);
+            color: var(--clr_dark);
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .mfg_address_item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--clr_muted);
+            margin-bottom: 8px;
+        }
+
+        .mfg_address_item i {
+            color: var(--clr_green);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .mfg_steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mfg_step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step_num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr_red), #c07010);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .step_body h4 {
+            font-family: var(--ff_display);
+            font-size: 15px;
+            color: var(--clr_dark);
+            margin-bottom: 4px;
+        }
+
+        .step_body p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+        }
+
+        /* TEAM */
+        .team_section {
+            background: var(--clr_light);
+        }
+
+        .team_header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .team_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .team_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .team_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .team_header p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            margin-top: 14px;
+        }
+
+        .team_grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+        }
+
+        .team_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            transition: all var(--transition);
+            text-align: center;
+        }
+
+        .team_card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow_md);
+        }
+
+        .team_img_box {
+            height: 220px;
+            overflow: hidden;
+            background: var(--clr_cream);
+        }
+
+        .team_img_box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .team_card:hover .team_img_box img {
+            transform: scale(1.05);
+        }
+
+        .team_body {
+            padding: 18px 16px 16px;
+        }
+
+        .team_name {
+            font-family: var(--ff_display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 4px;
+        }
+
+        .team_role {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--clr_red);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .team_bio {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        .team_social {
+            display: flex;
+            gap: 7px;
+            justify-content: center;
+        }
+
+        .team_social a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--clr_muted);
+            transition: all var(--transition);
+        }
+
+        .team_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* TIMELINE */
+        .timeline_section {
+            background: var(--clr_white);
+            padding: 80px 0;
+        }
+
+        .timeline_header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+        }
+
+        .timeline_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .timeline_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--clr_red), var(--clr_green));
+            transform: translateX(-50%);
+        }
+
+        .tl_item {
+            position: relative;
+            width: 50%;
+            padding: 0 44px 40px;
+            opacity: 0;
+            animation: fadeUp .6s forwards;
+        }
+
+        .tl_item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .tl_item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .tl_dot {
+            position: absolute;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--clr_red);
+            border: 3px solid var(--clr_white);
+            box-shadow: 0 0 0 2px var(--clr_red);
+        }
+
+        .tl_item:nth-child(odd) .tl_dot {
+            right: -8px;
+        }
+
+        .tl_item:nth-child(even) .tl_dot {
+            left: -8px;
+        }
+
+        .tl_year {
+            font-family: var(--ff_display);
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--clr_red);
+            margin-bottom: 4px;
+        }
+
+        .tl_title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 4px;
+        }
+
+        .tl_desc {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+        }
+
+        /* FSSAI BANNER */
+        .fssai_banner {
+            background: linear-gradient(135deg, var(--clr_red) 0%, #c07010 100%);
+            padding: 56px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fssai_banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .fssai_inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .fssai_item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .fssai_icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .fssai_text strong {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .fssai_text span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .fssai_divider {
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* FOOTER (shared) */
+        .footer {
+            background: var(--clr_dark);
+            padding: 60px 0 28px;
+        }
+
+        .footer_grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr;
+            gap: 36px;
+            margin-bottom: 50px;
+        }
+
+        .footer_logo_name {
+            font-family: var(--ff_script);
+            font-size: 28px;
+            color: var(--clr_amber);
+        }
+
+        .footer_brand p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+
+        .footer_heading {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer_heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 34px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+        }
+
+        .footer_links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer_links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer_links a i {
+            color: var(--clr_red);
+            font-size: 10px;
+        }
+
+        .footer_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_contact_item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .footer_contact_icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .07);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_amber);
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .footer_contact_item p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.65;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer_social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            transition: all var(--transition);
+        }
+
+        .footer_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .footer_bottom {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer_bottom p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        .footer_bottom span {
+            color: var(--clr_amber);
+        }
+
+        .footer_bottom_links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer_bottom_links a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .38);
+            transition: color var(--transition);
+        }
+
+        .footer_bottom_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .scroll_top_btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 44px;
+            height: 44px;
+            background: var(--clr_red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(232, 160, 32, .4);
+            transition: all var(--transition);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll_top_btn.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll_top_btn:hover {
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade_up {
+            opacity: 0;
+            animation: fadeUp .7s forwards;
+        }
+
+        @media(max-width:1024px) {
+
+            .about_hero_inner,
+            .story_inner,
+            .mfg_inner,
+            .mv_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about_hero_img {
+                display: none;
+            }
+
+            .team_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav_links {
+                display: none;
+            }
+
+            .team_grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline::before {
+                left: 16px;
+            }
+
+            .tl_item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 44px;
+                padding-right: 0;
+            }
+
+            .tl_item .tl_dot {
+                left: 8px !important;
+                right: auto !important;
+            }
+
+            .fssai_inner {
+                gap: 28px;
+            }
+
+            .fssai_divider {
+                display: none;
+            }
+
+            .story_img_float {
+                display: none;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top_bar_divider {
+                display: none;
+            }
+
+            .mv_grid {
+                gap: 16px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .team_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story_milestones {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top_bar">
+        <div class="top_bar_inner">
+            <div class="top_bar_item"><i class="fa-solid fa-truck-fast"></i><span>FREE SHIPPING ON ORDERS OVER
+                    ₹799</span></div>
+            <span class="top_bar_divider">|</span>
+            <div class="top_bar_item"><i class="fa-solid fa-tag"></i><span>USE CODE: <strong>SPI15</strong> FOR 15%
+                    OFF</span></div>
+            <span class="top_bar_divider">|</span>
+            <div class="top_bar_item"><i class="fa-solid fa-phone"></i><span>+91 92134 41003</span></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav_wrapper">
+            <div class="nav_logo">
+                <div class="nav_logo_text">
+                    <span class="nav_logo_name">Devnoor</span>
+                    <span class="nav_logo_sub">Masala</span>
+                </div>
+            </div>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav_icons">
+                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about_hero">
+        <div class="about_hero_pattern"></div>
+        <div class="about_hero_inner">
+            <div class="about_hero_left">
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>About Us</span>
+                </div>
+                <h1 class="fade_up" style="animation-delay:.1s">The Story Behind<br><em>Devnoor Masala</em></h1>
+                <p class="about_hero_desc fade_up" style="animation-delay:.3s">From the fertile lands of Gujarat to
+                    kitchens across India — Govind Sugar & Spices has been crafting pure, flavourful spices with
+                    unwavering commitment to quality, purity, and tradition.</p>
+                <div class="about_chips fade_up" style="animation-delay:.5s">
+                    <span class="chip"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
+                    <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
+                    <span class="chip"><i class="fa-solid fa-indian-rupee-sign"></i> Product of India</span>
+                    <span class="chip"><i class="fa-solid fa-award"></i> Best Quality</span>
+                </div>
+            </div>
+            <div class="about_hero_img fade_up" style="animation-delay:.4s">
+                <img src="img/Chilli_powder_1.png" alt="Devnoor Masala Products" />
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story_section section_padding">
+        <div class="container story_inner">
+            <div class="story_img_wrap">
+                <div class="story_img_main">
+                    <img src="img/Garam_masala_1.png" alt="Our Story" />
+                </div>
+                <div class="story_img_float">
+                    <img src="img/Turmeric_powder_1.png" alt="Turmeric" />
+                </div>
+            </div>
+            <div class="story_body">
+                <div class="story_eyebrow"><i class="fa-solid fa-book-open"></i> Our Story</div>
+                <h2 class="story_title">Crafted with <span>Passion,</span><br>Packed with Purpose</h2>
+                <p>Devnoor Masala is a product of Govind Sugar & Spices, a proudly Indian company established with a
+                    single vision: to bring the purest, most flavourful spices to every Indian household at an honest
+                    price.</p>
+                <p>Nestled at Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715, our
+                    state-of-the-art facility is designed to maintain the highest levels of hygiene and quality control.
+                </p>
+                <p>Every packet carries the FSSAI license number 10723014000067 — our promise that what you open is 100%
+                    pure, safe, and exactly what it says on the label. From sourcing whole spices to grinding, blending,
+                    and sealing, every step is done in-house under strict supervision.</p>
+                <div class="story_milestones">
+                    <div class="milestone"><strong>4</strong><span>Signature Products</span></div>
+                    <div class="milestone"><strong>8+</strong><span>Pack Variants</span></div>
+                    <div class="milestone"><strong>100%</strong><span>FSSAI Certified</span></div>
+                    <div class="milestone"><strong>∞</strong><span>Happy Families</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="mv_section section_padding">
+        <div class="container">
+            <div class="mv_grid">
+                <div class="mv_card mission">
+                    <div class="mv_card_pattern"></div>
+                    <div class="mv_icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To deliver the purest, freshest, most flavourful spices to every Indian kitchen — maintaining the
+                        highest standards of quality, hygiene, and transparency in every single batch we produce at our
+                        Mahesana facility.</p>
+                </div>
+                <div class="mv_card vision">
+                    <div class="mv_card_pattern"></div>
+                    <div class="mv_icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To become India's most trusted spice brand by setting a benchmark in purity, innovation, and
+                        customer satisfaction — making authentic Rajwadi flavours accessible to every household across
+                        the nation.</p>
+                </div>
+            </div>
+            <div class="mv_values">
+                <div class="mv_values_title">Our Core <span>Values</span></div>
+                <div class="values_grid">
+                    <div class="value_card">
+                        <div class="value_icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>Quality First</h4>
+                        <p>Every batch is tested. Every ingredient is verified. No compromise — ever.</p>
+                    </div>
+                    <div class="value_card">
+                        <div class="value_icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h4>Transparency</h4>
+                        <p>Full ingredient disclosure on every pack. You know exactly what you're eating.</p>
+                    </div>
+                    <div class="value_card">
+                        <div class="value_icon"><i class="fa-solid fa-heart"></i></div>
+                        <h4>Customer Care</h4>
+                        <p>If you find any fault, please inform us. Your feedback drives us forward.</p>
+                    </div>
+                    <div class="value_card">
+                        <div class="value_icon"><i class="fa-solid fa-leaf"></i></div>
+                        <h4>Natural Purity</h4>
+                        <p>No artificial colours, no additives. Pure spices as nature intended.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANUFACTURING -->
+    <section class="mfg_section section_padding">
+        <div class="container mfg_inner">
+            <div class="mfg_content">
+                <div class="section_eyebrow"><i class="fa-solid fa-industry"></i> Manufacturing</div>
+                <h2 class="mfg_title">Made in <span>Mahesana,</span><br>Gujarat with Pride</h2>
+                <p>Our manufacturing facility at Kamla Amrut Inditech Park is built to food-grade standards — hygienic,
+                    temperature-controlled, and equipped with modern spice-processing machinery.</p>
+                <p>We source whole spices directly from trusted growers, clean and dry them under controlled conditions,
+                    then grind and blend in-house to preserve maximum aroma and potency before sealing in our airtight
+                    packaging.</p>
+                <div class="mfg_address">
+                    <h4><i class="fa-solid fa-building-flag" style="color:var(--clr_green);margin-right:8px;"></i>
+                        Govind Sugar & Spices</h4>
+                    <div class="mfg_address_item"><i class="fa-solid fa-location-dot"></i><span>Plot No. 106, Sr. No.
+                            1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</span></div>
+                    <div class="mfg_address_item"><i class="fa-solid fa-certificate"></i><span>FSSAI Lic. No.:
+                            10723014000067</span></div>
+                    <div class="mfg_address_item"><i class="fa-solid fa-phone"></i><span>Consumer Care: +91 92134
+                            41003</span></div>
+                    <div class="mfg_address_item"><i
+                            class="fa-solid fa-envelope"></i><span>govindbrands@gmail.com</span></div>
+                    <div class="mfg_address_item"><i class="fa-solid fa-globe"></i><span>www.devnoormasala.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mfg_steps">
+                <div class="mfg_step">
+                    <div class="step_num">1</div>
+                    <div class="step_body">
+                        <h4>Farm Sourcing</h4>
+                        <p>Whole spices sourced directly from trusted farmers and growers across India's premium
+                            spice-growing regions.</p>
+                    </div>
+                </div>
+                <div class="mfg_step">
+                    <div class="step_num">2</div>
+                    <div class="step_body">
+                        <h4>Cleaning & Drying</h4>
+                        <p>Spices are thoroughly cleaned, sorted, and dried under controlled conditions to remove
+                            impurities.</p>
+                    </div>
+                </div>
+                <div class="mfg_step">
+                    <div class="step_num">3</div>
+                    <div class="step_body">
+                        <h4>Grinding & Blending</h4>
+                        <p>Freshly ground in-house using modern machinery to preserve maximum aroma, colour, and flavour
+                            potency.</p>
+                    </div>
+                </div>
+                <div class="mfg_step">
+                    <div class="step_num">4</div>
+                    <div class="step_body">
+                        <h4>Quality Testing</h4>
+                        <p>Every batch tested for purity, colour, moisture, and flavour profile before it is approved
+                            for packaging.</p>
+                    </div>
+                </div>
+                <div class="mfg_step">
+                    <div class="step_num">5</div>
+                    <div class="step_body">
+                        <h4>Airtight Sealing</h4>
+                        <p>Packed in airtight, tamper-proof packaging to maintain freshness from factory to your kitchen
+                            shelf.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team_section section_padding">
+        <div class="container">
+            <div class="team_header">
+                <h2>Our <span>Team</span></h2>
+                <p>The passionate individuals behind Devnoor Masala — dedicated to quality, flavour, and your
+                    satisfaction.</p>
+            </div>
+            <div class="team_grid">
+                <div class="team_card">
+                    <div class="team_img_box">
+                        <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=400&auto=format&fit=crop&q=70"
+                            alt="Ethalyn Allaire" />
+                    </div>
+                    <div class="team_body">
+                        <div class="team_name">Ethalyn Allaire</div>
+                        <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Spice Curator
+                        </div>
+                        <div class="team_bio">15 years of expertise in spice sourcing and quality grading. Oversees all
+                            raw material procurement and quality benchmarks.</div>
+                        <div class="team_social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team_card">
+                    <div class="team_img_box">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=70"
+                            alt="Timmy Bard" />
+                    </div>
+                    <div class="team_body">
+                        <div class="team_name">Timmy Bard</div>
+                        <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Farm Sourcing
+                            Head</div>
+                        <div class="team_bio">Travels across India's spice belts to forge direct partnerships with the
+                            best farmers and ensure consistent raw material quality.</div>
+                        <div class="team_social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team_card">
+                    <div class="team_img_box">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=70"
+                            alt="Willa Hegel" />
+                    </div>
+                    <div class="team_body">
+                        <div class="team_name">Willa Hegel</div>
+                        <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Quality Control
+                        </div>
+                        <div class="team_bio">Leads the QC lab at our Mahesana plant. Ensures every batch meets FSSAI
+                            standards before it leaves the facility.</div>
+                        <div class="team_social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team_card">
+                    <div class="team_img_box">
+                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&auto=format&fit=crop&q=70"
+                            alt="Soraya Belston" />
+                    </div>
+                    <div class="team_body">
+                        <div class="team_name">Soraya Belston</div>
+                        <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Chef Partner
+                        </div>
+                        <div class="team_bio">Our culinary expert who develops and tests spice blends in real kitchen
+                            conditions to ensure every product delivers authentic flavour.</div>
+                        <div class="team_social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline_section">
+        <div class="container">
+            <div class="timeline_header">
+                <h2>Our <span>Journey</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="tl_item" style="animation-delay:.1s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2010</div>
+                    <div class="tl_title">Founded</div>
+                    <div class="tl_desc">Govind Sugar & Spices established in Mahesana, Gujarat with a vision of pure,
+                        natural spices.</div>
+                </div>
+                <div class="tl_item" style="animation-delay:.2s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2013</div>
+                    <div class="tl_title">FSSAI Certification</div>
+                    <div class="tl_desc">Received FSSAI License No. 10723014000067 — our commitment to food safety
+                        formalised.</div>
+                </div>
+                <div class="tl_item" style="animation-delay:.3s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2016</div>
+                    <div class="tl_title">Devnoor Brand Launch</div>
+                    <div class="tl_desc">Launched the Devnoor Masala brand with SP. Chilli Powder and Turmeric Powder as
+                        flagship products.</div>
+                </div>
+                <div class="tl_item" style="animation-delay:.4s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2019</div>
+                    <div class="tl_title">Garam Masala Range</div>
+                    <div class="tl_desc">Introduced Garam Masala Powder — A Rajwadi Taste, and Coriander Cumin Powder to
+                        the lineup.</div>
+                </div>
+                <div class="tl_item" style="animation-delay:.5s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2023</div>
+                    <div class="tl_title">New Facility Expansion</div>
+                    <div class="tl_desc">Expanded manufacturing at Kamla Amrut Inditech Park with upgraded grinding and
+                        packaging lines.</div>
+                </div>
+                <div class="tl_item" style="animation-delay:.6s">
+                    <div class="tl_dot"></div>
+                    <div class="tl_year">2026</div>
+                    <div class="tl_title">Digital Presence</div>
+                    <div class="tl_desc">Launched www.devnoormasala.com to reach spice lovers across India with our full
+                        product range.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FSSAI BANNER -->
+    <div class="fssai_banner">
+        <div class="container fssai_inner">
+            <div class="fssai_item">
+                <div class="fssai_icon"><i class="fa-solid fa-certificate"></i></div>
+                <div class="fssai_text"><strong>FSSAI Certified</strong><span>Lic. No. 10723014000067</span></div>
+            </div>
+            <div class="fssai_divider"></div>
+            <div class="fssai_item">
+                <div class="fssai_icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="fssai_text"><strong>100% Natural</strong><span>No Artificial Colours</span></div>
+            </div>
+            <div class="fssai_divider"></div>
+            <div class="fssai_item">
+                <div class="fssai_icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="fssai_text"><strong>Made in Gujarat</strong><span>Mahesana, India</span></div>
+            </div>
+            <div class="fssai_divider"></div>
+            <div class="fssai_item">
+                <div class="fssai_icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="fssai_text"><strong>Consumer Care</strong><span>+91 92134 41003</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer_grid">
+                <div class="footer_brand">
+                    <span class="footer_logo_name">Devnoor Masala</span>
+                    <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
+                        Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <div class="footer_social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Quick Links</div>
+                    <div class="footer_links"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a><a
+                            href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a><a
+                            href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a><a
+                            href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a><a href="contact.html"><i
+                                class="fa-solid fa-chevron-right"></i> Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer_heading">Products</div>
+                    <div class="footer_links"><a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP.
+                            Chilli Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric
+                            Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander
+                            Cumin</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Help</div>
+                    <div class="footer_links"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact
+                            Us</a><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a><a href="#"><i
+                                class="fa-solid fa-chevron-right"></i> Privacy Policy</a></div>
+                </div>
+                <div>
+                    <div class="footer_heading">Contact</div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-phone"></i></div>
+                        <p>+91 92134 41003</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                        <p>govindbrands@gmail.com</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-globe"></i></div>
+                        <p>www.devnoormasala.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar & Spices. All rights reserved.</p>
+                <div class="footer_bottom_links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a
+                        href="#">Sitemap</a></div>
+            </div>
+        </div>
+    </footer>
+    <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
+            class="fa-solid fa-arrow-up"></i></div>
+    <script>
+        const scrollBtn = document.getElementById('scroll_top_btn');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+    </script>
+</body>
+
+</html>

@@ -337,6 +337,20 @@
             width: 100%;
         }
 
+        .nav_links li a.active::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--clr_red);
+        }
+
+        .nav_links a.active {
+            color: var(--clr_red);
+        }
+
         .nav_icons {
             display: flex;
             gap: 18px;
@@ -1912,20 +1926,15 @@
                 </div>
             </div>
             <ul class="nav_links">
-                <li><a href="#hero_section">Home</a></li>
-                <li><a href="#best_products_section">Products</a></li>
-                <li><a href="#flavors_section">Shop</a></li>
-                <li><a href="#team_section">About</a></li>
-                <li><a href="#blog_section">Blog</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav_icons">
-                <a href="#" class="nav_icon_btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#" class="nav_icon_btn" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
-                <a href="#" class="nav_icon_btn" title="Cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart_count">3</span>
-                </a>
+                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
             </div>
         </nav>
     </header>
@@ -2561,17 +2570,10 @@
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer_grid">
-
                 <div class="footer_brand">
-                    <div class="footer_logo_wrap">
-                        <!-- <div class="footer_logo_circle">
-                            <img src="https://images.unsplash.com/photo-1567098260939-5d9cee055592?w=100&auto=format&fit=crop&q=80"
-                                alt="Devnoor Masala" />
-                        </div> -->
-                        <span class="footer_logo_name">Devnoor Masala</span>
-                    </div>
-                    <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
-                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067. Product of India.</p>
+                    <span class="footer_logo_name">Devnoor Masala</span>
+                    <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
+                        Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
                     <div class="footer_social">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -2580,40 +2582,28 @@
                         <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
-
                 <div>
-                    <div class="footer_heading">About Us</div>
-                    <div class="footer_links">
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Our Story</a>
-                        <a href="#team_section"><i class="fa-solid fa-chevron-right"></i> Our Team</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Careers</a>
-                        <a href="#blog_section"><i class="fa-solid fa-chevron-right"></i> Blog</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Press</a>
+                    <div class="footer_heading">Quick Links</div>
+                    <div class="footer_links"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a><a
+                            href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a><a
+                            href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a><a
+                            href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a><a href="contact.html"><i
+                                class="fa-solid fa-chevron-right"></i> Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer_heading">Products</div>
+                    <div class="footer_links"><a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP.
+                            Chilli Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric
+                            Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander
+                            Cumin</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
                     </div>
                 </div>
-
                 <div>
                     <div class="footer_heading">Help</div>
-                    <div class="footer_links">
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Shipping Policy</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Returns</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Track Order</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
-                    </div>
+                    <div class="footer_links"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact
+                            Us</a><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a><a href="#"><i
+                                class="fa-solid fa-chevron-right"></i> Privacy Policy</a></div>
                 </div>
-
-                <div>
-                    <div class="footer_heading">Support</div>
-                    <div class="footer_links">
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Contact Us</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Live Chat</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Help Center</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Community</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Wholesale</a>
-                    </div>
-                </div>
-
                 <div>
                     <div class="footer_heading">Contact</div>
                     <div class="footer_contact_item">
@@ -2633,16 +2623,11 @@
                         <p>www.devnoormasala.com</p>
                     </div>
                 </div>
-
             </div>
-
             <div class="footer_bottom">
-                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
-                <div class="footer_bottom_links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Sitemap</a>
-                </div>
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar & Spices. All rights reserved.</p>
+                <div class="footer_bottom_links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a
+                        href="#">Sitemap</a></div>
             </div>
         </div>
     </footer>

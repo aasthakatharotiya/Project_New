@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Devnoor Masala</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --clr_white: #ffffff;
+            --clr_light: #fdf9f4;
+            --clr_cream: #f5ede0;
+            --clr_red: #e8a020;
+            --clr_red2: #e03222;
+            --clr_green: #3a6b35;
+            --clr_green2: #4e8c46;
+            --clr_gold: #d4860a;
+            --clr_amber: #f0a500;
+            --clr_dark: #1e1208;
+            --clr_text: #3d2b14;
+            --clr_muted: #8c7358;
+            --clr_border: #e8d8c0;
+            --ff_display: 'Playfair Display', serif;
+            --ff_body: 'Nunito', sans-serif;
+            --ff_script: 'Dancing Script', cursive;
+            --radius_lg: 16px;
+            --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
+            --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
+            --transition: .3s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--ff_body);
+            background: var(--clr_white);
+            color: var(--clr_text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section_padding {
+            padding: 80px 0;
+        }
+
+        /* TOP BAR & HEADER (same pattern) */
+        .top_bar {
+            background: var(--clr_red);
+            padding: 9px 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .95);
+            letter-spacing: .08em;
+        }
+
+        .top_bar_inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .top_bar_item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .top_bar_item i {
+            color: var(--clr_green);
+            font-size: 11px;
+        }
+
+        .top_bar_divider {
+            opacity: .4;
+        }
+
+        .header {
+            background: var(--clr_white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .nav_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav_logo_text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav_logo_name {
+            font-family: var(--ff_script);
+            font-size: 26px;
+            color: var(--clr_red);
+            line-height: 1;
+        }
+
+        .nav_logo_sub {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--clr_green);
+        }
+
+        .nav_links {
+            display: flex;
+            gap: 26px;
+        }
+
+        .nav_links a {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--clr_text);
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav_links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr_red);
+            transition: width var(--transition);
+        }
+
+        .nav_links a:hover,
+        .nav_links a.active {
+            color: var(--clr_red);
+        }
+
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
+            width: 100%;
+        }
+
+        .nav_icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav_icon_btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_text);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .nav_icon_btn:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* PAGE HERO */
+        .page_hero {
+            position: relative;
+            padding: 90px 0 70px;
+            background: linear-gradient(135deg, #fff5ec 0%, #fdecd8 40%, #fae0c4 100%);
+            overflow: hidden;
+        }
+
+        .page_hero_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(232, 160, 32, .08) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .page_hero_inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: var(--clr_muted);
+        }
+
+        .breadcrumb a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .breadcrumb i {
+            font-size: 9px;
+        }
+
+        .page_hero h1 {
+            font-family: var(--ff_display);
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            color: var(--clr_dark);
+            margin-bottom: 14px;
+        }
+
+        .page_hero h1 span {
+            color: var(--clr_red);
+        }
+
+        .page_hero p {
+            color: var(--clr_muted);
+            font-size: 15px;
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade_up {
+            opacity: 0;
+            animation: fadeUp .7s forwards;
+        }
+
+        /* BLOG LAYOUT */
+        .blog_layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* FEATURED POST */
+        .featured_post {
+            margin-bottom: 48px;
+        }
+
+        .featured_img {
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            height: 440px;
+            position: relative;
+            box-shadow: var(--shadow_md);
+        }
+
+        .featured_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s;
+        }
+
+        .featured_img:hover img {
+            transform: scale(1.04);
+        }
+
+        .featured_overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .1) 55%);
+        }
+
+        .featured_content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+        }
+
+        .featured_tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--clr_red);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 4px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .featured_title {
+            font-family: var(--ff_display);
+            font-size: clamp(22px, 3.5vw, 34px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .featured_meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .featured_meta i {
+            color: var(--clr_amber);
+        }
+
+        /* BLOG GRID */
+        .blog_section_label {
+            font-family: var(--ff_display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .blog_grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .blog_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            transition: all var(--transition);
+        }
+
+        .blog_card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow_md);
+            border-color: rgba(232, 160, 32, .3);
+        }
+
+        .blog_img_box {
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .blog_img_box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .blog_card:hover .blog_img_box img {
+            transform: scale(1.07);
+        }
+
+        .blog_body {
+            padding: 18px 18px 14px;
+        }
+
+        .blog_cat {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(232, 160, 32, .1);
+            color: var(--clr_red);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .blog_title_card {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .blog_excerpt_card {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .blog_meta_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--clr_muted);
+        }
+
+        .blog_meta_row i {
+            color: var(--clr_red);
+            font-size: 10px;
+            margin-right: 4px;
+        }
+
+        .blog_read_more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--clr_red);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            transition: gap var(--transition);
+        }
+
+        .blog_read_more:hover {
+            gap: 9px;
+        }
+
+        /* FULL-WIDTH BLOG CARD */
+        .blog_card_wide {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            transition: all var(--transition);
+            margin-bottom: 24px;
+        }
+
+        .blog_card_wide:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow_md);
+        }
+
+        .blog_card_wide_img {
+            height: 100%;
+            overflow: hidden;
+            min-height: 180px;
+        }
+
+        .blog_card_wide_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .blog_card_wide:hover .blog_card_wide_img img {
+            transform: scale(1.07);
+        }
+
+        .blog_card_wide_body {
+            padding: 22px 22px;
+        }
+
+        /* SIDEBAR */
+        .blog_sidebar {}
+
+        .sidebar_widget {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar_title {
+            font-family: var(--ff_display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--clr_cream);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar_title i {
+            color: var(--clr_red);
+        }
+
+        /* Search widget */
+        .search_box {
+            display: flex;
+            gap: 0;
+            border: 1.5px solid var(--clr_border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .search_box input {
+            flex: 1;
+            padding: 10px 14px;
+            border: none;
+            outline: none;
+            font-family: var(--ff_body);
+            font-size: 13px;
+            color: var(--clr_text);
+            background: var(--clr_white);
+        }
+
+        .search_box button {
+            background: var(--clr_red);
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background var(--transition);
+        }
+
+        .search_box button:hover {
+            background: var(--clr_gold);
+        }
+
+        /* Categories */
+        .cat_list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cat_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 12px;
+            border-radius: 8px;
+            background: var(--clr_light);
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 13px;
+        }
+
+        .cat_item:hover {
+            background: var(--clr_red);
+            color: #fff;
+        }
+
+        .cat_item:hover .cat_count {
+            background: rgba(255, 255, 255, .25);
+            color: #fff;
+        }
+
+        .cat_item_left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat_item i {
+            font-size: 12px;
+            color: var(--clr_red);
+        }
+
+        .cat_item:hover i {
+            color: #fff;
+        }
+
+        .cat_count {
+            background: var(--clr_cream);
+            color: var(--clr_muted);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* Recent posts */
+        .recent_post {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--clr_cream);
+            margin-bottom: 14px;
+        }
+
+        .recent_post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .recent_img {
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .recent_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent_text {}
+
+        .recent_title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        .recent_date {
+            font-size: 11px;
+            color: var(--clr_muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .recent_date i {
+            color: var(--clr_red);
+            font-size: 10px;
+        }
+
+        /* Tags */
+        .tags_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag_pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--clr_cream);
+            border: 1px solid var(--clr_border);
+            color: var(--clr_muted);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .tag_pill:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* Product sidebar */
+        .sidebar_product {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--clr_cream);
+            margin-bottom: 14px;
+        }
+
+        .sidebar_product:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sp_img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--clr_cream);
+        }
+
+        .sp_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .sp_name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 2px;
+        }
+
+        .sp_sub {
+            font-size: 11px;
+            color: var(--clr_muted);
+        }
+
+        /* NEWSLETTER */
+        .newsletter_section {
+            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .newsletter_inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .newsletter_inner h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 38px);
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .newsletter_inner h2 em {
+            font-style: italic;
+            color: var(--clr_amber);
+        }
+
+        .newsletter_inner p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 14px;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .newsletter_form {
+            display: flex;
+            gap: 0;
+            max-width: 420px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .2);
+        }
+
+        .newsletter_form input {
+            flex: 1;
+            padding: 14px 22px;
+            border: none;
+            outline: none;
+            font-family: var(--ff_body);
+            font-size: 13px;
+            color: var(--clr_dark);
+        }
+
+        .newsletter_form button {
+            background: var(--clr_red);
+            color: #fff;
+            border: none;
+            padding: 14px 24px;
+            font-family: var(--ff_body);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background var(--transition);
+        }
+
+        .newsletter_form button:hover {
+            background: var(--clr_gold);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--clr_dark);
+            padding: 60px 0 28px;
+        }
+
+        .footer_grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr;
+            gap: 36px;
+            margin-bottom: 50px;
+        }
+
+        .footer_logo_name {
+            font-family: var(--ff_script);
+            font-size: 28px;
+            color: var(--clr_amber);
+        }
+
+        .footer_brand p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+
+        .footer_heading {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer_heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 34px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+        }
+
+        .footer_links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer_links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer_links a i {
+            color: var(--clr_red);
+            font-size: 10px;
+        }
+
+        .footer_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_contact_item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .footer_contact_icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .07);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_amber);
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .footer_contact_item p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.65;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer_social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            transition: all var(--transition);
+        }
+
+        .footer_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .footer_bottom {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer_bottom p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        .footer_bottom span {
+            color: var(--clr_amber);
+        }
+
+        .footer_bottom_links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer_bottom_links a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .38);
+            transition: color var(--transition);
+        }
+
+        .footer_bottom_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .scroll_top_btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 44px;
+            height: 44px;
+            background: var(--clr_red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(232, 160, 32, .4);
+            transition: all var(--transition);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll_top_btn.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        @media(max-width:1024px) {
+            .blog_layout {
+                grid-template-columns: 1fr;
+            }
+
+            .blog_sidebar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav_links {
+                display: none;
+            }
+
+            .blog_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog_card_wide {
+                grid-template-columns: 1fr;
+            }
+
+            .blog_sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter_form {
+                flex-direction: column;
+                border-radius: var(--radius_lg);
+            }
+
+            .newsletter_form input,
+            .newsletter_form button {
+                border-radius: 8px;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top_bar_divider {
+                display: none;
+            }
+
+            .featured_img {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top_bar">
+        <div class="top_bar_inner">
+            <div class="top_bar_item"><i class="fa-solid fa-truck-fast"></i><span>FREE SHIPPING ON ORDERS OVER
+                    ₹799</span></div>
+            <span class="top_bar_divider">|</span>
+            <div class="top_bar_item"><i class="fa-solid fa-tag"></i><span>USE CODE: <strong>SPI15</strong> FOR 15%
+                    OFF</span></div>
+            <span class="top_bar_divider">|</span>
+            <div class="top_bar_item"><i class="fa-solid fa-phone"></i><span>+91 92134 41003</span></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav_wrapper">
+            <div class="nav_logo_text">
+                <span class="nav_logo_name">Devnoor</span>
+                <span class="nav_logo_sub">Masala</span>
+            </div>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav_icons">
+                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page_hero">
+        <div class="page_hero_pattern"></div>
+        <div class="page_hero_inner container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Blog</span>
+            </div>
+            <h1 class="fade_up" style="animation-delay:.1s">Spice <span>Stories</span> & Insights</h1>
+            <p class="fade_up" style="animation-delay:.3s">Recipes, health tips, spice science, and stories from the
+                Devnoor Masala kitchen — your guide to cooking with India's finest spices.</p>
+        </div>
+    </section>
+
+    <!-- MAIN BLOG CONTENT -->
+    <section class="section_padding" style="background:var(--clr_light);">
+        <div class="container">
+            <div class="blog_layout">
+
+                <!-- LEFT: POSTS -->
+                <div class="blog_main">
+
+                    <!-- FEATURED -->
+                    <div class="featured_post">
+                        <div class="featured_img">
+                            <img src="img/Chilli_powder_1.png" alt="SP. Chilli Powder Featured" />
+                            <div class="featured_overlay"></div>
+                            <div class="featured_content">
+                                <span class="featured_tag"><i class="fa-solid fa-fire"></i> Featured</span>
+                                <div class="featured_title">SP. Chilli Powder — The Secret Behind Every Perfect Rajwadi
+                                    Dish</div>
+                                <div class="featured_meta">
+                                    <span><i class="fa-regular fa-calendar"></i> May 13, 2026</span>
+                                    <span><i class="fa-regular fa-user"></i> Devnoor Kitchen</span>
+                                    <span><i class="fa-regular fa-comment"></i> 0 Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog_section_label"><i class="fa-solid fa-newspaper"
+                            style="color:var(--clr_red);margin-right:8px;"></i>Latest Articles</div>
+
+                    <!-- BLOG GRID (2 cols) -->
+                    <div class="blog_grid">
+
+                        <div class="blog_card">
+                            <div class="blog_img_box">
+                                <img src="img/Turmeric_powder_1.png" alt="Turmeric Blog" />
+                            </div>
+                            <div class="blog_body">
+                                <span class="blog_cat"><i class="fa-solid fa-sun"></i> Turmeric</span>
+                                <div class="blog_title_card">Golden Turmeric Powder — Ancient Superfood With Natural
+                                    Oils</div>
+                                <div class="blog_excerpt_card">Devnoor's Turmeric Powder (हल्दी) with natural oils
+                                    offers 354 Kcal per 100g and 7.8g protein. Discover how pure dry turmeric with
+                                    natural oils can elevate both flavour and nutrition in your daily cooking.</div>
+                                <div class="blog_meta_row">
+                                    <span><i class="fa-regular fa-calendar"></i> Apr 28, 2026 &nbsp;·&nbsp; <i
+                                            class="fa-regular fa-comment"></i> 3</span>
+                                    <a href="#" class="blog_read_more">Read <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog_card">
+                            <div class="blog_img_box">
+                                <img src="img/Garam_masala_1.png" alt="Garam Masala Blog" />
+                            </div>
+                            <div class="blog_body">
+                                <span class="blog_cat"><i class="fa-solid fa-mortar-pestle"></i> Garam Masala</span>
+                                <div class="blog_title_card">Garam Masala Powder — A Rajwadi Taste in Every Bite</div>
+                                <div class="blog_excerpt_card">Our Garam Masala blends 14+ whole spices — coriander,
+                                    chilli, bay leaves, cumin, cloves, star anise, ginger, cinnamon, cardamom, nutmeg
+                                    and more — for an authentic Rajwadi flavour experience.</div>
+                                <div class="blog_meta_row">
+                                    <span><i class="fa-regular fa-calendar"></i> Apr 6, 2026 &nbsp;·&nbsp; <i
+                                            class="fa-regular fa-comment"></i> 5</span>
+                                    <a href="#" class="blog_read_more">Read <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog_card">
+                            <div class="blog_img_box">
+                                <img src="img/Coriander_powder_1.png" alt="Coriander Cumin Blog" />
+                            </div>
+                            <div class="blog_body">
+                                <span class="blog_cat"><i class="fa-solid fa-leaf"></i> Coriander Cumin</span>
+                                <div class="blog_title_card">धनिया-जीरा Powder — The Soul of Indian Cooking</div>
+                                <div class="blog_excerpt_card">Coriander and cumin are the backbone of almost every
+                                    Indian curry. With 436 Kcal and 11.98g protein per 100g, Devnoor's Premium Coriander
+                                    Cumin Powder delivers both flavour and nutrition in every spoonful.</div>
+                                <div class="blog_meta_row">
+                                    <span><i class="fa-regular fa-calendar"></i> Mar 22, 2026 &nbsp;·&nbsp; <i
+                                            class="fa-regular fa-comment"></i> 2</span>
+                                    <a href="#" class="blog_read_more">Read <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog_card">
+                            <div class="blog_img_box">
+                                <img src="img/Turmeric_powder_2.png" alt="Storage Blog" />
+                            </div>
+                            <div class="blog_body">
+                                <span class="blog_cat"><i class="fa-solid fa-jar"></i> Tips & Tricks</span>
+                                <div class="blog_title_card">How to Store Spices Properly for Maximum Freshness</div>
+                                <div class="blog_excerpt_card">Store in a cool, dry & hygienic place. Keep away from
+                                    direct heat & sunlight. Once opened, keep in an airtight container. These simple
+                                    rules from Devnoor Masala keep your spices potent for longer.</div>
+                                <div class="blog_meta_row">
+                                    <span><i class="fa-regular fa-calendar"></i> Mar 10, 2026 &nbsp;·&nbsp; <i
+                                            class="fa-regular fa-comment"></i> 7</span>
+                                    <a href="#" class="blog_read_more">Read <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- WIDE BLOG CARDS -->
+                    <div class="blog_section_label"><i class="fa-solid fa-star"
+                            style="color:var(--clr_red);margin-right:8px;"></i>In Depth Reads</div>
+
+                    <div class="blog_card_wide">
+                        <div class="blog_card_wide_img">
+                            <img src="img/Chilli_powder_2.png" alt="Chilli 50g Blog" />
+                        </div>
+                        <div class="blog_card_wide_body">
+                            <span class="blog_cat"><i class="fa-solid fa-pepper-hot"></i> Chilli</span>
+                            <div class="blog_title_card"
+                                style="font-family:var(--ff_display);font-size:18px;font-weight:700;color:var(--clr_dark);margin:8px 0;">
+                                Why SP. Chilli Powder Is Different From Regular Chilli Powder</div>
+                            <div class="blog_excerpt_card">The "SP" in SP. Chilli Powder stands for special. Made from
+                                carefully selected red chillies blended with edible refined rapeseed oil (not more than
+                                2%), this powder delivers a deeper, more complex heat than ordinary chilli powder. At
+                                435 Kcal and 14.12g protein per 100g, it's also nutritionally rich.</div>
+                            <div class="blog_meta_row" style="margin-top:14px;">
+                                <span><i class="fa-regular fa-calendar"></i> Feb 18, 2026 &nbsp;·&nbsp; <i
+                                        class="fa-regular fa-clock"></i> 4 min read</span>
+                                <a href="#" class="blog_read_more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog_card_wide">
+                        <div class="blog_card_wide_img">
+                            <img src="img/Garam_masala_2.png" alt="Garam Masala 50g Blog" />
+                        </div>
+                        <div class="blog_card_wide_body">
+                            <span class="blog_cat"><i class="fa-solid fa-mortar-pestle"></i> Garam Masala</span>
+                            <div class="blog_title_card"
+                                style="font-family:var(--ff_display);font-size:18px;font-weight:700;color:var(--clr_dark);margin:8px 0;">
+                                The 14 Spices Behind Our Garam Masala Blend</div>
+                            <div class="blog_excerpt_card">Every pinch of Devnoor Garam Masala Powder contains coriander
+                                powder, chilli, bay leaves, cumin, cloves, clove leaves, black pepper, star anise,
+                                ajwain, ginger, rock salt, cinnamon, mace, cardamom, nutmeg, and mustard oil (2%).
+                                Here's why each ingredient matters for the perfect Rajwadi taste.</div>
+                            <div class="blog_meta_row" style="margin-top:14px;">
+                                <span><i class="fa-regular fa-calendar"></i> Jan 30, 2026 &nbsp;·&nbsp; <i
+                                        class="fa-regular fa-clock"></i> 6 min read</span>
+                                <a href="#" class="blog_read_more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT: SIDEBAR -->
+                <aside class="blog_sidebar">
+
+                    <!-- Search -->
+                    <div class="sidebar_widget">
+                        <div class="sidebar_title"><i class="fa-solid fa-magnifying-glass"></i> Search</div>
+                        <div class="search_box">
+                            <input type="text" placeholder="Search articles..." />
+                            <button><i class="fa-solid fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar_widget">
+                        <div class="sidebar_title"><i class="fa-solid fa-layer-group"></i> Categories</div>
+                        <div class="cat_list">
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-pepper-hot"></i> SP. Chilli Powder
+                                </div><span class="cat_count">3</span>
+                            </div>
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-sun"></i> Turmeric Powder</div><span
+                                    class="cat_count">2</span>
+                            </div>
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-leaf"></i> Coriander Cumin</div><span
+                                    class="cat_count">2</span>
+                            </div>
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-mortar-pestle"></i> Garam Masala</div>
+                                <span class="cat_count">3</span>
+                            </div>
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-jar"></i> Tips & Storage</div><span
+                                    class="cat_count">2</span>
+                            </div>
+                            <div class="cat_item">
+                                <div class="cat_item_left"><i class="fa-solid fa-heart-pulse"></i> Health & Nutrition
+                                </div><span class="cat_count">4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts -->
+                    <div class="sidebar_widget">
+                        <div class="sidebar_title"><i class="fa-solid fa-clock-rotate-left"></i> Recent Posts</div>
+                        <div class="recent_post">
+                            <div class="recent_img"><img src="img/Chilli_powder_1.png" alt="" /></div>
+                            <div class="recent_text">
+                                <div class="recent_title">SP. Chilli Powder — The Secret Behind Every Rajwadi Dish</div>
+                                <div class="recent_date"><i class="fa-regular fa-calendar"></i> May 13, 2026</div>
+                            </div>
+                        </div>
+                        <div class="recent_post">
+                            <div class="recent_img"><img src="img/Turmeric_powder_1.png" alt="" /></div>
+                            <div class="recent_text">
+                                <div class="recent_title">Golden Turmeric — Ancient Superfood With Natural Oils</div>
+                                <div class="recent_date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</div>
+                            </div>
+                        </div>
+                        <div class="recent_post">
+                            <div class="recent_img"><img src="img/Garam_masala_1.png" alt="" /></div>
+                            <div class="recent_text">
+                                <div class="recent_title">Garam Masala — A Rajwadi Taste in Every Bite</div>
+                                <div class="recent_date"><i class="fa-regular fa-calendar"></i> Apr 6, 2026</div>
+                            </div>
+                        </div>
+                        <div class="recent_post">
+                            <div class="recent_img"><img src="img/Coriander_powder_1.png" alt="" /></div>
+                            <div class="recent_text">
+                                <div class="recent_title">धनिया-जीरा Powder — Soul of Indian Cooking</div>
+                                <div class="recent_date"><i class="fa-regular fa-calendar"></i> Mar 22, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products -->
+                    <div class="sidebar_widget">
+                        <div class="sidebar_title"><i class="fa-solid fa-box-open"></i> Our Products</div>
+                        <div class="sidebar_product">
+                            <div class="sp_img"><img src="img/Chilli_powder_1.png" alt="" /></div>
+                            <div>
+                                <div class="sp_name">SP. Chilli Powder</div>
+                                <div class="sp_sub">स्पे. मिर्च पावडर · 50g / 100g</div>
+                            </div>
+                        </div>
+                        <div class="sidebar_product">
+                            <div class="sp_img"><img src="img/Turmeric_powder_1.png" alt="" /></div>
+                            <div>
+                                <div class="sp_name">Turmeric Powder</div>
+                                <div class="sp_sub">हल्दी पावडर · 50g / 100g</div>
+                            </div>
+                        </div>
+                        <div class="sidebar_product">
+                            <div class="sp_img"><img src="img/Coriander_powder_1.png" alt="" /></div>
+                            <div>
+                                <div class="sp_name">Coriander Cumin Powder</div>
+                                <div class="sp_sub">धनिया-जीरा पावडर · 50g / 100g</div>
+                            </div>
+                        </div>
+                        <div class="sidebar_product">
+                            <div class="sp_img"><img src="img/Garam_masala_1.png" alt="" /></div>
+                            <div>
+                                <div class="sp_name">Garam Masala Powder</div>
+                                <div class="sp_sub">गरम मसाला · 50g / 100g</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar_widget">
+                        <div class="sidebar_title"><i class="fa-solid fa-tags"></i> Popular Tags</div>
+                        <div class="tags_wrap">
+                            <span class="tag_pill"><i class="fa-solid fa-pepper-hot"></i> Chilli</span>
+                            <span class="tag_pill"><i class="fa-solid fa-sun"></i> Turmeric</span>
+                            <span class="tag_pill"><i class="fa-solid fa-leaf"></i> Coriander</span>
+                            <span class="tag_pill"><i class="fa-solid fa-mortar-pestle"></i> Masala</span>
+                            <span class="tag_pill"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            <span class="tag_pill"><i class="fa-solid fa-heart-pulse"></i> Health</span>
+                            <span class="tag_pill"><i class="fa-solid fa-jar"></i> Storage Tips</span>
+                            <span class="tag_pill"><i class="fa-solid fa-indian-rupee-sign"></i> India</span>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter_section">
+        <div class="newsletter_pattern"></div>
+        <div class="newsletter_inner">
+            <h2>Stay <em>Spiced Up</em></h2>
+            <p>Subscribe to the Devnoor Masala newsletter for the latest spice tips, recipes, health insights, and
+                product updates — delivered straight to your inbox.</p>
+            <div class="newsletter_form">
+                <input type="email" placeholder="Enter your email address..." />
+                <button><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_grid">
+                <div class="footer_brand">
+                    <span class="footer_logo_name">Devnoor Masala</span>
+                    <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
+                        Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <div class="footer_social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#"><i
+                                class="fa-brands fa-instagram"></i></a><a href="#"><i
+                                class="fa-brands fa-youtube"></i></a><a href="#"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Quick Links</div>
+                    <div class="footer_links"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a><a
+                            href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a><a
+                            href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a><a
+                            href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a><a href="contact.html"><i
+                                class="fa-solid fa-chevron-right"></i> Contact</a></div>
+                </div>
+                <div>
+                    <div class="footer_heading">Products</div>
+                    <div class="footer_links"><a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP.
+                            Chilli Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric
+                            Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander
+                            Cumin</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Blog</div>
+                    <div class="footer_links"><a href="#"><i class="fa-solid fa-chevron-right"></i> Chilli
+                            Articles</a><a href="#"><i class="fa-solid fa-chevron-right"></i> Turmeric Tips</a><a
+                            href="#"><i class="fa-solid fa-chevron-right"></i> Masala Recipes</a><a href="#"><i
+                                class="fa-solid fa-chevron-right"></i> Health & Nutrition</a></div>
+                </div>
+                <div>
+                    <div class="footer_heading">Contact</div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <p>Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-phone"></i></div>
+                        <p>+91 92134 41003</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                        <p>govindbrands@gmail.com</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-globe"></i></div>
+                        <p>www.devnoormasala.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar & Spices. All rights reserved.</p>
+                <div class="footer_bottom_links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a
+                        href="#">Sitemap</a></div>
+            </div>
+        </div>
+    </footer>
+    <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
+            class="fa-solid fa-arrow-up"></i></div>
+    <script>
+        const scrollBtn = document.getElementById('scroll_top_btn');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+    </script>
+</body>
+
+</html>
