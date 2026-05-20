@@ -4,28 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Devnoor Masala – Premium Quality Spices</title>
+    <title>Contact Us – Devnoor Masala</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         /* ============================================================
-   CSS VARIABLES – LIGHT THEME
+   ROOT VARIABLES
 ============================================================ */
         :root {
             --clr_white: #ffffff;
             --clr_light: #fdf9f4;
             --clr_cream: #f5ede0;
             --clr_beige: #ede0cc;
-            --clr_card: #fff8f0;
             --clr_red: #e8a020;
             --clr_red2: #e03222;
             --clr_green: #3a6b35;
             --clr_green2: #4e8c46;
             --clr_gold: #d4860a;
             --clr_amber: #f0a500;
-            --clr_brown: #7a4a1e;
             --clr_dark: #1e1208;
             --clr_text: #3d2b14;
             --clr_muted: #8c7358;
@@ -35,14 +33,14 @@
             --ff_script: 'Dancing Script', cursive;
             --radius: 8px;
             --radius_lg: 16px;
-            --shadow_sm: 0 2px 12px rgba(122, 74, 30, 0.10);
-            --shadow_md: 0 6px 28px rgba(122, 74, 30, 0.15);
-            --shadow_lg: 0 16px 48px rgba(122, 74, 30, 0.18);
-            --transition: 0.3s ease;
+            --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
+            --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
+            --shadow_lg: 0 16px 48px rgba(122, 74, 30, .18);
+            --transition: .3s ease;
         }
 
         /* ============================================================
-   RESET & BASE
+   RESET
 ============================================================ */
         *,
         *::before,
@@ -78,9 +76,6 @@
             list-style: none;
         }
 
-        /* ============================================================
-   UTILITY
-============================================================ */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -91,110 +86,43 @@
             padding: 80px 0;
         }
 
-        .section_title {
-            text-align: center;
-            margin-bottom: 10px;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .section_title h2 {
-            font-family: var(--ff_display);
-            font-size: clamp(26px, 4vw, 40px);
-            color: var(--clr_dark);
-            display: inline-block;
-            position: relative;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
-        .section_title h2 span {
-            color: var(--clr_red);
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
-        .section_title h2::after {
-            content: '';
-            display: block;
-            width: 56px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .section_subtitle {
-            text-align: center;
-            color: var(--clr_muted);
-            font-size: 14px;
-            letter-spacing: 0.04em;
-            margin-bottom: 50px;
-        }
-
-        .btn_primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, var(--clr_red), var(--clr_red2));
-            color: #fff;
-            padding: 13px 30px;
-            border-radius: 50px;
-            font-family: var(--ff_body);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 18px rgba(192, 41, 26, 0.35);
-            transition: all var(--transition);
-        }
-
-        .btn_primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(192, 41, 26, 0.45);
-        }
-
-        .btn_outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: var(--clr_red);
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-family: var(--ff_body);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border: 2px solid var(--clr_red);
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-
-        .btn_outline:hover {
-            background: var(--clr_red);
-            color: #fff;
-        }
-
-        .btn_green {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
-            color: #fff;
-            padding: 13px 30px;
-            border-radius: 50px;
-            font-family: var(--ff_body);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 18px rgba(58, 107, 53, 0.35);
-            transition: all var(--transition);
-        }
-
-        .btn_green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(58, 107, 53, 0.45);
+        .fade_up {
+            opacity: 0;
+            animation: fadeUp .7s forwards;
         }
 
         /* ============================================================
@@ -206,8 +134,8 @@
             text-align: center;
             font-size: 12px;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.95);
-            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, .95);
+            letter-spacing: .08em;
         }
 
         .top_bar_inner {
@@ -230,18 +158,18 @@
         }
 
         .top_bar_divider {
-            opacity: 0.4;
+            opacity: .4;
         }
 
         /* ============================================================
-   HEADER / NAV
+   HEADER
 ============================================================ */
         .header {
             background: var(--clr_white);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 16px rgba(122, 74, 30, 0.10);
+            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
             border-bottom: 2px solid var(--clr_cream);
         }
 
@@ -252,33 +180,6 @@
             padding: 14px 24px;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .nav_logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav_logo_img {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 12px rgba(58, 107, 53, 0.3);
-            flex-shrink: 0;
-            overflow: hidden;
-            padding: 4px;
-        }
-
-        .nav_logo_img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
         }
 
         .nav_logo_text {
@@ -296,7 +197,7 @@
         .nav_logo_sub {
             font-size: 10px;
             font-weight: 700;
-            letter-spacing: 0.18em;
+            letter-spacing: .18em;
             text-transform: uppercase;
             color: var(--clr_green);
         }
@@ -304,13 +205,12 @@
         .nav_links {
             display: flex;
             gap: 26px;
-            align-items: center;
         }
 
         .nav_links a {
             font-size: 13px;
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: .04em;
             text-transform: uppercase;
             color: var(--clr_text);
             transition: color var(--transition);
@@ -329,32 +229,25 @@
             transition: width var(--transition);
         }
 
-        .nav_links a:hover {
-            color: var(--clr_red);
-        }
-
-        .nav_links a:hover::after {
-            width: 100%;
-        }
-
-        .nav_links li a.active::after{
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--clr_red);
-        }
-
+        .nav_links a:hover,
         .nav_links a.active {
             color: var(--clr_red);
         }
 
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
+            width: 100%;
+        }
+
+        .nav_right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .nav_icons {
             display: flex;
-            gap: 18px;
-            align-items: center;
+            gap: 10px;
         }
 
         .nav_icon_btn {
@@ -370,7 +263,6 @@
             font-size: 15px;
             cursor: pointer;
             transition: all var(--transition);
-            position: relative;
         }
 
         .nav_icon_btn:hover {
@@ -379,287 +271,1188 @@
             border-color: var(--clr_red);
         }
 
-        .cart_count {
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--clr_text);
+            border-radius: 2px;
+            transition: all var(--transition);
+        }
+
+        /* ============================================================
+   MOBILE NAV
+============================================================ */
+        .mobile_nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 2000;
+        }
+
+        .mobile_nav.open {
+            display: block;
+        }
+
+        .mobile_panel {
             position: absolute;
-            top: -4px;
-            right: -4px;
+            top: 0;
+            left: 0;
+            width: 78%;
+            max-width: 300px;
+            height: 100%;
+            background: var(--clr_white);
+            padding: 28px 22px;
+            transform: translateX(-100%);
+            transition: transform .32s ease;
+            overflow-y: auto;
+        }
+
+        .mobile_nav.open .mobile_panel {
+            transform: translateX(0);
+        }
+
+        .mobile_close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            color: var(--clr_text);
+        }
+
+        .m_logo {
+            font-family: var(--ff_script);
+            font-size: 26px;
+            color: var(--clr_red);
+            margin-bottom: 26px;
+            display: block;
+        }
+
+        .m_links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .m_links a {
+            display: block;
+            padding: 11px 14px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: var(--clr_text);
+            transition: all var(--transition);
+        }
+
+        .m_links a:hover,
+        .m_links a.active {
             background: var(--clr_red);
             color: #fff;
-            font-size: 9px;
-            font-weight: 800;
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        /* =========================
-   CONTACT HERO
-========================= */
-
-        .contact-hero {
-            width: 100%;
-            padding: 90px 8%;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1400&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: #fff;
-        }
-
-        .contact-hero h1 {
-            font-size: 58px;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 15px;
-        }
-
-        .contact-hero p {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        /* =========================
-   CONTACT SECTION
-========================= */
-
-        .contact-section {
-            width: 100%;
-            padding: 80px 8%;
-        }
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        /* =========================
-   LEFT INFO
-========================= */
-
-        .contact-info {
-            background: #1f6b2f;
-            padding: 45px;
-            border-radius: 25px;
-            color: #fff;
+        /* ============================================================
+   PAGE HERO
+============================================================ */
+        .page_hero {
             position: relative;
+            padding: 90px 0;
+            background: linear-gradient(135deg, #fff5ec 0%, #fdecd8 40%, #fae0c4 100%);
             overflow: hidden;
         }
 
-        .contact-info::before {
-            content: '';
+        .page_hero_pattern {
             position: absolute;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            top: -100px;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(232, 160, 32, .08) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .page_hero_blob1 {
+            position: absolute;
+            top: -120px;
             right: -100px;
-        }
-
-        .contact-info h2 {
-            font-size: 40px;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 15px;
-        }
-
-        .contact-info p {
-            line-height: 1.9;
-            margin-bottom: 35px;
-            color: #f2f2f2;
-        }
-
-        .info-box {
-            display: flex;
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-
-        .info-icon {
-            min-width: 55px;
-            height: 55px;
+            width: 450px;
+            height: 450px;
             border-radius: 50%;
-            background: #f4a825;
+            background: radial-gradient(circle, rgba(232, 160, 32, .12) 0%, transparent 70%);
+        }
+
+        .page_hero_blob2 {
+            position: absolute;
+            bottom: -60px;
+            left: -80px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(58, 107, 53, .08) 0%, transparent 70%);
+        }
+
+        .hero_inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: flex-end;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero_left {
+            padding-bottom: 60px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: var(--clr_muted);
+        }
+
+        .breadcrumb a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .breadcrumb i {
+            font-size: 9px;
+        }
+
+        .page_hero h1 {
+            font-family: var(--ff_display);
+            font-size: clamp(36px, 5.5vw, 62px);
+            font-weight: 900;
+            color: var(--clr_dark);
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .page_hero h1 span {
+            color: var(--clr_red);
+        }
+
+        .page_hero_desc {
+            color: var(--clr_muted);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+            max-width: 480px;
+        }
+
+        .hero_quick_btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .q_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--ff_body);
+        }
+
+        .q_btn.primary {
+            background: linear-gradient(135deg, var(--clr_red), var(--clr_red2));
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 16px rgba(232, 160, 32, .35);
+        }
+
+        .q_btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 160, 32, .45);
+        }
+
+        .q_btn.outline {
+            background: transparent;
+            color: var(--clr_green);
+            border: 2px solid var(--clr_green);
+        }
+
+        .q_btn.outline:hover {
+            background: var(--clr_green);
+            color: #fff;
+        }
+
+        .hero_right {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding-bottom: 0;
+        }
+
+        .hero_cards_stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 0;
+        }
+
+        .h_info_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 22px 20px;
+            box-shadow: var(--shadow_md);
+            border: 1.5px solid var(--clr_border);
+            transition: all var(--transition);
+        }
+
+        .h_info_card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow_lg);
+        }
+
+        .h_card_icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
+            margin-bottom: 13px;
         }
 
-        .info-text h4 {
-            margin-bottom: 6px;
-            font-size: 18px;
+        .h_card_icon.red {
+            background: linear-gradient(135deg, rgba(232, 160, 32, .15), rgba(224, 50, 34, .1));
+            color: var(--clr_red);
         }
 
-        .info-text span {
-            font-size: 14px;
-            line-height: 1.8;
-            display: block;
-            color: #f0f0f0;
+        .h_card_icon.green {
+            background: linear-gradient(135deg, rgba(58, 107, 53, .12), rgba(78, 140, 70, .08));
+            color: var(--clr_green);
         }
 
-        .social-links {
-            margin-top: 35px;
+        .h_card_icon.amber {
+            background: linear-gradient(135deg, rgba(240, 165, 0, .15), rgba(212, 134, 10, .1));
+            color: var(--clr_gold);
+        }
+
+        .h_card_icon.dark {
+            background: linear-gradient(135deg, rgba(30, 18, 8, .08), rgba(61, 43, 20, .05));
+            color: var(--clr_dark);
+        }
+
+        .h_info_card h4 {
+            font-family: var(--ff_display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 5px;
+        }
+
+        .h_info_card p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.65;
+        }
+
+        .h_info_card a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .h_info_card a:hover {
+            text-decoration: underline;
+        }
+
+        /* hero full-width card */
+        .h_info_card.full {
+            grid-column: span 2;
             display: flex;
-            gap: 15px;
+            align-items: center;
+            gap: 16px;
         }
 
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            background: #fff;
-            color: #1f6b2f;
-            border-radius: 50%;
+        .h_info_card.full .h_card_icon {
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+
+        .h_info_card.full .h_card_text h4 {
+            margin-bottom: 3px;
+        }
+
+        /* ============================================================
+   QUICK CONTACT STRIPS
+============================================================ */
+        .quick_strip {
+            background: var(--clr_green);
+            padding: 20px 0;
+        }
+
+        .quick_strip_inner {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
+            gap: 48px;
+            flex-wrap: wrap;
         }
 
-        .social-links a:hover {
-            background: #f4a825;
+        .qs_item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             color: #fff;
-            transform: translateY(-4px);
         }
 
-        /* =========================
-   FORM
-========================= */
-
-        .contact-form {
-            background: #fff;
-            padding: 45px;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .form-title {
-            margin-bottom: 15px;
-        }
-
-        .form-title h2 {
-            font-size: 40px;
-            font-family: 'Playfair Display', serif;
-            color: #222;
-        }
-
-        .form-title span {
-            color: #f4a825;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px 18px;
-            border: 1px solid #ddd;
-            border-radius: 14px;
-            outline: none;
-            font-size: 15px;
-            transition: 0.3s;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #f4a825;
-            box-shadow: 0 0 0 4px rgba(244, 168, 37, 0.12);
-        }
-
-        .form-group textarea {
-            resize: none;
-            height: 135px;
-        }
-
-        .contact-btn {
-            padding: 16px 35px;
-            border: none;
-            border-radius: 50px;
-            background: #f4a825;
-            color: #fff;
+        .qs_icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .qs_text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        .qs_text span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .qs_divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* ============================================================
+   MAIN CONTACT SECTION
+============================================================ */
+        .contact_section {
+            background: var(--clr_light);
+        }
+
+        .contact_grid {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* LEFT — FORM CARD */
+        .form_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 40px 36px;
+            box-shadow: var(--shadow_md);
+            border: 1.5px solid var(--clr_border);
+        }
+
+        .form_card_header {
+            margin-bottom: 28px;
+        }
+
+        .form_card_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(24px, 3.5vw, 32px);
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .form_card_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .form_card_header p {
+            font-size: 13px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+        }
+
+        .form_row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form_row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .form_group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form_label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--clr_text);
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .form_label .req {
+            color: var(--clr_red);
+        }
+
+        .form_input,
+        .form_select,
+        .form_textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--clr_border);
+            border-radius: var(--radius);
+            font-family: var(--ff_body);
+            font-size: 14px;
+            color: var(--clr_text);
+            background: var(--clr_white);
+            transition: border-color var(--transition), box-shadow var(--transition);
+            outline: none;
+        }
+
+        .form_input:focus,
+        .form_select:focus,
+        .form_textarea:focus {
+            border-color: var(--clr_red);
+            box-shadow: 0 0 0 3px rgba(232, 160, 32, .12);
+        }
+
+        .form_input::placeholder,
+        .form_textarea::placeholder {
+            color: var(--clr_border);
+        }
+
+        .form_select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238c7358' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
             cursor: pointer;
-            transition: 0.3s;
+        }
+
+        .form_textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+
+        .form_check_row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form_check_row input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            accent-color: var(--clr_red);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .form_check_row label {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .form_check_row label a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .submit_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--clr_red), var(--clr_red2));
+            color: #fff;
+            font-family: var(--ff_body);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(232, 160, 32, .35);
+            transition: all var(--transition);
+        }
+
+        .submit_btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(232, 160, 32, .45);
+        }
+
+        .submit_btn i {
+            font-size: 16px;
+        }
+
+        /* success message */
+        .form_success {
+            display: none;
+            text-align: center;
+            padding: 32px 20px;
+        }
+
+        .form_success i {
+            font-size: 52px;
+            color: var(--clr_green);
+            margin-bottom: 14px;
+        }
+
+        .form_success h3 {
+            font-family: var(--ff_display);
+            font-size: 24px;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .form_success p {
+            font-size: 14px;
+            color: var(--clr_muted);
+        }
+
+        /* RIGHT — INFO COLUMN */
+        .info_col {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* address card */
+        .address_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            box-shadow: var(--shadow_md);
+            border: 1.5px solid var(--clr_border);
+        }
+
+        .address_card_top {
+            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
+            padding: 24px 26px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .address_card_top::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .07) 1px, transparent 0);
+            background-size: 22px 22px;
+        }
+
+        .address_card_top h3 {
+            font-family: var(--ff_display);
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 4px;
+            position: relative;
+        }
+
+        .address_card_top p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .75);
+            position: relative;
+        }
+
+        .address_card_body {
+            padding: 22px 26px;
+        }
+
+        .addr_row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--clr_cream);
+            margin-bottom: 16px;
+        }
+
+        .addr_row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .addr_icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #fff0e0, #ffdecb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: var(--clr_red);
+            flex-shrink: 0;
+        }
+
+        .addr_text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 3px;
+        }
+
+        .addr_text p,
+        .addr_text a {
+            font-size: 13px;
+            color: var(--clr_muted);
+            line-height: 1.65;
+        }
+
+        .addr_text a:hover {
+            color: var(--clr_red);
+        }
+
+        /* hours card */
+        .hours_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 24px 26px;
+            box-shadow: var(--shadow_sm);
+            border: 1.5px solid var(--clr_border);
+        }
+
+        .hours_card h3 {
+            font-family: var(--ff_display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hours_card h3 i {
+            color: var(--clr_red);
+        }
+
+        .hours_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--clr_cream);
+            font-size: 13px;
+        }
+
+        .hours_row:last-child {
+            border-bottom: none;
+        }
+
+        .hours_day {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--clr_text);
             font-weight: 600;
         }
 
-        .contact-btn:hover {
-            background: #1f6b2f;
-            transform: translateY(-3px);
+        .hours_day i {
+            color: var(--clr_red);
+            font-size: 11px;
         }
 
-        /* =========================
+        .hours_time {
+            color: var(--clr_green);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .hours_time.closed {
+            color: var(--clr_muted);
+        }
+
+        .open_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(58, 107, 53, .1);
+            color: var(--clr_green);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(58, 107, 53, .2);
+        }
+
+        .open_dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--clr_green);
+            animation: pulse_dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse_dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(.8);
+            }
+        }
+
+        /* social card */
+        .social_card {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 22px 26px;
+            box-shadow: var(--shadow_sm);
+            border: 1.5px solid var(--clr_border);
+        }
+
+        .social_card h3 {
+            font-family: var(--ff_display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social_card h3 i {
+            color: var(--clr_red);
+        }
+
+        .social_links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .s_link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 11px 14px;
+            border-radius: 10px;
+            border: 1.5px solid var(--clr_border);
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+
+        .s_link:hover {
+            border-color: var(--clr_red);
+            background: rgba(232, 160, 32, .05);
+        }
+
+        .s_link_icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .s_link_icon.fb {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .s_link_icon.ig {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+        }
+
+        .s_link_icon.wa {
+            background: #25d366;
+            color: #fff;
+        }
+
+        .s_link_icon.yt {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .s_link_icon.tw {
+            background: #000;
+            color: #fff;
+        }
+
+        .s_link_text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--clr_dark);
+        }
+
+        .s_link_text span {
+            font-size: 11px;
+            color: var(--clr_muted);
+        }
+
+        /* ============================================================
    MAP SECTION
-========================= */
-
-        .map-section {
-            width: 100%;
-            padding: 0 8% 80px;
+============================================================ */
+        .map_section {
+            background: var(--clr_white);
+            padding: 0 0 80px;
         }
 
-        .map-box {
-            border-radius: 25px;
+        .map_header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .map_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .map_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .map_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .map_header p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .map_wrap {
+            border-radius: var(--radius_lg);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow_lg);
+            border: 2px solid var(--clr_border);
+            position: relative;
         }
 
-        .map-box iframe {
+        .map_wrap iframe {
             width: 100%;
-            height: 450px;
-            border: 0;
+            height: 440px;
+            display: block;
+            border: none;
         }
 
-        /* =========================
-   RESPONSIVE
-========================= */
-
-        @media(max-width:992px) {
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-hero h1 {
-                font-size: 42px;
-            }
-
-            .contact-info,
-            .contact-form {
-                padding: 35px;
-            }
-
+        .map_overlay_card {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            padding: 18px 20px;
+            box-shadow: var(--shadow_md);
+            border: 1.5px solid var(--clr_border);
+            max-width: 280px;
         }
 
-        @media(max-width:576px) {
+        .map_overlay_card h4 {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
 
-            .contact-hero {
-                padding: 70px 6%;
-            }
+        .map_overlay_card h4 i {
+            color: var(--clr_red);
+        }
 
-            .contact-section {
-                padding: 60px 6%;
-            }
+        .map_overlay_card p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
 
-            .map-section {
-                padding: 0 6% 60px;
-            }
+        .map_dir_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--clr_green);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 20px;
+            transition: all var(--transition);
+        }
 
-            .contact-hero h1,
-            .contact-info h2,
-            .form-title h2 {
-                font-size: 32px;
-            }
+        .map_dir_btn:hover {
+            background: var(--clr_green2);
+            transform: translateY(-1px);
+        }
 
+        /* ============================================================
+   FAQ SECTION
+============================================================ */
+        .faq_section {
+            background: var(--clr_light);
+        }
+
+        .faq_header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .faq_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .faq_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .faq_header p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .faq_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .faq_item {
+            height: fit-content;
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            overflow: hidden;
+            transition: border-color var(--transition);
+        }
+
+        .faq_item:hover {
+            border-color: rgba(232, 160, 32, .35);
+        }
+
+        .faq_q {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            gap: 14px;
+        }
+
+        .faq_q_text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--clr_dark);
+        }
+
+        .faq_q_icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(232, 160, 32, .12), rgba(224, 50, 34, .08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--clr_red);
+            flex-shrink: 0;
+        }
+
+        .faq_arrow {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--clr_muted);
+            transition: all var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq_item.open .faq_arrow {
+            background: var(--clr_red);
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .faq_a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .35s ease;
+        }
+
+        .faq_item.open .faq_a {
+            max-height: 300px;
+        }
+
+        .faq_a_inner {
+            padding: 0 20px 18px;
+            font-size: 13px;
+            color: var(--clr_muted);
+            line-height: 1.8;
+            border-top: 1px solid var(--clr_cream);
+        }
+
+        /* ============================================================
+   NEWSLETTER STRIP
+============================================================ */
+        .nl_section {
+            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
+            padding: 68px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nl_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .nl_inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .nl_inner h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(24px, 4vw, 36px);
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .nl_inner h2 em {
+            font-style: italic;
+            color: var(--clr_amber);
+        }
+
+        .nl_inner p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 14px;
+            margin-bottom: 26px;
+            line-height: 1.8;
+        }
+
+        .nl_form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, .2);
+        }
+
+        .nl_form input {
+            flex: 1;
+            padding: 13px 20px;
+            border: none;
+            outline: none;
+            font-family: var(--ff_body);
+            font-size: 13px;
+            color: var(--clr_dark);
+        }
+
+        .nl_form button {
+            background: var(--clr_red);
+            color: #fff;
+            border: none;
+            padding: 13px 20px;
+            font-family: var(--ff_body);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background var(--transition);
+        }
+
+        .nl_form button:hover {
+            background: var(--clr_gold);
         }
 
         /* ============================================================
@@ -667,7 +1460,7 @@
 ============================================================ */
         .footer {
             background: var(--clr_dark);
-            padding: 70px 0 28px;
+            padding: 60px 0 28px;
         }
 
         .footer_grid {
@@ -675,32 +1468,6 @@
             grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr;
             gap: 36px;
             margin-bottom: 50px;
-        }
-
-        .footer_logo_wrap {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .footer_logo_circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--clr_green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 4px;
-        }
-
-        .footer_logo_circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
         }
 
         .footer_logo_name {
@@ -711,16 +1478,16 @@
 
         .footer_brand p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, .55);
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin: 12px 0 18px;
         }
 
         .footer_heading {
             font-family: var(--ff_display);
             font-size: 16px;
             color: #fff;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -743,7 +1510,7 @@
 
         .footer_links a {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, .55);
             transition: color var(--transition);
             display: flex;
             align-items: center;
@@ -759,18 +1526,18 @@
             color: var(--clr_amber);
         }
 
-        .footer_contact_item {
+        .f_contact {
             display: flex;
             gap: 12px;
             align-items: flex-start;
-            margin-bottom: 14px;
+            margin-bottom: 13px;
         }
 
-        .footer_contact_icon {
+        .f_ci {
             width: 32px;
             height: 32px;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, .07);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -780,39 +1547,39 @@
             margin-top: 2px;
         }
 
-        .footer_contact_item p {
+        .f_contact p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.65;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.6;
         }
 
-        .footer_social {
+        .f_social {
             display: flex;
             gap: 8px;
         }
 
-        .footer_social a {
+        .f_social a {
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border: 1.5px solid rgba(255, 255, 255, .12);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, .5);
             transition: all var(--transition);
         }
 
-        .footer_social a:hover {
+        .f_social a:hover {
             background: var(--clr_red);
             color: #fff;
             border-color: var(--clr_red);
         }
 
-        .footer_bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-            padding-top: 24px;
+        .f_bottom {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 22px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -820,33 +1587,31 @@
             gap: 12px;
         }
 
-        .footer_bottom p {
+        .f_bottom p {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.38);
+            color: rgba(255, 255, 255, .38);
         }
 
-        .footer_bottom span {
+        .f_bottom span {
             color: var(--clr_amber);
         }
 
-        .footer_bottom_links {
+        .f_blinks {
             display: flex;
-            gap: 18px;
+            gap: 16px;
         }
 
-        .footer_bottom_links a {
+        .f_blinks a {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.38);
+            color: rgba(255, 255, 255, .38);
             transition: color var(--transition);
         }
 
-        .footer_bottom_links a:hover {
+        .f_blinks a:hover {
             color: var(--clr_amber);
         }
 
-        /* ============================================================
-   SCROLL TOP BTN
-============================================================ */
+        /* SCROLL TOP */
         .scroll_top_btn {
             position: fixed;
             bottom: 26px;
@@ -861,7 +1626,7 @@
             justify-content: center;
             font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(192, 41, 26, 0.4);
+            box-shadow: 0 4px 20px rgba(232, 160, 32, .4);
             transition: all var(--transition);
             z-index: 999;
             opacity: 0;
@@ -875,13 +1640,12 @@
 
         .scroll_top_btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 28px rgba(192, 41, 26, 0.5);
         }
 
         /* ============================================================
    RESPONSIVE
 ============================================================ */
-        @media (max-width: 1024px) {
+        @media(max-width:1024px) {
             .hero_inner {
                 grid-template-columns: 1fr;
             }
@@ -890,74 +1654,42 @@
                 display: none;
             }
 
-            .products_grid {
-                grid-template-columns: repeat(3, 1fr);
+            .contact_grid {
+                grid-template-columns: 1fr;
             }
 
             .footer_grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .team_grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .premium_grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .promo_banner_inner {
+            .faq_grid {
                 grid-template-columns: 1fr;
-            }
-
-            .promo_banner_img {
-                display: none;
             }
         }
 
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
             .nav_links {
                 display: none;
             }
 
-            .products_grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hamburger {
+                display: flex;
             }
 
-            .blog_grid {
+            .form_row {
                 grid-template-columns: 1fr;
             }
 
-            .flavors_intro {
-                grid-template-columns: 1fr;
+            .hero_quick_btns {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .flavors_grid_main {
-                grid-template-columns: 1fr;
+            .quick_strip_inner {
+                gap: 20px;
             }
 
-            .flavors_all {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .flavor_card.tall {
-                min-height: 240px;
-            }
-
-            .services_grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service_item {
-                border-right: none;
-                border-bottom: 1.5px solid var(--clr_cream);
-            }
-
-            .gallery_strip {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .gallery_strip .gallery_item:nth-child(n+4) {
+            .qs_divider {
                 display: none;
             }
 
@@ -965,13 +1697,44 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero_trust {
-                flex-wrap: wrap;
-                gap: 16px;
-            }
-
             .top_bar_divider {
                 display: none;
+            }
+
+            .map_overlay_card {
+                display: none;
+            }
+
+            .nl_form {
+                flex-direction: column;
+                border-radius: var(--radius_lg);
+            }
+
+            .nl_form input,
+            .nl_form button {
+                border-radius: 8px;
+            }
+
+            .form_card {
+                padding: 26px 20px;
+            }
+
+            .hero_cards_stack {
+                grid-template-columns: 1fr;
+            }
+
+            .h_info_card.full {
+                grid-column: span 1;
+            }
+        }
+
+        @media(max-width:480px) {
+            .page_hero {
+                padding: 70px 0 0;
+            }
+
+            .social_links {
+                gap: 8px;
             }
         }
     </style>
@@ -995,11 +1758,9 @@
     <!-- HEADER -->
     <header class="header">
         <nav class="nav_wrapper">
-            <div class="nav_logo">
-                <div class="nav_logo_text">
-                    <span class="nav_logo_name">Devnoor</span>
-                    <span class="nav_logo_sub">Masala</span>
-                </div>
+            <div class="nav_logo_text">
+                <span class="nav_logo_name">Devnoor</span>
+                <span class="nav_logo_sub">Masala</span>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
@@ -1008,149 +1769,525 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="nav_icons">
-                <a href="#" class="nav_icon_btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#" class="nav_icon_btn" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
-                <a href="#" class="nav_icon_btn" title="Call"><i class="fa-solid fa-phone"></i></a>
+            <div class="nav_right">
+                <div class="nav_icons">
+                    <a href="tel:+919213441003" class="nav_icon_btn" title="Call Us"><i
+                            class="fa-solid fa-phone"></i></a>
+                </div>
+                <div class="hamburger" id="ham" onclick="openMenu()">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- =========================
-     HERO SECTION
-========================= -->
+    <!-- MOBILE NAV -->
+    <div class="mobile_nav" id="mobNav" onclick="outerClick(event)">
+        <div class="mobile_panel">
+            <button class="mobile_close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+            <span class="m_logo">Devnoor</span>
+            <div class="m_links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </div>
 
-    <section class="contact-hero">
-        <h1>Contact Us</h1>
-        <p>
-            We would love to hear from you. Whether you have a question about products,
-            orders, wholesale inquiries, or anything else — our team is ready to help.
-        </p>
-    </section>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page_hero">
+        <div class="page_hero_pattern"></div>
+        <div class="page_hero_blob1"></div>
+        <div class="page_hero_blob2"></div>
+        <div class="hero_inner">
 
-    <!-- =========================
-     CONTACT SECTION
-========================= -->
-
-    <section class="contact-section">
-
-        <div class="contact-wrapper">
-
-            <!-- LEFT SIDE -->
-            <div class="contact-info">
-
-                <h2>Get In Touch</h2>
-
-                <p>
-                    Experience the authentic taste of premium spices and herbs.
-                    Reach out to us anytime for support, product details, or bulk orders.
-                </p>
-
-                <div class="info-box">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <div class="info-text">
-                        <h4>Our Address</h4>
-                        <span>Rajkot, Gujarat, India</span>
-                    </div>
+            <!-- LEFT TEXT -->
+            <div class="hero_left">
+                <div class="breadcrumb fade_up" style="animation-delay:.1s">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Contact Us</span>
                 </div>
-
-                <div class="info-box">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-
-                    <div class="info-text">
-                        <h4>Phone Number</h4>
-                        <span>+91 98765 43210</span>
-                    </div>
+                <h1 class="fade_up" style="animation-delay:.2s">Let's <span>Connect</span><br>With Us</h1>
+                <p class="page_hero_desc fade_up" style="animation-delay:.35s">We'd love to hear from you — whether it's
+                    a product query, feedback, complaint, or wholesale enquiry. Our team at Govind Sugar &amp; Spices is
+                    always ready to help.</p>
+                <div class="hero_quick_btns fade_up" style="animation-delay:.5s">
+                    <a href="tel:+919213441003" class="q_btn primary"><i class="fa-solid fa-phone"></i> Call Us Now</a>
+                    <a href="mailto:govindbrands@gmail.com" class="q_btn outline"><i class="fa-solid fa-envelope"></i>
+                        Send Email</a>
                 </div>
-
-                <div class="info-box">
-                    <div class="info-icon">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-
-                    <div class="info-text">
-                        <h4>Email Address</h4>
-                        <span>info@dawnormasala.com</span>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-
             </div>
 
-            <!-- RIGHT SIDE -->
-            <div class="contact-form">
-
-                <div class="form-title">
-                    <h2>Send <span>Message</span></h2>
+            <!-- RIGHT CARDS -->
+            <div class="hero_right fade_up" style="animation-delay:.4s">
+                <div class="hero_cards_stack">
+                    <div class="h_info_card">
+                        <div class="h_card_icon red"><i class="fa-solid fa-phone"></i></div>
+                        <h4>Consumer Care</h4>
+                        <p><a href="tel:+919213441003">+91 92134 41003</a><br />Mon–Sat, 9am–6pm IST</p>
+                    </div>
+                    <div class="h_info_card">
+                        <div class="h_card_icon green"><i class="fa-solid fa-envelope"></i></div>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:govindbrands@gmail.com">govindbrands@gmail.com</a><br />Reply within 24 hours
+                        </p>
+                    </div>
+                    <div class="h_info_card">
+                        <div class="h_card_icon amber"><i class="fa-solid fa-globe"></i></div>
+                        <h4>Website</h4>
+                        <p><a href="http://www.devnoormasala.com"
+                                target="_blank">www.devnoormasala.com</a><br />Products &amp; information</p>
+                    </div>
+                    <div class="h_info_card">
+                        <div class="h_card_icon dark"><i class="fa-solid fa-certificate"></i></div>
+                        <h4>FSSAI License</h4>
+                        <p>Lic. No.&nbsp;<strong>10723014000067</strong><br />Mahesana, Gujarat</p>
+                    </div>
+                    <div class="h_info_card full">
+                        <div class="h_card_icon red"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="h_card_text">
+                            <h4>Factory &amp; Head Office</h4>
+                            <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                        </div>
+                    </div>
                 </div>
-
-                <form>
-
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea placeholder="Write Your Message"></textarea>
-                    </div>
-
-                    <button type="submit" class="contact-btn">
-                        Send Message
-                    </button>
-
-                </form>
-
             </div>
 
         </div>
-
     </section>
 
-    <!-- =========================
-     MAP
-========================= -->
-
-    <section class="map-section">
-
-        <div class="map-box">
-
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59077.1151817731!2d70.7388947!3d22.3038945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca0d3f4f2571%3A0x2b6f9c1c6b2f7b85!2sRajkot%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1712345678901!5m2!1sen!2sin"
-                allowfullscreen="" loading="lazy">
-            </iframe>
-
+    <!-- ==================== QUICK STRIP ==================== -->
+    <div class="quick_strip">
+        <div class="container quick_strip_inner">
+            <div class="qs_item">
+                <div class="qs_icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <div class="qs_text"><strong>+91 92134 41003</strong><span>Consumer Care Helpline</span></div>
+            </div>
+            <div class="qs_divider"></div>
+            <div class="qs_item">
+                <div class="qs_icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <div class="qs_text"><strong>govindbrands@gmail.com</strong><span>Email Support</span></div>
+            </div>
+            <div class="qs_divider"></div>
+            <div class="qs_item">
+                <div class="qs_icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="qs_text"><strong>Mon – Sat: 9:00 AM – 6:00 PM</strong><span>Office Hours (IST)</span></div>
+            </div>
+            <div class="qs_divider"></div>
+            <div class="qs_item">
+                <div class="qs_icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="qs_text"><strong>WhatsApp Us</strong><span>Quick reply guaranteed</span></div>
+            </div>
         </div>
+    </div>
 
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact_section section_padding">
+        <div class="container">
+            <div class="contact_grid">
+
+                <!-- FORM CARD -->
+                <div class="form_card" id="formCard">
+                    <div class="form_card_header">
+                        <h2>Send Us a <span>Message</span></h2>
+                        <p>Fill in the form below and our team will get back to you within 24 working hours. Fields
+                            marked <span style="color:var(--clr_red);">*</span> are required.</p>
+                    </div>
+
+                    <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="form_label">Full Name <span class="req">*</span></label>
+                                <input class="form_input" type="text" id="fname" placeholder="e.g. Ramesh Patel"
+                                    required />
+                            </div>
+                            <div class="form_group">
+                                <label class="form_label">Mobile Number <span class="req">*</span></label>
+                                <input class="form_input" type="tel" id="fphone" placeholder="+91 98765 43210"
+                                    required />
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label class="form_label">Email Address</label>
+                                <input class="form_input" type="email" id="femail" placeholder="you@example.com" />
+                            </div>
+                            <div class="form_group">
+                                <label class="form_label">City / Location</label>
+                                <input class="form_input" type="text" id="fcity"
+                                    placeholder="e.g. Ahmedabad, Gujarat" />
+                            </div>
+                        </div>
+
+                        <div class="form_row single">
+                            <div class="form_group">
+                                <label class="form_label">Subject / Topic <span class="req">*</span></label>
+                                <select class="form_select" id="fsubject" required>
+                                    <option value="" disabled selected>— Select a topic —</option>
+                                    <option value="product_query">Product Query</option>
+                                    <option value="quality_complaint">Quality Complaint</option>
+                                    <option value="quantity_issue">Quantity Issue</option>
+                                    <option value="wholesale_enquiry">Wholesale / Bulk Enquiry</option>
+                                    <option value="feedback">General Feedback</option>
+                                    <option value="nutritional_info">Nutritional Information</option>
+                                    <option value="distributor">Become a Distributor</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form_row single">
+                            <div class="form_group">
+                                <label class="form_label">Product Concerned</label>
+                                <select class="form_select" id="fproduct">
+                                    <option value="" selected>— Select product (optional) —</option>
+                                    <option value="sp_chilli_100">SP. Chilli Powder 100g</option>
+                                    <option value="sp_chilli_50">SP. Chilli Powder 50g</option>
+                                    <option value="turmeric_100">Turmeric Powder 100g</option>
+                                    <option value="turmeric_50">Turmeric Powder 50g</option>
+                                    <option value="coriander_100">Coriander Cumin Powder 100g</option>
+                                    <option value="coriander_50">Coriander Cumin Powder 50g</option>
+                                    <option value="garam_100">Garam Masala Powder 100g</option>
+                                    <option value="garam_50">Garam Masala Powder 50g</option>
+                                    <option value="multiple">Multiple Products</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form_row single">
+                            <div class="form_group">
+                                <label class="form_label">Your Message <span class="req">*</span></label>
+                                <textarea class="form_textarea" id="fmessage"
+                                    placeholder="Please describe your query, complaint, or feedback in detail. If reporting a quality or quantity issue, mention the batch number and packing date printed on the packet."
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form_check_row">
+                            <input type="checkbox" id="fcheck" required />
+                            <label for="fcheck">I confirm that the information provided is accurate, and I agree to the
+                                <a href="#">Privacy Policy</a> of Devnoor Masala / Govind Sugar &amp; Spices.</label>
+                        </div>
+
+                        <button type="submit" class="submit_btn">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <!-- SUCCESS STATE -->
+                    <div class="form_success" id="formSuccess">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out to Devnoor Masala. Our team will get back to you within 24 working
+                            hours.<br /><br />For urgent matters, call us directly at <strong>+91 92134 41003</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- INFO COLUMN -->
+                <div class="info_col">
+
+                    <!-- ADDRESS CARD -->
+                    <div class="address_card">
+                        <div class="address_card_top">
+                            <h3><i class="fa-solid fa-building-flag" style="margin-right:8px;"></i>Govind Sugar &amp;
+                                Spices</h3>
+                            <p>Manufacturer &amp; Packer of Devnoor Masala</p>
+                        </div>
+                        <div class="address_card_body">
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="addr_text">
+                                    <strong>Factory Address</strong>
+                                    <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="addr_text">
+                                    <strong>Consumer Care Cell</strong>
+                                    <a href="tel:+919213441003">+91 92134 41003</a>
+                                </div>
+                            </div>
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="addr_text">
+                                    <strong>Email Address</strong>
+                                    <a href="mailto:govindbrands@gmail.com">govindbrands@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-solid fa-globe"></i></div>
+                                <div class="addr_text">
+                                    <strong>Website</strong>
+                                    <a href="http://www.devnoormasala.com" target="_blank">www.devnoormasala.com</a>
+                                </div>
+                            </div>
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="addr_text">
+                                    <strong>FSSAI License No.</strong>
+                                    <p>10723014000067</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOURS CARD -->
+                    <div class="hours_card">
+                        <h3><i class="fa-solid fa-clock"></i> Office Hours &nbsp;<span class="open_badge"><span
+                                    class="open_dot"></span> Open Now</span></h3>
+                        <div class="hours_row">
+                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Monday – Friday</span>
+                            <span class="hours_time">9:00 AM – 6:00 PM</span>
+                        </div>
+                        <div class="hours_row">
+                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Saturday</span>
+                            <span class="hours_time">9:00 AM – 2:00 PM</span>
+                        </div>
+                        <div class="hours_row">
+                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Sunday</span>
+                            <span class="hours_time closed">Closed</span>
+                        </div>
+                        <div class="hours_row">
+                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Public Holidays</span>
+                            <span class="hours_time closed">Closed</span>
+                        </div>
+                    </div>
+
+                    <!-- SOCIAL CARD -->
+                    <div class="social_card">
+                        <h3><i class="fa-solid fa-share-nodes"></i> Follow Us</h3>
+                        <div class="social_links">
+                            <a href="#" class="s_link">
+                                <div class="s_link_icon fb"><i class="fa-brands fa-facebook-f"></i></div>
+                                <div class="s_link_text">
+                                    <strong>Facebook</strong><span>facebook.com/devnoormasala</span></div>
+                                <i class="fa-solid fa-arrow-right"
+                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
+                            </a>
+                            <a href="#" class="s_link">
+                                <div class="s_link_icon ig"><i class="fa-brands fa-instagram"></i></div>
+                                <div class="s_link_text"><strong>Instagram</strong><span>@devnoormasala</span></div>
+                                <i class="fa-solid fa-arrow-right"
+                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
+                            </a>
+                            <a href="#" class="s_link">
+                                <div class="s_link_icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div class="s_link_text"><strong>WhatsApp</strong><span>+91 92134 41003</span></div>
+                                <i class="fa-solid fa-arrow-right"
+                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
+                            </a>
+                            <a href="#" class="s_link">
+                                <div class="s_link_icon yt"><i class="fa-brands fa-youtube"></i></div>
+                                <div class="s_link_text"><strong>YouTube</strong><span>Devnoor Masala Official</span>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"
+                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div><!-- /info_col -->
+            </div><!-- /contact_grid -->
+        </div>
+    </section>
+
+    <!-- ==================== MAP SECTION ==================== -->
+    <section class="map_section">
+        <div class="container">
+            <div class="map_header">
+                <h2>Find <span>Our Factory</span></h2>
+                <p>Visit us at Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+            </div>
+            <div class="map_wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.5!2d72.3714!3d23.5986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM1JzU1LjAiTiA3MsKwMjInMTcuMCJF!5e0!3m2!1sen!2sin!4v1684000000000!5m2!1sen!2sin"
+                    width="100%" height="440" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Devnoor Masala Location">
+                </iframe>
+                <div class="map_overlay_card">
+                    <h4><i class="fa-solid fa-location-dot"></i> Govind Sugar &amp; Spices</h4>
+                    <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park,<br />Mahesana, Gujarat – 382715</p>
+                    <a href="https://maps.google.com/?q=Mahesana,Gujarat" target="_blank" class="map_dir_btn">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section class="faq_section section_padding">
+        <div class="container">
+            <div class="faq_header">
+                <h2>Frequently Asked <span>Questions</span></h2>
+                <p>Common queries about our products, quality, and contact process</p>
+            </div>
+            <div class="faq_grid" id="faqGrid">
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-pepper-hot"></i></div> How do I report a
+                            quality issue with a product?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">If you find any fault regarding quality or quantity in the packet,
+                            please inform us immediately. Call our Consumer Care Cell at <strong>+91 92134
+                                41003</strong>, email us at govindbrands@gmail.com, or write to our address: Plot No.
+                            106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715. Please keep the
+                            packet with batch number and packing date ready when contacting us.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-jar"></i></div> How should I store Devnoor
+                            Masala products?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Store all Devnoor Masala products in a cool, dry &amp; hygienic place.
+                            Keep away from direct heat &amp; sunlight. Once opened, transfer to an airtight container to
+                            maintain freshness, aroma, and potency. Do not use goods if the packet is not intact.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-certificate"></i></div> Are your products
+                            FSSAI certified?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Yes, all Devnoor Masala products are FSSAI certified under License No.
+                            <strong>10723014000067</strong>. Our manufacturing facility at Kamla Amrut Inditech Park,
+                            Mahesana, Gujarat meets all food safety and hygiene standards prescribed by FSSAI. Every
+                            batch is tested before dispatch.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-truck-fast"></i></div> Do you offer wholesale
+                            or bulk orders?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Yes, we welcome wholesale and bulk enquiries from retailers,
+                            distributors, and hotels. Please contact us at +91 92134 41003 or govindbrands@gmail.com
+                            with your requirements. You can also use the contact form on this page and select "Wholesale
+                            / Bulk Enquiry" as the topic.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-seedling"></i></div> Are your spices 100%
+                            natural with no additives?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Yes. All Devnoor Masala products contain no artificial colours, no
+                            preservatives, and no synthetic additives. Our SP. Chilli Powder uses only red chilli powder
+                            and edible refined rapeseed oil (≤2%). Our Turmeric Powder contains only dry turmeric with
+                            natural oils. Full ingredient lists are printed on every packet.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-box-open"></i></div> What pack sizes are
+                            available?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Currently, Devnoor Masala products are available in
+                            <strong>50g</strong> and <strong>100g</strong> packs. All four products — SP. Chilli Powder,
+                            Turmeric Powder, Coriander Cumin Powder, and Garam Masala Powder — come in both pack sizes.
+                            Please visit our <a href="products.html"
+                                style="color:var(--clr_red);font-weight:700;">Products page</a> for full details.</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-clock"></i></div> How quickly will you respond
+                            to my enquiry?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">We aim to respond to all email and form enquiries within <strong>24
+                                working hours</strong> (Monday to Saturday). For urgent matters, please call our
+                            Consumer Care Cell directly at <strong>+91 92134 41003</strong> during office hours (9 AM –
+                            6 PM, Mon–Fri; 9 AM – 2 PM Saturday).</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-handshake"></i></div> How do I become a
+                            distributor?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">To become an authorised distributor for Devnoor Masala in your region,
+                            please contact us at govindbrands@gmail.com or call +91 92134 41003. You can also fill out
+                            the contact form above and select "Become a Distributor" as your topic. Please mention your
+                            city, state, and current distribution experience.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="nl_section">
+        <div class="nl_pattern"></div>
+        <div class="nl_inner">
+            <h2>Stay <em>Connected</em></h2>
+            <p>Subscribe to the Devnoor Masala newsletter for product updates, spice tips, health insights, and
+                exclusive offers — delivered to your inbox.</p>
+            <div class="nl_form">
+                <input type="email" placeholder="Enter your email address..." />
+                <button><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+            </div>
+        </div>
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer_grid">
                 <div class="footer_brand">
                     <span class="footer_logo_name">Devnoor Masala</span>
-                    <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
-                        Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
-                    <div class="footer_social">
+                    <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
+                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067. Product of India.</p>
+                    <div class="f_social">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -1160,54 +2297,124 @@
                 </div>
                 <div>
                     <div class="footer_heading">Quick Links</div>
-                    <div class="footer_links"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a><a
-                            href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a><a
-                            href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a><a
-                            href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a><a href="contact.html"><i
-                                class="fa-solid fa-chevron-right"></i> Contact</a></div>
+                    <div class="footer_links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+                        <a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
                 </div>
                 <div>
                     <div class="footer_heading">Products</div>
-                    <div class="footer_links"><a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP.
-                            Chilli Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric
-                            Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander
-                            Cumin</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
+                    <div class="footer_links">
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander Cumin</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
                     </div>
                 </div>
                 <div>
                     <div class="footer_heading">Help</div>
-                    <div class="footer_links"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact
-                            Us</a><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a><a href="#"><i
-                                class="fa-solid fa-chevron-right"></i> Privacy Policy</a></div>
+                    <div class="footer_links">
+                        <a href="#faqGrid"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Shipping Policy</a>
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Terms of Use</a>
+                    </div>
                 </div>
                 <div>
                     <div class="footer_heading">Contact</div>
-                    <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="f_contact">
+                        <div class="f_ci"><i class="fa-solid fa-location-dot"></i></div>
                         <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
                     </div>
-                    <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="f_contact">
+                        <div class="f_ci"><i class="fa-solid fa-phone"></i></div>
                         <p>+91 92134 41003</p>
                     </div>
-                    <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="f_contact">
+                        <div class="f_ci"><i class="fa-solid fa-envelope"></i></div>
                         <p>govindbrands@gmail.com</p>
                     </div>
-                    <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="f_contact">
+                        <div class="f_ci"><i class="fa-solid fa-globe"></i></div>
                         <p>www.devnoormasala.com</p>
                     </div>
                 </div>
             </div>
-            <div class="footer_bottom">
-                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar & Spices. All rights reserved.</p>
-                <div class="footer_bottom_links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a
-                        href="#">Sitemap</a></div>
+            <div class="f_bottom">
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
+                <div class="f_blinks"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <div class="scroll_top_btn" id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        /* ── FORM SUBMIT ── */
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('fname').value.trim();
+            const phone = document.getElementById('fphone').value.trim();
+            const subject = document.getElementById('fsubject').value;
+            const message = document.getElementById('fmessage').value.trim();
+            const check = document.getElementById('fcheck').checked;
+
+            // Basic validation
+            if (!name || !phone || !subject || !message || !check) {
+                // highlight empty required fields
+                ['fname', 'fphone', 'fsubject', 'fmessage'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (!el.value.trim()) {
+                        el.style.borderColor = 'var(--clr_red2)';
+                        el.style.boxShadow = '0 0 0 3px rgba(224,50,34,.12)';
+                        el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
+                    }
+                });
+                if (!check) {
+                    document.getElementById('fcheck').style.outline = '2px solid var(--clr_red2)';
+                }
+                return;
+            }
+
+            // Simulate send — show success
+            const btn = document.querySelector('.submit_btn');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('contactForm').style.display = 'none';
+                const suc = document.getElementById('formSuccess');
+                suc.style.display = 'flex';
+                suc.style.flexDirection = 'column';
+                suc.style.alignItems = 'center';
+            }, 1400);
+        }
+
+        /* ── FAQ TOGGLE ── */
+        function toggleFaq(qEl) {
+            const item = qEl.closest('.faq_item');
+            const isOpen = item.classList.contains('open');
+            // close all
+            document.querySelectorAll('.faq_item.open').forEach(i => i.classList.remove('open'));
+            // open clicked (if it wasn't already open)
+            if (!isOpen) item.classList.add('open');
+        }
+
+        /* ── MOBILE NAV ── */
+        function openMenu() { document.getElementById('mobNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { document.getElementById('mobNav').classList.remove('open'); document.body.style.overflow = ''; }
+        function outerClick(e) { if (e.target === document.getElementById('mobNav')) closeMenu(); }
+
+        /* ── SCROLL TOP ── */
+        window.addEventListener('scroll', () => { document.getElementById('stb').classList.toggle('visible', window.scrollY > 400); });
+    </script>
 </body>
 
 </html>
