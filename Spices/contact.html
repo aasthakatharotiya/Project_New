@@ -126,42 +126,6 @@
         }
 
         /* ============================================================
-   TOP BAR
-============================================================ */
-        .top_bar {
-            background: var(--clr_red);
-            padding: 9px 0;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .95);
-            letter-spacing: .08em;
-        }
-
-        .top_bar_inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .top_bar_item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .top_bar_item i {
-            color: var(--clr_green);
-            font-size: 11px;
-        }
-
-        .top_bar_divider {
-            opacity: .4;
-        }
-
-        /* ============================================================
    HEADER
 ============================================================ */
         .header {
@@ -187,6 +151,10 @@
             flex-direction: column;
         }
 
+        .nav_logo_img{
+            height: 60px;
+        }
+        
         .nav_logo_name {
             font-family: var(--ff_script);
             font-size: 26px;
@@ -586,7 +554,6 @@
             text-decoration: underline;
         }
 
-        /* hero full-width card */
         .h_info_card.full {
             grid-column: span 2;
             display: flex;
@@ -601,59 +568,6 @@
 
         .h_info_card.full .h_card_text h4 {
             margin-bottom: 3px;
-        }
-
-        /* ============================================================
-   QUICK CONTACT STRIPS
-============================================================ */
-        .quick_strip {
-            background: var(--clr_green);
-            padding: 20px 0;
-        }
-
-        .quick_strip_inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-
-        .qs_item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #fff;
-        }
-
-        .qs_icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .qs_text strong {
-            display: block;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .04em;
-        }
-
-        .qs_text span {
-            font-size: 12px;
-            color: rgba(255, 255, 255, .75);
-        }
-
-        .qs_divider {
-            width: 1px;
-            height: 36px;
-            background: rgba(255, 255, 255, .2);
         }
 
         /* ============================================================
@@ -830,7 +744,6 @@
             font-size: 16px;
         }
 
-        /* success message */
         .form_success {
             display: none;
             text-align: center;
@@ -855,11 +768,31 @@
             color: var(--clr_muted);
         }
 
-        /* RIGHT — INFO COLUMN */
+        /* RIGHT — GET IN TOUCH COLUMN */
         .info_col {
             display: flex;
             flex-direction: column;
             gap: 24px;
+        }
+
+        /* GET IN TOUCH SECTION HEADING */
+        .git_heading {
+            font-family: var(--ff_display);
+            font-size: clamp(22px, 3vw, 30px);
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 4px;
+        }
+
+        .git_heading span {
+            color: var(--clr_red);
+        }
+
+        .git_subtext {
+            font-size: 13px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+            margin-bottom: 8px;
         }
 
         /* address card */
@@ -1118,16 +1051,6 @@
             color: #fff;
         }
 
-        .s_link_icon.yt {
-            background: #ff0000;
-            color: #fff;
-        }
-
-        .s_link_icon.tw {
-            background: #000;
-            color: #fff;
-        }
-
         .s_link_text strong {
             display: block;
             font-size: 13px;
@@ -1376,86 +1299,6 @@
         }
 
         /* ============================================================
-   NEWSLETTER STRIP
-============================================================ */
-        .nl_section {
-            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
-            padding: 68px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nl_pattern {
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .06) 1px, transparent 0);
-            background-size: 28px 28px;
-        }
-
-        .nl_inner {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 540px;
-            margin: 0 auto;
-        }
-
-        .nl_inner h2 {
-            font-family: var(--ff_display);
-            font-size: clamp(24px, 4vw, 36px);
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .nl_inner h2 em {
-            font-style: italic;
-            color: var(--clr_amber);
-        }
-
-        .nl_inner p {
-            color: rgba(255, 255, 255, .8);
-            font-size: 14px;
-            margin-bottom: 26px;
-            line-height: 1.8;
-        }
-
-        .nl_form {
-            display: flex;
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 50px;
-            overflow: hidden;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, .2);
-        }
-
-        .nl_form input {
-            flex: 1;
-            padding: 13px 20px;
-            border: none;
-            outline: none;
-            font-family: var(--ff_body);
-            font-size: 13px;
-            color: var(--clr_dark);
-        }
-
-        .nl_form button {
-            background: var(--clr_red);
-            color: #fff;
-            border: none;
-            padding: 13px 20px;
-            font-family: var(--ff_body);
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background var(--transition);
-        }
-
-        .nl_form button:hover {
-            background: var(--clr_gold);
-        }
-
-        /* ============================================================
    FOOTER
 ============================================================ */
         .footer {
@@ -1465,8 +1308,8 @@
 
         .footer_grid {
             display: grid;
-            grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr;
-            gap: 36px;
+            grid-template-columns: 2fr 1fr 1.4fr;
+            gap: 48px;
             margin-bottom: 50px;
         }
 
@@ -1553,20 +1396,22 @@
             line-height: 1.6;
         }
 
+        /* Footer social icons */
         .f_social {
             display: flex;
             gap: 8px;
+            margin-top: 4px;
         }
 
         .f_social a {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: 1.5px solid rgba(255, 255, 255, .12);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 14px;
             color: rgba(255, 255, 255, .5);
             transition: all var(--transition);
         }
@@ -1685,34 +1530,12 @@
                 align-items: flex-start;
             }
 
-            .quick_strip_inner {
-                gap: 20px;
-            }
-
-            .qs_divider {
-                display: none;
-            }
-
             .footer_grid {
                 grid-template-columns: 1fr;
             }
 
-            .top_bar_divider {
-                display: none;
-            }
-
             .map_overlay_card {
                 display: none;
-            }
-
-            .nl_form {
-                flex-direction: column;
-                border-radius: var(--radius_lg);
-            }
-
-            .nl_form input,
-            .nl_form button {
-                border-radius: 8px;
             }
 
             .form_card {
@@ -1742,31 +1565,19 @@
 
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top_bar">
-        <div class="top_bar_inner">
-            <div class="top_bar_item"><i class="fa-solid fa-truck-fast"></i><span>FREE SHIPPING ON ORDERS OVER
-                    ₹799</span></div>
-            <span class="top_bar_divider">|</span>
-            <div class="top_bar_item"><i class="fa-solid fa-tag"></i><span>USE CODE: <strong>SPI15</strong> FOR 15%
-                    OFF</span></div>
-            <span class="top_bar_divider">|</span>
-            <div class="top_bar_item"><i class="fa-solid fa-phone"></i><span>+91 92134 41003</span></div>
-        </div>
-    </div>
-
-    <!-- HEADER -->
+    <!-- HEADER (no top bar) -->
     <header class="header">
         <nav class="nav_wrapper">
             <div class="nav_logo_text">
-                <span class="nav_logo_name">Devnoor</span>
-                <span class="nav_logo_sub">Masala</span>
+                <!-- <span class="nav_logo_name">Devnoor</span>
+                <span class="nav_logo_sub">Masala</span> -->
+
+                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt=""></a>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="nav_right">
@@ -1790,7 +1601,6 @@
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
                 <a href="contact.html" class="active">Contact</a>
             </div>
         </div>
@@ -1836,10 +1646,10 @@
                         </p>
                     </div>
                     <div class="h_info_card">
-                        <div class="h_card_icon amber"><i class="fa-solid fa-globe"></i></div>
-                        <h4>Website</h4>
-                        <p><a href="http://www.devnoormasala.com"
-                                target="_blank">www.devnoormasala.com</a><br />Products &amp; information</p>
+                        <div class="h_card_icon amber"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/919213441003" target="_blank">+91 92134 41003</a><br />Quick reply
+                            guaranteed</p>
                     </div>
                     <div class="h_info_card">
                         <div class="h_card_icon dark"><i class="fa-solid fa-certificate"></i></div>
@@ -1858,31 +1668,6 @@
 
         </div>
     </section>
-
-    <!-- ==================== QUICK STRIP ==================== -->
-    <div class="quick_strip">
-        <div class="container quick_strip_inner">
-            <div class="qs_item">
-                <div class="qs_icon"><i class="fa-solid fa-phone-volume"></i></div>
-                <div class="qs_text"><strong>+91 92134 41003</strong><span>Consumer Care Helpline</span></div>
-            </div>
-            <div class="qs_divider"></div>
-            <div class="qs_item">
-                <div class="qs_icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-                <div class="qs_text"><strong>govindbrands@gmail.com</strong><span>Email Support</span></div>
-            </div>
-            <div class="qs_divider"></div>
-            <div class="qs_item">
-                <div class="qs_icon"><i class="fa-solid fa-clock"></i></div>
-                <div class="qs_text"><strong>Mon – Sat: 9:00 AM – 6:00 PM</strong><span>Office Hours (IST)</span></div>
-            </div>
-            <div class="qs_divider"></div>
-            <div class="qs_item">
-                <div class="qs_icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <div class="qs_text"><strong>WhatsApp Us</strong><span>Quick reply guaranteed</span></div>
-            </div>
-        </div>
-    </div>
 
     <!-- ==================== CONTACT SECTION ==================== -->
     <section class="contact_section section_padding">
@@ -1946,14 +1731,18 @@
                                 <label class="form_label">Product Concerned</label>
                                 <select class="form_select" id="fproduct">
                                     <option value="" selected>— Select product (optional) —</option>
-                                    <option value="sp_chilli_100">SP. Chilli Powder 100g</option>
-                                    <option value="sp_chilli_50">SP. Chilli Powder 50g</option>
-                                    <option value="turmeric_100">Turmeric Powder 100g</option>
-                                    <option value="turmeric_50">Turmeric Powder 50g</option>
-                                    <option value="coriander_100">Coriander Cumin Powder 100g</option>
-                                    <option value="coriander_50">Coriander Cumin Powder 50g</option>
-                                    <option value="garam_100">Garam Masala Powder 100g</option>
-                                    <option value="garam_50">Garam Masala Powder 50g</option>
+                                    <optgroup label="Pure Spices">
+                                        <option value="turmeric">Turmeric Powder</option>
+                                        <option value="sp_chilli">SP. Chilli Powder</option>
+                                        <option value="coriander">Coriander Powder</option>
+                                        <option value="kashmiri_chilli">Kashmiri Chilli Powder</option>
+                                        <option value="desi_chilli">Desi Chilli Powder</option>
+                                        <option value="teja_chilli">Teja Chilli Powder</option>
+                                    </optgroup>
+                                    <optgroup label="Blended Spices">
+                                        <option value="coriander_cumin">Coriander Cumin Powder</option>
+                                        <option value="garam_masala">Garam Masala</option>
+                                    </optgroup>
                                     <option value="multiple">Multiple Products</option>
                                 </select>
                             </div>
@@ -1989,8 +1778,14 @@
                     </div>
                 </div>
 
-                <!-- INFO COLUMN -->
+                <!-- GET IN TOUCH — INFO COLUMN -->
                 <div class="info_col">
+
+                    <div>
+                        <h2 class="git_heading">Get In <span>Touch</span></h2>
+                        <p class="git_subtext">Reach us directly through any of the channels below — we're here to help
+                            you every step of the way.</p>
+                    </div>
 
                     <!-- ADDRESS CARD -->
                     <div class="address_card">
@@ -2003,7 +1798,7 @@
                             <div class="addr_row">
                                 <div class="addr_icon"><i class="fa-solid fa-location-dot"></i></div>
                                 <div class="addr_text">
-                                    <strong>Factory Address</strong>
+                                    <strong>Address</strong>
                                     <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715
                                     </p>
                                 </div>
@@ -2011,29 +1806,22 @@
                             <div class="addr_row">
                                 <div class="addr_icon"><i class="fa-solid fa-phone"></i></div>
                                 <div class="addr_text">
-                                    <strong>Consumer Care Cell</strong>
+                                    <strong>Customer Care Number</strong>
                                     <a href="tel:+919213441003">+91 92134 41003</a>
+                                </div>
+                            </div>
+                            <div class="addr_row">
+                                <div class="addr_icon"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div class="addr_text">
+                                    <strong>WhatsApp Number</strong>
+                                    <a href="https://wa.me/919213441003" target="_blank">+91 92134 41003</a>
                                 </div>
                             </div>
                             <div class="addr_row">
                                 <div class="addr_icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div class="addr_text">
-                                    <strong>Email Address</strong>
+                                    <strong>Email</strong>
                                     <a href="mailto:govindbrands@gmail.com">govindbrands@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="addr_row">
-                                <div class="addr_icon"><i class="fa-solid fa-globe"></i></div>
-                                <div class="addr_text">
-                                    <strong>Website</strong>
-                                    <a href="http://www.devnoormasala.com" target="_blank">www.devnoormasala.com</a>
-                                </div>
-                            </div>
-                            <div class="addr_row">
-                                <div class="addr_icon"><i class="fa-solid fa-certificate"></i></div>
-                                <div class="addr_text">
-                                    <strong>FSSAI License No.</strong>
-                                    <p>10723014000067</p>
                                 </div>
                             </div>
                         </div>
@@ -2044,12 +1832,8 @@
                         <h3><i class="fa-solid fa-clock"></i> Office Hours &nbsp;<span class="open_badge"><span
                                     class="open_dot"></span> Open Now</span></h3>
                         <div class="hours_row">
-                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Monday – Friday</span>
+                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Monday – Saturday</span>
                             <span class="hours_time">9:00 AM – 6:00 PM</span>
-                        </div>
-                        <div class="hours_row">
-                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Saturday</span>
-                            <span class="hours_time">9:00 AM – 2:00 PM</span>
                         </div>
                         <div class="hours_row">
                             <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Sunday</span>
@@ -2078,16 +1862,9 @@
                                 <i class="fa-solid fa-arrow-right"
                                     style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
                             </a>
-                            <a href="#" class="s_link">
+                            <a href="https://wa.me/919213441003" target="_blank" class="s_link">
                                 <div class="s_link_icon wa"><i class="fa-brands fa-whatsapp"></i></div>
                                 <div class="s_link_text"><strong>WhatsApp</strong><span>+91 92134 41003</span></div>
-                                <i class="fa-solid fa-arrow-right"
-                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
-                            </a>
-                            <a href="#" class="s_link">
-                                <div class="s_link_icon yt"><i class="fa-brands fa-youtube"></i></div>
-                                <div class="s_link_text"><strong>YouTube</strong><span>Devnoor Masala Official</span>
-                                </div>
                                 <i class="fa-solid fa-arrow-right"
                                     style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
                             </a>
@@ -2115,7 +1892,7 @@
                 <div class="map_overlay_card">
                     <h4><i class="fa-solid fa-location-dot"></i> Govind Sugar &amp; Spices</h4>
                     <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park,<br />Mahesana, Gujarat – 382715</p>
-                    <a href="https://maps.google.com/?q=Mahesana,Gujarat" target="_blank" class="map_dir_btn">
+                    <a href="https://maps.app.goo.gl/FTR4GXXH947RGpEG7" target="_blank" class="map_dir_btn">
                         <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
                     </a>
                 </div>
@@ -2143,9 +1920,10 @@
                     <div class="faq_a">
                         <div class="faq_a_inner">If you find any fault regarding quality or quantity in the packet,
                             please inform us immediately. Call our Consumer Care Cell at <strong>+91 92134
-                                41003</strong>, email us at govindbrands@gmail.com, or write to our address: Plot No.
-                            106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715. Please keep the
-                            packet with batch number and packing date ready when contacting us.</div>
+                                41003</strong>,
+                            email us at govindbrands@gmail.com, or write to our address: Plot No. 106, Sr. No. 1157,
+                            Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715. Please keep the packet with batch
+                            number and packing date ready when contacting us.</div>
                     </div>
                 </div>
 
@@ -2176,7 +1954,8 @@
                         <div class="faq_a_inner">Yes, all Devnoor Masala products are FSSAI certified under License No.
                             <strong>10723014000067</strong>. Our manufacturing facility at Kamla Amrut Inditech Park,
                             Mahesana, Gujarat meets all food safety and hygiene standards prescribed by FSSAI. Every
-                            batch is tested before dispatch.</div>
+                            batch is tested before dispatch.
+                        </div>
                     </div>
                 </div>
 
@@ -2206,26 +1985,9 @@
                     </div>
                     <div class="faq_a">
                         <div class="faq_a_inner">Yes. All Devnoor Masala products contain no artificial colours, no
-                            preservatives, and no synthetic additives. Our SP. Chilli Powder uses only red chilli powder
-                            and edible refined rapeseed oil (≤2%). Our Turmeric Powder contains only dry turmeric with
-                            natural oils. Full ingredient lists are printed on every packet.</div>
-                    </div>
-                </div>
-
-                <div class="faq_item">
-                    <div class="faq_q" onclick="toggleFaq(this)">
-                        <div class="faq_q_text">
-                            <div class="faq_q_icon"><i class="fa-solid fa-box-open"></i></div> What pack sizes are
-                            available?
+                            preservatives, and no synthetic additives. Our products are carefully sourced, hygienically
+                            processed, and lab-tested for purity. Full ingredient lists are printed on every packet.
                         </div>
-                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
-                    </div>
-                    <div class="faq_a">
-                        <div class="faq_a_inner">Currently, Devnoor Masala products are available in
-                            <strong>50g</strong> and <strong>100g</strong> packs. All four products — SP. Chilli Powder,
-                            Turmeric Powder, Coriander Cumin Powder, and Garam Masala Powder — come in both pack sizes.
-                            Please visit our <a href="products.html"
-                                style="color:var(--clr_red);font-weight:700;">Products page</a> for full details.</div>
                     </div>
                 </div>
 
@@ -2241,7 +2003,24 @@
                         <div class="faq_a_inner">We aim to respond to all email and form enquiries within <strong>24
                                 working hours</strong> (Monday to Saturday). For urgent matters, please call our
                             Consumer Care Cell directly at <strong>+91 92134 41003</strong> during office hours (9 AM –
-                            6 PM, Mon–Fri; 9 AM – 2 PM Saturday).</div>
+                            6 PM, Mon–Sat).</div>
+                    </div>
+                </div>
+
+                <div class="faq_item">
+                    <div class="faq_q" onclick="toggleFaq(this)">
+                        <div class="faq_q_text">
+                            <div class="faq_q_icon"><i class="fa-solid fa-box-open"></i></div> What pack sizes are
+                            available?
+                        </div>
+                        <div class="faq_arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq_a">
+                        <div class="faq_a_inner">Devnoor Masala products are available in multiple pack sizes including
+                            <strong>18g, 50g, 100g, 200g, 500g, and 5kg</strong> depending on the product. Please visit
+                            our <a href="products.html" style="color:var(--clr_red);font-weight:700;">Products page</a>
+                            for pack size details per product.
+                        </div>
                     </div>
                 </div>
 
@@ -2265,64 +2044,37 @@
         </div>
     </section>
 
-    <!-- ==================== NEWSLETTER ==================== -->
-    <section class="nl_section">
-        <div class="nl_pattern"></div>
-        <div class="nl_inner">
-            <h2>Stay <em>Connected</em></h2>
-            <p>Subscribe to the Devnoor Masala newsletter for product updates, spice tips, health insights, and
-                exclusive offers — delivered to your inbox.</p>
-            <div class="nl_form">
-                <input type="email" placeholder="Enter your email address..." />
-                <button><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer_grid">
+
+                <!-- Brand -->
                 <div class="footer_brand">
                     <span class="footer_logo_name">Devnoor Masala</span>
                     <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
-                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067. Product of India.</p>
+                        Inditech Park, Mahesana, Gujarat – 382715.<br />FSSAI Lic. No.: 10723014000067. Product of
+                        India.</p>
                     <div class="f_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919213441003" target="_blank" title="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
+
+                <!-- Quick Links -->
                 <div>
                     <div class="footer_heading">Quick Links</div>
                     <div class="footer_links">
                         <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
                         <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
                         <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
-                        <a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a>
                         <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
                     </div>
                 </div>
-                <div>
-                    <div class="footer_heading">Products</div>
-                    <div class="footer_links">
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander Cumin</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="footer_heading">Help</div>
-                    <div class="footer_links">
-                        <a href="#faqGrid"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Shipping Policy</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Terms of Use</a>
-                    </div>
-                </div>
+
+                <!-- Contact -->
                 <div>
                     <div class="footer_heading">Contact</div>
                     <div class="f_contact">
@@ -2338,14 +2090,18 @@
                         <p>govindbrands@gmail.com</p>
                     </div>
                     <div class="f_contact">
-                        <div class="f_ci"><i class="fa-solid fa-globe"></i></div>
-                        <p>www.devnoormasala.com</p>
+                        <div class="f_ci"><i class="fa-brands fa-whatsapp"></i></div>
+                        <p>+91 92134 41003</p>
                     </div>
                 </div>
+
             </div>
             <div class="f_bottom">
                 <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
-                <div class="f_blinks"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a>
+                <div class="f_blinks">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -2366,9 +2122,7 @@
             const message = document.getElementById('fmessage').value.trim();
             const check = document.getElementById('fcheck').checked;
 
-            // Basic validation
             if (!name || !phone || !subject || !message || !check) {
-                // highlight empty required fields
                 ['fname', 'fphone', 'fsubject', 'fmessage'].forEach(id => {
                     const el = document.getElementById(id);
                     if (!el.value.trim()) {
@@ -2383,7 +2137,6 @@
                 return;
             }
 
-            // Simulate send — show success
             const btn = document.querySelector('.submit_btn');
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
             btn.disabled = true;
@@ -2401,9 +2154,7 @@
         function toggleFaq(qEl) {
             const item = qEl.closest('.faq_item');
             const isOpen = item.classList.contains('open');
-            // close all
             document.querySelectorAll('.faq_item.open').forEach(i => i.classList.remove('open'));
-            // open clicked (if it wasn't already open)
             if (!isOpen) item.classList.add('open');
         }
 

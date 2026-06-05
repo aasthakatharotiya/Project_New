@@ -10,9 +10,6 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ============================================================
-   CSS VARIABLES – LIGHT THEME
-============================================================ */
         :root {
             --clr_white: #ffffff;
             --clr_light: #fdf9f4;
@@ -41,9 +38,6 @@
             --transition: 0.3s ease;
         }
 
-        /* ============================================================
-   RESET & BASE
-============================================================ */
         *,
         *::before,
         *::after {
@@ -78,9 +72,6 @@
             list-style: none;
         }
 
-        /* ============================================================
-   UTILITY
-============================================================ */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -173,69 +164,54 @@
             color: #fff;
         }
 
-        .btn_green {
+        .btn_white {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
+            background: #fff;
+            color: var(--clr_green);
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-family: var(--ff_body);
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn_white:hover {
+            background: var(--clr_amber);
             color: #fff;
-            padding: 13px 30px;
+        }
+
+        .btn_outline_white {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #fff;
+            padding: 12px 26px;
             border-radius: 50px;
             font-family: var(--ff_body);
             font-weight: 700;
             font-size: 13px;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            border: none;
+            border: 2px solid rgba(255, 255, 255, 0.6);
             cursor: pointer;
-            box-shadow: 0 4px 18px rgba(58, 107, 53, 0.35);
             transition: all var(--transition);
         }
 
-        .btn_green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(58, 107, 53, 0.45);
+        .btn_outline_white:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
         }
 
-        /* ============================================================
-   TOP BAR
-============================================================ */
-        .top_bar {
-            background: var(--clr_red);
-            padding: 9px 0;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.95);
-            letter-spacing: 0.08em;
-        }
-
-        .top_bar_inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .top_bar_item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .top_bar_item i {
-            color: var(--clr_green);
-            font-size: 11px;
-        }
-
-        .top_bar_divider {
-            opacity: 0.4;
-        }
-
-        /* ============================================================
-   HEADER / NAV
-============================================================ */
+        /* HEADER */
         .header {
             background: var(--clr_white);
             position: sticky;
@@ -260,30 +236,13 @@
             gap: 10px;
         }
 
-        .nav_logo_img {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--clr_green) 0%, var(--clr_green2) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 12px rgba(58, 107, 53, 0.3);
-            flex-shrink: 0;
-            overflow: hidden;
-            padding: 4px;
-        }
-
-        .nav_logo_img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
         .nav_logo_text {
             display: flex;
             flex-direction: column;
+        }
+
+        .nav_logo_img{
+            height: 60px;
         }
 
         .nav_logo_name {
@@ -333,18 +292,9 @@
             color: var(--clr_red);
         }
 
-        .nav_links a:hover::after {
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
             width: 100%;
-        }
-
-        .nav_links li a.active::after{
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--clr_red);
         }
 
         .nav_links a.active {
@@ -370,7 +320,6 @@
             font-size: 15px;
             cursor: pointer;
             transition: all var(--transition);
-            position: relative;
         }
 
         .nav_icon_btn:hover {
@@ -379,25 +328,7 @@
             border-color: var(--clr_red);
         }
 
-        .cart_count {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background: var(--clr_red);
-            color: #fff;
-            font-size: 9px;
-            font-weight: 800;
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ============================================================
-   HERO SECTION
-============================================================ */
+        /* HERO */
         .hero_section {
             position: relative;
             min-height: 90vh;
@@ -469,10 +400,6 @@
             animation: fadeUp 0.7s 0.2s forwards;
         }
 
-        .hero_badge i {
-            font-size: 10px;
-        }
-
         .hero_title {
             font-family: var(--ff_display);
             font-size: clamp(38px, 5.5vw, 68px);
@@ -493,36 +420,6 @@
             color: var(--clr_green);
         }
 
-        .hero_coupon {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--clr_red);
-            color: #fff;
-            padding: 10px 22px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-            opacity: 0;
-            animation: fadeUp 0.7s 0.6s forwards;
-        }
-
-        .hero_coupon i {
-            color: var(--clr_amber);
-        }
-
-        .hero_coupon code {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-        }
-
         .hero_desc {
             font-size: 15px;
             color: var(--clr_muted);
@@ -530,7 +427,7 @@
             margin-bottom: 34px;
             line-height: 1.9;
             opacity: 0;
-            animation: fadeUp 0.7s 0.8s forwards;
+            animation: fadeUp 0.7s 0.6s forwards;
         }
 
         .hero_cta {
@@ -538,7 +435,7 @@
             gap: 14px;
             flex-wrap: wrap;
             opacity: 0;
-            animation: fadeUp 0.7s 1s forwards;
+            animation: fadeUp 0.7s 0.8s forwards;
         }
 
         .hero_trust {
@@ -546,7 +443,7 @@
             gap: 28px;
             margin-top: 40px;
             opacity: 0;
-            animation: fadeUp 0.7s 1.2s forwards;
+            animation: fadeUp 0.7s 1s forwards;
         }
 
         .hero_trust_item {
@@ -694,9 +591,7 @@
             }
         }
 
-        /* ============================================================
-   MARQUEE STRIP
-============================================================ */
+        /* MARQUEE */
         .marquee_strip {
             background: var(--clr_green);
             padding: 13px 0;
@@ -737,138 +632,387 @@
             }
         }
 
-        /* ============================================================
-   BEST PRODUCTS
-============================================================ */
-        .best_products_section {
+        /* PRODUCT CATEGORIES */
+        .categories_section {
             background: var(--clr_light);
         }
 
-        .product_tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 44px;
-            flex-wrap: wrap;
+        .categories_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
         }
 
-        .tab_btn {
+        .category_block {
+            background: var(--clr_white);
+            border-radius: var(--radius_lg);
+            border: 1.5px solid var(--clr_border);
+            box-shadow: var(--shadow_sm);
+            overflow: hidden;
+        }
+
+        .category_header {
+            padding: 22px 28px 16px;
+            border-bottom: 1.5px solid var(--clr_cream);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .category_icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .category_icon.pure {
+            background: linear-gradient(135deg, #fff0e0, #ffd6a0);
+            color: var(--clr_red);
+        }
+
+        .category_icon.blended {
+            background: linear-gradient(135deg, #e8f5e0, #b8e0a0);
+            color: var(--clr_green);
+        }
+
+        .category_header h3 {
+            font-family: var(--ff_display);
+            font-size: 22px;
+            color: var(--clr_dark);
+            font-weight: 700;
+        }
+
+        .category_header p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            margin-top: 2px;
+        }
+
+        .products_list {
+            padding: 20px 28px 24px;
+        }
+
+        .product_row {
+            display: grid;
+            grid-template-columns: 56px 1fr auto;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--clr_cream);
+            cursor: pointer;
+            transition: background var(--transition);
+            border-radius: 8px;
+        }
+
+        .product_row:last-child {
+            border-bottom: none;
+        }
+
+        .product_row:hover {
+            background: var(--clr_light);
+            padding-left: 8px;
+        }
+
+        .product_row_img {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--clr_cream);
+            flex-shrink: 0;
+        }
+
+        .product_row_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product_row_info {}
+
+        .product_row_name {
+            font-family: var(--ff_display);
+            font-size: 14px;
+            color: var(--clr_dark);
+            font-weight: 700;
+        }
+
+        .product_row_desc {
+            font-size: 11px;
+            color: var(--clr_muted);
+            margin-top: 2px;
+        }
+
+        .product_row_sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 5px;
+        }
+
+        .size_tag {
+            font-size: 9px;
+            font-weight: 700;
+            background: var(--clr_cream);
+            color: var(--clr_brown);
+            padding: 2px 7px;
+            border-radius: 4px;
+            letter-spacing: 0.04em;
+        }
+
+        .product_row_arrow {
+            color: var(--clr_border);
+            font-size: 12px;
+            transition: color var(--transition);
+        }
+
+        .product_row:hover .product_row_arrow {
+            color: var(--clr_red);
+        }
+
+        /* Sub-menu on product row click */
+        .product_submenu {
+            display: none;
+            grid-column: 1/-1;
+            background: var(--clr_light);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 6px;
+            border: 1px solid var(--clr_border);
+        }
+
+        .product_submenu.open {
+            display: block;
+        }
+
+        .submenu_title {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--clr_dark);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .submenu_sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .submenu_size_btn {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 10px 22px;
+            gap: 6px;
+            background: var(--clr_white);
+            border: 1.5px solid var(--clr_border);
+            color: var(--clr_text);
+            padding: 7px 14px;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
             cursor: pointer;
-            border: 2px solid var(--clr_border);
-            color: var(--clr_muted);
-            background: var(--clr_white);
             transition: all var(--transition);
             font-family: var(--ff_body);
         }
 
-        .tab_btn.active,
-        .tab_btn:hover {
+        .submenu_size_btn:hover,
+        .submenu_size_btn.selected {
             background: var(--clr_red);
             color: #fff;
             border-color: var(--clr_red);
         }
 
-        .products_grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 22px;
+        .submenu_actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
         }
 
-        .product_card {
-            background: var(--clr_white);
-            border-radius: var(--radius_lg);
-            padding: 22px 14px 18px;
-            text-align: center;
-            border: 1.5px solid var(--clr_border);
-            transition: all var(--transition);
-            cursor: pointer;
-            position: relative;
-            box-shadow: var(--shadow_sm);
+        .submenu_desc {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
         }
 
-        .product_card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow_md);
-            border-color: rgba(192, 41, 26, 0.3);
+        .category_footer {
+            padding: 0 28px 22px;
         }
 
-        .product_badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--clr_red);
-            color: #fff;
-            font-size: 9px;
-            font-weight: 800;
-            padding: 3px 9px;
-            border-radius: 4px;
+        .view_all_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--clr_red);
             letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: gap var(--transition);
         }
 
-        .product_img_wrap {
-            width: 120px;
-            height: 120px;
+        .view_all_btn:hover {
+            gap: 14px;
+        }
+
+        /* QUALITY PROCESS */
+        .quality_section {
+            background: var(--clr_white);
+        }
+
+        .process_track {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .process_track::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: calc(10% + 20px);
+            right: calc(10% + 20px);
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_green), var(--clr_amber), var(--clr_red));
+            border-radius: 2px;
+        }
+
+        .process_step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process_circle {
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 14px;
-            border: 3px solid var(--clr_cream);
-            transition: border-color var(--transition);
-            box-shadow: 0 4px 14px rgba(122, 74, 30, 0.12);
+            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(58, 107, 53, 0.3);
+            border: 3px solid #fff;
         }
 
-        .product_card:hover .product_img_wrap {
-            border-color: var(--clr_red);
+        .process_circle.amber {
+            background: linear-gradient(135deg, var(--clr_amber), var(--clr_gold));
         }
 
-        .product_img_wrap img {
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; */
-            transition: transform 0.5s;
+        .process_circle.red {
+            background: linear-gradient(135deg, var(--clr_red), var(--clr_red2));
         }
 
-        .product_card:hover .product_img_wrap img {
-            transform: scale(1.1);
-        }
-
-        .product_name {
+        .process_step h4 {
             font-family: var(--ff_display);
             font-size: 14px;
             color: var(--clr_dark);
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .process_step p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.6;
+        }
+
+        /* COMPARISON */
+        .comparison_section {
+            background: var(--clr_light);
+        }
+
+        .comparison_table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            box-shadow: var(--shadow_md);
+        }
+
+        .comparison_table thead tr {
+            background: var(--clr_dark);
+        }
+
+        .comparison_table thead th {
+            padding: 18px 24px;
+            font-family: var(--ff_display);
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
             font-weight: 700;
         }
 
-        .product_weight {
-            font-size: 11px;
-            color: var(--clr_muted);
-            margin-bottom: 8px;
+        .comparison_table thead th:first-child {
+            text-align: left;
         }
 
-        .product_price {
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--clr_red);
+        .comparison_table thead th.devnoor_col {
+            background: var(--clr_green);
         }
 
-        .product_price_old {
-            font-size: 12px;
-            color: var(--clr_muted);
-            text-decoration: line-through;
+        .comparison_table tbody tr {
+            border-bottom: 1px solid var(--clr_border);
         }
 
-        /* ============================================================
-   PROMO BANNER
-============================================================ */
+        .comparison_table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .comparison_table tbody tr:nth-child(even) {
+            background: var(--clr_cream);
+        }
+
+        .comparison_table tbody tr:nth-child(odd) {
+            background: var(--clr_white);
+        }
+
+        .comparison_table tbody td {
+            padding: 14px 24px;
+            font-size: 13px;
+            color: var(--clr_text);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .comparison_table tbody td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--clr_dark);
+        }
+
+        .comparison_table tbody td.devnoor_val {
+            color: var(--clr_green);
+            font-weight: 700;
+        }
+
+        .tick {
+            color: var(--clr_green);
+            font-size: 16px;
+        }
+
+        .cross {
+            color: var(--clr_red2);
+            font-size: 16px;
+        }
+
+        /* PROMO BANNER */
         .promo_banner_section {
             position: relative;
             overflow: hidden;
@@ -937,53 +1081,6 @@
             flex-wrap: wrap;
         }
 
-        .btn_white {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #fff;
-            color: var(--clr_green);
-            padding: 13px 28px;
-            border-radius: 50px;
-            font-family: var(--ff_body);
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition);
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn_white:hover {
-            background: var(--clr_amber);
-            color: #fff;
-        }
-
-        .btn_outline_white {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 50px;
-            font-family: var(--ff_body);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-
-        .btn_outline_white:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #fff;
-        }
-
         .promo_banner_img {
             border-radius: 20px;
             overflow: hidden;
@@ -996,531 +1093,7 @@
             object-fit: cover;
         }
 
-        /* ============================================================
-   SPICE GRID / FLAVORS
-============================================================ */
-        .flavors_section {
-            background: var(--clr_white);
-        }
-
-        .flavors_intro {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .flavors_grid_main {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .flavors_all {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .flavor_card {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius_lg);
-            cursor: pointer;
-            height: 320px;
-            box-shadow: var(--shadow_sm);
-        }
-
-        .flavor_card img {
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; */
-            transition: transform 0.6s ease;
-        }
-
-        .flavor_card:hover img {
-            transform: scale(1.1);
-        }
-
-        .flavor_overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 60%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 18px;
-        }
-
-        .flavor_card h3 {
-            font-family: var(--ff_display);
-            color: #fff;
-            font-size: 17px;
-            margin-bottom: 2px;
-        }
-
-        .flavor_card p {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .flavor_shop_btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--clr_red);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 5px 14px;
-            border-radius: 4px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-top: 10px;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all var(--transition);
-        }
-
-        .flavor_card:hover .flavor_shop_btn {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .flavor_card.tall {
-            /* height: 100%;
-            min-height: 456px; */
-            height: 655px;
-        }
-
-        .flavor_card.tall h3 {
-            font-size: 22px;
-        }
-
-        /* ============================================================
-   DISCOUNT STRIP
-============================================================ */
-        .discount_strip {
-            background: linear-gradient(135deg, var(--clr_red) 0%, #a0200e 100%);
-            padding: 56px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .discount_strip::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-
-        .discount_inner {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .discount_eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 10px;
-        }
-
-        .discount_eyebrow i {
-            color: var(--clr_amber);
-        }
-
-        .discount_inner h2 {
-            font-family: var(--ff_display);
-            font-size: clamp(52px, 9vw, 96px);
-            font-weight: 900;
-            color: #fff;
-            line-height: 0.95;
-            margin-bottom: 8px;
-        }
-
-        .discount_inner h3 {
-            font-family: var(--ff_body);
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 26px;
-        }
-
-        .discount_inner .promo_btns {
-            justify-content: center;
-        }
-
-        /* ============================================================
-   OUR TEAM
-============================================================ */
-        .team_section {
-            background: var(--clr_light);
-        }
-
-        .team_grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
-        }
-
-        .team_card {
-            text-align: center;
-            background: var(--clr_white);
-            border-radius: var(--radius_lg);
-            padding: 28px 20px;
-            box-shadow: var(--shadow_sm);
-            border: 1.5px solid var(--clr_border);
-            transition: all var(--transition);
-        }
-
-        .team_card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow_md);
-            border-color: rgba(192, 41, 26, 0.2);
-        }
-
-        .team_avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 14px;
-            border: 3px solid var(--clr_red);
-            padding: 2px;
-            background: var(--clr_cream);
-        }
-
-        .team_avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .team_name {
-            font-family: var(--ff_display);
-            color: var(--clr_dark);
-            font-size: 16px;
-            margin-bottom: 3px;
-            font-weight: 700;
-        }
-
-        .team_role {
-            font-size: 11px;
-            color: var(--clr_red);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 14px;
-        }
-
-        .team_social {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .team_social a {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1.5px solid var(--clr_border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: var(--clr_muted);
-            transition: all var(--transition);
-        }
-
-        .team_social a:hover {
-            background: var(--clr_red);
-            color: #fff;
-            border-color: var(--clr_red);
-        }
-
-        /* ============================================================
-   GALLERY STRIP
-============================================================ */
-        .gallery_strip {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 4px;
-            max-height: 260px;
-            overflow: hidden;
-        }
-
-        .gallery_item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .gallery_item img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-
-        .gallery_item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery_item_overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(192, 41, 26, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background var(--transition);
-        }
-
-        .gallery_item:hover .gallery_item_overlay {
-            background: rgba(192, 41, 26, 0.3);
-        }
-
-        .gallery_item_overlay i {
-            color: #fff;
-            font-size: 24px;
-            opacity: 0;
-            transform: scale(0.5);
-            transition: all var(--transition);
-        }
-
-        .gallery_item:hover .gallery_item_overlay i {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* ============================================================
-   BLOG SECTION
-============================================================ */
-        .blog_section {
-            background: var(--clr_white);
-        }
-
-        .blog_grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .blog_card {
-            background: var(--clr_white);
-            border-radius: var(--radius_lg);
-            overflow: hidden;
-            border: 1.5px solid var(--clr_border);
-            box-shadow: var(--shadow_sm);
-            transition: all var(--transition);
-        }
-
-        .blog_card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow_md);
-            border-color: rgba(192, 41, 26, 0.25);
-        }
-
-        .blog_img {
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .blog_img img {
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; */
-            transition: transform 0.5s ease;
-        }
-
-        .blog_card:hover .blog_img img {
-            transform: scale(1.06);
-        }
-
-        .blog_body {
-            padding: 20px;
-        }
-
-        .blog_meta {
-            display: flex;
-            gap: 10px;
-            font-size: 11px;
-            color: var(--clr_muted);
-            letter-spacing: 0.04em;
-            margin-bottom: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .blog_meta i {
-            color: var(--clr_red);
-            font-size: 10px;
-        }
-
-        .blog_title {
-            font-family: var(--ff_display);
-            font-size: 17px;
-            color: var(--clr_dark);
-            margin-bottom: 10px;
-            line-height: 1.35;
-            font-weight: 700;
-        }
-
-        .blog_excerpt {
-            font-size: 13px;
-            color: var(--clr_muted);
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .blog_link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--clr_red);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            transition: gap var(--transition);
-        }
-
-        .blog_link:hover {
-            gap: 12px;
-        }
-
-        /* ============================================================
-   PREMIUM PRODUCTS
-============================================================ */
-        .premium_section {
-            background: var(--clr_light);
-        }
-
-        .premium_grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .premium_card {
-            background: var(--clr_white);
-            border-radius: var(--radius_lg);
-            overflow: hidden;
-            border: 1.5px solid var(--clr_border);
-            box-shadow: var(--shadow_sm);
-            transition: all var(--transition);
-            cursor: pointer;
-        }
-
-        .premium_card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow_md);
-            border-color: rgba(192, 41, 26, 0.25);
-        }
-
-        .premium_img {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .premium_img img {
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; */
-            transition: transform 0.5s ease;
-        }
-
-        .premium_card:hover .premium_img img {
-            transform: scale(1.1);
-        }
-
-        .premium_img_tag {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--clr_red);
-            color: #fff;
-            font-size: 9px;
-            font-weight: 800;
-            padding: 3px 9px;
-            border-radius: 4px;
-            letter-spacing: 0.06em;
-        }
-
-        .premium_body {
-            padding: 16px 18px 8px;
-        }
-
-        .premium_name {
-            font-family: var(--ff_display);
-            font-size: 16px;
-            color: var(--clr_dark);
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .premium_desc {
-            font-size: 12px;
-            color: var(--clr_muted);
-            line-height: 1.65;
-            margin-bottom: 14px;
-        }
-
-        .premium_footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 18px 16px;
-        }
-
-        .premium_price {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--clr_red);
-        }
-
-        .add_cart_btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--clr_cream);
-            border: 1.5px solid var(--clr_border);
-            color: var(--clr_red);
-            padding: 8px 14px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all var(--transition);
-            font-family: var(--ff_body);
-        }
-
-        .add_cart_btn:hover {
-            background: var(--clr_red);
-            color: #fff;
-            border-color: var(--clr_red);
-        }
-
-        /* ============================================================
-   SERVICES BAR
-============================================================ */
+        /* SERVICES BAR */
         .services_bar {
             background: var(--clr_white);
             border-top: 2px solid var(--clr_cream);
@@ -1575,9 +1148,7 @@
             color: var(--clr_muted);
         }
 
-        /* ============================================================
-   FOOTER
-============================================================ */
+        /* FOOTER */
         .footer {
             background: var(--clr_dark);
             padding: 70px 0 28px;
@@ -1585,41 +1156,17 @@
 
         .footer_grid {
             display: grid;
-            grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr;
+            grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
             gap: 36px;
             margin-bottom: 50px;
-        }
-
-        .footer_logo_wrap {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .footer_logo_circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--clr_green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 4px;
-        }
-
-        .footer_logo_circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
         }
 
         .footer_logo_name {
             font-family: var(--ff_script);
             font-size: 28px;
             color: var(--clr_amber);
+            display: block;
+            margin-bottom: 12px;
         }
 
         .footer_brand p {
@@ -1702,17 +1249,18 @@
         .footer_social {
             display: flex;
             gap: 8px;
+            margin-top: 16px;
         }
 
         .footer_social a {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: 1.5px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.5);
             transition: all var(--transition);
         }
@@ -1721,6 +1269,21 @@
             background: var(--clr_red);
             color: #fff;
             border-color: var(--clr_red);
+        }
+
+        .footer_social a.wa:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        .footer_social a.fb:hover {
+            background: #1877F2;
+            border-color: #1877F2;
+        }
+
+        .footer_social a.ig:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: #cc2366;
         }
 
         .footer_bottom {
@@ -1757,9 +1320,6 @@
             color: var(--clr_amber);
         }
 
-        /* ============================================================
-   SCROLL TOP BTN
-============================================================ */
         .scroll_top_btn {
             position: fixed;
             bottom: 26px;
@@ -1788,13 +1348,10 @@
 
         .scroll_top_btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 28px rgba(192, 41, 26, 0.5);
         }
 
-        /* ============================================================
-   RESPONSIVE
-============================================================ */
-        @media (max-width: 1024px) {
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
             .hero_inner {
                 grid-template-columns: 1fr;
             }
@@ -1803,20 +1360,12 @@
                 display: none;
             }
 
-            .products_grid {
-                grid-template-columns: repeat(3, 1fr);
+            .categories_grid {
+                grid-template-columns: 1fr;
             }
 
             .footer_grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .team_grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .premium_grid {
-                grid-template-columns: repeat(2, 1fr);
             }
 
             .promo_banner_inner {
@@ -1828,33 +1377,19 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
             .nav_links {
                 display: none;
             }
 
-            .products_grid {
-                grid-template-columns: repeat(2, 1fr);
+            .process_track {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
             }
 
-            .blog_grid {
-                grid-template-columns: 1fr;
-            }
-
-            .flavors_intro {
-                grid-template-columns: 1fr;
-            }
-
-            .flavors_grid_main {
-                grid-template-columns: 1fr;
-            }
-
-            .flavors_all {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .flavor_card.tall {
-                min-height: 240px;
+            .process_track::before {
+                display: none;
             }
 
             .services_grid {
@@ -1866,14 +1401,6 @@
                 border-bottom: 1.5px solid var(--clr_cream);
             }
 
-            .gallery_strip {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .gallery_strip .gallery_item:nth-child(n+4) {
-                display: none;
-            }
-
             .footer_grid {
                 grid-template-columns: 1fr;
             }
@@ -1882,54 +1409,27 @@
                 flex-wrap: wrap;
                 gap: 16px;
             }
-
-            .top_bar_divider {
-                display: none;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ==================== TOP BAR ==================== -->
-    <div class="top_bar">
-        <div class="top_bar_inner">
-            <div class="top_bar_item">
-                <i class="fa-solid fa-truck-fast"></i>
-                <span>FREE SHIPPING ON ORDERS OVER ₹799</span>
-            </div>
-            <span class="top_bar_divider">|</span>
-            <div class="top_bar_item">
-                <i class="fa-solid fa-tag"></i>
-                <span>USE CODE: <strong>SPI15</strong> FOR 15% OFF</span>
-            </div>
-            <span class="top_bar_divider">|</span>
-            <div class="top_bar_item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+91 92134 41003</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== HEADER ==================== -->
+    <!-- HEADER -->
     <header class="header">
         <nav class="nav_wrapper">
             <div class="nav_logo">
-                <!-- <div class="nav_logo_img">
-                    <img src="https://images.unsplash.com/photo-1567098260939-5d9cee055592?w=100&auto=format&fit=crop&q=80"
-                        alt="Devnoor Masala Logo" />
-                </div> -->
                 <div class="nav_logo_text">
-                    <span class="nav_logo_name">Devnoor</span>
-                    <span class="nav_logo_sub">Masala</span>
+                    <!-- <span class="nav_logo_name">Devnoor</span>
+                    <span class="nav_logo_sub">Masala</span> -->
+
+                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt=""></a>
                 </div>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav_icons">
@@ -1939,26 +1439,21 @@
         </nav>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero_section" id="hero_section">
+    <!-- HERO -->
+    <section class="hero_section">
         <div class="hero_pattern"></div>
         <div class="hero_blob1"></div>
         <div class="hero_blob2"></div>
         <div class="hero_inner">
             <div class="hero_left">
-                <div class="hero_badge"><i class="fa-solid fa-star"></i> Premium Quality Spices Since 2010</div>
+                <div class="hero_badge"><i class="fa-solid fa-star"></i> Lab-Tested Purity Since 2021</div>
                 <h1 class="hero_title">The Choice<br>of <em>Chefs</em><br><span>&amp; Families</span></h1>
-                <div class="hero_coupon">
-                    <i class="fa-solid fa-fire"></i>
-                    15% OFF ON SPICES — USE CODE: <code>SPI15</code>
-                </div>
-                <p class="hero_desc">Discover the world's finest hand-picked spices from Govind Sugar &amp; Spices,
-                    ground fresh to preserve aroma, flavour, and colour. FSSAI Certified · 100% Pure · Product of India.
-                </p>
+                <p class="hero_desc">Pure, lab-tested spices crafted to bring authentic Indian flavor, rich aroma, and
+                    trusted quality to every kitchen.</p>
                 <div class="hero_cta">
-                    <a href="#best_products_section" class="btn_primary"><i class="fa-solid fa-bag-shopping"></i> Shop
+                    <a href="#categories_section" class="btn_primary"><i class="fa-solid fa-bag-shopping"></i> Shop
                         Now</a>
-                    <a href="#flavors_section" class="btn_outline"><i class="fa-solid fa-leaf"></i> Our Range</a>
+                    <a href="about.html" class="btn_outline"><i class="fa-solid fa-leaf"></i> Our Story</a>
                 </div>
                 <div class="hero_trust">
                     <div class="hero_trust_item">
@@ -1976,18 +1471,18 @@
                         </div>
                     </div>
                     <div class="hero_trust_item">
-                        <div class="hero_trust_icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="hero_trust_icon"><i class="fa-solid fa-flask"></i></div>
                         <div class="hero_trust_text">
-                            <strong>Best Quality</strong>
-                            <span>Premium Rich Quality</span>
+                            <strong>Lab Tested</strong>
+                            <span>Every Batch Verified</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="hero_right">
                 <div class="hero_float_card">
-                    <big>50%</big>
-                    <span>OFF TODAY</span>
+                    <big>100%</big>
+                    <span>PURE</span>
                 </div>
                 <div class="hero_main_img">
                     <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=70"
@@ -2004,188 +1499,497 @@
         </div>
     </section>
 
-    <!-- ==================== MARQUEE STRIP ==================== -->
+    <!-- MARQUEE -->
     <div class="marquee_strip">
         <div class="marquee_track">
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> SP. Chilli Powder</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Turmeric Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Coriander Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Kashmiri Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Teja Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Desi Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Garam Masala</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Coriander Cumin Powder</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Garam Masala Powder</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Premium Rich Quality</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> FSSAI Certified</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> 100% Pure</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Lab Tested Quality</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Product of India</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Govind Sugar &amp; Spices</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> SP. Chilli Powder</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Turmeric Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Coriander Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Kashmiri Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Teja Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Desi Chilli Powder</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Garam Masala</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Coriander Cumin Powder</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Garam Masala Powder</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Premium Rich Quality</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> FSSAI Certified</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> 100% Pure</span>
+            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Lab Tested Quality</span>
             <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Product of India</span>
-            <span class="marquee_item"><i class="fa-solid fa-circle-dot"></i> Govind Sugar &amp; Spices</span>
         </div>
     </div>
 
-    <!-- ==================== BEST PRODUCTS ==================== -->
-    <section class="best_products_section section_padding" id="best_products_section">
+    <!-- OUR STORY TEASER -->
+    <section class="section_padding" style="background:var(--clr_cream);">
+        <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+            <div>
+                <p
+                    style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--clr_green);margin-bottom:10px;">
+                    Our Story</p>
+                <h2
+                    style="font-family:var(--ff_display);font-size:clamp(28px,3.5vw,42px);color:var(--clr_dark);line-height:1.15;margin-bottom:18px;">
+                    Born from one<br>simple <em style="font-style:italic;color:var(--clr_red);">question</em></h2>
+                <p style="font-size:15px;color:var(--clr_muted);line-height:1.9;margin-bottom:28px;">"Are we using real,
+                    pure masalas?" What started as a concern in 2021 became a commitment to bring trusted purity,
+                    authentic flavor, and confidence back to Indian kitchens.</p>
+                <a href="about.html" class="btn_primary"><i class="fa-solid fa-arrow-right"></i> Read Our Story</a>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div
+                    style="background:var(--clr_white);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow_sm);">
+                    <div style="font-size:36px;font-weight:900;font-family:var(--ff_display);color:var(--clr_red);">2021
+                    </div>
+                    <div style="font-size:12px;color:var(--clr_muted);font-weight:600;">Founded</div>
+                </div>
+                <div
+                    style="background:var(--clr_white);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow_sm);">
+                    <div style="font-size:36px;font-weight:900;font-family:var(--ff_display);color:var(--clr_green);">8+
+                    </div>
+                    <div style="font-size:12px;color:var(--clr_muted);font-weight:600;">Spice Variants</div>
+                </div>
+                <div
+                    style="background:var(--clr_white);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow_sm);">
+                    <div style="font-size:36px;font-weight:900;font-family:var(--ff_display);color:var(--clr_amber);">
+                        100%</div>
+                    <div style="font-size:12px;color:var(--clr_muted);font-weight:600;">Lab Tested</div>
+                </div>
+                <div
+                    style="background:var(--clr_white);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow_sm);">
+                    <div style="font-size:36px;font-weight:900;font-family:var(--ff_display);color:var(--clr_red);">Pure
+                    </div>
+                    <div style="font-size:12px;color:var(--clr_muted);font-weight:600;">No Adulteration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section class="categories_section section_padding" id="categories_section">
         <div class="container">
             <div class="section_title">
-                <h2>Best <span>Products</span></h2>
+                <h2>Our <span>Products</span></h2>
             </div>
-            <p class="section_subtitle">Premium masalas &amp; spices packed fresh by Govind Sugar &amp; Spices,
-                Mahesana, Gujarat</p>
-            <div class="product_tabs">
-                <button class="tab_btn active" onclick="filterProducts('all',this)"><i class="fa-solid fa-grid-2"></i>
-                    View All</button>
-                <button class="tab_btn" onclick="filterProducts('chilli',this)"><i class="fa-solid fa-pepper-hot"></i>
-                    Chilli</button>
-                <button class="tab_btn" onclick="filterProducts('masala',this)"><i
-                        class="fa-solid fa-mortar-pestle"></i> Masalas</button>
-                <button class="tab_btn" onclick="filterProducts('powder',this)"><i class="fa-solid fa-jar"></i>
-                    Powders</button>
-            </div>
-            <div class="products_grid" id="products_grid">
+            <p class="section_subtitle">Click on any product to select your pack size</p>
+            <div class="categories_grid">
 
-                <!-- SP. CHILLI POWDER 100g -->
-                <div class="product_card" data-cat="chilli">
-                    <div class="product_badge">HOT</div>
-                    <div class="product_img_wrap">
-                        <img src="img/Chilli_powder_1.png"
-                            alt="SP. Chilli Powder" />
+                <!-- PURE SPICES -->
+                <div class="category_block">
+                    <div class="category_header">
+                        <div class="category_icon pure"><i class="fa-solid fa-seedling"></i></div>
+                        <div>
+                            <h3>Pure Spices</h3>
+                            <p>From golden turmeric to vibrant Kashmiri chili — sourced with care</p>
+                        </div>
                     </div>
-                    <div class="product_name">SP. Chilli Powder</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 100g Pack</div>
-                    <div class="product_price">₹99.00 <span class="product_price_old">₹120</span></div>
+                    <div class="products_list" id="pure_list">
+
+                        <!-- Turmeric -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_turmeric',this)">
+                            <div class="product_row_img"><img src="img/Turmeric_powder_1.png" alt="Turmeric" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Turmeric Powder</div>
+                                <div class="product_row_desc">The Golden Essence of Pure Indian Cooking</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span><span
+                                        class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_turmeric">
+                                <div class="submenu_desc">Crafted from carefully selected turmeric roots to preserve
+                                    vibrant golden color, earthy aroma, and natural depth of flavor. Hygienically
+                                    processed and quality-checked.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SP Chilli -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_spchilli',this)">
+                            <div class="product_row_img"><img src="img/Chilli_powder_1.png" alt="SP Chilli" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">SP. Chilli Powder</div>
+                                <div class="product_row_desc">Perfect Balance of Color and Spice</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_spchilli">
+                                <div class="submenu_desc">Fine ground red chillies known for rich natural color,
+                                    balanced pungency, and bold aroma. A staple for curries, sabzis, gravies, and
+                                    marinades.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coriander Cumin -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_coriander',this)">
+                            <div class="product_row_img"><img src="img/Coriander_powder_1.png" alt="Coriander" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Coriander Powder</div>
+                                <div class="product_row_desc">Fresh Aroma of Authentic Indian Cooking</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span><span
+                                        class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_coriander">
+                                <div class="submenu_desc">Garden-fresh coriander powder with naturally rich aroma.
+                                    Distinctive citrusy warmth with subtle sweet undertones — essential for curries,
+                                    gravies, and everyday recipes.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kashmiri Chilli -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_kashmiri',this)">
+                            <div class="product_row_img"><img src="img/Chilli_powder_2.png" alt="Kashmiri Chilli" />
+                            </div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Kashmiri Chilli Powder</div>
+                                <div class="product_row_desc">Brilliant Color with Mild Pungency</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span><span
+                                        class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_kashmiri">
+                                <div class="submenu_desc">Brilliant red color, rich aroma, and mild pungency. Widely
+                                    used in curries, tandoori preparations, and marinades — adds vibrant red hue without
+                                    excessive heat.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desi Chilli -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_desi',this)">
+                            <div class="product_row_img"><img src="img/Chilli_powder_1.png" alt="Desi Chilli" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Desi Chilli Powder</div>
+                                <div class="product_row_desc">Rich Natural Color, Medium Pungency</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_desi">
+                                <div class="submenu_desc">Fine ground red chillies with vibrant red hue and balanced
+                                    spiciness. Adds depth, warmth, and character to curries, sabzis, gravies, and
+                                    traditional Indian recipes.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Teja Chilli -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_teja',this)">
+                            <div class="product_row_img"><img src="img/Chilli_powder_2.png" alt="Teja Chilli" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Teja Chilli Powder</div>
+                                <div class="product_row_desc">Fiery Heat of Authentic Indian Cooking</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_teja">
+                                <div class="submenu_desc">Fine ground Teja (S17) chillies from Guntur, Andhra Pradesh.
+                                    Intense heat, vibrant red color, and bold aroma for those who enjoy a stronger kick
+                                    of spice.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="category_footer">
+                        <a href="products.html" class="view_all_btn"><i class="fa-solid fa-arrow-right"></i> View All
+                            Pure Spices</a>
+                    </div>
                 </div>
 
-                <!-- SP. CHILLI POWDER 50g -->
-                <div class="product_card" data-cat="chilli">
-                    <div class="product_img_wrap">
-                        <img src="img/Chilli_powder_2.png"
-                            alt="SP. Chilli Powder 50g" />
+                <!-- BLENDED SPICES -->
+                <div class="category_block">
+                    <div class="category_header">
+                        <div class="category_icon blended"><i class="fa-solid fa-mortar-pestle"></i></div>
+                        <div>
+                            <h3>Blended Spices</h3>
+                            <p>A perfect recipe deserves a perfect blend — tradition in every spoon</p>
+                        </div>
                     </div>
-                    <div class="product_name">SP. Chilli Powder</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 50g Pack</div>
-                    <div class="product_price">₹55.00</div>
-                </div>
+                    <div class="products_list">
 
-                <!-- TURMERIC POWDER 100g -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_badge">NEW</div>
-                    <div class="product_img_wrap">
-                        <img src="img/Turmeric_powder_1.png"
-                            alt="Turmeric Powder" />
-                    </div>
-                    <div class="product_name">Turmeric Powder</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 100g Pack</div>
-                    <div class="product_price">₹89.00 <span class="product_price_old">₹110</span></div>
-                </div>
+                        <!-- Coriander Cumin Powder -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_ccpowder',this)">
+                            <div class="product_row_img"><img src="img/Coriander_powder_1.png" alt="Coriander Cumin" />
+                            </div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Coriander Cumin Powder</div>
+                                <div class="product_row_desc">Perfect Blend of Aroma and Authentic Flavor</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span><span
+                                        class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_ccpowder">
+                                <div class="submenu_desc">Carefully crafted blend of coriander and cumin — fresh aroma,
+                                    warm earthy notes, and authentic flavor in every spoon. Enhances curries, sabzis,
+                                    and gravies.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- TURMERIC POWDER 50g -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_img_wrap">
-                        <img src="img/Turmeric_powder_2.png"
-                            alt="Turmeric Powder 50g" />
-                    </div>
-                    <div class="product_name">Turmeric Powder</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 50g Pack</div>
-                    <div class="product_price">₹10.00</div>
-                </div>
+                        <!-- Garam Masala -->
+                        <div class="product_row" onclick="toggleSubmenu('sub_garam',this)">
+                            <div class="product_row_img"><img src="img/Garam_masala_1.png" alt="Garam Masala" /></div>
+                            <div class="product_row_info">
+                                <div class="product_row_name">Garam Masala</div>
+                                <div class="product_row_desc">Signature Blend of Rich Aroma &amp; Authentic Flavor</div>
+                                <div class="product_row_sizes">
+                                    <span class="size_tag">18g</span><span class="size_tag">50g</span><span
+                                        class="size_tag">100g</span><span class="size_tag">200g</span><span
+                                        class="size_tag">500g</span><span class="size_tag">5kg</span>
+                                </div>
+                            </div>
+                            <div class="product_row_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div class="product_submenu" id="sub_garam">
+                                <div class="submenu_desc">Premium blend of coriander, chilli, bay leaves, cumin, cloves,
+                                    black pepper, star anise, ajwain, ginger, cinnamon, mace, cardamom, nutmeg, and a
+                                    touch of mustard oil.</div>
+                                <div class="submenu_title">Select Pack Size</div>
+                                <div class="submenu_sizes">
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">18g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">50g</button>
+                                    <button class="submenu_size_btn selected" onclick="selectSize(this)">100g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">200g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">500g</button>
+                                    <button class="submenu_size_btn" onclick="selectSize(this)">5kg</button>
+                                </div>
+                                <div class="submenu_actions">
+                                    <a href="products.html" class="btn_primary"
+                                        style="font-size:11px;padding:9px 18px;"><i class="fa-solid fa-eye"></i> View
+                                        Details</a>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- CORIANDER CUMIN 100g -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_img_wrap">
-                        <img src="img/Coriander_powder_1.png"
-                            alt="Coriander Cumin" />
                     </div>
-                    <div class="product_name">Coriander Cumin</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 100g Pack</div>
-                    <div class="product_price">₹95.00 <span class="product_price_old">₹115</span></div>
-                </div>
-
-                <!-- CORIANDER CUMIN 50g -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_img_wrap">
-                        <img src="img/Coriander_powder_2.png"
-                            alt="Coriander Cumin 50g" />
+                    <div class="category_footer">
+                        <a href="products.html" class="view_all_btn"><i class="fa-solid fa-arrow-right"></i> View All
+                            Blended Spices</a>
                     </div>
-                    <div class="product_name">Coriander Cumin</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 50g Pack</div>
-                    <div class="product_price">₹10.00</div>
-                </div>
-
-                <!-- GARAM MASALA 100g -->
-                <div class="product_card" data-cat="masala">
-                    <div class="product_badge">TOP</div>
-                    <div class="product_img_wrap">
-                        <img src="img/Garam_masala_1.png"
-                            alt="Garam Masala" />
-                    </div>
-                    <div class="product_name">Garam Masala</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 100g Pack</div>
-                    <div class="product_price">₹110.00 <span class="product_price_old">₹130</span></div>
-                </div>
-
-                <!-- GARAM MASALA 50g -->
-                <div class="product_card" data-cat="masala">
-                    <div class="product_img_wrap">
-                        <img src="img/Garam_masala_2.png"
-                            alt="Garam Masala 50g" />
-                    </div>
-                    <div class="product_name">Garam Masala</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 50g Pack</div>
-                    <div class="product_price">₹10.00</div>
-                </div>
-
-                <!-- BLACK MUSTARD -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_img_wrap">
-                        <img src="img/Garam_masala_3.png"
-                            alt="Black Mustard" />
-                    </div>
-                    <div class="product_name">Black Mustard</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 100g Pack</div>
-                    <div class="product_price">₹79.00</div>
-                </div>
-
-                <!-- CUMIN SEEDS -->
-                <div class="product_card" data-cat="powder">
-                    <div class="product_img_wrap">
-                        <img src="img/Coriander_powder_3.png"
-                            alt="Cumin Seeds" />
-                    </div>
-                    <div class="product_name">Cumin Seeds</div>
-                    <div class="product_weight"><i class="fa-solid fa-weight-hanging"
-                            style="color:var(--clr_muted);font-size:9px;"></i> 200g Pack</div>
-                    <div class="product_price">₹129.00 <span class="product_price_old">₹150</span></div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- ==================== PROMO BANNER ==================== -->
-    <section class="promo_banner_section" id="promo_banner_section">
+    <!-- QUALITY PROCESS -->
+    <section class="quality_section section_padding">
+        <div class="container">
+            <div class="section_title">
+                <h2>Farm to <span>Flavor</span></h2>
+            </div>
+            <p class="section_subtitle">Every spice follows a careful journey to ensure purity, taste, and trust in
+                every pack</p>
+            <div class="process_track">
+                <div class="process_step">
+                    <div class="process_circle"><span>🌿</span></div>
+                    <h4>Careful Sourcing</h4>
+                    <p>We select quality raw spices from trusted farms and reliable sources</p>
+                </div>
+                <div class="process_step">
+                    <div class="process_circle amber"><span>✨</span></div>
+                    <h4>Purity Cleaning</h4>
+                    <p>Each spice is cleaned and sorted for superior quality and hygiene</p>
+                </div>
+                <div class="process_step">
+                    <div class="process_circle red"><span>🌶</span></div>
+                    <h4>Precision Grinding</h4>
+                    <p>Crafted to preserve authentic Indian taste, aroma, and rich color</p>
+                </div>
+                <div class="process_step">
+                    <div class="process_circle amber"><span>🧪</span></div>
+                    <h4>Lab-Tested Quality</h4>
+                    <p>Every batch is lab-checked for purity, consistency, and safety</p>
+                </div>
+                <div class="process_step">
+                    <div class="process_circle"><span>📦</span></div>
+                    <h4>Hygienic Packing</h4>
+                    <p>Sealed with care under FSSAI standards to lock freshness and flavor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison_section section_padding">
+        <div class="container">
+            <div class="section_title">
+                <h2>Devnoor vs <span>Ordinary</span></h2>
+            </div>
+            <p class="section_subtitle">See why thousands of families trust Devnoor Masala every day</p>
+            <table class="comparison_table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th class="devnoor_col">🌿 Devnoor Masala</th>
+                        <th>Ordinary Spices</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Purity Testing</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Lab-tested for quality
+                        </td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> Purity often uncertain</td>
+                    </tr>
+                    <tr>
+                        <td>Flavor</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Rich, authentic flavor
+                        </td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> Inconsistent taste</td>
+                    </tr>
+                    <tr>
+                        <td>Adulteration</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> 100% pure, no adulteration
+                        </td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> May contain adulterants</td>
+                    </tr>
+                    <tr>
+                        <td>Processing</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Clean &amp; hygienically
+                            processed</td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> Unhygienic, manual processing</td>
+                    </tr>
+                    <tr>
+                        <td>Consistency</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Same trusted taste every
+                            pack</td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> Can differ batch to batch</td>
+                    </tr>
+                    <tr>
+                        <td>Sourcing</td>
+                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Sourced from the best
+                            farms</td>
+                        <td><i class="fa-solid fa-circle-xmark cross"></i> Random, unverified sourcing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- PROMO BANNER -->
+    <section class="promo_banner_section">
         <div class="promo_banner_pattern"></div>
         <div class="promo_banner_inner">
             <div>
                 <div class="promo_tag"><i class="fa-solid fa-leaf"></i> Healthy Choice</div>
-                <h2>Get <em>10% Off</em><br>On All Spicy &amp; Herbs</h2>
+                <h2>Pure Spices,<br><em>Trusted Quality</em></h2>
                 <p>All our spices are sourced directly from premium farms and packed under FSSAI standards at Kamla
                     Amrut Inditech Park, Mahesana, Gujarat. Store in a cool, dry &amp; hygienic place — once opened,
                     keep in an airtight container.</p>
                 <div class="promo_btns">
-                    <a href="#flavors_section" class="btn_white"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
-                    <a href="#" class="btn_outline_white"><i class="fa-solid fa-circle-info"></i> Know More</a>
+                    <a href="#categories_section" class="btn_white"><i class="fa-solid fa-bag-shopping"></i> Shop
+                        Now</a>
+                    <a href="about.html" class="btn_outline_white"><i class="fa-solid fa-circle-info"></i> Know More</a>
                 </div>
             </div>
             <div class="promo_banner_img">
@@ -2195,370 +1999,28 @@
         </div>
     </section>
 
-    <!-- ==================== FLAVORS / SPICE GRID ==================== -->
-    <section class="flavors_section section_padding" id="flavors_section">
-        <div class="container">
-            <div class="section_title">
-                <h2>The <span>Flavors</span> of Spices</h2>
-            </div>
-            <p class="section_subtitle">50% flat offer on selected products — explore our complete Devnoor Masala range
-            </p>
-
-            <!-- Row 1: Large featured + 2 side -->
-            <div class="flavors_intro">
-                <div class="flavor_card tall">
-                    <img src="img/Chilli_powder_1.png"
-                        alt="SP. Chilli Powder" />
-                    <div class="flavor_overlay">
-                        <p>Bold &amp; Fiery</p>
-                        <h3>SP. Chilli Powder</h3>
-                        <p>Red chilli powder, edible refined rapeseed oil. Sodium: 401mg · Protein: 14.12g · 435 Kcal
-                            per 100g</p>
-                        <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                    </div>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:16px;">
-                    <div class="flavor_card">
-                        <img src="img/Turmeric_powder_1.png"
-                            alt="Turmeric Powder" />
-                        <div class="flavor_overlay">
-                            <p>Golden Health</p>
-                            <h3>Turmeric Powder</h3>
-                            <p>With natural oils · Dry turmeric · 354 Kcal per 100g</p>
-                            <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="flavor_card">
-                        <img src="img/Coriander_powder_1.png"
-                            alt="Coriander Cumin" />
-                        <div class="flavor_overlay">
-                            <p>Premium Rich Quality</p>
-                            <h3>Coriander Cumin Powder</h3>
-                            <p>Dry coriander, cumin · 436 Kcal per 100g · Protein: 11.98g</p>
-                            <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 2: 3 cards -->
-            <div class="flavors_all">
-                <div class="flavor_card">
-                    <img src="img/Garam_masala_1.png"
-                        alt="Garam Masala" />
-                    <div class="flavor_overlay">
-                        <p>A Rajwadi Taste</p>
-                        <h3>Garam Masala Powder</h3>
-                        <p>Coriander, chilli, bay leaves, cumin, cloves, cinnamon, nutmeg &amp; more</p>
-                        <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                    </div>
-                </div>
-                <div class="flavor_card">
-                    <img src="img/Turmeric_powder_2.png"
-                        alt="Cumin Seeds" />
-                    <div class="flavor_overlay">
-                        <p>Earthy Warmth</p>
-                        <h3>Cumin Seeds</h3>
-                        <p>Pure dry cumin, rich in essential oils and antioxidants</p>
-                        <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                    </div>
-                </div>
-                <div class="flavor_card">
-                    <img src="img/Chilli_powder_2.png"
-                        alt="Cloves" />
-                    <div class="flavor_overlay">
-                        <p>Intense Aroma</p>
-                        <h3>Cloves</h3>
-                        <p>Intense, aromatic cloves — an essential ingredient in Garam Masala</p>
-                        <a href="#" class="flavor_shop_btn"><i class="fa-solid fa-arrow-right"></i> Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== DISCOUNT STRIP ==================== -->
-    <section class="discount_strip" id="discount_strip">
-        <div class="discount_inner">
-            <div class="discount_eyebrow"><i class="fa-solid fa-fire-flame-curved"></i> Limited Time Offer</div>
-            <h2>50% OFF</h2>
-            <h3><i class="fa-solid fa-pepper-hot"></i> Chilli / Turmeric / Coriander Cumin — All Products</h3>
-            <div class="promo_btns">
-                <a href="#best_products_section" class="btn_white"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
-                <a href="#premium_section" class="btn_outline_white"><i class="fa-solid fa-eye"></i> View More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== OUR TEAM ==================== -->
-    <section class="team_section section_padding" id="team_section">
-        <div class="container">
-            <div class="section_title">
-                <h2>Our <span>Team</span></h2>
-            </div>
-            <p class="section_subtitle">The passionate people behind Devnoor Masala — dedicated to quality from farm to
-                table</p>
-            <div class="team_grid">
-                <div class="team_card">
-                    <div class="team_avatar">
-                        <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=200&auto=format&fit=crop&q=70"
-                            alt="Ethalyn" />
-                    </div>
-                    <div class="team_name">Ethalyn Allaire</div>
-                    <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Spice Curator</div>
-                    <div class="team_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="team_card">
-                    <div class="team_avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=70"
-                            alt="Timmy" />
-                    </div>
-                    <div class="team_name">Timmy Bard</div>
-                    <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Farm Sourcing</div>
-                    <div class="team_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="team_card">
-                    <div class="team_avatar">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=70"
-                            alt="Willa" />
-                    </div>
-                    <div class="team_name">Willa Hegel</div>
-                    <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Quality Control</div>
-                    <div class="team_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="team_card">
-                    <div class="team_avatar">
-                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&auto=format&fit=crop&q=70"
-                            alt="Soraya" />
-                    </div>
-                    <div class="team_name">Soraya Belston</div>
-                    <div class="team_role"><i class="fa-solid fa-star" style="font-size:9px;"></i> Chef Partner</div>
-                    <div class="team_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== GALLERY STRIP ==================== -->
-    <div class="gallery_strip" id="gallery_strip">
-        <div class="gallery_item">
-            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=60"
-                alt="Gallery 1" />
-            <div class="gallery_item_overlay"><i class="fa-solid fa-plus"></i></div>
-        </div>
-        <div class="gallery_item">
-            <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=400&auto=format&fit=crop&q=60"
-                alt="Gallery 2" />
-            <div class="gallery_item_overlay"><i class="fa-solid fa-plus"></i></div>
-        </div>
-        <div class="gallery_item">
-            <img src="https://images.unsplash.com/photo-1605522469906-3fe226b356bc?w=600&auto=format&fit=crop&q=70"
-                alt="Gallery 3" />
-            <div class="gallery_item_overlay"><i class="fa-solid fa-plus"></i></div>
-        </div>
-        <div class="gallery_item">
-            <img src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?w=400&auto=format&fit=crop&q=60"
-                alt="Gallery 4" />
-            <div class="gallery_item_overlay"><i class="fa-solid fa-plus"></i></div>
-        </div>
-        <div class="gallery_item">
-            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop&q=60"
-                alt="Gallery 5" />
-            <div class="gallery_item_overlay"><i class="fa-solid fa-plus"></i></div>
-        </div>
-    </div>
-
-    <!-- ==================== BLOG SECTION ==================== -->
-    <section class="blog_section section_padding" id="blog_section">
-        <div class="container">
-            <div class="section_title">
-                <h2>Blog <span>Post</span></h2>
-            </div>
-            <p class="section_subtitle">Spice stories, health tips, and recipes from the Devnoor Masala kitchen</p>
-            <div class="blog_grid">
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="img/Chilli_powder_1.png"
-                            alt="Chilli Powder Blog" />
-                    </div>
-                    <div class="blog_body">
-                        <div class="blog_meta">
-                            <i class="fa-regular fa-calendar"></i> May 13, 2026
-                            <i class="fa-regular fa-comment" style="margin-left:6px;"></i> 0 Comments
-                        </div>
-                        <div class="blog_title">SP. Chilli Powder — The Secret Behind a Perfect Rajwadi Dish</div>
-                        <div class="blog_excerpt">Our SP. Chilli Powder is made from carefully selected red chillies
-                            blended with refined rapeseed oil. With 435 Kcal per 100g and 14.12g protein, it's bold,
-                            nutritious, and deeply flavourful.</div>
-                        <a href="#" class="blog_link"><i class="fa-solid fa-arrow-right"></i> Read More</a>
-                    </div>
-                </div>
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="img/Turmeric_powder_1.png"
-                            alt="Turmeric Blog" />
-                    </div>
-                    <div class="blog_body">
-                        <div class="blog_meta">
-                            <i class="fa-regular fa-calendar"></i> Apr 28, 2026
-                            <i class="fa-regular fa-comment" style="margin-left:6px;"></i> 3 Comments
-                        </div>
-                        <div class="blog_title">Golden Turmeric Powder — Ancient Superfood With Natural Oils</div>
-                        <div class="blog_excerpt">Devnoor's Turmeric Powder (Haldi) with natural oils offers 354 Kcal
-                            per 100g and 7.8g protein. Store in cool, dry &amp; hygienic place. Keep away from direct
-                            heat &amp; sunlight for maximum shelf life.</div>
-                        <a href="#" class="blog_link"><i class="fa-solid fa-arrow-right"></i> Read More</a>
-                    </div>
-                </div>
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="img/Garam_masala_1.png"
-                            alt="Garam Masala Blog" />
-                    </div>
-                    <div class="blog_body">
-                        <div class="blog_meta">
-                            <i class="fa-regular fa-calendar"></i> Apr 6, 2026
-                            <i class="fa-regular fa-comment" style="margin-left:6px;"></i> 5 Comments
-                        </div>
-                        <div class="blog_title">Garam Masala Powder — A Rajwadi Taste in Every Bite</div>
-                        <div class="blog_excerpt">Our Garam Masala blends coriander, chilli, bay leaves, cumin, cloves,
-                            black pepper, star anise, ginger, rock salt, cinnamon, mace, cardamom, nutmeg, and mustard
-                            oil for an authentic Rajwadi experience.</div>
-                        <a href="#" class="blog_link"><i class="fa-solid fa-arrow-right"></i> Read More</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PREMIUM PRODUCTS ==================== -->
-    <section class="premium_section section_padding" id="premium_section">
-        <div class="container">
-            <div class="section_title">
-                <h2>Premium Quality <span>Products</span></h2>
-            </div>
-            <p class="section_subtitle">FSSAI Certified · Govind Sugar &amp; Spices · Mahesana, Gujarat — Best Quality
-                Product</p>
-            <div class="premium_grid">
-
-                <div class="premium_card">
-                    <div class="premium_img">
-                        <div class="premium_img_tag">100g</div>
-                        <img src="img/Chilli_powder_2.png"
-                            alt="SP. Chilli Powder" />
-                    </div>
-                    <div class="premium_body">
-                        <div class="premium_name">SP. Chilli Powder</div>
-                        <div class="premium_desc">Red chilli powder &amp; refined rapeseed oil. Bold flavour, deep red
-                            colour, 435 Kcal/100g. FSSAI Certified, Product of India.</div>
-                    </div>
-                    <div class="premium_footer">
-                        <div class="premium_price">₹99</div>
-                        <button class="add_cart_btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="premium_card">
-                    <div class="premium_img">
-                        <div class="premium_img_tag">100g</div>
-                        <img src="img/Turmeric_powder_2.png"
-                            alt="Turmeric Powder" />
-                    </div>
-                    <div class="premium_body">
-                        <div class="premium_name">Turmeric Powder</div>
-                        <div class="premium_desc">Premium haldi (हल्दी पावडर) with natural oils. Dry turmeric, 354
-                            Kcal/100g. Store in a cool, dry place away from sunlight.</div>
-                    </div>
-                    <div class="premium_footer">
-                        <div class="premium_price">₹89</div>
-                        <button class="add_cart_btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="premium_card">
-                    <div class="premium_img">
-                        <div class="premium_img_tag">100g</div>
-                        <img src="img/Coriander_powder_2.png"
-                            alt="Coriander Cumin Powder" />
-                    </div>
-                    <div class="premium_body">
-                        <div class="premium_name">Coriander Cumin Powder</div>
-                        <div class="premium_desc">Premium धनिया-जीरा पावडर. Dry coriander &amp; cumin. 436 Kcal/100g,
-                            11.98g protein. Rich quality, fresh grind.</div>
-                    </div>
-                    <div class="premium_footer">
-                        <div class="premium_price">₹95</div>
-                        <button class="add_cart_btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="premium_card">
-                    <div class="premium_img">
-                        <div class="premium_img_tag">100g</div>
-                        <img src="img/Garam_masala_2.png"
-                            alt="Garam Masala Powder" />
-                    </div>
-                    <div class="premium_body">
-                        <div class="premium_name">Garam Masala Powder</div>
-                        <div class="premium_desc">गरम मसाला पावडर — A Rajwadi Taste. Coriander, chilli, bay leaves,
-                            cumin, cloves, black pepper, star anise &amp; more.</div>
-                    </div>
-                    <div class="premium_footer">
-                        <div class="premium_price">₹110</div>
-                        <button class="add_cart_btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SERVICES BAR ==================== -->
-    <section class="services_bar" id="services_bar">
+    <!-- SERVICES BAR -->
+    <section class="services_bar">
         <div class="container">
             <div class="services_grid">
                 <div class="service_item">
                     <div class="service_icon"><i class="fa-solid fa-building-columns"></i></div>
                     <div class="service_text">
                         <h4>Money Back Guarantee</h4>
-                        <p>100% satisfaction guaranteed. Not happy? Full refund within 30 days, no questions asked.</p>
+                        <p>100% satisfaction guaranteed. Not happy? Full refund, no questions asked.</p>
                     </div>
                 </div>
                 <div class="service_item">
-                    <div class="service_icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="service_icon"><i class="fa-solid fa-flask"></i></div>
                     <div class="service_text">
-                        <h4>Free Shipping</h4>
-                        <p>Free delivery across India on all orders above ₹799. Fast &amp; reliable dispatch.</p>
+                        <h4>Lab-Tested Purity</h4>
+                        <p>Every batch is laboratory-tested for purity, consistency, and food safety.</p>
                     </div>
                 </div>
                 <div class="service_item">
                     <div class="service_icon"><i class="fa-solid fa-headset"></i></div>
                     <div class="service_text">
-                        <h4>24/7 Customer Support</h4>
+                        <h4>Customer Support</h4>
                         <p>Reach us at +91 92134 41003 or govindbrands@gmail.com — always happy to help.</p>
                     </div>
                 </div>
@@ -2566,113 +2028,105 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
             <div class="footer_grid">
                 <div class="footer_brand">
                     <span class="footer_logo_name">Devnoor Masala</span>
-                    <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
-                        Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
+                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
                     <div class="footer_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919213441003" class="wa"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
                     <div class="footer_heading">Quick Links</div>
-                    <div class="footer_links"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a><a
-                            href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a><a
-                            href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a><a
-                            href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a><a href="contact.html"><i
-                                class="fa-solid fa-chevron-right"></i> Contact</a></div>
-                </div>
-                <div>
-                    <div class="footer_heading">Products</div>
-                    <div class="footer_links"><a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP.
-                            Chilli Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric
-                            Powder</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander
-                            Cumin</a><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
+                    <div class="footer_links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
                     </div>
                 </div>
                 <div>
-                    <div class="footer_heading">Help</div>
-                    <div class="footer_links"><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact
-                            Us</a><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a><a href="#"><i
-                                class="fa-solid fa-chevron-right"></i> Privacy Policy</a></div>
+                    <div class="footer_heading">Products</div>
+                    <div class="footer_links">
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Kashmiri Chilli</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Teja Chilli Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander Powder</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
+                    </div>
                 </div>
                 <div>
-                    <div class="footer_heading">Contact</div>
+                    <div class="footer_heading">Contact Us</div>
                     <div class="footer_contact_item">
                         <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
                         <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
                     </div>
                     <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="footer_contact_icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <p>+91 92134 41003</p>
                     </div>
                     <div class="footer_contact_item">
                         <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
                         <p>govindbrands@gmail.com</p>
                     </div>
-                    <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-globe"></i></div>
-                        <p>www.devnoormasala.com</p>
-                    </div>
                 </div>
             </div>
             <div class="footer_bottom">
-                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar & Spices. All rights reserved.</p>
-                <div class="footer_bottom_links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a
-                        href="#">Sitemap</a></div>
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
+                <div class="footer_bottom_links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== SCROLL TOP ==================== -->
+    <!-- SCROLL TOP -->
     <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <!-- ==================== SCRIPTS ==================== -->
     <script>
-        // Product tab filter
-        function filterProducts(cat, btn) {
-            document.querySelectorAll('.tab_btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.product_card').forEach(card => {
-                if (cat === 'all' || card.dataset.cat === cat) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
+        function toggleSubmenu(id, row) {
+            const submenu = document.getElementById(id);
+            const allSubmenus = document.querySelectorAll('.product_submenu');
+            const allRows = document.querySelectorAll('.product_row');
+
+            // Close all others
+            allSubmenus.forEach(s => {
+                if (s.id !== id) {
+                    s.classList.remove('open');
                 }
             });
+            allRows.forEach(r => {
+                if (r !== row) r.style.background = '';
+            });
+
+            // Toggle this one
+            const isOpen = submenu.classList.toggle('open');
+            row.style.background = isOpen ? 'var(--clr_cream)' : '';
+
+            // Update arrow
+            const arrow = row.querySelector('.product_row_arrow i');
+            arrow.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right';
         }
 
-        // Scroll top visibility
+        function selectSize(btn) {
+            btn.closest('.submenu_sizes').querySelectorAll('.submenu_size_btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        // Scroll top
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => {
             scrollBtn.classList.toggle('visible', window.scrollY > 400);
-        });
-
-        // Add-to-cart feedback
-        document.querySelectorAll('.add_cart_btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const orig = this.innerHTML;
-                this.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
-                this.style.background = 'var(--clr_green)';
-                this.style.color = '#fff';
-                this.style.borderColor = 'var(--clr_green)';
-                setTimeout(() => {
-                    this.innerHTML = orig;
-                    this.style.background = '';
-                    this.style.color = '';
-                    this.style.borderColor = '';
-                }, 1600);
-            });
         });
     </script>
 </body>

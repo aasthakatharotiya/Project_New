@@ -84,7 +84,7 @@
 
         /* TOP BAR */
         .top_bar {
-            background: var(--clr_red);
+            background: var(--clr_green);
             padding: 9px 0;
             text-align: center;
             font-size: 12px;
@@ -108,7 +108,7 @@
         }
 
         .top_bar_item i {
-            color: var(--clr_green);
+            color: var(--clr_amber);
             font-size: 11px;
         }
 
@@ -141,6 +141,10 @@
             gap: 10px;
         }
 
+        .nav_logo_img{
+            height: 60px;
+        }
+        
         .nav_logo_name {
             font-family: var(--ff_script);
             font-size: 26px;
@@ -383,6 +387,46 @@
             font-weight: 800;
         }
 
+        /* CATEGORY SECTION HEADERS */
+        .category_section_header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            margin-top: 16px;
+        }
+
+        .cat_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--clr_red);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+        }
+
+        .cat_badge.blended {
+            background: var(--clr_green);
+        }
+
+        .category_section_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(22px, 3vw, 30px);
+            font-weight: 700;
+            color: var(--clr_dark);
+        }
+
+        .cat_line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clr_border), transparent);
+        }
+
         /* PRODUCTS SECTION */
         .products_section {
             background: var(--clr_light);
@@ -420,8 +464,6 @@
         .prod_img_box img {
             width: 100%;
             height: 100%;
-            /* object-fit: contain; */
-            /* padding: 16px; */
             padding: 35px 16px 16px 16px;
             transition: transform .5s ease;
         }
@@ -435,7 +477,6 @@
             top: 5px;
             left: 12px;
             display: flex;
-            /* flex-direction: column; */
             gap: 5px;
         }
 
@@ -572,6 +613,329 @@
             gap: 9px;
         }
 
+        /* SUBMENU DROPDOWN */
+        .prod_card_wrapper {
+            position: relative;
+        }
+
+        .prod_submenu {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: var(--clr_white);
+            border: 1.5px solid var(--clr_border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow_md);
+            z-index: 200;
+            padding: 14px 16px;
+            animation: fadeUp .25s ease;
+        }
+
+        .prod_submenu.open {
+            display: block;
+        }
+
+        .prod_submenu::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: var(--clr_white);
+        }
+
+        .prod_submenu::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--clr_border);
+            margin-top: 1px;
+        }
+
+        .submenu_title {
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--clr_muted);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            margin-bottom: 10px;
+        }
+
+        .submenu_sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .submenu_size_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--clr_cream);
+            border: 1.5px solid var(--clr_border);
+            color: var(--clr_text);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--ff_body);
+        }
+
+        .submenu_size_btn:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .submenu_size_btn i {
+            font-size: 9px;
+        }
+
+        /* QUALITY PROCESS SECTION */
+        .quality_section {
+            background: var(--clr_white);
+            padding: 80px 0;
+        }
+
+        .quality_header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .quality_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+            margin-bottom: 10px;
+        }
+
+        .quality_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .quality_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .quality_header p {
+            color: var(--clr_muted);
+            font-size: 14px;
+            margin-top: 14px;
+        }
+
+        .quality_flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .quality_step_label {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--clr_white);
+            background: var(--clr_green);
+            padding: 8px 18px;
+            border-radius: 50px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .quality_arrow {
+            color: var(--clr_amber);
+            font-size: 18px;
+            margin: 0 6px;
+        }
+
+        .quality_cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .quality_card {
+            background: var(--clr_light);
+            border: 1.5px solid var(--clr_border);
+            border-radius: var(--radius_lg);
+            padding: 28px 20px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .quality_card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow_md);
+            border-color: rgba(232, 160, 32, .3);
+        }
+
+        .quality_icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+            margin: 0 auto 14px;
+        }
+
+        .quality_card h4 {
+            font-family: var(--ff_display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .quality_card p {
+            font-size: 12px;
+            color: var(--clr_muted);
+            line-height: 1.65;
+        }
+
+        /* COMPARISON SECTION */
+        .compare_section {
+            background: var(--clr_light);
+            padding: 80px 0;
+        }
+
+        .compare_header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .compare_header h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(26px, 4vw, 40px);
+            color: var(--clr_dark);
+            margin-bottom: 10px;
+        }
+
+        .compare_header h2 span {
+            color: var(--clr_red);
+        }
+
+        .compare_header h2::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .compare_table_wrap {
+            overflow-x: auto;
+            border-radius: var(--radius_lg);
+            box-shadow: var(--shadow_md);
+        }
+
+        .compare_table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .compare_table thead tr {
+            background: var(--clr_dark);
+        }
+
+        .compare_table th {
+            padding: 18px 22px;
+            font-family: var(--ff_display);
+            font-size: 15px;
+            color: #fff;
+            text-align: left;
+        }
+
+        .compare_table th.devnoor_col {
+            color: var(--clr_amber);
+        }
+
+        .compare_table th.ordinary_col {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .compare_table th:first-child {
+            color: rgba(255, 255, 255, .7);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+
+        .compare_table tbody tr:nth-child(odd) td {
+            background: var(--clr_white);
+        }
+
+        .compare_table tbody tr:nth-child(even) td {
+            background: var(--clr_light);
+        }
+
+        .compare_table td {
+            padding: 14px 22px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--clr_border);
+            color: var(--clr_text);
+        }
+
+        .compare_table td:first-child {
+            font-weight: 700;
+            color: var(--clr_dark);
+            font-size: 13px;
+        }
+
+        .compare_table td.devnoor_val {
+            color: var(--clr_green);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .compare_table td.devnoor_val i {
+            color: var(--clr_green);
+            font-size: 13px;
+        }
+
+        .compare_table td.ordinary_val {
+            color: var(--clr_red2);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .compare_table td.ordinary_val i {
+            color: var(--clr_red2);
+            font-size: 13px;
+        }
+
+        .compare_col_head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         /* NUTRITION SECTION */
         .nutrition_section {
             background: var(--clr_white);
@@ -662,7 +1026,6 @@
         .nutr_img_side img {
             width: 100%;
             height: 400px;
-            /* object-fit: contain; */
             background: var(--clr_cream);
             padding: 24px;
         }
@@ -1109,6 +1472,10 @@
             .why_grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .quality_cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media(max-width:768px) {
@@ -1144,6 +1511,14 @@
             .top_bar_divider {
                 display: none;
             }
+
+            .quality_cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quality_flow {
+                gap: 4px;
+            }
         }
 
         @media(max-width:480px) {
@@ -1154,20 +1529,21 @@
             .why_grid {
                 grid-template-columns: 1fr;
             }
+
+            .quality_cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
+    <!-- TOP BAR — Green only, no promo code, just phone -->
     <div class="top_bar">
         <div class="top_bar_inner">
             <div class="top_bar_item"><i class="fa-solid fa-truck-fast"></i><span>FREE SHIPPING ON ORDERS OVER
                     ₹799</span></div>
-            <span class="top_bar_divider">|</span>
-            <div class="top_bar_item"><i class="fa-solid fa-tag"></i><span>USE CODE: <strong>SPI15</strong> FOR 15%
-                    OFF</span></div>
             <span class="top_bar_divider">|</span>
             <div class="top_bar_item"><i class="fa-solid fa-phone"></i><span>+91 92134 41003</span></div>
         </div>
@@ -1178,15 +1554,16 @@
         <nav class="nav_wrapper">
             <div class="nav_logo">
                 <div class="nav_logo_text">
-                    <span class="nav_logo_name">Devnoor</span>
-                    <span class="nav_logo_sub">Masala</span>
+                    <!-- <span class="nav_logo_name">Devnoor</span>
+                    <span class="nav_logo_sub">Masala</span> -->
+
+                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt=""></a>
                 </div>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html" class="active">Products</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav_icons">
@@ -1214,7 +1591,7 @@
                 <div class="page_stat"><strong>8+</strong><span>Products</span></div>
                 <div class="page_stat"><strong>100%</strong><span>Pure & Natural</span></div>
                 <div class="page_stat"><strong>FSSAI</strong><span>Certified</span></div>
-                <div class="page_stat"><strong>2</strong><span>Pack Sizes</span></div>
+                <div class="page_stat"><strong>Lab</strong><span>Tested</span></div>
             </div>
         </div>
     </section>
@@ -1225,14 +1602,16 @@
             <div class="filter_tabs">
                 <button class="filter_tab active" onclick="filterProds('all',this)"><i
                         class="fa-solid fa-border-all"></i> All Products</button>
+                <button class="filter_tab" onclick="filterProds('pure',this)"><i class="fa-solid fa-seedling"></i> Pure
+                    Spices</button>
+                <button class="filter_tab" onclick="filterProds('blended',this)"><i
+                        class="fa-solid fa-mortar-pestle"></i> Blended Spices</button>
                 <button class="filter_tab" onclick="filterProds('chilli',this)"><i class="fa-solid fa-pepper-hot"></i>
                     Chilli</button>
                 <button class="filter_tab" onclick="filterProds('turmeric',this)"><i class="fa-solid fa-sun"></i>
                     Turmeric</button>
                 <button class="filter_tab" onclick="filterProds('coriander',this)"><i class="fa-solid fa-leaf"></i>
-                    Coriander Cumin</button>
-                <button class="filter_tab" onclick="filterProds('masala',this)"><i
-                        class="fa-solid fa-mortar-pestle"></i> Garam Masala</button>
+                    Coriander</button>
             </div>
             <div class="filter_count">Showing <span id="prod_count">8</span> products</div>
         </div>
@@ -1241,236 +1620,512 @@
     <!-- PRODUCTS GRID -->
     <section class="products_section section_padding">
         <div class="container">
+
+            <!-- ── PURE SPICES ── -->
+            <div class="category_section_header" id="pure_header">
+                <span class="cat_badge"><i class="fa-solid fa-seedling"></i> Pure Spices</span>
+                <h2>Single-Ingredient Pure Spices</h2>
+                <div class="cat_line"></div>
+            </div>
+
             <div class="products_grid_full" id="prod_grid">
 
-                <!-- SP. CHILLI POWDER 100g -->
-                <div class="prod_card" data-cat="chilli">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge hot">HOT</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- TURMERIC POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure turmeric">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge new">PURE</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Turmeric_powder_1.png" alt="Turmeric Powder" />
                         </div>
-                        <img src="img/Chilli_powder_1.png" alt="SP. Chilli Powder 100g" />
-                    </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Chilli Powder</div>
-                        <div class="prod_name">SP. Chilli Powder</div>
-                        <div class="prod_hindi">स्पे. मिर्च पावडर</div>
-                        <div class="prod_desc">Bold, fiery red chilli powder made from premium quality red chillies
-                            blended with edible refined rapeseed oil. Deep colour, intense aroma, authentic Rajwadi
-                            taste.</div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 435 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 14.12g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-droplet"></i> 401mg Sodium</span>
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-sun"></i> Pure Spice · Turmeric</div>
+                            <div class="prod_name">Turmeric Powder</div>
+                            <div class="prod_hindi">हल्दी पावडर</div>
+                            <div class="prod_desc">The Golden Essence of Pure Indian Cooking. Carefully sourced turmeric
+                                roots, vibrant golden color, earthy aroma, and natural depth of flavor. Lab-tested
+                                purity in every pack.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 354 Kcal/100g</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 7.8g Protein</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">100g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- SP. CHILLI POWDER 50g -->
-                <div class="prod_card" data-cat="chilli">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge hot">HOT</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- SP. CHILLI POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure chilli">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge hot">HOT</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Chilli_powder_1.png" alt="SP. Chilli Powder" />
                         </div>
-                        <img src="img/Chilli_powder_2.png" alt="SP. Chilli Powder 50g" />
-                    </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Chilli Powder</div>
-                        <div class="prod_name">SP. Chilli Powder</div>
-                        <div class="prod_hindi">स्पे. मिर्च पावडर</div>
-                        <div class="prod_desc">Same premium SP. Chilli Powder in a convenient 50g pack. Perfect for
-                            smaller households. Red chilli + edible refined rapeseed oil. No artificial colour.</div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 435 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 14.12g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-droplet"></i> 401mg Sodium</span>
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                            <div class="prod_name">SP. Chilli Powder</div>
+                            <div class="prod_hindi">स्पे. मिर्च पावडर</div>
+                            <div class="prod_desc">Perfect Balance of Color and Spice. Fine ground red chillies with
+                                rich natural color, balanced pungency, and bold aroma for everyday Indian cooking.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 435 Kcal/100g</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 14.12g Protein</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">50g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- TURMERIC 100g -->
-                <div class="prod_card" data-cat="turmeric">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge new">NEW</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- CORIANDER POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure coriander">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge new">PURE</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Coriander_powder_1.png" alt="Coriander Powder" />
                         </div>
-                        <img src="img/Turmeric_powder_1.png" alt="Turmeric Powder 100g" />
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-leaf"></i> Pure Spice · Coriander</div>
+                            <div class="prod_name">Coriander Powder</div>
+                            <div class="prod_hindi">धनिया पावडर</div>
+                            <div class="prod_desc">Fresh Aroma of Authentic Indian Cooking. Garden-fresh coriander with
+                                rich natural aroma, citrusy warmth, and subtle sweet undertones. Essential for curries
+                                and sabzis.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-leaf"></i> Rich Aroma</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-seedling"></i> Natural</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
+                        </div>
                     </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-sun"></i> Turmeric Powder</div>
-                        <div class="prod_name">Turmeric Powder</div>
-                        <div class="prod_hindi">प्रीमियम हल्दी पावडर</div>
-                        <div class="prod_desc">Pure dry turmeric with natural oils. Golden, aromatic haldi that adds
-                            colour and health to every dish. Sourced from premium turmeric-growing regions of India.
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
                         </div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 354 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 7.8g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-heart-pulse"></i> Natural Oils</span>
-                        </div>
-                    </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">100g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 
-                <!-- TURMERIC 50g -->
-                <div class="prod_card" data-cat="turmeric">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge new">NEW</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- KASHMIRI CHILLI POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure chilli">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge new">MILD</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Kashmiri_chilli.png" alt="Kashmiri Chilli Powder" />
                         </div>
-                        <img src="img/Turmeric_powder_2.png" alt="Turmeric Powder 50g" />
-                    </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-sun"></i> Turmeric Powder</div>
-                        <div class="prod_name">Turmeric Powder</div>
-                        <div class="prod_hindi">प्रीमियम हल्दी पावडर</div>
-                        <div class="prod_desc">Compact 50g pack of our premium turmeric powder with natural oils. Ideal
-                            for daily use. Store in a cool, dry place. Keep away from direct sunlight.</div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 354 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 7.8g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-heart-pulse"></i> Natural Oils</span>
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                            <div class="prod_name">Kashmiri Chilli Powder</div>
+                            <div class="prod_hindi">काश्मीरी मिर्च पावडर</div>
+                            <div class="prod_desc">Brilliant Color with Mild Pungency. Distinguished by brilliant red
+                                color, rich aroma, and mild heat — ideal for curries, tandoori dishes, and gravies.
+                            </div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-palette"></i> Vibrant Color</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire-flame-curved"></i> Mild
+                                    Heat</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">50g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CORIANDER CUMIN 100g -->
-                <div class="prod_card" data-cat="coriander">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- DESI CHILLI POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure chilli">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge hot">DESI</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Desi_chilli.png" alt="Desi Chilli Powder" />
                         </div>
-                        <img src="img/Coriander_powder_1.png" alt="Coriander Cumin 100g" />
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                            <div class="prod_name">Desi Chilli Powder</div>
+                            <div class="prod_hindi">देसी मिर्च पावडर</div>
+                            <div class="prod_desc">Perfect Balance of Color and Spice. Medium pungency with vibrant red
+                                hue and authentic aroma — crafted for those who enjoy balanced heat in everyday cooking.
+                            </div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> Medium Heat</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-seedling"></i> Pure</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">500g</span>
+                                <span class="weight_tag">5 kg</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
+                        </div>
                     </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-leaf"></i> Coriander Cumin</div>
-                        <div class="prod_name">Coriander Cumin Powder</div>
-                        <div class="prod_hindi">प्रीमियम धनिया-जीरा पावडर</div>
-                        <div class="prod_desc">Premium blend of dry coriander and cumin. Rich, earthy aroma that forms
-                            the base of countless Indian recipes. Premium Rich Quality — freshly ground for max potency.
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
                         </div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 436 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 11.98g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-droplet"></i> 102mg Sodium</span>
-                        </div>
-                    </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">100g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 
-                <!-- CORIANDER CUMIN 50g -->
-                <div class="prod_card" data-cat="coriander">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- TEJA CHILLI POWDER -->
+                <div class="prod_card_wrapper" data-cat="pure chilli">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge hot">FIERY</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Teja_chilli.png" alt="Teja Chilli Powder" />
                         </div>
-                        <img src="img/Coriander_powder_2.png" alt="Coriander Cumin 50g" />
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                            <div class="prod_name">Teja Chilli Powder</div>
+                            <div class="prod_hindi">तेजा मिर्च पावडर</div>
+                            <div class="prod_desc">Fiery Heat of Authentic Indian Cooking. Fine ground Teja (S17)
+                                chillies from Guntur — intense heat, vibrant red color, and bold aroma for those who
+                                love strong spice.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire-flame-curved"></i> Intense
+                                    Heat</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-location-dot"></i> Guntur</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">500g</span>
+                                <span class="weight_tag">5 kg</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
+                        </div>
                     </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-leaf"></i> Coriander Cumin</div>
-                        <div class="prod_name">Coriander Cumin Powder</div>
-                        <div class="prod_hindi">प्रीमियम धनिया-जीरा पावडर</div>
-                        <div class="prod_desc">50g value pack of our signature Coriander Cumin blend. Dry coriander and
-                            cumin finely ground together for a perfect flavour balance in dals, curries, and sabzis.
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
                         </div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 436 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 11.98g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-droplet"></i> 102mg Sodium</span>
-                        </div>
-                    </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">50g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 
-                <!-- GARAM MASALA 100g -->
-                <div class="prod_card" data-cat="masala">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge top">TOP</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+            </div><!-- end pure grid -->
+
+            <!-- ── BLENDED SPICES ── -->
+            <div class="category_section_header" style="margin-top: 60px;" id="blended_header">
+                <span class="cat_badge blended"><i class="fa-solid fa-mortar-pestle"></i> Blended Spices</span>
+                <h2>Expert-Crafted Blended Spices</h2>
+                <div class="cat_line"></div>
+            </div>
+
+            <div class="products_grid_full" id="blended_grid">
+
+                <!-- CORIANDER CUMIN POWDER -->
+                <div class="prod_card_wrapper" data-cat="blended coriander">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge new">BLEND</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Coriander_powder_1.png" alt="Coriander Cumin Powder" />
                         </div>
-                        <img src="img/Garam_masala_1.png" alt="Garam Masala 100g" />
-                    </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-mortar-pestle"></i> Garam Masala</div>
-                        <div class="prod_name">Garam Masala Powder</div>
-                        <div class="prod_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
-                        <div class="prod_desc">A Rajwadi Taste. Complex blend of coriander, chilli, bay leaves, cumin,
-                            cloves, black pepper, star anise, ajwain, ginger, rock salt, cinnamon, mace, cardamom,
-                            nutmeg & mustard oil.</div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 342 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 12.3g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-droplet"></i> 2213mg Sodium</span>
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-leaf"></i> Blended Spice</div>
+                            <div class="prod_name">Coriander Cumin Powder</div>
+                            <div class="prod_hindi">धनिया-जीरा पावडर</div>
+                            <div class="prod_desc">Perfect Blend of Aroma and Authentic Flavor. Coriander's citrusy
+                                warmth meets cumin's rich earthy aroma — a perfectly balanced blend loved in Indian
+                                kitchens.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 436 Kcal/100g</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 11.98g Protein</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">100g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- GARAM MASALA 50g -->
-                <div class="prod_card" data-cat="masala">
-                    <div class="prod_img_box">
-                        <div class="prod_badge_wrap">
-                            <span class="prod_badge top">TOP</span>
-                            <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                <!-- GARAM MASALA -->
+                <div class="prod_card_wrapper" data-cat="blended masala">
+                    <div class="prod_card">
+                        <div class="prod_img_box">
+                            <div class="prod_badge_wrap">
+                                <span class="prod_badge top">TOP</span>
+                                <span class="prod_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI</span>
+                            </div>
+                            <img src="img/Garam_masala_1.png" alt="Garam Masala" />
                         </div>
-                        <img src="img/Garam_masala_2.png" alt="Garam Masala 50g" />
+                        <div class="prod_body">
+                            <div class="prod_category"><i class="fa-solid fa-mortar-pestle"></i> Blended Spice</div>
+                            <div class="prod_name">Garam Masala Powder</div>
+                            <div class="prod_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
+                            <div class="prod_desc">Signature Blend of Rich Aroma and Authentic Flavor. Crafted with 14+
+                                whole spices including cloves, cardamom, cinnamon, star anise, and mustard oil for bold
+                                Rajwadi taste.</div>
+                            <div class="prod_meta">
+                                <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 342 Kcal/100g</span>
+                                <span class="prod_meta_item"><i class="fa-solid fa-star"></i> Rajwadi Taste</span>
+                            </div>
+                        </div>
+                        <div class="prod_footer">
+                            <div class="prod_weight_tags">
+                                <span class="weight_tag">18g</span>
+                                <span class="weight_tag">50g</span>
+                                <span class="weight_tag">100g</span>
+                                <span class="weight_tag">+more</span>
+                            </div>
+                            <button class="prod_info_btn" onclick="toggleSubmenu(this)"><i
+                                    class="fa-solid fa-circle-info"></i> Sizes <i
+                                    class="fa-solid fa-chevron-down"></i></button>
+                        </div>
                     </div>
-                    <div class="prod_body">
-                        <div class="prod_category"><i class="fa-solid fa-mortar-pestle"></i> Garam Masala</div>
-                        <div class="prod_name">Garam Masala Powder</div>
-                        <div class="prod_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
-                        <div class="prod_desc">Our bestselling Garam Masala in a 50g pack. The perfect Rajwadi flavour —
-                            complex, warming spice blend crafted from 14+ whole spices. Ideal for everyday cooking.
+                    <div class="prod_submenu">
+                        <div class="submenu_title"><i class="fa-solid fa-weight-hanging"></i> Available Pack Sizes</div>
+                        <div class="submenu_sizes">
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 18 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 50 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 100 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 200 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box-open"></i> 500 gms</button>
+                            <button class="submenu_size_btn"><i class="fa-solid fa-box"></i> 5 kg</button>
                         </div>
-                        <div class="prod_meta">
-                            <span class="prod_meta_item"><i class="fa-solid fa-fire"></i> 342 Kcal/100g</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-dumbbell"></i> 12.3g Protein</span>
-                            <span class="prod_meta_item"><i class="fa-solid fa-star"></i> Rajwadi Taste</span>
-                        </div>
-                    </div>
-                    <div class="prod_footer">
-                        <div class="prod_weight_tags"><span class="weight_tag">50g</span></div>
-                        <button class="prod_info_btn"><i class="fa-solid fa-circle-info"></i> Details <i
-                                class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 
+            </div><!-- end blended grid -->
+        </div>
+    </section>
+
+    <!-- QUALITY PROCESS SECTION -->
+    <section class="quality_section">
+        <div class="container">
+            <div class="quality_header">
+                <h2>From <span>Farm to Flavor</span></h2>
+                <p>At Devnoor Masala, every spice follows a careful journey to ensure purity, taste, and trust in every
+                    pack.</p>
+            </div>
+            <div class="quality_flow">
+                <span class="quality_step_label">Source</span>
+                <span class="quality_arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="quality_step_label">Clean</span>
+                <span class="quality_arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="quality_step_label">Grind & Blend</span>
+                <span class="quality_arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="quality_step_label">Lab Test</span>
+                <span class="quality_arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="quality_step_label">Pack</span>
+            </div>
+            <div class="quality_cards">
+                <div class="quality_card">
+                    <div class="quality_icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h4>Careful Sourcing</h4>
+                    <p>We select quality raw spices from trusted sources and verified farms across India.</p>
+                </div>
+                <div class="quality_card">
+                    <div class="quality_icon"><i class="fa-solid fa-broom"></i></div>
+                    <h4>Purity Cleaning</h4>
+                    <p>Each spice is cleaned and sorted for better quality, removing impurities at the source.</p>
+                </div>
+                <div class="quality_card">
+                    <div class="quality_icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+                    <h4>Precision Grinding</h4>
+                    <p>Crafted to preserve authentic Indian taste, aroma, and natural color in every batch.</p>
+                </div>
+                <div class="quality_card">
+                    <div class="quality_icon"><i class="fa-solid fa-flask"></i></div>
+                    <h4>Lab-Tested Quality</h4>
+                    <p>Every batch is checked for purity, consistency, and safety before leaving our facility.</p>
+                </div>
+                <div class="quality_card">
+                    <div class="quality_icon"><i class="fa-solid fa-box-archive"></i></div>
+                    <h4>Hygienic Packing</h4>
+                    <p>Sealed with care to lock in freshness and flavor — from our hands to your kitchen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="compare_section">
+        <div class="container">
+            <div class="compare_header">
+                <h2>Devnoor Masala <span>vs</span> Ordinary Spices</h2>
+                <p style="color:var(--clr_muted);font-size:14px;margin-top:14px;">See the difference that trusted
+                    quality makes in every meal.</p>
+            </div>
+            <div class="compare_table_wrap">
+                <table class="compare_table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="devnoor_col">
+                                <div class="compare_col_head"><i class="fa-solid fa-star"></i> Devnoor Masala</div>
+                            </th>
+                            <th class="ordinary_col">
+                                <div class="compare_col_head"><i class="fa-solid fa-question"></i> Ordinary Spices</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quality Testing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> Lab-tested for purity</td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> Purity often uncertain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Flavor</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> Rich, authentic Indian
+                                flavor</td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> Inconsistent taste</td>
+                        </tr>
+                        <tr>
+                            <td>Purity</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> 100% pure, no adulteration
+                            </td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> May contain adulterants
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Processing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> Hygienic, machine processed
+                            </td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> Unhygienic manual
+                                processing</td>
+                        </tr>
+                        <tr>
+                            <td>Consistency</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> Same trusted taste every
+                                pack</td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> Can differ batch to batch
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sourcing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> Sourced from best farms
+                            </td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> Random, unverified
+                                sourcing</td>
+                        </tr>
+                        <tr>
+                            <td>Certification</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check"></i> FSSAI Certified</td>
+                            <td class="ordinary_val"><i class="fa-solid fa-circle-xmark"></i> No certified standard</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -1500,8 +2155,7 @@
                     <h3>SP. Chilli Powder</h3>
                     <div class="hindi">स्पे. मिर्च पावडर</div>
                     <div class="nutr_ing"><strong>Ingredients:</strong> Red Chilli Powder, Edible Refined Rapeseed Oil.
-                        <em>Only powder in this package contains an admixture of not more than 2% of edible refined
-                            rapeseed oil.</em></div>
+                        <em>Powder contains not more than 2% edible refined rapeseed oil.</em></div>
                     <table class="nutr_table">
                         <tr>
                             <th>Nutrient</th>
@@ -1544,8 +2198,7 @@
                             <td>14.12 g</td>
                         </tr>
                     </table>
-                    <div class="nutr_note">* Approximate values | RDA calculated on the basis of 2000 Kcal energy a day
-                        is used for general nutrition advice.</div>
+                    <div class="nutr_note">* Approximate values | RDA calculated on basis of 2000 Kcal/day.</div>
                     <div class="nutr_tags">
                         <span class="nutr_tag"><i class="fa-solid fa-shield-halved"></i> FSSAI Certified</span>
                         <span class="nutr_tag"><i class="fa-solid fa-seedling"></i> No Artificial Colour</span>
@@ -1558,10 +2211,9 @@
                 <div class="nutr_img_side"><img src="img/Turmeric_powder_1.png" alt="Turmeric Powder" /></div>
                 <div class="nutr_info">
                     <h3>Turmeric Powder</h3>
-                    <div class="hindi">प्रीमियम हल्दी पावडर</div>
+                    <div class="hindi">हल्दी पावडर</div>
                     <div class="nutr_ing"><strong>Ingredients:</strong> Dry Turmeric. <em>With Natural Oils®. Store in
-                            cool, dry & hygienic place. Keep away from direct heat & sunlight. Once opened keep in
-                            airtight container.</em></div>
+                            cool, dry & hygienic place.</em></div>
                     <table class="nutr_table">
                         <tr>
                             <th>Nutrient</th>
@@ -1604,8 +2256,7 @@
                             <td>7.8 g</td>
                         </tr>
                     </table>
-                    <div class="nutr_note">* Approximate values | RDA calculated on the basis of 2000 Kcal energy a day.
-                    </div>
+                    <div class="nutr_note">* Approximate values | RDA calculated on basis of 2000 Kcal/day.</div>
                     <div class="nutr_tags">
                         <span class="nutr_tag"><i class="fa-solid fa-shield-halved"></i> FSSAI Certified</span>
                         <span class="nutr_tag"><i class="fa-solid fa-heart-pulse"></i> With Natural Oils</span>
@@ -1618,9 +2269,9 @@
                 <div class="nutr_img_side"><img src="img/Coriander_powder_1.png" alt="Coriander Cumin" /></div>
                 <div class="nutr_info">
                     <h3>Coriander Cumin Powder</h3>
-                    <div class="hindi">प्रीमियम धनिया-जीरा पावडर</div>
+                    <div class="hindi">धनिया-जीरा पावडर</div>
                     <div class="nutr_ing"><strong>Ingredients:</strong> Dry Coriander, Cumin. <em>Premium Rich Quality.
-                            Store in cool, dry & hygienic place. Once opened keep in airtight container.</em></div>
+                            Store in cool, dry & hygienic place.</em></div>
                     <table class="nutr_table">
                         <tr>
                             <th>Nutrient</th>
@@ -1663,8 +2314,7 @@
                             <td>11.98 g</td>
                         </tr>
                     </table>
-                    <div class="nutr_note">* Approximate values | RDA calculated on the basis of 2000 Kcal energy a day.
-                    </div>
+                    <div class="nutr_note">* Approximate values | RDA calculated on basis of 2000 Kcal/day.</div>
                     <div class="nutr_tags">
                         <span class="nutr_tag"><i class="fa-solid fa-shield-halved"></i> FSSAI Certified</span>
                         <span class="nutr_tag"><i class="fa-solid fa-leaf"></i> Premium Rich Quality</span>
@@ -1678,9 +2328,9 @@
                 <div class="nutr_info">
                     <h3>Garam Masala Powder</h3>
                     <div class="hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
-                    <div class="nutr_ing"><strong>Ingredients:</strong> Coriander Powder, Chilli, Bay Leaves, Cumin,
-                        Cloves, Clove Leaves, Black Pepper, Star Anise, Ajwain, Ginger, Rock Salt, Cinnamon, Mace,
-                        Cardamom, Nutmeg, Mustard Oil (2%).</div>
+                    <div class="nutr_ing"><strong>Ingredients:</strong> Coriander, Chilli, Bay Leaves, Cumin, Cloves,
+                        Black Pepper, Star Anise, Ajwain, Ginger, Rock Salt, Cinnamon, Mace, Cardamom, Nutmeg, Mustard
+                        Oil (2%).</div>
                     <table class="nutr_table">
                         <tr>
                             <th>Nutrient</th>
@@ -1727,8 +2377,7 @@
                             <td>3.48 mg</td>
                         </tr>
                     </table>
-                    <div class="nutr_note">* Approximate values | RDA calculated on the basis of 2000 Kcal energy a day.
-                    </div>
+                    <div class="nutr_note">* Approximate values | RDA calculated on basis of 2000 Kcal/day.</div>
                     <div class="nutr_tags">
                         <span class="nutr_tag"><i class="fa-solid fa-shield-halved"></i> FSSAI Certified</span>
                         <span class="nutr_tag"><i class="fa-solid fa-star"></i> Rajwadi Taste</span>
@@ -1769,8 +2418,7 @@
                 <div class="why_card">
                     <div class="why_icon"><i class="fa-solid fa-award"></i></div>
                     <h4>Best Quality Product</h4>
-                    <p>Premium Rich Quality — freshly ground and packed at our state-of-the-art facility in Mahesana,
-                        Gujarat.</p>
+                    <p>Freshly ground and packed at our state-of-the-art facility in Mahesana, Gujarat.</p>
                 </div>
             </div>
         </div>
@@ -1818,28 +2466,26 @@
                     <p>Manufactured & Packed by Govind Sugar & Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech
                         Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067. Product of India.</p>
                     <div class="footer_social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
                     <div class="footer_heading">About Us</div>
                     <div class="footer_links">
                         <a href="about.html"><i class="fa-solid fa-chevron-right"></i> Our Story</a>
-                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> Our Team</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Careers</a>
-                        <a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a>
+                        <a href="about.html#mission"><i class="fa-solid fa-chevron-right"></i> Our Mission</a>
+                        <a href="about.html#vision"><i class="fa-solid fa-chevron-right"></i> Our Vision</a>
+                        <a href="about.html#promise"><i class="fa-solid fa-chevron-right"></i> Our Promise</a>
                     </div>
                 </div>
                 <div>
                     <div class="footer_heading">Products</div>
                     <div class="footer_links">
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
                         <a href="#"><i class="fa-solid fa-chevron-right"></i> Turmeric Powder</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Coriander Cumin</a>
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Kashmiri Chilli</a>
                         <a href="#"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
                     </div>
                 </div>
@@ -1847,8 +2493,7 @@
                     <div class="footer_heading">Help</div>
                     <div class="footer_links">
                         <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
-                        <a href="#"><i class="fa-solid fa-chevron-right"></i> Shipping Policy</a>
+                        <a href="contact.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
                         <a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a>
                     </div>
                 </div>
@@ -1863,12 +2508,12 @@
                         <p>+91 92134 41003</p>
                     </div>
                     <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
-                        <p>govindbrands@gmail.com</p>
+                        <div class="footer_contact_icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <p>+91 92134 41003</p>
                     </div>
                     <div class="footer_contact_item">
-                        <div class="footer_contact_icon"><i class="fa-solid fa-globe"></i></div>
-                        <p>www.devnoormasala.com</p>
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                        <p>govindbrands@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -1887,23 +2532,62 @@
             class="fa-solid fa-arrow-up"></i></div>
 
     <script>
+        // Filter — works across both grids
         function filterProds(cat, btn) {
             document.querySelectorAll('.filter_tab').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const cards = document.querySelectorAll('.prod_card');
+
+            const allWrappers = document.querySelectorAll('.prod_card_wrapper');
             let count = 0;
-            cards.forEach(c => {
-                if (cat === 'all' || c.dataset.cat === cat) { c.style.display = ''; count++; }
-                else c.style.display = 'none';
+
+            allWrappers.forEach(w => {
+                const cats = (w.dataset.cat || '').split(' ');
+                const show = cat === 'all' || cats.includes(cat) ||
+                    (cat === 'pure' && cats.includes('pure')) ||
+                    (cat === 'blended' && cats.includes('blended'));
+                w.style.display = show ? '' : 'none';
+                if (show) count++;
             });
+
+            // Show/hide category headers based on visible cards
+            const pureVisible = [...allWrappers].some(w => !w.style.display && w.dataset.cat.includes('pure'));
+            const blendedVisible = [...allWrappers].some(w => !w.style.display && w.dataset.cat.includes('blended'));
+
+            const pureHeader = document.getElementById('pure_header');
+            const blendedHeader = document.getElementById('blended_header');
+            if (pureHeader) pureHeader.style.display = (cat === 'all' || cat === 'pure' || cat === 'chilli' || cat === 'turmeric' || cat === 'coriander') ? '' : 'none';
+            if (blendedHeader) blendedHeader.style.display = (cat === 'all' || cat === 'blended' || cat === 'coriander' || cat === 'masala') ? '' : 'none';
+
             document.getElementById('prod_count').textContent = count;
         }
+
+        // Submenu toggle — click Details button to show pack sizes
+        function toggleSubmenu(btn) {
+            const wrapper = btn.closest('.prod_card_wrapper');
+            const submenu = wrapper.querySelector('.prod_submenu');
+
+            // Close all other submenus
+            document.querySelectorAll('.prod_submenu.open').forEach(s => {
+                if (s !== submenu) s.classList.remove('open');
+            });
+
+            submenu.classList.toggle('open');
+        }
+
+        // Close submenu on outside click
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.prod_card_wrapper')) {
+                document.querySelectorAll('.prod_submenu.open').forEach(s => s.classList.remove('open'));
+            }
+        });
+
         function switchNutr(id, btn) {
             document.querySelectorAll('.nutr_tab').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.nutr_panel').forEach(p => p.classList.remove('active'));
             btn.classList.add('active');
             document.getElementById('nutr_' + id).classList.add('active');
         }
+
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
     </script>
