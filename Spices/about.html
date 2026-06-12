@@ -5,10 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us – Devnoor Masala</title>
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/Logo.png">
-    
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
         rel="stylesheet" />
@@ -105,7 +102,7 @@
             flex-direction: column;
         }
 
-        .nav_logo_img{
+        .nav_logo_img {
             height: 60px;
         }
 
@@ -204,20 +201,22 @@
             background-size: 28px 28px;
         }
 
+        /* Hero inner: single column now (image removed) */
         .about_hero_inner {
             position: relative;
             z-index: 2;
-            max-width: 1200px;
+            width: 80%;
             margin: 0 auto;
             padding: 0 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .about_hero_left {
-            padding: 60px 0;
+            padding: 80px 0;
+            width: 100%;
+            text-align: center;
         }
 
         .breadcrumb {
@@ -227,6 +226,7 @@
             margin-bottom: 18px;
             font-size: 13px;
             color: rgba(255, 255, 255, .6);
+            justify-content: center;
         }
 
         .breadcrumb a {
@@ -257,12 +257,16 @@
             font-size: 15px;
             line-height: 1.9;
             margin-bottom: 30px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about_chips {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center;
         }
 
         .chip {
@@ -283,65 +287,14 @@
             font-size: 11px;
         }
 
-        .about_hero_img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 16px 48px rgba(0, 0, 0, .3);
-        }
-
-        .about_hero_img img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            background: rgba(255, 255, 255, .08);
-            padding: 20px;
-        }
-
-        /* STORY */
+        /* STORY — text only, no images */
         .story_section {
             background: var(--clr_white);
         }
 
         .story_inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .story_img_wrap {
-            position: relative;
-        }
-
-        .story_img_main {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow_md);
-        }
-
-        .story_img_main img {
             width: 100%;
-            height: 450px;
-            background: var(--clr_cream);
-            padding: 20px;
-        }
-
-        .story_img_float {
-            position: absolute;
-            bottom: -24px;
-            right: -24px;
-            width: 160px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: var(--shadow_md);
-            border: 4px solid var(--clr_white);
-        }
-
-        .story_img_float img {
-            width: 100%;
-            height: 150px;
-            background: var(--clr_cream);
-            padding: 10px;
+            margin: 0 auto;
         }
 
         .story_eyebrow {
@@ -378,35 +331,6 @@
             font-size: 14px;
             line-height: 1.9;
             margin-bottom: 14px;
-        }
-
-        .story_milestones {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 28px;
-        }
-
-        .milestone {
-            background: var(--clr_light);
-            border-radius: 12px;
-            padding: 18px 16px;
-            border-left: 3px solid var(--clr_red);
-        }
-
-        .milestone strong {
-            display: block;
-            font-family: var(--ff_display);
-            font-size: 22px;
-            color: var(--clr_red);
-            font-weight: 900;
-        }
-
-        .milestone span {
-            font-size: 12px;
-            color: var(--clr_muted);
-            text-transform: uppercase;
-            letter-spacing: .06em;
         }
 
         /* MISSION VISION */
@@ -706,77 +630,15 @@
             color: #fff;
         }
 
-        /* FSSAI BANNER */
-        .fssai_banner {
-            background: linear-gradient(135deg, var(--clr_red) 0%, #c07010 100%);
-            padding: 56px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fssai_banner::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .05) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-
-        .fssai_inner {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .fssai_item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .fssai_icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #fff;
-        }
-
-        .fssai_text strong {
-            display: block;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        .fssai_text span {
-            font-size: 12px;
-            color: rgba(255, 255, 255, .75);
-        }
-
-        .fssai_divider {
-            width: 1px;
-            height: 50px;
-            background: rgba(255, 255, 255, .2);
-        }
-
         /* FOOTER */
         .footer {
             background: var(--clr_dark);
-            padding: 60px 0 28px;
+            padding: 70px 0 28px;
         }
 
         .footer_grid {
             display: grid;
-            grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+            grid-template-columns: 1.8fr 1fr 1.4fr;
             gap: 36px;
             margin-bottom: 50px;
         }
@@ -791,7 +653,7 @@
 
         .footer_brand p {
             font-size: 13px;
-            color: rgba(255, 255, 255, .55);
+            color: rgba(255, 255, 255, 0.55);
             line-height: 1.8;
             margin-bottom: 20px;
         }
@@ -823,7 +685,7 @@
 
         .footer_links a {
             font-size: 13px;
-            color: rgba(255, 255, 255, .55);
+            color: rgba(255, 255, 255, 0.55);
             transition: color var(--transition);
             display: flex;
             align-items: center;
@@ -850,7 +712,7 @@
             width: 32px;
             height: 32px;
             border-radius: 8px;
-            background: rgba(255, 255, 255, .07);
+            background: rgba(255, 255, 255, 0.07);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -862,7 +724,7 @@
 
         .footer_contact_item p {
             font-size: 13px;
-            color: rgba(255, 255, 255, .55);
+            color: rgba(255, 255, 255, 0.55);
             line-height: 1.65;
         }
 
@@ -876,12 +738,12 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, .12);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
-            color: rgba(255, 255, 255, .5);
+            color: rgba(255, 255, 255, 0.5);
             transition: all var(--transition);
         }
 
@@ -907,7 +769,7 @@
         }
 
         .footer_bottom {
-            border-top: 1px solid rgba(255, 255, 255, .07);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
             padding-top: 24px;
             display: flex;
             align-items: center;
@@ -918,7 +780,7 @@
 
         .footer_bottom p {
             font-size: 12px;
-            color: rgba(255, 255, 255, .38);
+            color: rgba(255, 255, 255, 0.38);
         }
 
         .footer_bottom span {
@@ -932,7 +794,7 @@
 
         .footer_bottom_links a {
             font-size: 11px;
-            color: rgba(255, 255, 255, .38);
+            color: rgba(255, 255, 255, 0.38);
             transition: color var(--transition);
         }
 
@@ -973,12 +835,12 @@
         @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(22px);
+                transform: translateY(22px)
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
@@ -987,7 +849,6 @@
             animation: fadeUp .7s forwards;
         }
 
-        /* SECTION TITLE */
         .section_title {
             text-align: center;
             margin-bottom: 10px;
@@ -1023,10 +884,9 @@
             margin-bottom: 50px;
         }
 
+        /* RESPONSIVE */
         @media(max-width:1024px) {
 
-            .about_hero_inner,
-            .story_inner,
             .why_inner,
             .mv_grid {
                 grid-template-columns: 1fr;
@@ -1034,10 +894,6 @@
 
             .footer_grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .about_hero_img {
-                display: none;
             }
 
             .promise_grid {
@@ -1054,18 +910,6 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .fssai_inner {
-                gap: 28px;
-            }
-
-            .fssai_divider {
-                display: none;
-            }
-
-            .story_img_float {
-                display: none;
-            }
-
             .footer_grid {
                 grid-template-columns: 1fr;
             }
@@ -1079,10 +923,6 @@
             .promise_grid {
                 grid-template-columns: 1fr;
             }
-
-            .story_milestones {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -1094,10 +934,7 @@
         <nav class="nav_wrapper">
             <div class="nav_logo">
                 <div class="nav_logo_text">
-                    <!-- <span class="nav_logo_name">Devnoor</span>
-                    <span class="nav_logo_sub">Masala</span> -->
-
-                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt=""></a>
+                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
                 </div>
             </div>
             <ul class="nav_links">
@@ -1113,7 +950,7 @@
         </nav>
     </header>
 
-    <!-- ABOUT HERO -->
+    <!-- ABOUT HERO — product image removed, text centred -->
     <section class="about_hero">
         <div class="about_hero_pattern"></div>
         <div class="about_hero_inner">
@@ -1123,56 +960,48 @@
                     <i class="fa-solid fa-chevron-right"></i>
                     <span>About Us</span>
                 </div>
-                <h1 class="fade_up" style="animation-delay:.1s">Bringing <em>Purity,</em><br>Flavor &amp; Trust<br>to
+                <h1 class="fade_up" style="animation-delay:.1s">Bringing <em>Purity,</em>Flavor &amp; Trust<br>to
                     Every Kitchen</h1>
                 <p class="about_hero_desc fade_up" style="animation-delay:.3s">In Indian homes, spices are not just
                     ingredients — they are the soul of cooking, the heart of family meals, and the taste behind lasting
-                    memories. Devnoor Masala was born to remove one silent doubt: <em
-                        style="color:var(--clr_amber);font-style:italic;">"Are we using real, pure masalas?"</em></p>
+                    memories. Devnoor Masala was born to remove one silent doubt:
+                    <em style="color:var(--clr_amber);font-style:italic;">"Are we using real, pure masalas?"</em>
+                </p>
                 <div class="about_chips fade_up" style="animation-delay:.5s">
                     <span class="chip"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
                     <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
                     <span class="chip"><i class="fa-solid fa-flask"></i> Lab Tested</span>
-                    <span class="chip"><i class="fa-solid fa-award"></i> Founded 2021</span>
+                    <!-- <span class="chip"><i class="fa-solid fa-award"></i> Founded 2021</span> -->
                 </div>
-            </div>
-            <div class="about_hero_img fade_up" style="animation-delay:.4s">
-                <img src="img/Chilli_powder_1.png" alt="Devnoor Masala Products" />
             </div>
         </div>
     </section>
 
-    <!-- OUR STORY -->
+    <!-- OUR STORY — images and milestone boxes removed, text only -->
     <section class="story_section section_padding">
-        <div class="container story_inner">
-            <div class="story_img_wrap">
-                <div class="story_img_main">
-                    <img src="img/Garam_masala_1.png" alt="Our Story" />
-                </div>
-                <div class="story_img_float">
-                    <img src="img/Turmeric_powder_1.png" alt="Turmeric" />
-                </div>
-            </div>
-            <div class="story_body">
+        <div class="container">
+            <div class="story_inner">
                 <div class="story_eyebrow"><i class="fa-solid fa-book-open"></i> Our Story</div>
-                <h2 class="story_title">Born from One<br>Simple <span>Question</span></h2>
-                <p>In Indian homes, spices are not just ingredients — they are the soul of cooking, the heart of family
-                    meals, and the taste behind lasting memories. But over time, one silent question began to grow in
-                    many households: <strong>"Are we using real, pure masalas?"</strong></p>
-                <p>Too often, families had to compromise — questioning purity, consistency, and authentic taste in the
-                    spices they used every day. Founded in 2021, Devnoor Masala was born to remove that doubt.</p>
-                <p>What started as a simple belief soon became a mission: to create blended spices that families could
-                    trust — spices that bring purity, authentic flavor, and confidence to every meal. By sourcing
-                    quality ingredients and ensuring lab-tested purity, Devnoor brings clean, powerful spices blended
-                    for real Indian taste.</p>
-                <p>Whether it's your everyday sabzi, a Sunday biryani, or a festive family feast, Devnoor is there — not
-                    just as a spice brand, but as a trusted kitchen companion. Because your family deserves taste,
-                    health, and happiness in every bite.</p>
-                <div class="story_milestones">
-                    <div class="milestone"><strong>2021</strong><span>Founded</span></div>
-                    <div class="milestone"><strong>8+</strong><span>Spice Variants</span></div>
-                    <div class="milestone"><strong>100%</strong><span>Lab Tested</span></div>
-                    <div class="milestone"><strong>Pure</strong><span>No Adulteration</span></div>
+                <h2 class="story_title">Born from One Simple <span>Question</span></h2>
+                <div class="story_body">
+                    <p>In Indian homes, spices are not just ingredients — they are the soul of cooking, the heart of
+                        family
+                        meals, and the taste behind lasting memories. But over time, one silent question began to grow
+                        in
+                        many households: <strong>"Are we using real, pure masalas?"</strong></p>
+                    <p>Too often, families had to compromise — questioning purity, consistency, and authentic taste in
+                        the
+                        spices they used every day. Founded in 2021, Devnoor Masala was born to remove that doubt.</p>
+                    <p>What started as a simple belief soon became a mission: to create blended spices that families
+                        could
+                        trust — spices that bring purity, authentic flavor, and confidence to every meal. By sourcing
+                        quality ingredients and ensuring lab-tested purity, Devnoor brings clean, powerful spices
+                        blended
+                        for real Indian taste.</p>
+                    <p>Whether it's your everyday sabzi, a Sunday biryani, or a festive family feast, Devnoor is there —
+                        not
+                        just as a spice brand, but as a trusted kitchen companion. Because your family deserves taste,
+                        health, and happiness in every bite.</p>
                 </div>
             </div>
         </div>
@@ -1292,31 +1121,6 @@
         </div>
     </section>
 
-    <!-- FSSAI BANNER -->
-    <div class="fssai_banner">
-        <div class="container fssai_inner">
-            <div class="fssai_item">
-                <div class="fssai_icon"><i class="fa-solid fa-certificate"></i></div>
-                <div class="fssai_text"><strong>FSSAI Certified</strong><span>Lic. No. 10723014000067</span></div>
-            </div>
-            <div class="fssai_divider"></div>
-            <div class="fssai_item">
-                <div class="fssai_icon"><i class="fa-solid fa-seedling"></i></div>
-                <div class="fssai_text"><strong>100% Natural</strong><span>No Artificial Colours</span></div>
-            </div>
-            <div class="fssai_divider"></div>
-            <div class="fssai_item">
-                <div class="fssai_icon"><i class="fa-solid fa-industry"></i></div>
-                <div class="fssai_text"><strong>Made in Gujarat</strong><span>Mahesana, India</span></div>
-            </div>
-            <div class="fssai_divider"></div>
-            <div class="fssai_item">
-                <div class="fssai_icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <div class="fssai_text"><strong>WhatsApp Us</strong><span>+91 92134 41003</span></div>
-            </div>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
@@ -1338,17 +1142,6 @@
                         <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
                         <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
                         <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="footer_heading">Products</div>
-                    <div class="footer_links">
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Turmeric Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> SP. Chilli Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Kashmiri Chilli</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Teja Chilli Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Coriander Powder</a>
-                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Garam Masala</a>
                     </div>
                 </div>
                 <div>
@@ -1380,6 +1173,7 @@
     <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <i class="fa-solid fa-arrow-up"></i>
     </div>
+
     <script>
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));

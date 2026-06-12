@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teja Chilli Powder – Devnoor Masala</title>
+    <link rel="icon" type="image/png" href="img/Logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --clr_white: #ffffff;
+            --clr_light: #fdf9f4;
+            --clr_cream: #f5ede0;
+            --clr_red: #e8a020;
+            --clr_red2: #e03222;
+            --clr_green: #3a6b35;
+            --clr_green2: #4e8c46;
+            --clr_gold: #d4860a;
+            --clr_amber: #f0a500;
+            --clr_dark: #1e1208;
+            --clr_text: #3d2b14;
+            --clr_muted: #8c7358;
+            --clr_border: #e8d8c0;
+            --ff_display: 'Playfair Display', serif;
+            --ff_body: 'Nunito', sans-serif;
+            --ff_script: 'Dancing Script', cursive;
+            --radius_lg: 16px;
+            --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
+            --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
+            --transition: .3s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--ff_body);
+            background: var(--clr_white);
+            color: var(--clr_text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            background: var(--clr_white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .nav_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav_logo_img {
+            height: 60px;
+        }
+
+        .nav_links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .nav_links a {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--clr_text);
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav_links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr_red);
+            transition: width var(--transition);
+        }
+
+        .nav_links a:hover,
+        .nav_links a.active {
+            color: var(--clr_red);
+        }
+
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
+            width: 100%;
+        }
+
+        .nav_icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav_icon_btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_text);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .nav_icon_btn:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb_bar {
+            background: var(--clr_cream);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--clr_border);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--clr_muted);
+        }
+
+        .breadcrumb a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .breadcrumb i {
+            font-size: 9px;
+        }
+
+        /* PRODUCT DETAIL */
+        .product_detail {
+            padding: 60px 0 80px;
+        }
+
+        .product_detail_inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .product_img_wrap {
+            position: sticky;
+            top: 100px;
+        }
+
+        .product_img_main {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow_md);
+            background: var(--clr_cream);
+        }
+
+        .product_img_main img {
+            width: 100%;
+            height: 480px;
+            object-fit: contain;
+            padding: 32px;
+        }
+
+        .product_badge_row {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .p_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 50px;
+            letter-spacing: .06em;
+        }
+
+        .p_badge.fssai {
+            background: rgba(58, 107, 53, .1);
+            border: 1px solid rgba(58, 107, 53, .25);
+            color: var(--clr_green);
+        }
+
+        .p_badge.india {
+            background: rgba(232, 160, 32, .1);
+            border: 1px solid rgba(232, 160, 32, .25);
+            color: var(--clr_gold);
+        }
+
+        .p_badge.hot {
+            background: rgba(224, 50, 34, .1);
+            border: 1px solid rgba(224, 50, 34, .25);
+            color: var(--clr_red2);
+        }
+
+        .p_badge.pure {
+            background: rgba(58, 107, 53, .1);
+            border: 1px solid rgba(58, 107, 53, .25);
+            color: var(--clr_green);
+        }
+
+        /* RIGHT SIDE */
+        .product_info {}
+
+        .product_category_tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--clr_muted);
+            margin-bottom: 8px;
+        }
+
+        .product_name {
+            font-family: var(--ff_display);
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 900;
+            color: var(--clr_dark);
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .product_hindi {
+            font-size: 16px;
+            color: var(--clr_red);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .product_tagline {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr_dark);
+            margin-bottom: 16px;
+            font-family: var(--ff_display);
+            font-style: italic;
+        }
+
+        .product_desc {
+            font-size: 14px;
+            color: var(--clr_muted);
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        /* PACK SIZE */
+        .pack_label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr_dark);
+            margin-bottom: 12px;
+        }
+
+        .pack_sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .pack_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--clr_white);
+            border: 2px solid var(--clr_border);
+            color: var(--clr_text);
+            padding: 9px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--ff_body);
+        }
+
+        .pack_btn:hover,
+        .pack_btn.active {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* INGREDIENTS & STORAGE */
+        .info_block {
+            background: var(--clr_light);
+            border-radius: var(--radius_lg);
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            border-left: 3px solid var(--clr_red);
+        }
+
+        .info_block h4 {
+            font-family: var(--ff_display);
+            font-size: 15px;
+            color: var(--clr_dark);
+            margin-bottom: 8px;
+        }
+
+        .info_block p {
+            font-size: 13px;
+            color: var(--clr_muted);
+            line-height: 1.7;
+        }
+
+        /* NUTRITION TABLE */
+        .nutr_block {
+            margin-top: 32px;
+        }
+
+        .nutr_block h3 {
+            font-family: var(--ff_display);
+            font-size: 22px;
+            color: var(--clr_dark);
+            margin-bottom: 16px;
+        }
+
+        .nutr_table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius_lg);
+            overflow: hidden;
+            box-shadow: var(--shadow_sm);
+        }
+
+        .nutr_table th {
+            background: var(--clr_green);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 10px 16px;
+            text-align: left;
+        }
+
+        .nutr_table td {
+            padding: 9px 16px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--clr_cream);
+        }
+
+        .nutr_table tr:nth-child(even) td {
+            background: var(--clr_light);
+        }
+
+        .nutr_table td:last-child {
+            font-weight: 700;
+            color: var(--clr_dark);
+            text-align: right;
+        }
+
+        .nutr_note {
+            font-size: 11px;
+            color: var(--clr_muted);
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* ORIGIN */
+        .origin_block {
+            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
+            border-radius: var(--radius_lg);
+            padding: 24px 28px;
+            margin-top: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .origin_block::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        .origin_block h4 {
+            font-family: var(--ff_display);
+            font-size: 17px;
+            color: #fff;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .origin_block p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .85);
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* BACK LINK */
+        .back_link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--clr_red);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            transition: gap var(--transition);
+        }
+
+        .back_link:hover {
+            gap: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--clr_dark);
+            padding: 50px 0 24px;
+        }
+
+        .footer_bottom_simple {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer_bottom_simple p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        .footer_bottom_simple span {
+            color: var(--clr_amber);
+        }
+
+        .footer_mini_grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1.4fr;
+            gap: 36px;
+            margin-bottom: 20px;
+        }
+
+        .footer_logo_name {
+            font-family: var(--ff_script);
+            font-size: 26px;
+            color: var(--clr_amber);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer_brand p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .footer_heading {
+            font-family: var(--ff_display);
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 14px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer_heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+        }
+
+        .footer_links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer_links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .footer_links a i {
+            color: var(--clr_red);
+            font-size: 9px;
+        }
+
+        .footer_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_contact_item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .footer_contact_icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, .07);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_amber);
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .footer_contact_item p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.6;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 7px;
+            margin-top: 12px;
+        }
+
+        .footer_social a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            transition: all var(--transition);
+        }
+
+        .footer_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .footer_social a.wa:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        .footer_social a.fb:hover {
+            background: #1877F2;
+            border-color: #1877F2;
+        }
+
+        .footer_social a.ig:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: #cc2366;
+        }
+
+        .scroll_top_btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 44px;
+            height: 44px;
+            background: var(--clr_red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(192, 41, 26, .4);
+            transition: all var(--transition);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll_top_btn.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        @media(max-width:1024px) {
+            .product_detail_inner {
+                grid-template-columns: 1fr;
+            }
+
+            .product_img_wrap {
+                position: static;
+            }
+
+            .footer_mini_grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav_links {
+                display: none;
+            }
+
+            .footer_mini_grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav_wrapper">
+            <div class="nav_logo">
+                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
+            </div>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav_icons">
+                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="breadcrumb_bar">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="products.html">Products</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Teja Chilli Powder</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="product_detail">
+        <div class="container">
+            <a href="products.html" class="back_link"><i class="fa-solid fa-arrow-left"></i> Back to All Products</a>
+            <div class="product_detail_inner">
+
+                <!-- LEFT: IMAGE -->
+                <div class="product_img_wrap">
+                    <div class="product_img_main">
+                        <img src="img/Chilli_powder_2.png" alt="Teja Chilli Powder" />
+                    </div>
+                    <div class="product_badge_row">
+                        <span class="p_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
+                        <span class="p_badge india"><i class="fa-solid fa-indian-rupee-sign"></i> Product of
+                            India</span>
+                        <span class="p_badge hot">Fiery</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: INFO -->
+                <div class="product_info">
+                    <div class="product_category_tag"><i class="fa-solid fa-tag"></i> Pure Spice · Chilli</div>
+                    <h1 class="product_name">Teja Chilli Powder</h1>
+                    <div class="product_hindi">तेजा मिर्च पावडर</div>
+                    <div class="product_tagline">The Fiery Heat of Authentic Indian Cooking</div>
+                    <p class="product_desc">Fine ground Teja chillies of carefully selected quality, known for their
+                        intense heat, vibrant red color, and bold aroma. Devnoor Teja Chilli Powder is specially crafted
+                        for those who enjoy a stronger kick of spice and the authentic fiery taste of Indian cooking.
+                        Teja chilli (S17) is renowned for its fiery heat and strong flavor — most famously associated
+                        with the Guntur district of Andhra Pradesh.</p>
+
+                    <div class="pack_label">Select Pack Size</div>
+                    <div class="pack_sizes"><button class="pack_btn active" onclick="">500g</button><button
+                            class="pack_btn" onclick="">5kg</button></div>
+
+                    <div class="info_block">
+                        <h4><i class="fa-solid fa-list" style="color:var(--clr_green);margin-right:6px;"></i>Ingredients
+                        </h4>
+                        <p>Teja Chilli (S17) Powder.</p>
+                    </div>
+
+                    <div class="info_block" style="border-color:var(--clr_green);">
+                        <h4><i class="fa-solid fa-box" style="color:var(--clr_green);margin-right:6px;"></i>Storage
+                            Instructions</h4>
+                        <p>Store in a cool, dry &amp; hygienic place. Keep away from direct heat &amp; sunlight. Once
+                            opened, keep in an airtight container.</p>
+                    </div>
+
+                    <div class="nutr_block">
+                        <h3>Nutritional Information <small
+                                style="font-size:13px;color:var(--clr_muted);font-family:var(--ff_body);font-weight:400;">per
+                                100g</small></h3>
+                        <table class="nutr_table">
+                            <tr>
+                                <th>Nutrient</th>
+                                <th>Per 100g</th>
+                            </tr>
+                            <tr>
+                                <td>Calories</td>
+                                <td>~435 Kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Protein</td>
+                                <td>~14 g</td>
+                            </tr>
+                        </table>
+                        <p class="nutr_note">* Approximate values. RDA calculated on the basis of 2000 Kcal energy a
+                            day.</p>
+                    </div>
+
+                    <div class="origin_block">
+                        <h4><i class="fa-solid fa-map-location-dot" style="margin-right:8px;"></i>Origin &amp; Sourcing
+                        </h4>
+                        <p>Most famously associated with the Guntur district of Andhra Pradesh, one of India's largest
+                            and most recognized chilli markets. Also cultivated in Telangana and Madhya Pradesh.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_mini_grid">
+                <div class="footer_brand">
+                    <span class="footer_logo_name">Devnoor Masala</span>
+                    <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
+                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <div class="footer_social">
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919213441003" class="wa"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Quick Links</div>
+                    <div class="footer_links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Contact Us</div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <p>+91 92134 41003</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                        <p>govindbrands@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom_simple">
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
+            class="fa-solid fa-arrow-up"></i></div>
+    <script>
+        // Pack size selector
+        document.querySelectorAll('.pack_btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.pack_btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        const scrollBtn = document.getElementById('scroll_top_btn');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+    </script>
+</body>
+
+</html>

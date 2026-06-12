@@ -5,18 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us – Devnoor Masala</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/Logo.png">
-    
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ============================================================
-   ROOT VARIABLES
-============================================================ */
         :root {
             --clr_white: #ffffff;
             --clr_light: #fdf9f4;
@@ -43,9 +40,6 @@
             --transition: .3s ease;
         }
 
-        /* ============================================================
-   RESET
-============================================================ */
         *,
         *::before,
         *::after {
@@ -102,36 +96,12 @@
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
         .fade_up {
             opacity: 0;
             animation: fadeUp .7s forwards;
         }
 
-        /* ============================================================
-   HEADER
-============================================================ */
+        /* HEADER */
         .header {
             background: var(--clr_white);
             position: sticky;
@@ -155,7 +125,7 @@
             flex-direction: column;
         }
 
-        .nav_logo_img{
+        .nav_logo_img {
             height: 60px;
         }
 
@@ -260,9 +230,7 @@
             transition: all var(--transition);
         }
 
-        /* ============================================================
-   MOBILE NAV
-============================================================ */
+        /* MOBILE NAV */
         .mobile_nav {
             display: none;
             position: fixed;
@@ -339,9 +307,7 @@
             color: #fff;
         }
 
-        /* ============================================================
-   PAGE HERO
-============================================================ */
+        /* PAGE HERO */
         .page_hero {
             position: relative;
             padding: 90px 0;
@@ -480,14 +446,12 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
-            padding-bottom: 0;
         }
 
         .hero_cards_stack {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
-            margin-bottom: 0;
         }
 
         .h_info_card {
@@ -574,9 +538,7 @@
             margin-bottom: 3px;
         }
 
-        /* ============================================================
-   MAIN CONTACT SECTION
-============================================================ */
+        /* CONTACT SECTION */
         .contact_section {
             background: var(--clr_light);
         }
@@ -588,7 +550,7 @@
             align-items: start;
         }
 
-        /* LEFT — FORM CARD */
+        /* FORM CARD */
         .form_card {
             background: var(--clr_white);
             border-radius: var(--radius_lg);
@@ -772,14 +734,13 @@
             color: var(--clr_muted);
         }
 
-        /* RIGHT — GET IN TOUCH COLUMN */
+        /* INFO COLUMN */
         .info_col {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
-        /* GET IN TOUCH SECTION HEADING */
         .git_heading {
             font-family: var(--ff_display);
             font-size: clamp(22px, 3vw, 30px);
@@ -799,7 +760,7 @@
             margin-bottom: 8px;
         }
 
-        /* address card */
+        /* ADDRESS CARD */
         .address_card {
             background: var(--clr_white);
             border-radius: var(--radius_lg);
@@ -888,7 +849,7 @@
             color: var(--clr_red);
         }
 
-        /* hours card */
+        /* HOURS CARD */
         .hours_card {
             background: var(--clr_white);
             border-radius: var(--radius_lg);
@@ -948,128 +909,7 @@
             color: var(--clr_muted);
         }
 
-        .open_badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(58, 107, 53, .1);
-            color: var(--clr_green);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(58, 107, 53, .2);
-        }
-
-        .open_dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--clr_green);
-            animation: pulse_dot 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse_dot {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: .5;
-                transform: scale(.8);
-            }
-        }
-
-        /* social card */
-        .social_card {
-            background: var(--clr_white);
-            border-radius: var(--radius_lg);
-            padding: 22px 26px;
-            box-shadow: var(--shadow_sm);
-            border: 1.5px solid var(--clr_border);
-        }
-
-        .social_card h3 {
-            font-family: var(--ff_display);
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--clr_dark);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .social_card h3 i {
-            color: var(--clr_red);
-        }
-
-        .social_links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .s_link {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 11px 14px;
-            border-radius: 10px;
-            border: 1.5px solid var(--clr_border);
-            transition: all var(--transition);
-            cursor: pointer;
-        }
-
-        .s_link:hover {
-            border-color: var(--clr_red);
-            background: rgba(232, 160, 32, .05);
-        }
-
-        .s_link_icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 9px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .s_link_icon.fb {
-            background: #1877f2;
-            color: #fff;
-        }
-
-        .s_link_icon.ig {
-            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: #fff;
-        }
-
-        .s_link_icon.wa {
-            background: #25d366;
-            color: #fff;
-        }
-
-        .s_link_text strong {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--clr_dark);
-        }
-
-        .s_link_text span {
-            font-size: 11px;
-            color: var(--clr_muted);
-        }
-
-        /* ============================================================
-   MAP SECTION
-============================================================ */
+        /* MAP SECTION */
         .map_section {
             background: var(--clr_white);
             padding: 0 0 80px;
@@ -1174,9 +1014,7 @@
             transform: translateY(-1px);
         }
 
-        /* ============================================================
-   FAQ SECTION
-============================================================ */
+        /* FAQ SECTION */
         .faq_section {
             background: var(--clr_light);
         }
@@ -1302,18 +1140,16 @@
             border-top: 1px solid var(--clr_cream);
         }
 
-        /* ============================================================
-   FOOTER
-============================================================ */
+        /* FOOTER */
         .footer {
             background: var(--clr_dark);
-            padding: 60px 0 28px;
+            padding: 70px 0 28px;
         }
 
         .footer_grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1.4fr;
-            gap: 48px;
+            grid-template-columns: 1.8fr 1fr 1.4fr;
+            gap: 36px;
             margin-bottom: 50px;
         }
 
@@ -1321,20 +1157,22 @@
             font-family: var(--ff_script);
             font-size: 28px;
             color: var(--clr_amber);
+            display: block;
+            margin-bottom: 12px;
         }
 
         .footer_brand p {
             font-size: 13px;
-            color: rgba(255, 255, 255, .55);
+            color: rgba(255, 255, 255, 0.55);
             line-height: 1.8;
-            margin: 12px 0 18px;
+            margin-bottom: 20px;
         }
 
         .footer_heading {
             font-family: var(--ff_display);
             font-size: 16px;
             color: #fff;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -1357,7 +1195,7 @@
 
         .footer_links a {
             font-size: 13px;
-            color: rgba(255, 255, 255, .55);
+            color: rgba(255, 255, 255, 0.55);
             transition: color var(--transition);
             display: flex;
             align-items: center;
@@ -1370,6 +1208,107 @@
         }
 
         .footer_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_contact_item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .footer_contact_icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_amber);
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .footer_contact_item p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.65;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .footer_social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all var(--transition);
+        }
+
+        .footer_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .footer_social a.wa:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        .footer_social a.fb:hover {
+            background: #1877F2;
+            border-color: #1877F2;
+        }
+
+        .footer_social a.ig:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: #cc2366;
+        }
+
+        .footer_bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer_bottom p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.38);
+        }
+
+        .footer_bottom span {
+            color: var(--clr_amber);
+        }
+
+        .footer_bottom_links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer_bottom_links a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.38);
+            transition: color var(--transition);
+        }
+
+        .footer_bottom_links a:hover {
             color: var(--clr_amber);
         }
 
@@ -1400,7 +1339,6 @@
             line-height: 1.6;
         }
 
-        /* Footer social icons */
         .f_social {
             display: flex;
             gap: 8px;
@@ -1491,9 +1429,7 @@
             transform: translateY(-3px);
         }
 
-        /* ============================================================
-   RESPONSIVE
-============================================================ */
+        /* RESPONSIVE */
         @media(max-width:1024px) {
             .hero_inner {
                 grid-template-columns: 1fr;
@@ -1559,24 +1495,17 @@
             .page_hero {
                 padding: 70px 0 0;
             }
-
-            .social_links {
-                gap: 8px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER (no top bar) -->
+    <!-- HEADER -->
     <header class="header">
         <nav class="nav_wrapper">
             <div class="nav_logo_text">
-                <!-- <span class="nav_logo_name">Devnoor</span>
-                <span class="nav_logo_sub">Masala</span> -->
-
-                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt=""></a>
+                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
@@ -1610,14 +1539,12 @@
         </div>
     </div>
 
-    <!-- ==================== PAGE HERO ==================== -->
+    <!-- PAGE HERO -->
     <section class="page_hero">
         <div class="page_hero_pattern"></div>
         <div class="page_hero_blob1"></div>
         <div class="page_hero_blob2"></div>
         <div class="hero_inner">
-
-            <!-- LEFT TEXT -->
             <div class="hero_left">
                 <div class="breadcrumb fade_up" style="animation-delay:.1s">
                     <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
@@ -1634,8 +1561,6 @@
                         Send Email</a>
                 </div>
             </div>
-
-            <!-- RIGHT CARDS -->
             <div class="hero_right fade_up" style="animation-delay:.4s">
                 <div class="hero_cards_stack">
                     <div class="h_info_card">
@@ -1669,11 +1594,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ==================== CONTACT SECTION ==================== -->
+    <!-- CONTACT SECTION -->
     <section class="contact_section section_padding">
         <div class="container">
             <div class="contact_grid">
@@ -1685,9 +1609,7 @@
                         <p>Fill in the form below and our team will get back to you within 24 working hours. Fields
                             marked <span style="color:var(--clr_red);">*</span> are required.</p>
                     </div>
-
                     <form id="contactForm" onsubmit="submitForm(event)" novalidate>
-
                         <div class="form_row">
                             <div class="form_group">
                                 <label class="form_label">Full Name <span class="req">*</span></label>
@@ -1700,7 +1622,6 @@
                                     required />
                             </div>
                         </div>
-
                         <div class="form_row">
                             <div class="form_group">
                                 <label class="form_label">Email Address</label>
@@ -1712,7 +1633,6 @@
                                     placeholder="e.g. Ahmedabad, Gujarat" />
                             </div>
                         </div>
-
                         <div class="form_row single">
                             <div class="form_group">
                                 <label class="form_label">Subject / Topic <span class="req">*</span></label>
@@ -1729,7 +1649,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form_row single">
                             <div class="form_group">
                                 <label class="form_label">Product Concerned</label>
@@ -1751,7 +1670,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form_row single">
                             <div class="form_group">
                                 <label class="form_label">Your Message <span class="req">*</span></label>
@@ -1760,19 +1678,15 @@
                                     required></textarea>
                             </div>
                         </div>
-
                         <div class="form_check_row">
                             <input type="checkbox" id="fcheck" required />
                             <label for="fcheck">I confirm that the information provided is accurate, and I agree to the
                                 <a href="#">Privacy Policy</a> of Devnoor Masala / Govind Sugar &amp; Spices.</label>
                         </div>
-
                         <button type="submit" class="submit_btn">
                             <i class="fa-solid fa-paper-plane"></i> Send Message
                         </button>
                     </form>
-
-                    <!-- SUCCESS STATE -->
                     <div class="form_success" id="formSuccess">
                         <i class="fa-solid fa-circle-check"></i>
                         <h3>Message Sent Successfully!</h3>
@@ -1782,7 +1696,7 @@
                     </div>
                 </div>
 
-                <!-- GET IN TOUCH — INFO COLUMN -->
+                <!-- GET IN TOUCH COLUMN -->
                 <div class="info_col">
 
                     <div>
@@ -1831,56 +1745,23 @@
                         </div>
                     </div>
 
-                    <!-- HOURS CARD -->
+                    <!-- HOURS CARD — only Mon–Sat row, no badge, no Sunday/holidays -->
                     <div class="hours_card">
-                        <h3><i class="fa-solid fa-clock"></i> Office Hours &nbsp;<span class="open_badge"><span
-                                    class="open_dot"></span> Open Now</span></h3>
+                        <h3><i class="fa-solid fa-clock"></i> Office Hours</h3>
                         <div class="hours_row">
                             <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Monday – Saturday</span>
                             <span class="hours_time">9:00 AM – 6:00 PM</span>
                         </div>
-                        <div class="hours_row">
-                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Sunday</span>
-                            <span class="hours_time closed">Closed</span>
-                        </div>
-                        <div class="hours_row">
-                            <span class="hours_day"><i class="fa-solid fa-circle-dot"></i> Public Holidays</span>
-                            <span class="hours_time closed">Closed</span>
-                        </div>
                     </div>
 
-                    <!-- SOCIAL CARD -->
-                    <div class="social_card">
-                        <h3><i class="fa-solid fa-share-nodes"></i> Follow Us</h3>
-                        <div class="social_links">
-                            <a href="#" class="s_link">
-                                <div class="s_link_icon fb"><i class="fa-brands fa-facebook-f"></i></div>
-                                <div class="s_link_text">
-                                    <strong>Facebook</strong><span>facebook.com/devnoormasala</span></div>
-                                <i class="fa-solid fa-arrow-right"
-                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
-                            </a>
-                            <a href="#" class="s_link">
-                                <div class="s_link_icon ig"><i class="fa-brands fa-instagram"></i></div>
-                                <div class="s_link_text"><strong>Instagram</strong><span>@devnoormasala</span></div>
-                                <i class="fa-solid fa-arrow-right"
-                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
-                            </a>
-                            <a href="https://wa.me/919213441003" target="_blank" class="s_link">
-                                <div class="s_link_icon wa"><i class="fa-brands fa-whatsapp"></i></div>
-                                <div class="s_link_text"><strong>WhatsApp</strong><span>+91 92134 41003</span></div>
-                                <i class="fa-solid fa-arrow-right"
-                                    style="color:var(--clr_border);font-size:11px;margin-left:auto;"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- SOCIAL CARD REMOVED -->
 
                 </div><!-- /info_col -->
             </div><!-- /contact_grid -->
         </div>
     </section>
 
-    <!-- ==================== MAP SECTION ==================== -->
+    <!-- MAP SECTION -->
     <section class="map_section">
         <div class="container">
             <div class="map_header">
@@ -1904,7 +1785,7 @@
         </div>
     </section>
 
-    <!-- ==================== FAQ SECTION ==================== -->
+    <!-- FAQ SECTION -->
     <section class="faq_section section_padding">
         <div class="container">
             <div class="faq_header">
@@ -1924,10 +1805,9 @@
                     <div class="faq_a">
                         <div class="faq_a_inner">If you find any fault regarding quality or quantity in the packet,
                             please inform us immediately. Call our Consumer Care Cell at <strong>+91 92134
-                                41003</strong>,
-                            email us at govindbrands@gmail.com, or write to our address: Plot No. 106, Sr. No. 1157,
-                            Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715. Please keep the packet with batch
-                            number and packing date ready when contacting us.</div>
+                                41003</strong>, email us at govindbrands@gmail.com, or write to our address: Plot No.
+                            106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715. Please keep the
+                            packet with batch number and packing date ready when contacting us.</div>
                     </div>
                 </div>
 
@@ -1958,8 +1838,7 @@
                         <div class="faq_a_inner">Yes, all Devnoor Masala products are FSSAI certified under License No.
                             <strong>10723014000067</strong>. Our manufacturing facility at Kamla Amrut Inditech Park,
                             Mahesana, Gujarat meets all food safety and hygiene standards prescribed by FSSAI. Every
-                            batch is tested before dispatch.
-                        </div>
+                            batch is tested before dispatch.</div>
                     </div>
                 </div>
 
@@ -2023,8 +1902,7 @@
                         <div class="faq_a_inner">Devnoor Masala products are available in multiple pack sizes including
                             <strong>18g, 50g, 100g, 200g, 500g, and 5kg</strong> depending on the product. Please visit
                             our <a href="products.html" style="color:var(--clr_red);font-weight:700;">Products page</a>
-                            for pack size details per product.
-                        </div>
+                            for pack size details per product.</div>
                     </div>
                 </div>
 
@@ -2048,26 +1926,20 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer_grid">
-
-                <!-- Brand -->
                 <div class="footer_brand">
                     <span class="footer_logo_name">Devnoor Masala</span>
                     <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
-                        Inditech Park, Mahesana, Gujarat – 382715.<br />FSSAI Lic. No.: 10723014000067. Product of
-                        India.</p>
-                    <div class="f_social">
-                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/919213441003" target="_blank" title="WhatsApp"><i
-                                class="fa-brands fa-whatsapp"></i></a>
+                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <div class="footer_social">
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919213441003" class="wa"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div>
                     <div class="footer_heading">Quick Links</div>
                     <div class="footer_links">
@@ -2077,35 +1949,27 @@
                         <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
                     </div>
                 </div>
-
-                <!-- Contact -->
                 <div>
-                    <div class="footer_heading">Contact</div>
-                    <div class="f_contact">
-                        <div class="f_ci"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="footer_heading">Contact Us</div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
                         <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
                     </div>
-                    <div class="f_contact">
-                        <div class="f_ci"><i class="fa-solid fa-phone"></i></div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <p>+91 92134 41003</p>
                     </div>
-                    <div class="f_contact">
-                        <div class="f_ci"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
                         <p>govindbrands@gmail.com</p>
                     </div>
-                    <div class="f_contact">
-                        <div class="f_ci"><i class="fa-brands fa-whatsapp"></i></div>
-                        <p>+91 92134 41003</p>
-                    </div>
                 </div>
-
             </div>
-            <div class="f_bottom">
+            <div class="footer_bottom">
                 <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
-                <div class="f_blinks">
+                <div class="footer_bottom_links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Use</a>
-                    <a href="#">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -2115,9 +1979,7 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <!-- ==================== SCRIPTS ==================== -->
     <script>
-        /* ── FORM SUBMIT ── */
         function submitForm(e) {
             e.preventDefault();
             const name = document.getElementById('fname').value.trim();
@@ -2125,7 +1987,6 @@
             const subject = document.getElementById('fsubject').value;
             const message = document.getElementById('fmessage').value.trim();
             const check = document.getElementById('fcheck').checked;
-
             if (!name || !phone || !subject || !message || !check) {
                 ['fname', 'fphone', 'fsubject', 'fmessage'].forEach(id => {
                     const el = document.getElementById(id);
@@ -2135,16 +1996,12 @@
                         el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
                     }
                 });
-                if (!check) {
-                    document.getElementById('fcheck').style.outline = '2px solid var(--clr_red2)';
-                }
+                if (!check) document.getElementById('fcheck').style.outline = '2px solid var(--clr_red2)';
                 return;
             }
-
             const btn = document.querySelector('.submit_btn');
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
             btn.disabled = true;
-
             setTimeout(() => {
                 document.getElementById('contactForm').style.display = 'none';
                 const suc = document.getElementById('formSuccess');
@@ -2154,7 +2011,6 @@
             }, 1400);
         }
 
-        /* ── FAQ TOGGLE ── */
         function toggleFaq(qEl) {
             const item = qEl.closest('.faq_item');
             const isOpen = item.classList.contains('open');
@@ -2162,12 +2018,10 @@
             if (!isOpen) item.classList.add('open');
         }
 
-        /* ── MOBILE NAV ── */
         function openMenu() { document.getElementById('mobNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeMenu() { document.getElementById('mobNav').classList.remove('open'); document.body.style.overflow = ''; }
         function outerClick(e) { if (e.target === document.getElementById('mobNav')) closeMenu(); }
 
-        /* ── SCROLL TOP ── */
         window.addEventListener('scroll', () => { document.getElementById('stb').classList.toggle('visible', window.scrollY > 400); });
     </script>
 </body>
