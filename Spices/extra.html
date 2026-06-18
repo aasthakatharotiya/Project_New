@@ -78,7 +78,7 @@
             padding: 80px 0;
         }
 
-        /* HEADER */
+        /* ── HEADER ── */
         .header {
             background: var(--clr_white);
             position: sticky;
@@ -97,28 +97,8 @@
             margin: 0 auto;
         }
 
-        .nav_logo_text {
-            display: flex;
-            flex-direction: column;
-        }
-
         .nav_logo_img {
             height: 60px;
-        }
-
-        .nav_logo_name {
-            font-family: var(--ff_script);
-            font-size: 26px;
-            color: var(--clr_red);
-            line-height: 1;
-        }
-
-        .nav_logo_sub {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--clr_green);
         }
 
         .nav_links {
@@ -184,56 +164,49 @@
             border-color: var(--clr_red);
         }
 
-        /* ── ABOUT HERO — only these rules changed from original ── */
+        /* ──────────────────────────────────────────────
+           ABOUT HERO — clean gradient, NO background image
+        ────────────────────────────────────────────── */
         .about_hero {
             position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            /* spice image replaces the green gradient */
-            background:
-                url('img/about_hero_2.png') center center / cover no-repeat;
+            padding: 90px 0 80px;
+            background: linear-gradient(135deg, #fff8ef 0%, #fdecd8 45%, #fae0c2 100%);
             overflow: hidden;
         }
 
-        /* dark overlay so text stays readable over the image */
+        /* subtle dot pattern */
         .about_hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(10, 5, 2, 0.82) 0%,
-                rgba(10, 5, 2, 0.52) 50%,
-                rgba(10, 5, 2, 0.28) 100%
-            );
-            z-index: 1;
-        }
-
-        /* the original dot-pattern now sits on top of the overlay */
-        .about_hero_pattern {
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .04) 1px, transparent 0);
+            background-image: radial-gradient(circle at 1px 1px, rgba(232, 160, 32, .08) 1px, transparent 0);
             background-size: 28px 28px;
-            z-index: 2;
         }
 
-        /* Hero inner: single column now (image removed) */
+        /* decorative blobs */
+        .hero_blob1 {
+            position: absolute;
+            top: -100px;
+            right: -80px;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 160, 32, .13) 0%, transparent 70%);
+        }
+
+        .hero_blob2 {
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(58, 107, 53, .09) 0%, transparent 70%);
+        }
+
         .about_hero_inner {
             position: relative;
-            z-index: 3;                /* above overlay + pattern */
-            width: 80%;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about_hero_left {
-            padding: 80px 0;
-            width: 100%;
+            z-index: 2;
             text-align: center;
         }
 
@@ -243,12 +216,12 @@
             gap: 8px;
             margin-bottom: 18px;
             font-size: 13px;
-            color: rgba(255, 255, 255, .6);
+            color: var(--clr_muted);
             justify-content: center;
         }
 
         .breadcrumb a {
-            color: var(--clr_amber);
+            color: var(--clr_red);
             font-weight: 700;
         }
 
@@ -258,27 +231,24 @@
 
         .about_hero h1 {
             font-family: var(--ff_display);
-            font-size: clamp(36px, 5.5vw, 60px);
+            font-size: clamp(34px, 5.5vw, 60px);
             font-weight: 900;
-            color: #fff;
+            color: var(--clr_dark);
             line-height: 1.1;
             margin-bottom: 18px;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
         }
 
         .about_hero h1 em {
             font-style: italic;
-            color: var(--clr_amber);
+            color: var(--clr_red);
         }
 
         .about_hero_desc {
-            color: rgba(255, 255, 255, .82);
+            color: var(--clr_muted);
             font-size: 15px;
             line-height: 1.9;
-            margin-bottom: 30px;
+            margin: 0 auto 32px;
             max-width: 620px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .about_chips {
@@ -292,33 +262,39 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            background: rgba(255, 255, 255, .12);
-            border: 1px solid rgba(255, 255, 255, .25);
-            color: #fff;
+            background: rgba(255, 255, 255, .75);
+            border: 1.5px solid var(--clr_border);
+            color: var(--clr_text);
             font-size: 12px;
             font-weight: 700;
-            padding: 7px 16px;
+            padding: 8px 18px;
             border-radius: 50px;
+            box-shadow: var(--shadow_sm);
         }
 
         .chip i {
-            color: var(--clr_amber);
+            color: var(--clr_red);
             font-size: 11px;
         }
 
-        /* STORY — text only, no images */
-        .story_section {
+        /* ──────────────────────────────────────────────
+           OUR STORY — split layout, image on right
+           The section itself has a warm parchment BG
+           The image sits right-edge, bleeding to the bottom
+        ────────────────────────────────────────────── */
+         {
             position: relative;
             overflow: hidden;
             /* warm parchment background colour */
             background: #f9f0e0;
         }
 
+        /* The spice image fills the right half as a tall panel */
         .story_img_panel {
             position: absolute;
             top: 0;
             right: 0;
-            width: 50%;
+            .story_sectionwidth: 50%;
             height: 100%;
             overflow: hidden;
         }
@@ -331,14 +307,16 @@
             display: block;
         }
 
+        /* left-to-right fade so text is readable */
         .story_img_panel::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, #f9f0e0 0%, rgba(249, 240, 224, .55) 35%, transparent 50%);
+            background: linear-gradient(to right, #f9f0e0 0%, rgba(249, 240, 224, .55) 35%, transparent 70%);
             z-index: 1;
         }
 
+        /* content sits above the panel */
         .story_content_wrap {
             position: relative;
             z-index: 2;
@@ -351,7 +329,8 @@
         .story_left {
             padding: 80px 48px 80px 0;
         }
-        
+
+        /* empty right col — occupied by the absolute image panel */
         .story_right_spacer {
             /* intentionally empty */
         }
@@ -416,7 +395,7 @@
             transform: translateY(-2px);
         }
 
-        /* MISSION VISION */
+        /* ── MISSION & VISION ── */
         .mv_section {
             background: var(--clr_light);
         }
@@ -478,7 +457,7 @@
             position: relative;
         }
 
-        /* WHY WE EXIST */
+        /* ── WHY WE EXIST ── */
         .why_section {
             background: var(--clr_white);
         }
@@ -584,7 +563,7 @@
             color: var(--clr_muted);
         }
 
-        /* OUR PROMISE */
+        /* ── OUR PROMISE ── */
         .promise_section {
             background: var(--clr_light);
         }
@@ -713,7 +692,7 @@
             color: #fff;
         }
 
-        /* FOOTER */
+        /* ── FOOTER ── */
         .footer {
             background: var(--clr_dark);
             padding: 70px 0 28px;
@@ -736,7 +715,7 @@
 
         .footer_brand p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, .55);
             line-height: 1.8;
             margin-bottom: 20px;
         }
@@ -768,7 +747,7 @@
 
         .footer_links a {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, .55);
             transition: color var(--transition);
             display: flex;
             align-items: center;
@@ -795,7 +774,7 @@
             width: 32px;
             height: 32px;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, .07);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -807,7 +786,7 @@
 
         .footer_contact_item p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, .55);
             line-height: 1.65;
         }
 
@@ -821,12 +800,12 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border: 1.5px solid rgba(255, 255, 255, .12);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, .5);
             transition: all var(--transition);
         }
 
@@ -852,7 +831,7 @@
         }
 
         .footer_bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, .07);
             padding-top: 24px;
             display: flex;
             align-items: center;
@@ -863,7 +842,7 @@
 
         .footer_bottom p {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.38);
+            color: rgba(255, 255, 255, .38);
         }
 
         .footer_bottom span {
@@ -877,7 +856,7 @@
 
         .footer_bottom_links a {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.38);
+            color: rgba(255, 255, 255, .38);
             transition: color var(--transition);
         }
 
@@ -916,8 +895,15 @@
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(22px) }
-            to   { opacity: 1; transform: translateY(0) }
+            from {
+                opacity: 0;
+                transform: translateY(22px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
         }
 
         .fade_up {
@@ -960,15 +946,21 @@
             margin-bottom: 50px;
         }
 
-        /* RESPONSIVE */
+        /* ── RESPONSIVE ── */
         @media(max-width:1024px) {
+            .story_img_panel {
+                width: 45%;
+            }
+
             .why_inner,
             .mv_grid {
                 grid-template-columns: 1fr;
             }
+
             .footer_grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .promise_grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -978,12 +970,27 @@
             .nav_links {
                 display: none;
             }
+
+            .story_content_wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .story_img_panel {
+                display: none;
+            }
+
+            .story_left {
+                padding: 60px 0;
+            }
+
             .promise_grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .footer_grid {
                 grid-template-columns: 1fr;
             }
+
             .promise_banner {
                 padding: 28px 24px;
             }
@@ -1003,9 +1010,7 @@
     <header class="header">
         <nav class="nav_wrapper">
             <div class="nav_logo">
-                <div class="nav_logo_text">
-                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
-                </div>
+                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
@@ -1020,33 +1025,83 @@
         </nav>
     </header>
 
-    <!-- ABOUT HERO -->
+    <!-- ══════════════════════════════════════
+     ABOUT HERO — clean gradient, no bg image
+════════════════════════════════════════ -->
     <section class="about_hero">
-        <div class="about_hero_pattern"></div>
-        <div class="about_hero_inner">
-            <div class="about_hero_left">
-                <div class="breadcrumb">
-                    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <span>About Us</span>
-                </div>
-                <h1 class="fade_up" style="animation-delay:.1s">Bringing <em>Purity,</em> Flavor &amp; Trust<br>to
-                    Every Kitchen</h1>
-                <p class="about_hero_desc fade_up" style="animation-delay:.3s">In Indian homes, spices are not just
-                    ingredients — they are the soul of cooking, the heart of family meals, and the taste behind lasting
-                    memories. Devnoor Masala was born to remove one silent doubt:
-                    <em style="color:var(--clr_amber);font-style:italic;">"Are we using real, pure masalas?"</em>
-                </p>
-                <div class="about_chips fade_up" style="animation-delay:.5s">
-                    <span class="chip"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
-                    <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
-                    <span class="chip"><i class="fa-solid fa-flask"></i> Lab Tested</span>
-                </div>
+        <div class="hero_blob1"></div>
+        <div class="hero_blob2"></div>
+        <div class="about_hero_inner container">
+            <div class="breadcrumb fade_up" style="animation-delay:.05s">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+            <h1 class="fade_up" style="animation-delay:.15s">
+                Bringing <em>Purity,</em> Flavor &amp; Trust<br>to Every Kitchen
+            </h1>
+            <p class="about_hero_desc fade_up" style="animation-delay:.3s">
+                In Indian homes, spices are not just ingredients — they are the soul of cooking, the heart of family
+                meals,
+                and the taste behind lasting memories. Devnoor Masala was born to remove one silent doubt:
+                <em style="color:var(--clr_red);font-style:italic;">"Are we using real, pure masalas?"</em>
+            </p>
+            <div class="about_chips fade_up" style="animation-delay:.48s">
+                <span class="chip"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
+                <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
+                <span class="chip"><i class="fa-solid fa-flask"></i> Lab Tested</span>
+                <span class="chip"><i class="fa-solid fa-calendar"></i> Since 2021</span>
             </div>
         </div>
     </section>
 
-    
+    <!-- ══════════════════════════════════════
+     OUR STORY — text left, image right (full panel)
+     about_BG.png = img/about_BG.png
+════════════════════════════════════════ -->
+    <section class="story_section">
+
+        <!-- Right-side image panel (absolute, fills right half) -->
+        <div class="story_img_panel">
+            <img src="img/about_BG.png" alt="Traditional Indian spices" />
+        </div>
+
+        <div class="container">
+            <div class="story_content_wrap">
+
+                <!-- LEFT: text -->
+                <div class="story_left">
+                    <div class="story_eyebrow"><i class="fa-solid fa-book-open"></i> Our Story</div>
+                    <h2 class="story_title">
+                        Born from one simple <em>question</em>
+                    </h2>
+                    <div class="story_body">
+                        <p><strong style="color:var(--clr_dark);">"Are we using real, pure masalas?"</strong> What
+                            started
+                            as a concern in 2021 became a commitment to bring trusted purity, authentic flavor, and
+                            confidence back to Indian kitchens. We realized that families deserved spices they could
+                            trust — free from compromise and rich in natural taste.</p>
+                        <p>Guided by this belief, we carefully source quality ingredients, follow strict quality
+                            standards,
+                            and ensure every pack delivers freshness, aroma, and consistency. Today, our mission remains
+                            simple: to help every home create memorable meals with spices that celebrate the true
+                            essence of
+                            Indian cooking.</p>
+                        <p>Whether it's your everyday sabzi, a Sunday biryani, or a festive family feast, Devnoor is
+                            there —
+                            not just as a spice brand, but as a trusted kitchen companion. Because your family deserves
+                            taste, health, and happiness in every bite.</p>
+                    </div>
+                    <a href="contact.html" class="story_cta">
+                        <i class="fa-solid fa-arrow-right"></i> Get in Touch
+                    </a>
+                </div>
+
+                <!-- RIGHT: spacer (image is absolutely positioned) -->
+                <div class="story_right_spacer"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- MISSION & VISION -->
     <section class="mv_section section_padding">
@@ -1070,47 +1125,6 @@
                     <p>To be in every Indian kitchen — just like your mother's masala dabba. A brand so trusted it
                         becomes part of the family, every meal, every day.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- OUR STORY -->
-    <section class="story_section">
-
-        <div class="story_img_panel">
-            <img src="img/about_BG.png" alt="Traditional Indian spices" />
-        </div>
-
-        <div class="container">
-            <div class="story_content_wrap">
-
-                <!-- LEFT: text -->
-                <div class="story_left">
-                    <div class="story_eyebrow"><i class="fa-solid fa-book-open"></i> Our Story</div>
-                    <h2 class="story_title">
-                        Born from one simple <em>question</em>
-                    </h2>
-                    <div class="story_body">
-                        <p>
-                            In Indian homes, spices are not just ingredients — they are the soul of cooking, the heart of family meals, and the taste behind lasting memories. But over time, one silent question began to grow in many households: <strong style="color:var(--clr_dark);">"Are we using real, pure masalas?"</strong> 
-                        </p>
-                        <p>
-                            Too often, families had to compromise — questioning purity, consistency, and authentic taste in the spices they used every day. Founded in 2021, Devnoor Masala was born to remove that doubt.
-                        </p>
-                        <p>
-                            What started as a simple belief soon became a mission: to create blended spices that families could trust — spices that bring purity, authentic flavor, and confidence to every meal. By sourcing quality ingredients and ensuring lab-tested purity, Devnoor brings clean, powerful spices blended for real Indian taste.
-                        </p>
-                        <p>
-                            Whether it's your everyday sabzi, a Sunday biryani, or a festive family feast, Devnoor is there — not just as a spice brand, but as a trusted kitchen companion. Because your family deserves taste, health, and happiness in every bite.
-                        </p>
-                    </div>
-                    <a href="contact.html" class="story_cta">
-                        <i class="fa-solid fa-arrow-right"></i> Get in Touch
-                    </a>
-                </div>
-
-                <!-- RIGHT: spacer (image is absolutely positioned) -->
-                <div class="story_right_spacer"></div>
             </div>
         </div>
     </section>

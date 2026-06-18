@@ -39,11 +39,11 @@
         *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 0
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
 
         body {
@@ -51,36 +51,37 @@
             background: var(--clr_white);
             color: var(--clr_text);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.6
         }
 
         a {
             text-decoration: none;
-            color: inherit;
+            color: inherit
         }
 
         img {
             display: block;
-            width: 100%;
+            width: 100%
         }
 
         ul {
-            list-style: none;
+            list-style: none
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 24px
         }
 
+        /* HEADER */
         .header {
             background: var(--clr_white);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
-            border-bottom: 2px solid var(--clr_cream);
+            border-bottom: 2px solid var(--clr_cream)
         }
 
         .nav_wrapper {
@@ -89,17 +90,17 @@
             justify-content: space-between;
             padding: 14px 24px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto
         }
 
         .nav_logo_img {
-            height: 60px;
+            height: 60px
         }
 
         .nav_links {
             display: flex;
             gap: 26px;
-            align-items: center;
+            align-items: center
         }
 
         .nav_links a {
@@ -110,7 +111,7 @@
             color: var(--clr_text);
             transition: color var(--transition);
             position: relative;
-            padding-bottom: 4px;
+            padding-bottom: 4px
         }
 
         .nav_links a::after {
@@ -121,22 +122,22 @@
             width: 0;
             height: 2px;
             background: var(--clr_red);
-            transition: width var(--transition);
+            transition: width var(--transition)
         }
 
         .nav_links a:hover,
         .nav_links a.active {
-            color: var(--clr_red);
+            color: var(--clr_red)
         }
 
         .nav_links a:hover::after,
         .nav_links a.active::after {
-            width: 100%;
+            width: 100%
         }
 
         .nav_icons {
             display: flex;
-            gap: 18px;
+            gap: 18px
         }
 
         .nav_icon_btn {
@@ -151,20 +152,20 @@
             color: var(--clr_text);
             font-size: 15px;
             cursor: pointer;
-            transition: all var(--transition);
+            transition: all var(--transition)
         }
 
         .nav_icon_btn:hover {
             background: var(--clr_red);
             color: #fff;
-            border-color: var(--clr_red);
+            border-color: var(--clr_red)
         }
 
         /* BREADCRUMB */
         .breadcrumb_bar {
             background: var(--clr_cream);
             padding: 14px 0;
-            border-bottom: 1px solid var(--clr_border);
+            border-bottom: 1px solid var(--clr_border)
         }
 
         .breadcrumb {
@@ -172,56 +173,166 @@
             align-items: center;
             gap: 8px;
             font-size: 13px;
-            color: var(--clr_muted);
+            color: var(--clr_muted)
         }
 
         .breadcrumb a {
             color: var(--clr_red);
-            font-weight: 700;
+            font-weight: 700
         }
 
         .breadcrumb i {
-            font-size: 9px;
+            font-size: 9px
         }
 
         /* PRODUCT DETAIL */
         .product_detail {
-            padding: 60px 0 80px;
+            padding: 60px 0 80px
         }
 
         .product_detail_inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: flex-start;
+            align-items: flex-start
         }
 
-        .product_img_wrap {
+
+        /* ── IMAGE SLIDER ── */
+        .slider_wrap {
             position: sticky;
             top: 100px;
         }
 
-        .product_img_main {
+        .slider_main {
+            position: relative;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow_md);
             background: var(--clr_cream);
         }
 
-        .product_img_main img {
-            width: 100%;
+        .slider_track {
+            display: flex;
+            transition: transform .4s ease;
+        }
+
+        .slide {
+            min-width: 100%;
             height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--clr_cream);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             padding: 32px;
+            transition: transform .5s ease;
+        }
+
+        .slider_main:hover .slide img {
+            transform: scale(1.04);
+        }
+
+        .slider_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .92);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--clr_text);
+            cursor: pointer;
+            transition: all var(--transition);
+            z-index: 10;
+            box-shadow: var(--shadow_sm);
+        }
+
+        .slider_arrow:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .slider_prev {
+            left: 12px;
+        }
+
+        .slider_next {
+            right: 12px;
+        }
+
+        .slider_dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--clr_border);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .dot.active {
+            background: var(--clr_red);
+            width: 22px;
+            border-radius: 4px;
+        }
+
+        .slider_thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            justify-content: center;
+        }
+
+        .thumb {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2.5px solid var(--clr_border);
+            cursor: pointer;
+            transition: all var(--transition);
+            background: var(--clr_cream);
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 6px;
+        }
+
+        .thumb.active {
+            border-color: var(--clr_red);
+            box-shadow: 0 0 0 2px rgba(232, 160, 32, .25);
         }
 
         .product_badge_row {
             display: flex;
             gap: 8px;
-            margin-top: 16px;
+            margin-top: 14px;
             flex-wrap: wrap;
         }
 
+
+        /* BADGE TYPES */
         .p_badge {
             display: inline-flex;
             align-items: center;
@@ -230,43 +341,66 @@
             font-weight: 700;
             padding: 5px 14px;
             border-radius: 50px;
-            letter-spacing: .06em;
+            letter-spacing: .06em
         }
 
         .p_badge.fssai {
             background: rgba(58, 107, 53, .1);
             border: 1px solid rgba(58, 107, 53, .25);
-            color: var(--clr_green);
+            color: var(--clr_green)
         }
 
         .p_badge.india {
             background: rgba(232, 160, 32, .1);
             border: 1px solid rgba(232, 160, 32, .25);
-            color: var(--clr_gold);
+            color: var(--clr_gold)
         }
 
         .p_badge.hot {
             background: rgba(224, 50, 34, .1);
             border: 1px solid rgba(224, 50, 34, .25);
-            color: var(--clr_red2);
+            color: var(--clr_red2)
         }
 
         .p_badge.pure {
             background: rgba(58, 107, 53, .1);
             border: 1px solid rgba(58, 107, 53, .25);
-            color: var(--clr_green);
+            color: var(--clr_green)
         }
 
-        /* RIGHT SIDE */
-        .product_info {}
+        .p_badge.mild {
+            background: rgba(91, 143, 212, .1);
+            border: 1px solid rgba(91, 143, 212, .25);
+            color: #3a6fb0;
+        }
 
+        .p_badge.fiery {
+            background: rgba(196, 28, 13, .1);
+            border: 1px solid rgba(196, 28, 13, .25);
+            color: #c41c0d;
+        }
+
+        .p_badge.desi {
+            background: rgba(192, 88, 13, .1);
+            border: 1px solid rgba(192, 88, 13, .25);
+            color: #c0580d;
+        }
+
+        .p_badge.blend {
+            background: rgba(126, 92, 176, .1);
+            border: 1px solid rgba(126, 92, 176, .25);
+            color: #7e5cb0;
+        }
+
+
+        /* PRODUCT INFO */
         .product_category_tag {
             font-size: 11px;
             font-weight: 700;
             letter-spacing: .14em;
             text-transform: uppercase;
             color: var(--clr_muted);
-            margin-bottom: 8px;
+            margin-bottom: 8px
         }
 
         .product_name {
@@ -275,14 +409,14 @@
             font-weight: 900;
             color: var(--clr_dark);
             line-height: 1.1;
-            margin-bottom: 6px;
+            margin-bottom: 6px
         }
 
         .product_hindi {
             font-size: 16px;
             color: var(--clr_red);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 16px
         }
 
         .product_tagline {
@@ -291,31 +425,30 @@
             color: var(--clr_dark);
             margin-bottom: 16px;
             font-family: var(--ff_display);
-            font-style: italic;
+            font-style: italic
         }
 
         .product_desc {
             font-size: 14px;
             color: var(--clr_muted);
             line-height: 1.9;
-            margin-bottom: 28px;
+            margin-bottom: 28px
         }
 
-        /* PACK SIZE */
         .pack_label {
             font-size: 12px;
             font-weight: 800;
             letter-spacing: .1em;
             text-transform: uppercase;
             color: var(--clr_dark);
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .pack_sizes {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 28px;
+            margin-bottom: 28px
         }
 
         .pack_btn {
@@ -331,48 +464,46 @@
             font-weight: 700;
             cursor: pointer;
             transition: all var(--transition);
-            font-family: var(--ff_body);
+            font-family: var(--ff_body)
         }
 
         .pack_btn:hover,
         .pack_btn.active {
             background: var(--clr_red);
             color: #fff;
-            border-color: var(--clr_red);
+            border-color: var(--clr_red)
         }
 
-        /* INGREDIENTS & STORAGE */
         .info_block {
             background: var(--clr_light);
             border-radius: var(--radius_lg);
             padding: 22px 24px;
             margin-bottom: 18px;
-            border-left: 3px solid var(--clr_red);
+            border-left: 3px solid var(--clr_red)
         }
 
         .info_block h4 {
             font-family: var(--ff_display);
             font-size: 15px;
             color: var(--clr_dark);
-            margin-bottom: 8px;
+            margin-bottom: 8px
         }
 
         .info_block p {
             font-size: 13px;
             color: var(--clr_muted);
-            line-height: 1.7;
+            line-height: 1.7
         }
 
-        /* NUTRITION TABLE */
         .nutr_block {
-            margin-top: 32px;
+            margin-top: 32px
         }
 
         .nutr_block h3 {
             font-family: var(--ff_display);
             font-size: 22px;
             color: var(--clr_dark);
-            margin-bottom: 16px;
+            margin-bottom: 16px
         }
 
         .nutr_table {
@@ -380,7 +511,7 @@
             border-collapse: collapse;
             border-radius: var(--radius_lg);
             overflow: hidden;
-            box-shadow: var(--shadow_sm);
+            box-shadow: var(--shadow_sm)
         }
 
         .nutr_table th {
@@ -391,23 +522,23 @@
             letter-spacing: .08em;
             text-transform: uppercase;
             padding: 10px 16px;
-            text-align: left;
+            text-align: left
         }
 
         .nutr_table td {
             padding: 9px 16px;
             font-size: 13px;
-            border-bottom: 1px solid var(--clr_cream);
+            border-bottom: 1px solid var(--clr_cream)
         }
 
         .nutr_table tr:nth-child(even) td {
-            background: var(--clr_light);
+            background: var(--clr_light)
         }
 
         .nutr_table td:last-child {
             font-weight: 700;
             color: var(--clr_dark);
-            text-align: right;
+            text-align: right
         }
 
         .nutr_note {
@@ -415,17 +546,16 @@
             color: var(--clr_muted);
             font-style: italic;
             margin-top: 10px;
-            line-height: 1.6;
+            line-height: 1.6
         }
 
-        /* ORIGIN */
         .origin_block {
             background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
             border-radius: var(--radius_lg);
             padding: 24px 28px;
             margin-top: 32px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .origin_block::before {
@@ -433,7 +563,7 @@
             position: absolute;
             inset: 0;
             background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .06) 1px, transparent 0);
-            background-size: 20px 20px;
+            background-size: 20px 20px
         }
 
         .origin_block h4 {
@@ -441,17 +571,16 @@
             font-size: 17px;
             color: #fff;
             margin-bottom: 8px;
-            position: relative;
+            position: relative
         }
 
         .origin_block p {
             font-size: 13px;
             color: rgba(255, 255, 255, .85);
             line-height: 1.7;
-            position: relative;
+            position: relative
         }
 
-        /* BACK LINK */
         .back_link {
             display: inline-flex;
             align-items: center;
@@ -462,17 +591,17 @@
             letter-spacing: .06em;
             text-transform: uppercase;
             margin-bottom: 32px;
-            transition: gap var(--transition);
+            transition: gap var(--transition)
         }
 
         .back_link:hover {
-            gap: 14px;
+            gap: 14px
         }
 
         /* FOOTER */
         .footer {
             background: var(--clr_dark);
-            padding: 50px 0 24px;
+            padding: 50px 0 24px
         }
 
         .footer_bottom_simple {
@@ -483,23 +612,23 @@
             gap: 12px;
             border-top: 1px solid rgba(255, 255, 255, .07);
             padding-top: 20px;
-            margin-top: 20px;
+            margin-top: 20px
         }
 
         .footer_bottom_simple p {
             font-size: 12px;
-            color: rgba(255, 255, 255, .38);
+            color: rgba(255, 255, 255, .38)
         }
 
         .footer_bottom_simple span {
-            color: var(--clr_amber);
+            color: var(--clr_amber)
         }
 
         .footer_mini_grid {
             display: grid;
             grid-template-columns: 1.8fr 1fr 1.4fr;
             gap: 36px;
-            margin-bottom: 20px;
+            margin-bottom: 20px
         }
 
         .footer_logo_name {
@@ -507,14 +636,14 @@
             font-size: 26px;
             color: var(--clr_amber);
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .footer_brand p {
             font-size: 13px;
             color: rgba(255, 255, 255, .55);
             line-height: 1.8;
-            margin-bottom: 14px;
+            margin-bottom: 14px
         }
 
         .footer_heading {
@@ -523,7 +652,7 @@
             color: #fff;
             margin-bottom: 14px;
             position: relative;
-            padding-bottom: 8px;
+            padding-bottom: 8px
         }
 
         .footer_heading::after {
@@ -533,13 +662,13 @@
             left: 0;
             width: 30px;
             height: 2px;
-            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber))
         }
 
         .footer_links {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 8px
         }
 
         .footer_links a {
@@ -548,23 +677,23 @@
             transition: color var(--transition);
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 7px
         }
 
         .footer_links a i {
             color: var(--clr_red);
-            font-size: 9px;
+            font-size: 9px
         }
 
         .footer_links a:hover {
-            color: var(--clr_amber);
+            color: var(--clr_amber)
         }
 
         .footer_contact_item {
             display: flex;
             gap: 10px;
             align-items: flex-start;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .footer_contact_icon {
@@ -578,19 +707,19 @@
             justify-content: center;
             color: var(--clr_amber);
             font-size: 11px;
-            margin-top: 2px;
+            margin-top: 2px
         }
 
         .footer_contact_item p {
             font-size: 12px;
             color: rgba(255, 255, 255, .55);
-            line-height: 1.6;
+            line-height: 1.6
         }
 
         .footer_social {
             display: flex;
             gap: 7px;
-            margin-top: 12px;
+            margin-top: 12px
         }
 
         .footer_social a {
@@ -603,28 +732,28 @@
             justify-content: center;
             font-size: 13px;
             color: rgba(255, 255, 255, .5);
-            transition: all var(--transition);
+            transition: all var(--transition)
         }
 
         .footer_social a:hover {
             background: var(--clr_red);
             color: #fff;
-            border-color: var(--clr_red);
+            border-color: var(--clr_red)
         }
 
         .footer_social a.wa:hover {
             background: #25D366;
-            border-color: #25D366;
+            border-color: #25D366
         }
 
         .footer_social a.fb:hover {
             background: #1877F2;
-            border-color: #1877F2;
+            border-color: #1877F2
         }
 
         .footer_social a.ig:hover {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            border-color: #cc2366;
+            border-color: #cc2366
         }
 
         .scroll_top_btn {
@@ -645,35 +774,39 @@
             transition: all var(--transition);
             z-index: 999;
             opacity: 0;
-            pointer-events: none;
+            pointer-events: none
         }
 
         .scroll_top_btn.visible {
             opacity: 1;
-            pointer-events: all;
+            pointer-events: all
         }
 
         @media(max-width:1024px) {
             .product_detail_inner {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
-            .product_img_wrap {
-                position: static;
+            .slider_wrap {
+                position: static
             }
 
             .footer_mini_grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr
             }
         }
 
         @media(max-width:768px) {
             .nav_links {
-                display: none;
+                display: none
             }
 
             .footer_mini_grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
+            }
+
+            .slide {
+                height: 320px
             }
         }
     </style>
@@ -716,23 +849,47 @@
             <a href="products.html" class="back_link"><i class="fa-solid fa-arrow-left"></i> Back to All Products</a>
             <div class="product_detail_inner">
 
-                <!-- LEFT: IMAGE -->
-                <div class="product_img_wrap">
-                    <div class="product_img_main">
-                        <img src="img/Garam_masala_1.png" alt="Garam Masala" />
+                <!-- LEFT: IMAGE SLIDER -->
+                <div class="slider_wrap">
+                    <div class="slider_main">
+                        <div class="slider_track" id="sliderTrack">
+                            <div class="slide"><img src="img/Garam_masala_1.png" alt="Garam Masala View 1" /></div>
+                            <div class="slide"><img src="img/Garam_masala_1.png" alt="Garam Masala View 2" /></div>
+                            <div class="slide"><img src="img/Garam_masala_1.png" alt="Garam Masala View 3" /></div>
+
+                        </div>
+                        <button class="slider_arrow slider_prev" onclick="moveSlide(-1)" aria-label="Previous"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider_arrow slider_next" onclick="moveSlide(1)" aria-label="Next"><i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider_dots" id="sliderDots">
+                        <div class="dot active" onclick="goToSlide(0)"></div>
+                        <div class="dot" onclick="goToSlide(1)"></div>
+                        <div class="dot" onclick="goToSlide(2)"></div>
+
+                    </div>
+                    <div class="slider_thumbs">
+                        <div class="thumb active" onclick="goToSlide(0)"><img src="img/Garam_masala_1.png"
+                                alt="Thumb 1" /></div>
+                        <div class="thumb" onclick="goToSlide(1)"><img src="img/Garam_masala_1.png" alt="Thumb 2" />
+                        </div>
+                        <div class="thumb" onclick="goToSlide(2)"><img src="img/Garam_masala_1.png" alt="Thumb 3" />
+                        </div>
+
                     </div>
                     <div class="product_badge_row">
                         <span class="p_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
                         <span class="p_badge india"><i class="fa-solid fa-indian-rupee-sign"></i> Product of
                             India</span>
-                        <span class="p_badge pure">Rajwadi</span>
+                        <span class="p_badge blend">RAJWADI</span>
                     </div>
                 </div>
 
                 <!-- RIGHT: INFO -->
                 <div class="product_info">
                     <div class="product_category_tag"><i class="fa-solid fa-tag"></i> Blended Spice</div>
-                    <h1 class="product_name">Garam Masala</h1>
+                    <h1 class="product_name">Garam Masala Powder</h1>
                     <div class="product_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
                     <div class="product_tagline">Signature Blend of Rich Aroma and Authentic Flavor</div>
                     <p class="product_desc">A carefully crafted blend of premium spices, Devnoor Garam Masala brings
@@ -741,11 +898,10 @@
                         blend in Indian kitchens, known for bringing richness, warmth, and character to every dish.</p>
 
                     <div class="pack_label">Select Pack Size</div>
-                    <div class="pack_sizes"><button class="pack_btn active" onclick="">18g</button><button
-                            class="pack_btn" onclick="">50g</button><button class="pack_btn"
-                            onclick="">100g</button><button class="pack_btn" onclick="">200g</button><button
-                            class="pack_btn" onclick="">500g</button><button class="pack_btn" onclick="">5kg</button>
-                    </div>
+                    <div class="pack_sizes"><button class="pack_btn active">18g</button><button
+                            class="pack_btn">50g</button><button class="pack_btn">100g</button><button
+                            class="pack_btn">200g</button><button class="pack_btn">500g</button><button
+                            class="pack_btn">5kg</button></div>
 
                     <div class="info_block">
                         <h4><i class="fa-solid fa-list" style="color:var(--clr_green);margin-right:6px;"></i>Ingredients
@@ -753,7 +909,6 @@
                         <p>Coriander Powder, Chilli, Bay Leaves, Cumin, Cloves, Clove Leaves, Black Pepper, Star Anise,
                             Ajwain, Ginger, Rock Salt, Cinnamon, Mace, Cardamom, Nutmeg, Mustard Oil (2%).</p>
                     </div>
-
                     <div class="info_block" style="border-color:var(--clr_green);">
                         <h4><i class="fa-solid fa-box" style="color:var(--clr_green);margin-right:6px;"></i>Storage
                             Instructions</h4>
@@ -778,6 +933,27 @@
                                 <td>Protein</td>
                                 <td>12.09 g</td>
                             </tr>
+                            <tr>
+                                <td>Total Fat</td>
+                                <td>13.23 g</td>
+                            </tr>
+                            <tr>
+                                <td>Carbohydrate</td>
+                                <td>46.22 g</td>
+                            </tr>
+                            <tr>
+                                <td>Sodium</td>
+                                <td>2213 mg</td>
+                            </tr>
+                            <tr>
+                                <td>Vitamin A</td>
+                                <td>12.22 μg</td>
+                            </tr>
+                            <tr>
+                                <td>Vitamin C</td>
+                                <td>3.48 mg</td>
+                            </tr>
+
                         </table>
                         <p class="nutr_note">* Approximate values. RDA calculated on the basis of 2000 Kcal energy a
                             day.</p>
@@ -842,8 +1018,35 @@
 
     <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
             class="fa-solid fa-arrow-up"></i></div>
+
     <script>
-        // Pack size selector
+
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+        const total = slides.length;
+        const track = document.getElementById('sliderTrack');
+        const dots = document.querySelectorAll('.dot');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        function updateSlider() {
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+        }
+        function moveSlide(dir) { current = (current + dir + total) % total; updateSlider(); }
+        function goToSlide(n) { current = n; updateSlider(); }
+
+        let autoTimer = setInterval(() => moveSlide(1), 4000);
+        document.querySelector('.slider_main').addEventListener('mouseenter', () => clearInterval(autoTimer));
+        document.querySelector('.slider_main').addEventListener('mouseleave', () => { autoTimer = setInterval(() => moveSlide(1), 4000); });
+
+        let touchStartX = 0;
+        document.querySelector('.slider_main').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+        document.querySelector('.slider_main').addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+        });
+
         document.querySelectorAll('.pack_btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 document.querySelectorAll('.pack_btn').forEach(b => b.classList.remove('active'));
@@ -852,6 +1055,7 @@
         });
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+
     </script>
 </body>
 

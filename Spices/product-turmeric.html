@@ -74,6 +74,7 @@
             padding: 0 24px;
         }
 
+        /* HEADER */
         .header {
             background: var(--clr_white);
             position: sticky;
@@ -196,29 +197,131 @@
             align-items: flex-start;
         }
 
-        .product_img_wrap {
+        /* ── IMAGE SLIDER ── */
+        .slider_wrap {
             position: sticky;
             top: 100px;
         }
 
-        .product_img_main {
+        .slider_main {
+            position: relative;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow_md);
             background: var(--clr_cream);
         }
 
-        .product_img_main img {
-            width: 100%;
+        .slider_track {
+            display: flex;
+            transition: transform .4s ease;
+        }
+
+        .slide {
+            min-width: 100%;
             height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--clr_cream);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             padding: 32px;
+        }
+
+        .slider_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .92);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--clr_text);
+            cursor: pointer;
+            transition: all var(--transition);
+            z-index: 10;
+            box-shadow: var(--shadow_sm);
+        }
+
+        .slider_arrow:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .slider_prev {
+            left: 12px;
+        }
+
+        .slider_next {
+            right: 12px;
+        }
+
+        .slider_dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--clr_border);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .dot.active {
+            background: var(--clr_red);
+            width: 22px;
+            border-radius: 4px;
+        }
+
+        .slider_thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            justify-content: center;
+        }
+
+        .thumb {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2.5px solid var(--clr_border);
+            cursor: pointer;
+            transition: all var(--transition);
+            background: var(--clr_cream);
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 6px;
+        }
+
+        .thumb.active {
+            border-color: var(--clr_red);
+            box-shadow: 0 0 0 2px rgba(232, 160, 32, .25);
         }
 
         .product_badge_row {
             display: flex;
             gap: 8px;
-            margin-top: 16px;
+            margin-top: 14px;
             flex-wrap: wrap;
         }
 
@@ -257,9 +360,25 @@
             color: var(--clr_green);
         }
 
-        /* RIGHT SIDE */
-        .product_info {}
+        .p_badge.mild {
+            background: rgba(91, 143, 212, .1);
+            border: 1px solid rgba(91, 143, 212, .25);
+            color: #3a6fb0;
+        }
 
+        .p_badge.fiery {
+            background: rgba(196, 28, 13, .1);
+            border: 1px solid rgba(196, 28, 13, .25);
+            color: #c41c0d;
+        }
+
+        .p_badge.blend {
+            background: rgba(126, 92, 176, .1);
+            border: 1px solid rgba(126, 92, 176, .25);
+            color: #7e5cb0;
+        }
+
+        /* RIGHT SIDE */
         .product_category_tag {
             font-size: 11px;
             font-weight: 700;
@@ -301,7 +420,6 @@
             margin-bottom: 28px;
         }
 
-        /* PACK SIZE */
         .pack_label {
             font-size: 12px;
             font-weight: 800;
@@ -341,7 +459,6 @@
             border-color: var(--clr_red);
         }
 
-        /* INGREDIENTS & STORAGE */
         .info_block {
             background: var(--clr_light);
             border-radius: var(--radius_lg);
@@ -363,7 +480,6 @@
             line-height: 1.7;
         }
 
-        /* NUTRITION TABLE */
         .nutr_block {
             margin-top: 32px;
         }
@@ -418,7 +534,6 @@
             line-height: 1.6;
         }
 
-        /* ORIGIN */
         .origin_block {
             background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
             border-radius: var(--radius_lg);
@@ -451,7 +566,6 @@
             position: relative;
         }
 
-        /* BACK LINK */
         .back_link {
             display: inline-flex;
             align-items: center;
@@ -658,7 +772,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .product_img_wrap {
+            .slider_wrap {
                 position: static;
             }
 
@@ -674,6 +788,10 @@
 
             .footer_mini_grid {
                 grid-template-columns: 1fr;
+            }
+
+            .slide {
+                height: 320px;
             }
         }
     </style>
@@ -716,10 +834,34 @@
             <a href="products.html" class="back_link"><i class="fa-solid fa-arrow-left"></i> Back to All Products</a>
             <div class="product_detail_inner">
 
-                <!-- LEFT: IMAGE -->
-                <div class="product_img_wrap">
-                    <div class="product_img_main">
-                        <img src="img/Turmeric_powder_1.png" alt="Turmeric Powder" />
+                <!-- LEFT: IMAGE SLIDER -->
+                <div class="slider_wrap">
+                    <div class="slider_main">
+                        <div class="slider_track" id="sliderTrack">
+                            <div class="slide"><img src="img/Turmeric_powder_1.png" alt="Turmeric Powder - View 1" />
+                            </div>
+                            <div class="slide"><img src="img/Turmeric_powder_slide_2.png" alt="Turmeric Powder - View 2" />
+                            </div>
+                            <div class="slide"><img src="img/Turmeric_powder_slide_3.jpg" alt="Turmeric Powder - View 3" />
+                            </div>
+                        </div>
+                        <button class="slider_arrow slider_prev" onclick="moveSlide(-1)" aria-label="Previous"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider_arrow slider_next" onclick="moveSlide(1)" aria-label="Next"><i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider_dots" id="sliderDots">
+                        <div class="dot active" onclick="goToSlide(0)"></div>
+                        <div class="dot" onclick="goToSlide(1)"></div>
+                        <div class="dot" onclick="goToSlide(2)"></div>
+                    </div>
+                    <div class="slider_thumbs">
+                        <div class="thumb active" onclick="goToSlide(0)"><img src="img/Turmeric_powder_1.png"
+                                alt="Thumb 1" /></div>
+                        <div class="thumb" onclick="goToSlide(1)"><img src="img/Turmeric_powder_slide_2.png" alt="Thumb 2" />
+                        </div>
+                        <div class="thumb" onclick="goToSlide(2)"><img src="img/Turmeric_powder_slide_3.jpg" alt="Thumb 3" />
+                        </div>
                     </div>
                     <div class="product_badge_row">
                         <span class="p_badge fssai"><i class="fa-solid fa-certificate"></i> FSSAI Certified</span>
@@ -742,11 +884,10 @@
                         purity, consistency, and trusted flavor in every spoon.</p>
 
                     <div class="pack_label">Select Pack Size</div>
-                    <div class="pack_sizes"><button class="pack_btn active" onclick="">18g</button><button
-                            class="pack_btn" onclick="">50g</button><button class="pack_btn"
-                            onclick="">100g</button><button class="pack_btn" onclick="">200g</button><button
-                            class="pack_btn" onclick="">500g</button><button class="pack_btn" onclick="">5kg</button>
-                    </div>
+                    <div class="pack_sizes"><button class="pack_btn active">18g</button><button
+                            class="pack_btn">50g</button><button class="pack_btn">100g</button><button
+                            class="pack_btn">200g</button><button class="pack_btn">500g</button><button
+                            class="pack_btn">5kg</button></div>
 
                     <div class="info_block">
                         <h4><i class="fa-solid fa-list" style="color:var(--clr_green);margin-right:6px;"></i>Ingredients
@@ -777,6 +918,18 @@
                             <tr>
                                 <td>Protein</td>
                                 <td>7.8 g</td>
+                            </tr>
+                            <tr>
+                                <td>Total Fat</td>
+                                <td>6.9 g</td>
+                            </tr>
+                            <tr>
+                                <td>Carbohydrate</td>
+                                <td>64.9 g</td>
+                            </tr>
+                            <tr>
+                                <td>Sodium</td>
+                                <td>38.6 mg</td>
                             </tr>
                         </table>
                         <p class="nutr_note">* Approximate values. RDA calculated on the basis of 2000 Kcal energy a
@@ -841,7 +994,47 @@
 
     <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i
             class="fa-solid fa-arrow-up"></i></div>
+
     <script>
+        let current = 0;
+        const total = 3;
+        const track = document.getElementById('sliderTrack');
+        const dots = document.querySelectorAll('.dot');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        function updateSlider() {
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+        }
+
+        function moveSlide(dir) {
+            current = (current + dir + total) % total;
+            updateSlider();
+        }
+
+        function goToSlide(n) {
+            current = n;
+            updateSlider();
+        }
+
+        // Auto-slide every 4 seconds
+        let autoTimer = setInterval(() => moveSlide(1), 4000);
+
+        // Pause on hover
+        document.querySelector('.slider_main').addEventListener('mouseenter', () => clearInterval(autoTimer));
+        document.querySelector('.slider_main').addEventListener('mouseleave', () => {
+            autoTimer = setInterval(() => moveSlide(1), 4000);
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        document.querySelector('.slider_main').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+        document.querySelector('.slider_main').addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+        });
+
         // Pack size selector
         document.querySelectorAll('.pack_btn').forEach(btn => {
             btn.addEventListener('click', function () {
@@ -849,6 +1042,8 @@
                 this.classList.add('active');
             });
         });
+
+        // Scroll top
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
     </script>
