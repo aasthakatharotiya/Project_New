@@ -489,50 +489,114 @@
             }
         }
 
-        /* OUR STORY — text only, no stat cards */
-        .story_teaser {
-            /* background: var(--clr_cream); */
-            padding: 80px 0;
+        /* STORY — text only, no images */
+        .story_section {
+            position: relative;
+            overflow: hidden;
+            /* warm parchment background colour */
+            background: #f9f0e0;
         }
 
-        .story_teaser_inner {
+        .story_img_panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .story_img_panel img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center right;
+            display: block;
+        }
+
+        .story_img_panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #f9f0e0 0%, rgba(249, 240, 224, .55) 35%, transparent 50%);
+            z-index: 1;
+        }
+
+        .story_content_wrap {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 560px;
+            align-items: center;
+        }
+
+        .story_left {
+            padding: 80px 48px 80px 0;
+        }
+        
+        .story_right_spacer {
+            /* intentionally empty */
         }
 
         .story_eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(232, 160, 32, .1);
-            border: 1px solid rgba(232, 160, 32, .25);
-            color: var(--clr_red);
+            background: rgba(232, 160, 32, .12);
+            border: 1px solid rgba(232, 160, 32, .28);
+            color: var(--clr_gold);
             font-size: 11px;
             font-weight: 700;
             letter-spacing: .14em;
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 50px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        .story_teaser h2 {
+        .story_title {
             font-family: var(--ff_display);
-            font-size: clamp(28px, 3.5vw, 42px);
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 900;
             color: var(--clr_dark);
-            line-height: 1.15;
-            margin-bottom: 18px;
+            line-height: 1.12;
+            margin-bottom: 20px;
         }
 
-        .story_teaser h2 em {
+        .story_title em {
             font-style: italic;
-            color: var(--clr_red);
+            color: var(--clr_amber);
         }
 
-        .story_teaser p {
-            font-size: 15px;
+        .story_body p {
             color: var(--clr_muted);
+            font-size: 14px;
             line-height: 1.9;
-            margin-bottom: 28px;
+            margin-bottom: 13px;
+        }
+
+        .story_cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--clr_red);
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-family: var(--ff_body);
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-top: 28px;
+            transition: all var(--transition);
+            box-shadow: 0 4px 18px rgba(232, 160, 32, .35);
+        }
+
+        .story_cta:hover {
+            background: var(--clr_gold);
+            transform: translateY(-2px);
         }
 
         /* PRODUCT CATEGORIES — category cards only, NO product rows */
@@ -1195,31 +1259,36 @@
     </section>
 
     <!-- OUR STORY — text + button only, NO stat cards -->
-    <section class="story_teaser">
+    <section class="story_section">
+
+        <div class="story_img_panel">
+            <img src="img/about_BG.png" alt="Traditional Indian spices" />
+        </div>
+
         <div class="container">
-            <div class="story_teaser_inner">
-                <div class="story_eyebrow">
-                    <i class="fa-solid fa-book-open"></i> Our Story
+            <div class="story_content_wrap">
+
+                <!-- LEFT: text -->
+                <div class="story_left">
+                    <div class="story_eyebrow"><i class="fa-solid fa-book-open"></i> Our Story</div>
+                    <h2 class="story_title">
+                        Born from one simple <em>question</em>
+                    </h2>
+                    <div class="story_body">
+                        <p>
+                            <strong style="color:var(--clr_dark);">"Are we using real, pure masalas?"</strong> What started as a concern in 2021 became a commitment to bring trusted purity, authentic flavor, and confidence back to Indian kitchens. We realized that families deserved spices they could trust—free from compromise and rich in natural taste.
+                        </p>
+                        <p>
+                            Guided by this belief, we carefully source quality ingredients, follow strict quality standards, and ensure every pack delivers freshness, aroma, and consistency. Today, our mission remains simple: to help every home create memorable meals with spices that celebrate the true essence of Indian cooking.
+                        </p>
+                    </div>
+                    <a href="contact.html" class="story_cta">
+                        <i class="fa-solid fa-arrow-right"></i> Get in Touch
+                    </a>
                 </div>
 
-                <h2>Born from one simple <em>question</em></h2>
-
-                <p>
-                    "Are we using real, pure masalas?" What started as a concern in 2021 became a commitment to bring
-                    trusted purity, authentic flavor, and confidence back to Indian kitchens. We realized that families
-                    deserved spices they could trust—free from compromise and rich in natural taste.
-                </p>
-
-                <p>
-                    Guided by this belief, we carefully source quality ingredients, follow strict quality standards, and
-                    ensure every pack delivers freshness, aroma, and consistency. Today, our mission remains simple: to
-                    help every home create memorable meals with spices that celebrate the true essence of Indian
-                    cooking.
-                </p>
-
-                <a href="about.html" class="btn_primary">
-                    <i class="fa-solid fa-arrow-right"></i> Read Our Story
-                </a>
+                <!-- RIGHT: spacer (image is absolutely positioned) -->
+                <div class="story_right_spacer"></div>
             </div>
         </div>
     </section>
@@ -1479,8 +1548,8 @@
             <div class="footer_bottom">
                 <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
                 <div class="footer_bottom_links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="legal.html">Privacy Policy</a>
+                    <a href="legal.html#acceptance">Terms of Use</a>
                 </div>
             </div>
         </div>

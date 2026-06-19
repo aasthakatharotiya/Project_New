@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy & Terms – Devnoor Masala</title>
+    <link rel="icon" type="image/png" href="img/Logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --clr_white: #ffffff;
+            --clr_light: #fdf9f4;
+            --clr_cream: #f5ede0;
+            --clr_red: #e8a020;
+            --clr_red2: #e03222;
+            --clr_green: #3a6b35;
+            --clr_green2: #4e8c46;
+            --clr_gold: #d4860a;
+            --clr_amber: #f0a500;
+            --clr_dark: #1e1208;
+            --clr_text: #3d2b14;
+            --clr_muted: #8c7358;
+            --clr_border: #e8d8c0;
+            --ff_display: 'Playfair Display', serif;
+            --ff_body: 'Nunito', sans-serif;
+            --ff_script: 'Dancing Script', cursive;
+            --ff_mono: 'JetBrains Mono', monospace;
+            --radius_lg: 16px;
+            --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
+            --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
+            --transition: .3s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--ff_body);
+            background: var(--clr_white);
+            color: var(--clr_text);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: var(--clr_white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .nav_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav_logo_img {
+            height: 60px;
+        }
+
+        .nav_links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .nav_links a {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--clr_text);
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav_links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr_red);
+            transition: width var(--transition);
+        }
+
+        .nav_links a:hover,
+        .nav_links a.active {
+            color: var(--clr_red);
+        }
+
+        .nav_links a:hover::after,
+        .nav_links a.active::after {
+            width: 100%;
+        }
+
+        .nav_icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .nav_icon_btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: 1.5px solid var(--clr_border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_text);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .nav_icon_btn:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        /* ── BREADCRUMB ── */
+        .breadcrumb_bar {
+            background: var(--clr_cream);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--clr_border);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--clr_muted);
+        }
+
+        .breadcrumb a {
+            color: var(--clr_red);
+            font-weight: 700;
+        }
+
+        .breadcrumb i {
+            font-size: 9px;
+        }
+
+        /* ── PAGE HERO — signature element: a "document ledger" header ── */
+        .legal_hero {
+            position: relative;
+            padding: 64px 0 56px;
+            background: linear-gradient(135deg, #1a4d15 0%, #2d7a26 60%, #3a8a31 100%);
+            overflow: hidden;
+        }
+
+        .legal_hero_pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .legal_hero_inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .legal_hero_left {
+            max-width: 640px;
+        }
+
+        .legal_eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .25);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+        }
+
+        .legal_hero h1 {
+            font-family: var(--ff_display);
+            font-size: clamp(32px, 5vw, 54px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .legal_hero h1 em {
+            font-style: italic;
+            color: var(--clr_amber);
+        }
+
+        .legal_hero p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* document meta plate — like a stamped ledger card */
+        .doc_plate {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 14px;
+            padding: 18px 22px;
+            min-width: 260px;
+            flex-shrink: 0;
+        }
+
+        .doc_plate_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .doc_plate_row:last-child {
+            border-bottom: none;
+        }
+
+        .doc_plate_label {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .doc_plate_value {
+            font-family: var(--ff_mono);
+            font-size: 12.5px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* ── LAYOUT: sticky TOC + content ── */
+        .legal_layout {
+            padding: 60px 0 100px;
+        }
+
+        .legal_grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 56px;
+            align-items: flex-start;
+        }
+
+        /* TOC sidebar */
+        .toc_wrap {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc_card {
+            background: var(--clr_light);
+            border: 1.5px solid var(--clr_border);
+            border-radius: var(--radius_lg);
+            padding: 22px 20px;
+        }
+
+        .toc_title {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--clr_muted);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc_title i {
+            color: var(--clr_red);
+        }
+
+        .toc_list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .toc_group_label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr_red);
+            margin: 16px 0 6px;
+        }
+
+        .toc_group_label:first-child {
+            margin-top: 0;
+        }
+
+        .toc_link {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 7px 8px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--clr_text);
+            transition: all var(--transition);
+            border-left: 2px solid transparent;
+        }
+
+        .toc_link:hover {
+            background: var(--clr_cream);
+            color: var(--clr_red);
+        }
+
+        .toc_link.active {
+            background: var(--clr_white);
+            border-left-color: var(--clr_red);
+            color: var(--clr_red);
+            font-weight: 700;
+            box-shadow: var(--shadow_sm);
+        }
+
+        .toc_num {
+            font-family: var(--ff_mono);
+            font-size: 11px;
+            color: var(--clr_muted);
+            flex-shrink: 0;
+            min-width: 22px;
+        }
+
+        .toc_link.active .toc_num {
+            color: var(--clr_red);
+        }
+
+        .toc_contact_card {
+            margin-top: 18px;
+            background: linear-gradient(135deg, var(--clr_green), var(--clr_green2));
+            border-radius: var(--radius_lg);
+            padding: 20px;
+            color: #fff;
+        }
+
+        .toc_contact_card h4 {
+            font-family: var(--ff_display);
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .toc_contact_card p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .85);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .toc_contact_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #fff;
+            color: var(--clr_green);
+            padding: 9px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            transition: all var(--transition);
+        }
+
+        .toc_contact_btn:hover {
+            background: var(--clr_amber);
+            color: #fff;
+        }
+
+        /* main content */
+        .legal_content {
+            min-width: 0;
+        }
+
+        .legal_section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .legal_section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section_head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--clr_cream);
+        }
+
+        .section_num {
+            font-family: var(--ff_display);
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--clr_border);
+            flex-shrink: 0;
+            min-width: 48px;
+        }
+
+        .legal_section.active .section_num,
+        .section_head:hover .section_num {
+            color: var(--clr_red);
+        }
+
+        .section_head h2 {
+            font-family: var(--ff_display);
+            font-size: clamp(20px, 2.6vw, 26px);
+            font-weight: 700;
+            color: var(--clr_dark);
+        }
+
+        .section_head h2 span {
+            color: var(--clr_red);
+        }
+
+        .legal_section p {
+            font-size: 14.5px;
+            color: var(--clr_muted);
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+
+        .legal_section p strong {
+            color: var(--clr_dark);
+            font-weight: 700;
+        }
+
+        .legal_section ul.bullet_list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 14px 0 18px;
+        }
+
+        .legal_section ul.bullet_list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--clr_muted);
+            line-height: 1.8;
+        }
+
+        .legal_section ul.bullet_list li i {
+            color: var(--clr_red);
+            font-size: 9px;
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        /* highlight callout block */
+        .legal_callout {
+            background: var(--clr_light);
+            border-left: 3px solid var(--clr_red);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+
+        .legal_callout p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        .legal_callout p:first-child strong {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--clr_dark);
+            font-size: 13px;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        /* mini data table for cookie / data table */
+        .legal_table_wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: 12px;
+            box-shadow: var(--shadow_sm);
+        }
+
+        table.legal_table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 480px;
+        }
+
+        table.legal_table thead tr {
+            background: var(--clr_dark);
+        }
+
+        table.legal_table th {
+            padding: 12px 18px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: left;
+        }
+
+        table.legal_table td {
+            padding: 12px 18px;
+            font-size: 13px;
+            color: var(--clr_text);
+            border-bottom: 1px solid var(--clr_cream);
+        }
+
+        table.legal_table tbody tr:nth-child(even) td {
+            background: var(--clr_light);
+        }
+
+        table.legal_table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* divider between Privacy and Terms mega-sections */
+        .doc_divider {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 64px 0 48px;
+        }
+
+        .doc_divider_line {
+            flex: 1;
+            height: 1px;
+            background: var(--clr_border);
+        }
+
+        .doc_divider_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--clr_dark);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-family: var(--ff_display);
+            font-size: 15px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .doc_divider_badge i {
+            color: var(--clr_amber);
+        }
+
+        /* back to top mini */
+        .back_to_toc {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--clr_red);
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            margin-top: 8px;
+            transition: gap var(--transition);
+        }
+
+        .back_to_toc:hover {
+            gap: 11px;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--clr_dark);
+            padding: 60px 0 28px;
+        }
+
+        .footer_grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1.4fr;
+            gap: 36px;
+            margin-bottom: 48px;
+        }
+
+        .footer_logo_name {
+            font-family: var(--ff_script);
+            font-size: 28px;
+            color: var(--clr_amber);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .footer_brand p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .footer_heading {
+            font-family: var(--ff_display);
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer_heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 34px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--clr_red), var(--clr_amber));
+        }
+
+        .footer_links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer_links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer_links a i {
+            color: var(--clr_red);
+            font-size: 10px;
+        }
+
+        .footer_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_contact_item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .footer_contact_icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, .07);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr_amber);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .footer_contact_item p {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.6;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .footer_social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            transition: all var(--transition);
+        }
+
+        .footer_social a:hover {
+            background: var(--clr_red);
+            color: #fff;
+            border-color: var(--clr_red);
+        }
+
+        .footer_social a.wa:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        .footer_social a.fb:hover {
+            background: #1877F2;
+            border-color: #1877F2;
+        }
+
+        .footer_social a.ig:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: #cc2366;
+        }
+
+        .footer_bottom {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer_bottom p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        .footer_bottom span {
+            color: var(--clr_amber);
+        }
+
+        .footer_bottom_links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer_bottom_links a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .38);
+            transition: color var(--transition);
+        }
+
+        .footer_bottom_links a:hover {
+            color: var(--clr_amber);
+        }
+
+        .footer_bottom_links a.current {
+            color: var(--clr_amber);
+        }
+
+        .scroll_top_btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 44px;
+            height: 44px;
+            background: var(--clr_red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(192, 41, 26, .4);
+            transition: all var(--transition);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll_top_btn.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll_top_btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* mobile TOC toggle */
+        .mobile_toc_toggle {
+            display: none;
+        }
+
+        @media(max-width: 1024px) {
+            .legal_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc_wrap {
+                position: static;
+                margin-bottom: 32px;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .legal_hero_inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .nav_links {
+                display: none;
+            }
+
+            .footer_grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doc_plate {
+                width: 100%;
+            }
+
+            .section_head {
+                gap: 10px;
+            }
+
+            .section_num {
+                font-size: 22px;
+                min-width: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav_wrapper">
+            <div class="nav_logo">
+                <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
+            </div>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav_icons">
+                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb_bar">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Privacy Policy &amp; Terms</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="legal_hero">
+        <div class="legal_hero_pattern"></div>
+        <div class="container legal_hero_inner">
+            <div class="legal_hero_left">
+                <div class="legal_eyebrow"><i class="fa-solid fa-scale-balanced"></i> Legal</div>
+                <h1>Privacy Policy &amp; <em>Terms</em></h1>
+                <p>How Devnoor Masala — a product of Govind Sugar &amp; Spices — collects, uses, and protects your
+                    information, and the terms that govern your use of our website and products.</p>
+            </div>
+            <div class="doc_plate">
+                <div class="doc_plate_row">
+                    <span class="doc_plate_label">Effective Date</span>
+                    <span class="doc_plate_value">19 Jun 2026</span>
+                </div>
+                <div class="doc_plate_row">
+                    <span class="doc_plate_label">Last Updated</span>
+                    <span class="doc_plate_value">19 Jun 2026</span>
+                </div>
+                <div class="doc_plate_row">
+                    <span class="doc_plate_label">Entity</span>
+                    <span class="doc_plate_value">Govind Sugar &amp; Spices</span>
+                </div>
+                <div class="doc_plate_row">
+                    <span class="doc_plate_label">Jurisdiction</span>
+                    <span class="doc_plate_value">Mahesana, Gujarat, IN</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <section class="legal_layout">
+        <div class="container legal_grid">
+
+            <!-- TOC SIDEBAR -->
+            <aside class="toc_wrap">
+                <div class="toc_card">
+                    <div class="toc_title"><i class="fa-solid fa-list-ul"></i> On This Page</div>
+                    <div class="toc_list" id="tocList">
+
+                        <div class="toc_group_label">Privacy Policy</div>
+                        <a href="#info-we-collect" class="toc_link" data-target="info-we-collect"><span
+                                class="toc_num">01</span> Information We Collect</a>
+                        <a href="#how-we-use" class="toc_link" data-target="how-we-use"><span class="toc_num">02</span>
+                            How We Use Information</a>
+                        <a href="#cookies" class="toc_link" data-target="cookies"><span class="toc_num">03</span>
+                            Cookies &amp; Tracking</a>
+                        <a href="#data-sharing" class="toc_link" data-target="data-sharing"><span
+                                class="toc_num">04</span> Data Sharing</a>
+                        <a href="#data-security" class="toc_link" data-target="data-security"><span
+                                class="toc_num">05</span> Data Security</a>
+                        <a href="#your-rights" class="toc_link" data-target="your-rights"><span
+                                class="toc_num">06</span> Your Rights</a>
+
+                        <div class="toc_group_label">Terms of Use</div>
+                        <a href="#acceptance" class="toc_link" data-target="acceptance"><span class="toc_num">07</span>
+                            Acceptance of Terms</a>
+                        <a href="#products-orders" class="toc_link" data-target="products-orders"><span
+                                class="toc_num">08</span> Products &amp; Orders</a>
+                        <a href="#ip" class="toc_link" data-target="ip"><span class="toc_num">09</span> Intellectual
+                            Property</a>
+                        <a href="#liability" class="toc_link" data-target="liability"><span class="toc_num">10</span>
+                            Limitation of Liability</a>
+                        <a href="#changes" class="toc_link" data-target="changes"><span class="toc_num">11</span>
+                            Changes to Terms</a>
+                        <a href="#contact-us" class="toc_link" data-target="contact-us"><span class="toc_num">12</span>
+                            Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="toc_contact_card">
+                    <h4>Questions about this policy?</h4>
+                    <p>Reach our team directly — we're happy to clarify any part of these terms.</p>
+                    <a href="contact.html" class="toc_contact_btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <div class="legal_content">
+
+                <!-- INTRO -->
+                <div class="legal_section">
+                    <p>Govind Sugar &amp; Spices ("Devnoor Masala", "we", "us", or "our") operates the website and sells
+                        spice products under the Devnoor Masala brand. This document explains how we handle your
+                        personal information and sets out the terms that apply when you visit our website, contact us,
+                        or purchase our products. By using this website, you agree to the practices described below.</p>
+                </div>
+
+                <!-- 01 -->
+                <div class="legal_section" id="info-we-collect">
+                    <div class="section_head">
+                        <span class="section_num">01</span>
+                        <h2>Information We <span>Collect</span></h2>
+                    </div>
+                    <p>We collect information that you provide directly to us, as well as information gathered
+                        automatically when you interact with our website.</p>
+                    <ul class="bullet_list">
+                        <li><i class="fa-solid fa-circle"></i> <strong style="color:var(--clr_dark);">Contact
+                                details</strong> — name, phone number, email address, and delivery address when you
+                            reach out via our contact form or WhatsApp.</li>
+                        <li><i class="fa-solid fa-circle"></i> <strong style="color:var(--clr_dark);">Order
+                                information</strong> — products purchased, pack sizes, and order history, where
+                            applicable.</li>
+                        <li><i class="fa-solid fa-circle"></i> <strong style="color:var(--clr_dark);">Communication
+                                records</strong> — messages, queries, or feedback you send us through any channel.</li>
+                        <li><i class="fa-solid fa-circle"></i> <strong style="color:var(--clr_dark);">Technical
+                                data</strong> — browser type, device information, and pages visited, collected
+                            automatically through standard web analytics.</li>
+                    </ul>
+                    <div class="legal_callout">
+                        <p><strong><i class="fa-solid fa-circle-info"></i> Note</strong>We do not knowingly collect
+                            sensitive personal information such as payment card details on our website. Any transactions
+                            are handled through secure third-party channels where applicable.</p>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="legal_section" id="how-we-use">
+                    <div class="section_head">
+                        <span class="section_num">02</span>
+                        <h2>How We <span>Use</span> Information</h2>
+                    </div>
+                    <p>The information we collect is used solely to operate and improve our business, including to:</p>
+                    <ul class="bullet_list">
+                        <li><i class="fa-solid fa-circle"></i> Respond to your enquiries, orders, and customer support
+                            requests.</li>
+                        <li><i class="fa-solid fa-circle"></i> Process and fulfil product orders, including delivery
+                            coordination.</li>
+                        <li><i class="fa-solid fa-circle"></i> Share updates about products, offers, or changes to our
+                            policies, where you have consented to receive them.</li>
+                        <li><i class="fa-solid fa-circle"></i> Improve our website, product range, and overall customer
+                            experience.</li>
+                        <li><i class="fa-solid fa-circle"></i> Comply with applicable legal and regulatory obligations,
+                            including FSSAI requirements.</li>
+                    </ul>
+                </div>
+
+                <!-- 03 -->
+                <div class="legal_section" id="cookies">
+                    <div class="section_head">
+                        <span class="section_num">03</span>
+                        <h2>Cookies &amp; <span>Tracking</span></h2>
+                    </div>
+                    <p>Our website may use cookies and similar technologies to remember your preferences and understand
+                        how visitors use our site. You can control or disable cookies through your browser settings at
+                        any time; doing so may affect some website functionality.</p>
+                    <div class="legal_table_wrap">
+                        <table class="legal_table">
+                            <thead>
+                                <tr>
+                                    <th>Cookie Type</th>
+                                    <th>Purpose</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Essential</td>
+                                    <td>Core site functionality and navigation</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics</td>
+                                    <td>Understand site usage and improve experience</td>
+                                    <td>Up to 12 months</td>
+                                </tr>
+                                <tr>
+                                    <td>Preference</td>
+                                    <td>Remember display and language preferences</td>
+                                    <td>Up to 6 months</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="legal_section" id="data-sharing">
+                    <div class="section_head">
+                        <span class="section_num">04</span>
+                        <h2>Data <span>Sharing</span></h2>
+                    </div>
+                    <p>We do not sell your personal information to third parties. We may share limited information with:
+                    </p>
+                    <ul class="bullet_list">
+                        <li><i class="fa-solid fa-circle"></i> Delivery and logistics partners, solely to fulfil your
+                            orders.</li>
+                        <li><i class="fa-solid fa-circle"></i> Service providers who support our website,
+                            communications, or operations under confidentiality obligations.</li>
+                        <li><i class="fa-solid fa-circle"></i> Government or regulatory authorities, where required by
+                            applicable law.</li>
+                    </ul>
+                </div>
+
+                <!-- 05 -->
+                <div class="legal_section" id="data-security">
+                    <div class="section_head">
+                        <span class="section_num">05</span>
+                        <h2>Data <span>Security</span></h2>
+                    </div>
+                    <p>We take reasonable administrative and technical measures to protect the information you share
+                        with us against unauthorised access, alteration, or disclosure. However, no method of
+                        transmission over the internet is completely secure, and we cannot guarantee absolute security.
+                    </p>
+                </div>
+
+                <!-- 06 -->
+                <div class="legal_section" id="your-rights">
+                    <div class="section_head">
+                        <span class="section_num">06</span>
+                        <h2>Your <span>Rights</span></h2>
+                    </div>
+                    <p>You may contact us at any time to:</p>
+                    <ul class="bullet_list">
+                        <li><i class="fa-solid fa-circle"></i> Request access to the personal information we hold about
+                            you.</li>
+                        <li><i class="fa-solid fa-circle"></i> Ask us to correct inaccurate or outdated information.
+                        </li>
+                        <li><i class="fa-solid fa-circle"></i> Request deletion of your information, subject to legal
+                            and operational requirements.</li>
+                        <li><i class="fa-solid fa-circle"></i> Withdraw consent for marketing communications at any
+                            time.</li>
+                    </ul>
+                    <p>To exercise any of these rights, reach out using the contact details at the end of this page.</p>
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="doc_divider">
+                    <div class="doc_divider_line"></div>
+                    <div class="doc_divider_badge"><i class="fa-solid fa-file-contract"></i> Terms of Use</div>
+                    <div class="doc_divider_line"></div>
+                </div>
+
+                <!-- 07 -->
+                <div class="legal_section" id="acceptance">
+                    <div class="section_head">
+                        <span class="section_num">07</span>
+                        <h2>Acceptance of <span>Terms</span></h2>
+                    </div>
+                    <p>By accessing or using this website, you agree to be bound by these Terms of Use and our Privacy
+                        Policy. If you do not agree with any part of these terms, please discontinue use of the website.
+                    </p>
+                </div>
+
+                <!-- 08 -->
+                <div class="legal_section" id="products-orders">
+                    <div class="section_head">
+                        <span class="section_num">08</span>
+                        <h2>Products &amp; <span>Orders</span></h2>
+                    </div>
+                    <p>All Devnoor Masala products are manufactured and packed by Govind Sugar &amp; Spices under FSSAI
+                        License No. 10723014000067. We take care to ensure product descriptions, weights, and images are
+                        accurate; minor variations in packaging or appearance may occur between batches.</p>
+                    <ul class="bullet_list">
+                        <li><i class="fa-solid fa-circle"></i> Product availability and pricing are subject to change
+                            without prior notice.</li>
+                        <li><i class="fa-solid fa-circle"></i> Orders placed via WhatsApp, phone, or the contact form
+                            are confirmed directly by our team.</li>
+                        <li><i class="fa-solid fa-circle"></i> Please store products as indicated on packaging — in a
+                            cool, dry, hygienic place, away from direct heat and sunlight.</li>
+                    </ul>
+                </div>
+
+                <!-- 09 -->
+                <div class="legal_section" id="ip">
+                    <div class="section_head">
+                        <span class="section_num">09</span>
+                        <h2>Intellectual <span>Property</span></h2>
+                    </div>
+                    <p>All content on this website — including the Devnoor Masala name, logo, product descriptions,
+                        photography, and design — is the property of Govind Sugar &amp; Spices and is protected under
+                        applicable intellectual property laws. You may not reproduce, distribute, or use this content
+                        for commercial purposes without our prior written consent.</p>
+                </div>
+
+                <!-- 10 -->
+                <div class="legal_section" id="liability">
+                    <div class="section_head">
+                        <span class="section_num">10</span>
+                        <h2>Limitation of <span>Liability</span></h2>
+                    </div>
+                    <p>While we strive to ensure the accuracy of information on this website, Devnoor Masala and Govind
+                        Sugar &amp; Spices shall not be held liable for any indirect, incidental, or consequential
+                        damages arising from the use of this website or our products, except where such liability cannot
+                        be excluded under applicable law.</p>
+                </div>
+
+                <!-- 11 -->
+                <div class="legal_section" id="changes">
+                    <div class="section_head">
+                        <span class="section_num">11</span>
+                        <h2>Changes to <span>Terms</span></h2>
+                    </div>
+                    <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in our
+                        practices or for legal and regulatory reasons. The "Last Updated" date at the top of this page
+                        indicates when revisions were last made. Continued use of the website after changes are posted
+                        constitutes acceptance of the updated terms.</p>
+                </div>
+
+                <!-- 12 -->
+                <div class="legal_section" id="contact-us">
+                    <div class="section_head">
+                        <span class="section_num">12</span>
+                        <h2>Contact <span>Us</span></h2>
+                    </div>
+                    <p>If you have any questions about this Privacy Policy, our Terms of Use, or how your information is
+                        handled, please reach out:</p>
+                    <div class="legal_callout">
+                        <p><strong><i class="fa-solid fa-location-dot"></i> Address</strong>Govind Sugar &amp; Spices,
+                            Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                    </div>
+                    <div class="legal_callout">
+                        <p><strong><i class="fa-brands fa-whatsapp"></i> WhatsApp / Customer Care</strong>+91 92134
+                            41003</p>
+                    </div>
+                    <div class="legal_callout">
+                        <p><strong><i class="fa-solid fa-envelope"></i> Email</strong>govindbrands@gmail.com</p>
+                    </div>
+                    <a href="#tocList" class="back_to_toc"
+                        onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><i
+                            class="fa-solid fa-arrow-up"></i> Back to top</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_grid">
+                <div class="footer_brand">
+                    <span class="footer_logo_name">Devnoor Masala</span>
+                    <p>Manufactured &amp; Packed by Govind Sugar &amp; Spices, Plot No. 106, Sr. No. 1157, Kamla Amrut
+                        Inditech Park, Mahesana, Gujarat – 382715. FSSAI Lic. No.: 10723014000067.</p>
+                    <div class="footer_social">
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919213441003" class="wa"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Quick Links</div>
+                    <div class="footer_links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a>
+                        <a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer_heading">Contact Us</div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <p>Plot No. 106, Sr. No. 1157, Kamla Amrut Inditech Park, Mahesana, Gujarat – 382715</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <p>+91 92134 41003</p>
+                    </div>
+                    <div class="footer_contact_item">
+                        <div class="footer_contact_icon"><i class="fa-solid fa-envelope"></i></div>
+                        <p>govindbrands@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>© 2026 <span>Devnoor Masala</span> · Govind Sugar &amp; Spices. All rights reserved.</p>
+                <div class="footer_bottom_links">
+                    <a href="legal.html" class="current">Privacy Policy</a>
+                    <a href="legal.html#acceptance">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll_top_btn" id="scroll_top_btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Scroll spy for TOC
+        const sections = document.querySelectorAll('.legal_section[id]');
+        const tocLinks = document.querySelectorAll('.toc_link');
+
+        function updateActiveLink() {
+            let currentId = '';
+            const scrollPos = window.scrollY + 140;
+            sections.forEach(sec => {
+                if (sec.offsetTop <= scrollPos) currentId = sec.id;
+            });
+            tocLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.target === currentId);
+            });
+        }
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
+
+        // Smooth scroll for TOC links (offset for sticky header)
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.getElementById(this.dataset.target);
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll-to-top button
+        const scrollBtn = document.getElementById('scroll_top_btn');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+    </script>
+</body>
+
+</html>
