@@ -37,6 +37,12 @@
             --shadow_md: 0 6px 28px rgba(122, 74, 30, 0.15);
             --shadow_lg: 0 16px 48px rgba(122, 74, 30, 0.18);
             --transition: 0.3s ease;
+            
+            --gold: #e8a020;
+            --t: .28s ease;
+            --border: #e8d8c0;
+            --text: #3d2b14;
+            --ff-script: 'Dancing Script', cursive;
         }
 
         *,
@@ -212,55 +218,43 @@
             border-color: #fff;
         }
 
-        /* HEADER */
+        /* ─── HEADER ─── */
         .header {
             background: var(--clr_white);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 16px rgba(122, 74, 30, 0.10);
-            border-bottom: 2px solid var(--clr_cream);
+            z-index: 900;
+            box-shadow: 0 2px 18px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream)
         }
 
-        .nav_wrapper {
+        .nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 12px 24px;
+            max-width: 1240px;
+            margin: 0 auto
         }
 
-        .nav_logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav_logo_text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .nav_logo_img {
-            height: 60px;
+        .nav_logo img {
+            height: 56px
         }
 
         .nav_links {
             display: flex;
-            gap: 26px;
-            align-items: center;
+            gap: 24px
         }
 
         .nav_links a {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: .05em;
             text-transform: uppercase;
-            color: var(--clr_text);
-            transition: color var(--transition);
+            color: var(--text);
             position: relative;
             padding-bottom: 4px;
+            transition: color var(--t)
         }
 
         .nav_links a::after {
@@ -270,48 +264,138 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--clr_red);
-            transition: width var(--transition);
+            background: var(--gold);
+            border-radius: 2px;
+            transition: width var(--t)
         }
 
-        .nav_links a:hover {
-            color: var(--clr_red);
+        .nav_links a:hover,
+        .nav_links a.active {
+            color: var(--gold)
         }
 
         .nav_links a:hover::after,
         .nav_links a.active::after {
-            width: 100%;
-        }
-
-        .nav_links a.active {
-            color: var(--clr_red);
+            width: 100%
         }
 
         .nav_icons {
             display: flex;
-            gap: 18px;
-            align-items: center;
+            gap: 8px
         }
 
-        .nav_icon_btn {
-            width: 38px;
-            height: 38px;
+        .nav_btn {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: var(--clr_cream);
-            border: 1.5px solid var(--clr_border);
+            border: 1.5px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--clr_text);
-            font-size: 15px;
+            font-size: 14px;
+            color: var(--text);
             cursor: pointer;
-            transition: all var(--transition);
+            transition: all var(--t)
         }
 
-        .nav_icon_btn:hover {
-            background: var(--clr_red);
+        .nav_btn:hover {
+            background: var(--gold);
             color: #fff;
-            border-color: var(--clr_red);
+            border-color: var(--gold)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px
+        }
+
+        /* ─── MOBILE NAV ─── */
+        .mob_nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 2000
+        }
+
+        .mob_nav.open {
+            display: block
+        }
+
+        .mob_panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 78%;
+            max-width: 290px;
+            height: 100%;
+            background: var(--clr_white);
+            padding: 28px 22px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+            overflow-y: auto
+        }
+
+        .mob_nav.open .mob_panel {
+            transform: translateX(0)
+        }
+
+        .mob_close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text)
+        }
+
+        .mob_logo {
+            font-family: var(--ff-script);
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: block
+        }
+
+        .mob_links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .mob_links a {
+            display: block;
+            padding: 11px 14px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: var(--text);
+            transition: all var(--t)
+        }
+
+        .mob_links a:hover,
+        .mob_links a.active {
+            background: var(--gold);
+            color: #fff
         }
 
         /* HERO */
@@ -911,6 +995,12 @@
             align-items: center;
         }
 
+        @media screen and (max-width: 500px) {
+            .promo_banner_inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .promo_tag {
             display: inline-flex;
             align-items: center;
@@ -1190,6 +1280,10 @@
                 display: none;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .process_track {
                 flex-direction: column;
                 align-items: center;
@@ -1204,6 +1298,493 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .read_more_story{
+            display: none;
+        }
+
+        /* ===========================
+            STORY SECTION MOBILE
+        ===========================*/
+
+        @media (max-width:768px){
+
+            .story_section{
+                background:#f9f0e0;
+                padding:60px 0;
+            }
+
+            .story_content_wrap{
+                display:block;
+                min-height:auto;
+            }
+
+            .story_img_panel{
+                position:relative;
+                width:100%;
+                height:260px;
+                margin-bottom:30px;
+            }
+
+            .story_img_panel img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                object-position:center;
+            }
+
+            .story_img_panel::before{
+                display:none;
+            }
+
+            .story_left{
+                padding:0;
+            }
+
+            .story_title{
+                font-size:42px;
+                line-height:1.1;
+            }
+
+            .story_body{
+                position:relative;
+            }
+
+            .story_body.collapsed{
+                max-height:190px;
+                overflow:hidden;
+            }
+
+            .story_body.collapsed::after{
+                content:"";
+                position:absolute;
+                left:0;
+                right:0;
+                bottom:0;
+                height:80px;
+                background:linear-gradient(to bottom,
+                    rgba(249,240,224,0),
+                    rgba(249,240,224,1));
+            }
+
+            .read_more_story{
+                width: fit-content;
+                display:flex;
+                align-items: center;
+                gap: 10px;
+                margin-top:20px;
+                color:var(--clr_red);
+                border-bottom: 2px solid var(--clr_red);
+                font-weight:700;
+                cursor:pointer;
+            }
+
+        }
+
+        @media (max-width:768px){
+
+            .comparison_section{
+                overflow:hidden;
+            }
+
+            .comparison_table{
+                min-width:620px;
+            }
+
+            .table_wrapper{
+                overflow-x:auto;
+                -webkit-overflow-scrolling:touch;
+                border-radius:20px;
+            }
+
+            .table_wrapper::-webkit-scrollbar{
+                height:5px;
+            }
+
+            .table_wrapper::-webkit-scrollbar-thumb{
+                background:#d4a04b;
+            }
+
+            .comparison_table th,
+            .comparison_table td{
+                padding:16px 12px;
+                font-size:15px;
+                white-space:normal;
+            }
+
+            .comparison_table td:first-child{
+                min-width:130px;
+            }
+
+        }
+
+        /* ======================================================
+        2K / 4K / ULTRAWIDE DESKTOPS
+        ====================================================== */
+
+        @media screen and (min-width:1721px){
+
+            /* Container */
+
+            .container{
+                max-width:75vw;
+                padding:0 1.25vw;
+            }
+
+            .section_padding{
+                padding:4vw 0;
+            }
+
+            /* ================= HEADER ================= */
+
+            .nav{
+                max-width:75vw;
+                padding:.7vw 1.25vw;
+            }
+
+            .nav_logo img{
+                height:2.9vw;
+            }
+
+            .nav_links{
+                gap:1.25vw;
+            }
+
+            .nav_links a{
+                font-size:.68vw;
+                padding-bottom:.2vw;
+            }
+
+            .nav_btn{
+                width:1.9vw;
+                height:1.9vw;
+                font-size:.72vw;
+            }
+
+            /* ================= BUTTONS ================= */
+
+            .btn_primary,
+            .btn_white{
+                padding:.7vw 1.6vw;
+                font-size:.68vw;
+                gap:.45vw;
+                border-radius:3vw;
+            }
+
+            .btn_outline,
+            .btn_outline_white{
+                padding:.65vw 1.5vw;
+                font-size:.68vw;
+                gap:.45vw;
+                border-radius:3vw;
+            }
+
+            /* ================= HERO ================= */
+
+            .hero_section{
+                min-height:90vh;
+            }
+
+            .hero_inner{
+                max-width:75vw;
+                gap:2.5vw;
+                padding:0 1.25vw;
+            }
+
+            .hero_left{
+                padding:3vw 0;
+            }
+
+            .hero_blob1{
+                width:24vw;
+                height:24vw;
+                top:-5vw;
+                right:-5vw;
+            }
+
+            .hero_blob2{
+                width:18vw;
+                height:18vw;
+                left:-4vw;
+                bottom:-4vw;
+            }
+
+            .hero_title{
+                font-size:3.5vw;
+                margin-bottom:.9vw;
+            }
+
+            .hero_desc{
+                font-size:.82vw;
+                max-width:26vw;
+                margin-bottom:1.8vw;
+            }
+
+            .hero_cta{
+                gap:.75vw;
+            }
+
+            .hero_main_img{
+                border-radius:1.5vw;
+            }
+
+            .hero_main_img img{
+                height:30vw;
+            }
+
+            /* ================= MARQUEE ================= */
+
+            .marquee_strip{
+                padding:.7vw 0;
+            }
+
+            .marquee_item{
+                font-size:.62vw;
+                padding:0 1.5vw;
+                gap:.7vw;
+            }
+
+            /* ================= SECTION TITLE ================= */
+
+            .section_title{
+                margin-bottom:.5vw;
+            }
+
+            .section_title h2{
+                font-size:2.3vw;
+            }
+
+            .section_subtitle{
+                font-size:.75vw;
+                margin-bottom:2.8vw;
+            }
+
+            /* ================= STORY ================= */
+
+            .story_content_wrap{
+                min-height:34vw;
+            }
+
+            .story_left{
+                padding:4vw 2.5vw 4vw 0;
+            }
+
+            .story_eyebrow{
+                font-size:.58vw;
+                padding:.35vw .9vw;
+                margin-bottom:1vw;
+                gap:.4vw;
+            }
+
+            .story_title{
+                font-size:2.5vw;
+                margin-bottom:1vw;
+            }
+
+            .story_body p{
+                font-size:.75vw;
+                margin-bottom:.7vw;
+            }
+
+            .story_cta{
+                padding:.65vw 1.5vw;
+                font-size:.68vw;
+                margin-top:1.5vw;
+            }
+
+            /* ================= CATEGORIES ================= */
+
+            .categories_grid{
+                gap:2vw;
+            }
+
+            .category_card{
+                border-radius:1vw;
+            }
+
+            .category_card_img{
+                height:16vw;
+            }
+
+            .category_card_body{
+                padding:1.6vw;
+            }
+
+            .category_icon_wrap{
+                width:3vw;
+                height:3vw;
+                font-size:1.3vw;
+                margin-bottom:.9vw;
+            }
+
+            .category_card h3{
+                font-size:1.45vw;
+            }
+
+            .category_card p{
+                font-size:.72vw;
+                margin-bottom:1vw;
+            }
+
+            .category_products_list{
+                gap:.45vw;
+                margin-bottom:1.3vw;
+            }
+
+            .category_product_item{
+                font-size:.68vw;
+            }
+
+            .category_card_link{
+                font-size:.68vw;
+            }
+
+            /* ================= QUALITY ================= */
+
+            .process_track{
+                margin-top:1vw;
+            }
+
+            .process_circle{
+                width:4vw;
+                height:4vw;
+                font-size:1.2vw;
+                margin-bottom:.75vw;
+            }
+
+            .process_step h4{
+                font-size:.8vw;
+            }
+
+            .process_step p{
+                font-size:.65vw;
+            }
+
+            /* ================= COMPARISON ================= */
+
+            .comparison_table th{
+                padding:1vw 1.3vw;
+                font-size:.82vw;
+            }
+
+            .comparison_table td{
+                padding:.8vw 1.3vw;
+                font-size:.68vw;
+            }
+
+            /* ================= PROMO ================= */
+
+            .promo_banner_section{
+                padding:3.8vw 0;
+            }
+
+            .promo_banner_inner{
+                max-width:75vw;
+                gap:2.5vw;
+                padding:0 1.25vw;
+            }
+
+            .promo_tag{
+                font-size:.58vw;
+                padding:.35vw .9vw;
+                margin-bottom:1vw;
+            }
+
+            .promo_banner_inner h2{
+                font-size:2.7vw;
+            }
+
+            .promo_banner_inner p{
+                font-size:.75vw;
+                margin-bottom:1.5vw;
+            }
+
+            .promo_btns{
+                gap:.7vw;
+            }
+
+            .promo_banner_img{
+                border-radius:1vw;
+            }
+
+            .promo_banner_img img{
+                height:20vw;
+            }
+
+            /* ================= FOOTER ================= */
+
+            .footer{
+                padding:4vw 0 1.5vw;
+            }
+
+            .footer_grid{
+                gap:2vw;
+                margin-bottom:2.5vw;
+            }
+
+            .footer_logo_name{
+                font-size:1.7vw;
+            }
+
+            .footer_brand p{
+                font-size:.72vw;
+            }
+
+            .footer_heading{
+                font-size:.9vw;
+            }
+
+            .footer_links a{
+                font-size:.68vw;
+            }
+
+            .footer_contact_item p{
+                font-size:.68vw;
+            }
+
+            .footer_contact_icon{
+                width:2vw;
+                height:2vw;
+                font-size:.72vw;
+            }
+
+            .footer_social{
+                gap:.45vw;
+            }
+
+            .footer_social a{
+                width:2vw;
+                height:2vw;
+                font-size:.72vw;
+            }
+
+            .footer_bottom{
+                padding-top:1.3vw;
+            }
+
+            .footer_bottom p{
+                font-size:.62vw;
+            }
+
+            .footer_bottom_links{
+                gap:1vw;
+            }
+
+            .footer_bottom_links a{
+                font-size:.58vw;
+            }
+
+            /* ================= SCROLL BUTTON ================= */
+
+            .scroll_top_btn{
+                width:2.4vw;
+                height:2.4vw;
+                right:1.5vw;
+                bottom:1.5vw;
+                font-size:.85vw;
+            }
+
+        }
     </style>
 </head>
 
@@ -1211,11 +1792,9 @@
 
     <!-- HEADER -->
     <header class="header">
-        <nav class="nav_wrapper">
+        <nav class="nav">
             <div class="nav_logo">
-                <div class="nav_logo_text">
-                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
-                </div>
+                <a href="index.html"><img src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -1223,12 +1802,32 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <!-- <div class="nav_icons">
-                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+
+            <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+            <!-- <div style="display:flex;align-items:center;gap:10px">
+                <div class="nav_icons">
+                    <a href="#" class="nav_btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="tel:+919213441003" class="nav_btn" title="Call"><i class="fa-solid fa-phone"></i></a>
+                </div>
+                <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
             </div> -->
         </nav>
     </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mob_nav" id="mobNav" onclick="closeMobOut(event)">
+        <div class="mob_panel">
+            <button class="mob_close" onclick="closeMob()"><i class="fa-solid fa-xmark"></i></button>
+            <!-- <span class="mob_logo">Devnoor</span> -->
+            <a href="index.html"><img src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
+            <div class="mob_links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO — no badge, no trust row, no float card, no img badge -->
     <section class="hero_section">
@@ -1274,7 +1873,7 @@
                     <h2 class="story_title">
                         Born from one simple <em>question</em>
                     </h2>
-                    <div class="story_body">
+                    <div class="story_body collapsed" id="storyText">
                         <p>
                             <strong style="color:var(--clr_dark);">"Are we using real, pure masalas?"</strong> What started as a concern in 2021 became a commitment to bring trusted purity, authentic flavor, and confidence back to Indian kitchens. We realized that families deserved spices they could trust—free from compromise and rich in natural taste.
                         </p>
@@ -1282,8 +1881,11 @@
                             Guided by this belief, we carefully source quality ingredients, follow strict quality standards, and ensure every pack delivers freshness, aroma, and consistency. Today, our mission remains simple: to help every home create memorable meals with spices that celebrate the true essence of Indian cooking.
                         </p>
                     </div>
-                    <a href="contact.html" class="story_cta">
-                        <i class="fa-solid fa-arrow-right"></i> Get in Touch
+                    <div class="read_more_story" id="storyBtn">
+                        Read More <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <a href="about.html" class="story_cta">
+                        <i class="fa-solid fa-arrow-right"></i> Read  Our Story
                     </a>
                 </div>
 
@@ -1335,7 +1937,7 @@
                                     class="fa-solid fa-chevron-right"></i> Teja Chilli Powder — Fiery Heat of Authentic
                                 Indian Cooking</a>
                         </div> -->
-                        <a href="products.html" class="category_card_link pure"><i class="fa-solid fa-arrow-right"></i>
+                        <a href="products.html?type=pure" class="category_card_link pure"><i class="fa-solid fa-arrow-right"></i>
                             View All Pure Spices</a>
                     </div>
                 </div>
@@ -1361,7 +1963,7 @@
                                     class="fa-solid fa-chevron-right"></i> Garam Masala — Signature Blend of Rich Aroma
                                 &amp; Authentic Flavor</a>
                         </div> -->
-                        <a href="products.html" class="category_card_link blended"><i
+                        <a href="products.html?type=blended" class="category_card_link blended"><i
                                 class="fa-solid fa-arrow-right"></i> View All Blended Spices</a>
                     </div>
                 </div>
@@ -1433,53 +2035,55 @@
                 <h2>Devnoor vs <span>Ordinary</span></h2>
             </div>
             <p class="section_subtitle">See why thousands of families trust Devnoor Masala every day</p>
-            <table class="comparison_table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th class="devnoor_col">🌿 Devnoor Masala</th>
-                        <th>Ordinary Spices</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Purity Testing</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Lab-tested for quality
-                        </td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> Purity often uncertain</td>
-                    </tr>
-                    <tr>
-                        <td>Flavor</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Rich, authentic flavor
-                        </td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> Inconsistent taste</td>
-                    </tr>
-                    <tr>
-                        <td>Adulteration</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> 100% pure, no adulteration
-                        </td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> May contain adulterants</td>
-                    </tr>
-                    <tr>
-                        <td>Processing</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Clean &amp; hygienically
-                            processed</td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> Unhygienic, manual processing</td>
-                    </tr>
-                    <tr>
-                        <td>Consistency</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Same trusted taste every
-                            pack</td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> Can differ batch to batch</td>
-                    </tr>
-                    <tr>
-                        <td>Sourcing</td>
-                        <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Sourced from the best
-                            farms</td>
-                        <td><i class="fa-solid fa-circle-xmark cross"></i> Random, unverified sourcing</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table_wrapper">
+                <table class="comparison_table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="devnoor_col">🌿 Devnoor Masala</th>
+                            <th>Ordinary Spices</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Purity Testing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Lab-tested for quality
+                            </td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> Purity often uncertain</td>
+                        </tr>
+                        <tr>
+                            <td>Flavor</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Rich, authentic flavor
+                            </td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> Inconsistent taste</td>
+                        </tr>
+                        <tr>
+                            <td>Adulteration</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> 100% pure, no adulteration
+                            </td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> May contain adulterants</td>
+                        </tr>
+                        <tr>
+                            <td>Processing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Clean &amp; hygienically
+                                processed</td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> Unhygienic, manual processing</td>
+                        </tr>
+                        <tr>
+                            <td>Consistency</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Same trusted taste every
+                                pack</td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> Can differ batch to batch</td>
+                        </tr>
+                        <tr>
+                            <td>Sourcing</td>
+                            <td class="devnoor_val"><i class="fa-solid fa-circle-check tick"></i> Sourced from the best
+                                farms</td>
+                            <td><i class="fa-solid fa-circle-xmark cross"></i> Random, unverified sourcing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -1561,6 +2165,36 @@
     <script>
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+
+        /* MOBILE NAV */
+        function openMob() { document.getElementById('mobNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeMob() { document.getElementById('mobNav').classList.remove('open'); document.body.style.overflow = ''; }
+        function closeMobOut(e) { if (e.target === document.getElementById('mobNav')) closeMob(); }
+
+        /* SCROLL TOP */
+        window.addEventListener('scroll', () => {
+            document.getElementById('stb').classList.toggle('on', window.scrollY > 400);
+        });
+
+        const storyBtn=document.getElementById("storyBtn");
+        const storyText=document.getElementById("storyText");
+
+        if(storyBtn){
+
+        storyBtn.onclick=function(){
+
+        storyText.classList.toggle("collapsed");
+
+        if(storyText.classList.contains("collapsed")){
+        storyBtn.innerHTML='Read More <i class="fa-solid fa-angle-down"></i>';
+        }
+        else{
+        storyBtn.innerHTML='Read Less <i class="fa-solid fa-angle-up"></i>';
+        }
+
+        }
+
+        }
     </script>
 </body>
 

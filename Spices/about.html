@@ -32,6 +32,12 @@
             --shadow_sm: 0 2px 12px rgba(122, 74, 30, .10);
             --shadow_md: 0 6px 28px rgba(122, 74, 30, .15);
             --transition: .3s ease;
+
+            --gold: #e8a020;
+            --t: .28s ease;
+            --border: #e8d8c0;
+            --text: #3d2b14;
+            --ff-script: 'Dancing Script', cursive;
         }
 
         *,
@@ -78,63 +84,43 @@
             padding: 80px 0;
         }
 
-        /* HEADER */
+        /* ─── HEADER ─── */
         .header {
             background: var(--clr_white);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 16px rgba(122, 74, 30, .10);
-            border-bottom: 2px solid var(--clr_cream);
+            z-index: 900;
+            box-shadow: 0 2px 18px rgba(122, 74, 30, .10);
+            border-bottom: 2px solid var(--clr_cream)
         }
 
-        .nav_wrapper {
+        .nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 12px 24px;
+            max-width: 1240px;
+            margin: 0 auto
         }
 
-        .nav_logo_text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .nav_logo_img {
-            height: 60px;
-        }
-
-        .nav_logo_name {
-            font-family: var(--ff_script);
-            font-size: 26px;
-            color: var(--clr_red);
-            line-height: 1;
-        }
-
-        .nav_logo_sub {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--clr_green);
+        .nav_logo img {
+            height: 56px
         }
 
         .nav_links {
             display: flex;
-            gap: 26px;
+            gap: 24px
         }
 
         .nav_links a {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
-            letter-spacing: .04em;
+            letter-spacing: .05em;
             text-transform: uppercase;
-            color: var(--clr_text);
-            transition: color var(--transition);
+            color: var(--text);
             position: relative;
             padding-bottom: 4px;
+            transition: color var(--t)
         }
 
         .nav_links a::after {
@@ -144,44 +130,138 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--clr_red);
-            transition: width var(--transition);
+            background: var(--gold);
+            border-radius: 2px;
+            transition: width var(--t)
         }
 
         .nav_links a:hover,
         .nav_links a.active {
-            color: var(--clr_red);
+            color: var(--gold)
         }
 
         .nav_links a:hover::after,
         .nav_links a.active::after {
-            width: 100%;
+            width: 100%
         }
 
         .nav_icons {
             display: flex;
-            gap: 18px;
+            gap: 8px
         }
 
-        .nav_icon_btn {
-            width: 38px;
-            height: 38px;
+        .nav_btn {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: var(--clr_cream);
-            border: 1.5px solid var(--clr_border);
+            border: 1.5px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--clr_text);
-            font-size: 15px;
+            font-size: 14px;
+            color: var(--text);
             cursor: pointer;
-            transition: all var(--transition);
+            transition: all var(--t)
         }
 
-        .nav_icon_btn:hover {
-            background: var(--clr_red);
+        .nav_btn:hover {
+            background: var(--gold);
             color: #fff;
-            border-color: var(--clr_red);
+            border-color: var(--gold)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px
+        }
+
+        /* ─── MOBILE NAV ─── */
+        .mob_nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 2000
+        }
+
+        .mob_nav.open {
+            display: block
+        }
+
+        .mob_panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 78%;
+            max-width: 290px;
+            height: 100%;
+            background: var(--clr_white);
+            padding: 28px 22px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+            overflow-y: auto
+        }
+
+        .mob_nav.open .mob_panel {
+            transform: translateX(0)
+        }
+
+        .mob_close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--clr_cream);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text)
+        }
+
+        .mob_logo {
+            font-family: var(--ff-script);
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: block
+        }
+
+        .mob_links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .mob_links a {
+            display: block;
+            padding: 11px 14px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: var(--text);
+            transition: all var(--t)
+        }
+
+        .mob_links a:hover,
+        .mob_links a.active {
+            background: var(--gold);
+            color: #fff
         }
 
         /* ── ABOUT HERO — only these rules changed from original ── */
@@ -978,6 +1058,9 @@
             .nav_links {
                 display: none;
             }
+            .hamburger {
+                display: flex
+            }
             .promise_grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -994,6 +1077,433 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .read_more_story{
+            display: none;
+        }
+
+        /* ===========================
+            STORY SECTION MOBILE
+        ===========================*/
+
+        @media (max-width:768px){
+
+            .story_section{
+                background:#f9f0e0;
+                padding:60px 0;
+            }
+
+            .story_content_wrap{
+                display:block;
+                min-height:auto;
+            }
+
+            .story_img_panel{
+                position:relative;
+                width:100%;
+                height:260px;
+                margin-bottom:30px;
+            }
+
+            .story_img_panel img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                object-position:center;
+            }
+
+            .story_img_panel::before{
+                display:none;
+            }
+
+            .story_left{
+                padding:0;
+            }
+
+            .story_title{
+                font-size:42px;
+                line-height:1.1;
+            }
+
+            .story_body{
+                position:relative;
+            }
+
+            .story_body.collapsed{
+                max-height:190px;
+                overflow:hidden;
+            }
+
+            .story_body.collapsed::after{
+                content:"";
+                position:absolute;
+                left:0;
+                right:0;
+                bottom:0;
+                height:80px;
+                background:linear-gradient(to bottom,
+                    rgba(249,240,224,0),
+                    rgba(249,240,224,1));
+            }
+
+            .read_more_story{
+                width: fit-content;
+                display:flex;
+                align-items: center;
+                gap: 10px;
+                margin-top:20px;
+                color:var(--clr_red);
+                border-bottom: 2px solid var(--clr_red);
+                font-weight:700;
+                cursor:pointer;
+            }
+
+        }
+
+        /* ======================================================
+        2K / 4K / 5K / ULTRAWIDE RESPONSIVE
+        ====================================================== */
+
+        @media screen and (min-width:1721px){
+
+            /* Container */
+
+            .container{
+                max-width:75vw;
+                padding:0 1.25vw;
+            }
+
+            .section_padding{
+                padding:4vw 0;
+            }
+
+            /* Header */
+
+            .nav{
+                max-width:75vw;
+                padding:.7vw 1.25vw;
+            }
+
+            .nav_logo img{
+                height:2.9vw;
+            }
+
+            .nav_links{
+                gap:1.25vw;
+            }
+
+            .nav_links a{
+                font-size:.68vw;
+                padding-bottom:.2vw;
+            }
+
+            .nav_icons{
+                gap:.45vw;
+            }
+
+            .nav_btn{
+                width:2vw;
+                height:2vw;
+                font-size:.75vw;
+            }
+
+            /* About Hero */
+
+            .about_hero{
+                min-height:80vh;
+            }
+
+            .about_hero_inner{
+                width:75%;
+                padding:0 1.25vw;
+            }
+
+            .about_hero_left{
+                padding:5vw 0;
+            }
+
+            .breadcrumb{
+                gap:.45vw;
+                margin-bottom:1vw;
+                font-size:.68vw;
+            }
+
+            .breadcrumb i{
+                font-size:.45vw;
+            }
+
+            .about_hero h1{
+                font-size:3.6vw;
+                margin-bottom:1vw;
+            }
+
+            .about_hero_desc{
+                font-size:.82vw;
+                max-width:32vw;
+                margin-bottom:1.8vw;
+            }
+
+            .about_chips{
+                gap:.6vw;
+            }
+
+            .chip{
+                font-size:.62vw;
+                padding:.45vw .95vw;
+                gap:.35vw;
+            }
+
+            /* Section Title */
+
+            .section_title{
+                margin-bottom:.6vw;
+            }
+
+            .section_title h2{
+                font-size:2.35vw;
+            }
+
+            .section_subtitle{
+                font-size:.75vw;
+                margin-bottom:2.8vw;
+            }
+
+            /* Story */
+
+            .story_content_wrap{
+                min-height:34vw;
+            }
+
+            .story_left{
+                padding:4vw 2.5vw 4vw 0;
+            }
+
+            .story_eyebrow{
+                font-size:.58vw;
+                padding:.35vw .9vw;
+                margin-bottom:1vw;
+            }
+
+            .story_title{
+                font-size:2.5vw;
+                margin-bottom:1vw;
+            }
+
+            .story_body p{
+                font-size:.75vw;
+                margin-bottom:.8vw;
+            }
+
+            .story_cta{
+                padding:.65vw 1.5vw;
+                font-size:.68vw;
+                margin-top:1.5vw;
+            }
+
+            /* Mission Vision */
+
+            .mv_grid{
+                gap:1.8vw;
+            }
+
+            .mv_card{
+                padding:2.4vw 2vw;
+                border-radius:1vw;
+            }
+
+            .mv_icon{
+                width:3vw;
+                height:3vw;
+                font-size:1.3vw;
+                margin-bottom:1vw;
+            }
+
+            .mv_card h3{
+                font-size:1.5vw;
+                margin-bottom:.8vw;
+            }
+
+            .mv_card p{
+                font-size:.72vw;
+            }
+
+            /* Why */
+
+            .why_inner{
+                gap:3vw;
+            }
+
+            .why_eyebrow{
+                font-size:.58vw;
+                padding:.35vw .9vw;
+                margin-bottom:1vw;
+            }
+
+            .why_title{
+                font-size:2.3vw;
+                margin-bottom:1vw;
+            }
+
+            .why_body p{
+                font-size:.75vw;
+                margin-bottom:.8vw;
+            }
+
+            .why_visual{
+                padding:2.8vw;
+                border-radius:1.3vw;
+                gap:1.2vw;
+            }
+
+            .why_stat{
+                padding:1vw 1.2vw;
+                border-radius:.9vw;
+                gap:1vw;
+            }
+
+            .why_stat_icon{
+                width:2.8vw;
+                height:2.8vw;
+                font-size:1vw;
+            }
+
+            .why_stat strong{
+                font-size:1vw;
+            }
+
+            .why_stat span{
+                font-size:.65vw;
+            }
+
+            /* Promise */
+
+            .promise_intro{
+                max-width:42vw;
+                margin-bottom:2.5vw;
+            }
+
+            .promise_intro p{
+                font-size:.75vw;
+            }
+
+            .promise_grid{
+                gap:1.2vw;
+            }
+
+            .promise_card{
+                padding:1.8vw 1.2vw;
+                border-radius:1vw;
+            }
+
+            .promise_icon{
+                width:3vw;
+                height:3vw;
+                font-size:1.2vw;
+                margin-bottom:.9vw;
+            }
+
+            .promise_card h4{
+                font-size:.9vw;
+            }
+
+            .promise_card p{
+                font-size:.65vw;
+            }
+
+            .promise_banner{
+                padding:2.6vw 3vw;
+                margin-top:3vw;
+                gap:2vw;
+            }
+
+            .promise_banner_text h3{
+                font-size:2vw;
+            }
+
+            .promise_banner_text p{
+                font-size:.75vw;
+                max-width:34vw;
+            }
+
+            .promise_banner_btn{
+                padding:.7vw 1.5vw;
+                font-size:.68vw;
+            }
+
+            /* Footer */
+
+            .footer{
+                padding:4vw 0 1.5vw;
+            }
+
+            .footer_grid{
+                gap:2vw;
+                margin-bottom:2.5vw;
+            }
+
+            .footer_logo_name{
+                font-size:1.7vw;
+            }
+
+            .footer_brand p{
+                font-size:.72vw;
+            }
+
+            .footer_heading{
+                font-size:.9vw;
+            }
+
+            .footer_links a{
+                font-size:.68vw;
+            }
+
+            .footer_contact_item p{
+                font-size:.68vw;
+            }
+
+            .footer_contact_icon{
+                width:2vw;
+                height:2vw;
+                font-size:.75vw;
+            }
+
+            .footer_social{
+                gap:.45vw;
+            }
+
+            .footer_social a{
+                width:2vw;
+                height:2vw;
+                font-size:.75vw;
+            }
+
+            .footer_bottom{
+                padding-top:1.3vw;
+            }
+
+            .footer_bottom p{
+                font-size:.62vw;
+            }
+
+            .footer_bottom_links{
+                gap:1vw;
+            }
+
+            .footer_bottom_links a{
+                font-size:.6vw;
+            }
+
+            /* Scroll Button */
+
+            .scroll_top_btn{
+                width:2.5vw;
+                height:2.5vw;
+                right:1.5vw;
+                bottom:1.5vw;
+                font-size:.9vw;
+            }
+
+        }
     </style>
 </head>
 
@@ -1001,11 +1511,9 @@
 
     <!-- HEADER -->
     <header class="header">
-        <nav class="nav_wrapper">
+        <nav class="nav">
             <div class="nav_logo">
-                <div class="nav_logo_text">
-                    <a href="index.html"><img class="nav_logo_img" src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
-                </div>
+                <a href="index.html"><img src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
             </div>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
@@ -1013,12 +1521,30 @@
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="nav_icons">
-                <a href="#" class="nav_icon_btn"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="contact.html" class="nav_icon_btn"><i class="fa-solid fa-phone"></i></a>
+            <div style="display:flex;align-items:center;gap:10px">
+                <div class="nav_icons">
+                    <a href="#" class="nav_btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="tel:+919213441003" class="nav_btn" title="Call"><i class="fa-solid fa-phone"></i></a>
+                </div>
+                <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
             </div>
         </nav>
     </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mob_nav" id="mobNav" onclick="closeMobOut(event)">
+        <div class="mob_panel">
+            <button class="mob_close" onclick="closeMob()"><i class="fa-solid fa-xmark"></i></button>
+            <!-- <span class="mob_logo">Devnoor</span> -->
+            <a href="index.html"><img src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
+            <div class="mob_links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ABOUT HERO -->
     <section class="about_hero">
@@ -1090,7 +1616,7 @@
                     <h2 class="story_title">
                         Born from one simple <em>question</em>
                     </h2>
-                    <div class="story_body">
+                    <div class="story_body collapsed" id="storyText">
                         <p>
                             In Indian homes, spices are not just ingredients — they are the soul of cooking, the heart of family meals, and the taste behind lasting memories. But over time, one silent question began to grow in many households: <strong style="color:var(--clr_dark);">"Are we using real, pure masalas?"</strong> 
                         </p>
@@ -1103,6 +1629,9 @@
                         <p>
                             Whether it's your everyday sabzi, a Sunday biryani, or a festive family feast, Devnoor is there — not just as a spice brand, but as a trusted kitchen companion. Because your family deserves taste, health, and happiness in every bite.
                         </p>
+                    </div>
+                    <div class="read_more_story" id="storyBtn">
+                        Read More <i class="fa-solid fa-angle-down"></i>
                     </div>
                     <a href="contact.html" class="story_cta">
                         <i class="fa-solid fa-arrow-right"></i> Get in Touch
@@ -1269,6 +1798,36 @@
     <script>
         const scrollBtn = document.getElementById('scroll_top_btn');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400));
+
+        /* MOBILE NAV */
+        function openMob() { document.getElementById('mobNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeMob() { document.getElementById('mobNav').classList.remove('open'); document.body.style.overflow = ''; }
+        function closeMobOut(e) { if (e.target === document.getElementById('mobNav')) closeMob(); }
+
+        /* SCROLL TOP */
+        window.addEventListener('scroll', () => {
+            document.getElementById('stb').classList.toggle('on', window.scrollY > 400);
+        });
+
+        const storyBtn=document.getElementById("storyBtn");
+        const storyText=document.getElementById("storyText");
+
+        if(storyBtn){
+
+        storyBtn.onclick=function(){
+
+        storyText.classList.toggle("collapsed");
+
+        if(storyText.classList.contains("collapsed")){
+        storyBtn.innerHTML='Read More <i class="fa-solid fa-angle-down"></i>';
+        }
+        else{
+        storyBtn.innerHTML='Read Less <i class="fa-solid fa-angle-up"></i>';
+        }
+
+        }
+
+        }
     </script>
 </body>
 

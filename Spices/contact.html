@@ -886,6 +886,13 @@
             border-bottom: none;
         }
 
+        @media screen and (max-width: 500px) {
+            .hours_row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         .hours_day {
             display: flex;
             align-items: center;
@@ -1495,6 +1502,283 @@
             .page_hero {
                 padding: 70px 0 0;
             }
+        }
+
+        /* ==========================================================
+        2K / 4K / 5K / ULTRAWIDE RESPONSIVE SCALING
+        Add this AFTER all existing media queries
+        ========================================================== */
+
+        @media screen and (min-width:1721px){
+
+            html{
+                font-size:calc(16px + .18vw);
+            }
+
+            .container,
+            .nav_wrapper,
+            .hero_inner{
+                max-width:75vw;
+                padding-left:1.25vw;
+                padding-right:1.25vw;
+            }
+
+            .section_padding{
+                padding:4vw 0;
+            }
+
+            /* Header */
+
+            .nav_wrapper{
+                padding:.8vw 1.25vw;
+            }
+
+            .nav_logo_img{
+                height:3vw;
+            }
+
+            .nav_links{
+                gap:1.4vw;
+            }
+
+            .nav_links a{
+                font-size:.72vw;
+            }
+
+            .nav_icon_btn{
+                width:2vw;
+                height:2vw;
+                font-size:.8vw;
+            }
+
+            /* Hero */
+
+            .page_hero{
+                padding:5vw 0;
+            }
+
+            .hero_inner{
+                gap:3vw;
+            }
+
+            .hero_left{
+                padding-bottom:3vw;
+            }
+
+            .page_hero h1{
+                font-size:3.6vw;
+            }
+
+            .page_hero_desc{
+                font-size:.82vw;
+                max-width:32vw;
+            }
+
+            .q_btn{
+                padding:.7vw 1.5vw;
+                font-size:.65vw;
+            }
+
+            /* Hero Cards */
+
+            .hero_cards_stack{
+                gap:1vw;
+            }
+
+            .h_info_card{
+                padding:1.4vw;
+            }
+
+            .h_card_icon{
+                width:2.8vw;
+                height:2.8vw;
+                font-size:1.1vw;
+            }
+
+            .h_info_card h4{
+                font-size:.9vw;
+            }
+
+            .h_info_card p{
+                font-size:.7vw;
+            }
+
+            /* Contact */
+
+            .contact_grid{
+                gap:3vw;
+            }
+
+            .form_card{
+                padding:2.5vw;
+            }
+
+            .form_card_header h2{
+                font-size:2vw;
+            }
+
+            .form_input,
+            .form_select,
+            .form_textarea{
+                padding:.8vw 1vw;
+                font-size:.72vw;
+            }
+
+            .form_label{
+                font-size:.62vw;
+            }
+
+            .submit_btn{
+                padding:.9vw;
+                font-size:.72vw;
+            }
+
+            /* Address */
+
+            .address_card_top{
+                padding:1.6vw;
+            }
+
+            .address_card_body{
+                padding:1.6vw;
+            }
+
+            .addr_icon{
+                width:2.4vw;
+                height:2.4vw;
+                font-size:.9vw;
+            }
+
+            .addr_text strong{
+                font-size:.8vw;
+            }
+
+            .addr_text p,
+            .addr_text a{
+                font-size:.7vw;
+            }
+
+            /* Hours */
+
+            .hours_card{
+                padding:1.6vw;
+            }
+
+            .hours_card h3{
+                font-size:1vw;
+            }
+
+            .hours_row{
+                font-size:.7vw;
+            }
+
+            /* Map */
+
+            .map_wrap iframe{
+                height:34vw;
+            }
+
+            .map_overlay_card{
+                top:1.4vw;
+                left:1.4vw;
+                padding:1.2vw;
+                max-width:18vw;
+            }
+
+            .map_overlay_card h4{
+                font-size:.9vw;
+            }
+
+            .map_overlay_card p{
+                font-size:.68vw;
+            }
+
+            .map_dir_btn{
+                font-size:.62vw;
+                padding:.5vw 1vw;
+            }
+
+            /* FAQ */
+
+            .faq_header{
+                margin-bottom:3vw;
+            }
+
+            .faq_q{
+                padding:1.2vw;
+            }
+
+            .faq_q_text{
+                font-size:.78vw;
+            }
+
+            .faq_q_icon{
+                width:2vw;
+                height:2vw;
+                font-size:.8vw;
+            }
+
+            .faq_arrow{
+                width:1.8vw;
+                height:1.8vw;
+                font-size:.65vw;
+            }
+
+            .faq_a_inner{
+                padding:0 1.2vw 1.2vw;
+                font-size:.7vw;
+            }
+
+            /* Footer */
+
+            .footer{
+                padding:4vw 0 1.5vw;
+            }
+
+            .footer_grid{
+                gap:2vw;
+            }
+
+            .footer_logo_name{
+                font-size:1.8vw;
+            }
+
+            .footer_heading{
+                font-size:.95vw;
+            }
+
+            .footer_links a,
+            .footer_contact_item p{
+                font-size:.7vw;
+            }
+
+            .footer_contact_icon{
+                width:2vw;
+                height:2vw;
+                font-size:.75vw;
+            }
+
+            .footer_social a{
+                width:2vw;
+                height:2vw;
+                font-size:.75vw;
+            }
+
+            .footer_bottom p,
+            .footer_bottom_links a{
+                font-size:.62vw;
+            }
+
+            /* Scroll Button */
+
+            .scroll_top_btn{
+                width:2.5vw;
+                height:2.5vw;
+                right:1.5vw;
+                bottom:1.5vw;
+                font-size:.9vw;
+            }
+
         }
     </style>
 </head>

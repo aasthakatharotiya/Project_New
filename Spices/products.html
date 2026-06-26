@@ -73,7 +73,7 @@
         .wrap {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 0 24px
+            padding: 0 24px;
         }
 
         .sec {
@@ -428,17 +428,30 @@
             padding: 60px 0 80px
         }
 
+        .prod_grid_cover{
+            display: flex;
+            gap: 40px;
+            flex-direction: column;
+        }
+
         /* category header */
         .cat_header {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 28px
+            /* margin-bottom: 28px */
+        }
+
+        @media screen and (max-width: 500px) {
+            .cat_header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         .cat_header+.cat_header,
         .cat_header.second {
-            margin-top: 64px
+            /* margin-top: 64px */
         }
 
         .cat_pill {
@@ -469,7 +482,6 @@
             font-size: clamp(20px, 2.5vw, 28px);
             font-weight: 700;
             color: var(--dark);
-            white-space: nowrap
         }
 
         .cat_line {
@@ -1222,6 +1234,293 @@
                 font-size: 10.5px
             }
         }
+
+
+        /* =====================================================
+        LARGE DESKTOP / 2K / 4K SCREENS
+        ===================================================== */
+
+        @media screen and (min-width:1721px){
+
+            .wrap{
+                max-width:75vw;
+                padding:0 1.25vw;
+            }
+
+            .sec{
+                padding:4vw 0;
+            }
+
+            /* Header */
+
+            .nav{
+                max-width:75vw;
+                padding:.7vw 1.25vw;
+            }
+
+            .nav_logo img{
+                height:2.9vw;
+            }
+
+            .nav_links{
+                gap:1.25vw;
+            }
+
+            .nav_links a{
+                font-size:.68vw;
+                padding-bottom:.2vw;
+            }
+
+            .nav_btn{
+                width:1.9vw;
+                height:1.9vw;
+                font-size:.72vw;
+            }
+
+            /* Hero */
+
+            .hero{
+                padding:4vw 0 3vw;
+            }
+
+            .hero_blob{
+                width:20vw;
+                height:20vw;
+                top:-4vw;
+                right:-4vw;
+            }
+
+            .hero_blob2{
+                width:15vw;
+                height:15vw;
+                bottom:-3vw;
+                left:-3vw;
+            }
+
+            .hero h1{
+                font-size:3vw;
+            }
+
+            .hero p{
+                max-width:28vw;
+                font-size:.85vw;
+                margin:0 auto 1.8vw;
+            }
+
+            /* Filter */
+
+            .filterbar{
+                padding:1vw 0;
+            }
+
+            .filter_row{
+                gap:.7vw;
+            }
+
+            .filter_tabs{
+                gap:.45vw;
+            }
+
+            .ftab{
+                padding:.5vw 1vw;
+                font-size:.62vw;
+                border-radius:3vw;
+            }
+
+            .filter_count{
+                font-size:.72vw;
+            }
+
+            /* Products */
+
+            .prod_sec{
+                padding:3vw 0 4vw;
+            }
+
+            .prod_grid_cover{
+                gap:2vw;
+            }
+
+            .prod_grid{
+                gap:1.25vw;
+            }
+
+            .cat_header{
+                gap:.75vw;
+            }
+
+            .cat_pill{
+                padding:.4vw 1vw;
+                font-size:.55vw;
+                gap:.4vw;
+            }
+
+            .cat_header h2{
+                font-size:1.5vw;
+            }
+
+            .pcard{
+                border-radius:1vw;
+            }
+
+            .pcard_img{
+                height:14vw;
+            }
+
+            .pcard_img img{
+                padding:1vw .8vw;
+            }
+
+            .pcard_body{
+                padding:.9vw 1vw .8vw;
+            }
+
+            .pcard_cat{
+                font-size:.55vw;
+                margin-bottom:.25vw;
+            }
+
+            .pcard_name{
+                font-size:1vw;
+                margin-bottom:.2vw;
+            }
+
+            .pcard_hindi{
+                font-size:.7vw;
+                margin-bottom:.55vw;
+            }
+
+            .pcard_desc{
+                font-size:.68vw;
+                margin-bottom:.8vw;
+            }
+
+            .chip{
+                font-size:.58vw;
+                padding:.2vw .55vw;
+                border-radius:2vw;
+            }
+
+            .pcard_foot{
+                padding:.7vw 1vw;
+            }
+
+            .wt{
+                font-size:.55vw;
+                padding:.2vw .55vw;
+            }
+
+            .view_btn{
+                font-size:.58vw;
+                gap:.3vw;
+            }
+
+            /* Nutrition */
+
+            .sec_head{
+                margin-bottom:2.5vw;
+            }
+
+            .sec_head h2{
+                font-size:2vw;
+            }
+
+            .sec_head p{
+                font-size:.75vw;
+            }
+
+            .nutr_sec{
+                padding:4vw 0;
+            }
+
+            .nutr_tabs{
+                gap:.6vw;
+                margin-bottom:2vw;
+            }
+
+            .ntab{
+                padding:.55vw 1.1vw;
+                font-size:.62vw;
+            }
+
+            .npanel.active{
+                gap:2.2vw;
+            }
+
+            .nutr_img{
+                min-height:18vw;
+            }
+
+            .nutr_img img{
+                height:18vw;
+                padding:1.2vw;
+            }
+
+            .nutr_info h3{
+                font-size:1.5vw;
+            }
+
+            .nutr_info .hindi{
+                font-size:.75vw;
+            }
+
+            .nutr_info .ing{
+                font-size:.7vw;
+                padding:.7vw .8vw;
+            }
+
+            table.ntable th{
+                font-size:.6vw;
+                padding:.6vw .8vw;
+            }
+
+            table.ntable td{
+                font-size:.68vw;
+                padding:.55vw .8vw;
+            }
+
+            /* Footer */
+
+            .footer{
+                padding:3vw 0 1.5vw;
+            }
+
+            .footer_grid{
+                gap:2vw;
+            }
+
+            .f_logo{
+                font-size:1.6vw;
+            }
+
+            .f_desc{
+                font-size:.7vw;
+            }
+
+            .f_heading{
+                font-size:.85vw;
+            }
+
+            .f_links a,
+            .f_ci_row p{
+                font-size:.68vw;
+            }
+
+            .f_social a{
+                width:1.8vw;
+                height:1.8vw;
+                font-size:.7vw;
+            }
+
+            .stb{
+                width:2.4vw;
+                height:2.4vw;
+                bottom:1.4vw;
+                right:1.4vw;
+                font-size:.85vw;
+            }
+
+        }
     </style>
 </head>
 
@@ -1253,7 +1552,8 @@
     <div class="mob_nav" id="mobNav" onclick="closeMobOut(event)">
         <div class="mob_panel">
             <button class="mob_close" onclick="closeMob()"><i class="fa-solid fa-xmark"></i></button>
-            <span class="mob_logo">Devnoor</span>
+            <!-- <span class="mob_logo">Devnoor</span> -->
+            <a href="index.html"><img src="img/Logo-BG.png" alt="Devnoor Masala" /></a>
             <div class="mob_links">
                 <a href="index.html">Home</a>
                 <a href="products.html" class="active">Products</a>
@@ -1305,273 +1605,274 @@
     <!-- PRODUCTS -->
     <section class="prod_sec">
         <div class="wrap">
+            <div class="prod_grid_cover">
+                <!-- PURE SPICES HEADER -->
+                <div class="cat_header" id="hdr_pure">
+                    <span class="cat_pill pure"><i class="fa-solid fa-seedling"></i> Pure Spices</span>
+                    <h2>Single-Ingredient Pure Spices</h2>
+                    <div class="cat_line"></div>
+                </div>
 
-            <!-- PURE SPICES HEADER -->
-            <div class="cat_header" id="hdr_pure">
-                <span class="cat_pill pure"><i class="fa-solid fa-seedling"></i> Pure Spices</span>
-                <h2>Single-Ingredient Pure Spices</h2>
-                <div class="cat_line"></div>
+                <div class="prod_grid" id="pure_grid">
+
+                    <!-- 1. TURMERIC POWDER -->
+                    <div class="pcard_wrap" data-cat="pure turmeric">
+                        <a href="product-turmeric.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge pure">PURE</span></div>
+                                <img src="img/Turmeric_powder_1.png" alt="Turmeric Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-jar\'></i><span>Turmeric Powder</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-sun"></i> Pure Spice · Turmeric</div>
+                                <div class="pcard_name">Turmeric Powder</div>
+                                <div class="pcard_hindi">हल्दी पावडर</div>
+                                <div class="pcard_desc">The Golden Essence of Pure Indian Cooking. Carefully sourced
+                                    turmeric roots with vibrant golden color, earthy aroma, and natural depth of flavor.
+                                    Lab-tested purity in every pack.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire"></i> 354 Kcal/100g</span>
+                                    <span class="chip"><i class="fa-solid fa-dumbbell"></i> 7.8g Protein</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">+more</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 2. SP. CHILLI POWDER -->
+                    <div class="pcard_wrap" data-cat="pure chilli">
+                        <a href="product-spchilli.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge hot">HOT</span></div>
+                                <img src="img/Chilli_powder_2.png" alt="SP. Chilli Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>SP. Chilli Powder</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                                <div class="pcard_name">SP. Chilli Powder</div>
+                                <div class="pcard_hindi">स्पे. मिर्च पावडर</div>
+                                <div class="pcard_desc">Perfect Balance of Color and Spice. Fine ground red chillies with
+                                    rich natural color, balanced pungency, and bold aroma for everyday Indian cooking.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire"></i> 435 Kcal/100g</span>
+                                    <span class="chip"><i class="fa-solid fa-dumbbell"></i> 14.12g Protein</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">200g</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 3. CORIANDER POWDER -->
+                    <div class="pcard_wrap" data-cat="pure coriander">
+                        <a href="product-coriander.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge pure">PURE</span></div>
+                                <img src="img/Coriander_powder_2.png" alt="Coriander Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-leaf\'></i><span>Coriander Powder</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-leaf"></i> Pure Spice · Coriander</div>
+                                <div class="pcard_name">Coriander Powder</div>
+                                <div class="pcard_hindi">धनिया पावडर</div>
+                                <div class="pcard_desc">Fresh Aroma of Authentic Indian Cooking. Garden-fresh coriander with
+                                    rich natural aroma, citrusy warmth, and subtle sweet undertones — essential for curries
+                                    and sabzis.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-leaf"></i> Rich Aroma</span>
+                                    <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">+more</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 4. KASHMIRI CHILLI -->
+                    <div class="pcard_wrap" data-cat="pure chilli">
+                        <a href="product-kashmiri.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge mild">MILD</span></div>
+                                <img src="img/Chilli_powder_2.png" alt="Kashmiri Chilli Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Kashmiri Chilli</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                                <div class="pcard_name">Kashmiri Chilli Powder</div>
+                                <div class="pcard_hindi">काश्मीरी मिर्च पावडर</div>
+                                <div class="pcard_desc">Brilliant Color with Mild Pungency. Distinguished by brilliant red
+                                    color, rich aroma, and mild heat — ideal for curries, tandoori dishes, and gravies.
+                                </div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-palette"></i> Vibrant Color</span>
+                                    <span class="chip"><i class="fa-solid fa-fire-flame-curved"></i> Mild Heat</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">+more</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 5. DESI CHILLI -->
+                    <div class="pcard_wrap" data-cat="pure chilli">
+                        <a href="product-desi.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge desi">DESI</span></div>
+                                <img src="img/Chilli_powder_2.png" alt="Desi Chilli Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Desi Chilli Powder</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                                <div class="pcard_name">Desi Chilli Powder</div>
+                                <div class="pcard_hindi">देसी मिर्च पावडर</div>
+                                <div class="pcard_desc">Perfect Balance of Color and Spice. Medium pungency with vibrant red
+                                    hue and authentic aroma — crafted for those who enjoy balanced heat in everyday Indian
+                                    cooking.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire"></i> Medium Heat</span>
+                                    <span class="chip"><i class="fa-solid fa-seedling"></i> Pure</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">500g</span><span class="wt">5 kg</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 6. TEJA CHILLI -->
+                    <div class="pcard_wrap" data-cat="pure chilli">
+                        <a href="product-teja.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge fiery">FIERY</span></div>
+                                <img src="img/Chilli_powder_1.png" alt="Teja Chilli Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Teja Chilli Powder</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
+                                <div class="pcard_name">Teja Chilli Powder</div>
+                                <div class="pcard_hindi">तेजा मिर्च पावडर</div>
+                                <div class="pcard_desc">Fiery Heat of Authentic Indian Cooking. Fine ground Teja (S17)
+                                    chillies from Guntur — intense heat, vibrant red color, and bold aroma for those who
+                                    love strong spice.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire-flame-curved"></i> Intense Heat</span>
+                                    <span class="chip"><i class="fa-solid fa-location-dot"></i> Guntur</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">500g</span><span class="wt">5 kg</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div><!-- /pure_grid -->
+
+                <!-- BLENDED SPICES HEADER -->
+                <div class="cat_header second" id="hdr_blend">
+                    <span class="cat_pill blend"><i class="fa-solid fa-mortar-pestle"></i> Blended Spices</span>
+                    <h2>Expert-Crafted Blended Spices</h2>
+                    <div class="cat_line"></div>
+                </div>
+
+                <div class="prod_grid" id="blend_grid">
+
+                    <!-- 7. CORIANDER CUMIN -->
+                    <div class="pcard_wrap" data-cat="blended coriander">
+                        <a href="product-ccpowder.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge blend">BLEND</span></div>
+                                <img src="img/Coriander_powder_1.png" alt="Coriander Cumin Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-leaf\'></i><span>Coriander Cumin</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-leaf"></i> Blended Spice</div>
+                                <div class="pcard_name">Coriander Cumin Powder</div>
+                                <div class="pcard_hindi">धनिया-जीरा पावडर</div>
+                                <div class="pcard_desc">Perfect Blend of Aroma and Authentic Flavor. Coriander's citrusy
+                                    warmth meets cumin's rich earthy aroma — a perfectly balanced blend loved in Indian
+                                    kitchens.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire"></i> 436 Kcal/100g</span>
+                                    <span class="chip"><i class="fa-solid fa-dumbbell"></i> 11.98g Protein</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">+more</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 8. GARAM MASALA -->
+                    <div class="pcard_wrap" data-cat="blended masala">
+                        <a href="product-garam.html" class="pcard">
+                            <div class="pcard_img">
+                                <div class="pcard_badges"><span class="badge top">TOP</span></div>
+                                <img src="img/Garam_masala_1.png" alt="Garam Masala Powder"
+                                    onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-mortar-pestle\'></i><span>Garam Masala</span></div>'" />
+                            </div>
+                            <div class="pcard_body">
+                                <div class="pcard_cat"><i class="fa-solid fa-mortar-pestle"></i> Blended Spice</div>
+                                <div class="pcard_name">Garam Masala Powder</div>
+                                <div class="pcard_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
+                                <div class="pcard_desc">Signature Blend of Rich Aroma & Authentic Flavor. Crafted with 14+
+                                    whole spices — cloves, cardamom, cinnamon, star anise & mustard oil for bold Rajwadi
+                                    taste.</div>
+                                <div class="pcard_chips">
+                                    <span class="chip"><i class="fa-solid fa-fire"></i> 342 Kcal/100g</span>
+                                    <span class="chip"><i class="fa-solid fa-star"></i> Rajwadi Taste</span>
+                                </div>
+                            </div>
+                            <div class="pcard_foot">
+                                <div class="wt_tags">
+                                    <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
+                                        class="wt">+more</span>
+                                </div>
+                                <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
+                                        class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div><!-- /blend_grid -->
             </div>
-
-            <div class="prod_grid" id="pure_grid">
-
-                <!-- 1. TURMERIC POWDER -->
-                <div class="pcard_wrap" data-cat="pure turmeric">
-                    <a href="product-turmeric.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge pure">PURE</span></div>
-                            <img src="img/Turmeric_powder_1.png" alt="Turmeric Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-jar\'></i><span>Turmeric Powder</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-sun"></i> Pure Spice · Turmeric</div>
-                            <div class="pcard_name">Turmeric Powder</div>
-                            <div class="pcard_hindi">हल्दी पावडर</div>
-                            <div class="pcard_desc">The Golden Essence of Pure Indian Cooking. Carefully sourced
-                                turmeric roots with vibrant golden color, earthy aroma, and natural depth of flavor.
-                                Lab-tested purity in every pack.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire"></i> 354 Kcal/100g</span>
-                                <span class="chip"><i class="fa-solid fa-dumbbell"></i> 7.8g Protein</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">+more</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 2. SP. CHILLI POWDER -->
-                <div class="pcard_wrap" data-cat="pure chilli">
-                    <a href="product-spchilli.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge hot">HOT</span></div>
-                            <img src="img/Chilli_powder_2.png" alt="SP. Chilli Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>SP. Chilli Powder</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
-                            <div class="pcard_name">SP. Chilli Powder</div>
-                            <div class="pcard_hindi">स्पे. मिर्च पावडर</div>
-                            <div class="pcard_desc">Perfect Balance of Color and Spice. Fine ground red chillies with
-                                rich natural color, balanced pungency, and bold aroma for everyday Indian cooking.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire"></i> 435 Kcal/100g</span>
-                                <span class="chip"><i class="fa-solid fa-dumbbell"></i> 14.12g Protein</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">200g</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 3. CORIANDER POWDER -->
-                <div class="pcard_wrap" data-cat="pure coriander">
-                    <a href="product-coriander.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge pure">PURE</span></div>
-                            <img src="img/Coriander_powder_2.png" alt="Coriander Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-leaf\'></i><span>Coriander Powder</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-leaf"></i> Pure Spice · Coriander</div>
-                            <div class="pcard_name">Coriander Powder</div>
-                            <div class="pcard_hindi">धनिया पावडर</div>
-                            <div class="pcard_desc">Fresh Aroma of Authentic Indian Cooking. Garden-fresh coriander with
-                                rich natural aroma, citrusy warmth, and subtle sweet undertones — essential for curries
-                                and sabzis.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-leaf"></i> Rich Aroma</span>
-                                <span class="chip"><i class="fa-solid fa-seedling"></i> 100% Natural</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">+more</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 4. KASHMIRI CHILLI -->
-                <div class="pcard_wrap" data-cat="pure chilli">
-                    <a href="product-kashmiri.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge mild">MILD</span></div>
-                            <img src="img/Chilli_powder_2.png" alt="Kashmiri Chilli Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Kashmiri Chilli</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
-                            <div class="pcard_name">Kashmiri Chilli Powder</div>
-                            <div class="pcard_hindi">काश्मीरी मिर्च पावडर</div>
-                            <div class="pcard_desc">Brilliant Color with Mild Pungency. Distinguished by brilliant red
-                                color, rich aroma, and mild heat — ideal for curries, tandoori dishes, and gravies.
-                            </div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-palette"></i> Vibrant Color</span>
-                                <span class="chip"><i class="fa-solid fa-fire-flame-curved"></i> Mild Heat</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">+more</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 5. DESI CHILLI -->
-                <div class="pcard_wrap" data-cat="pure chilli">
-                    <a href="product-desi.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge desi">DESI</span></div>
-                            <img src="img/Chilli_powder_2.png" alt="Desi Chilli Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Desi Chilli Powder</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
-                            <div class="pcard_name">Desi Chilli Powder</div>
-                            <div class="pcard_hindi">देसी मिर्च पावडर</div>
-                            <div class="pcard_desc">Perfect Balance of Color and Spice. Medium pungency with vibrant red
-                                hue and authentic aroma — crafted for those who enjoy balanced heat in everyday Indian
-                                cooking.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire"></i> Medium Heat</span>
-                                <span class="chip"><i class="fa-solid fa-seedling"></i> Pure</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">500g</span><span class="wt">5 kg</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 6. TEJA CHILLI -->
-                <div class="pcard_wrap" data-cat="pure chilli">
-                    <a href="product-teja.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge fiery">FIERY</span></div>
-                            <img src="img/Chilli_powder_1.png" alt="Teja Chilli Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-pepper-hot\'></i><span>Teja Chilli Powder</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-pepper-hot"></i> Pure Spice · Chilli</div>
-                            <div class="pcard_name">Teja Chilli Powder</div>
-                            <div class="pcard_hindi">तेजा मिर्च पावडर</div>
-                            <div class="pcard_desc">Fiery Heat of Authentic Indian Cooking. Fine ground Teja (S17)
-                                chillies from Guntur — intense heat, vibrant red color, and bold aroma for those who
-                                love strong spice.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire-flame-curved"></i> Intense Heat</span>
-                                <span class="chip"><i class="fa-solid fa-location-dot"></i> Guntur</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">500g</span><span class="wt">5 kg</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-            </div><!-- /pure_grid -->
-
-            <!-- BLENDED SPICES HEADER -->
-            <div class="cat_header second" id="hdr_blend">
-                <span class="cat_pill blend"><i class="fa-solid fa-mortar-pestle"></i> Blended Spices</span>
-                <h2>Expert-Crafted Blended Spices</h2>
-                <div class="cat_line"></div>
-            </div>
-
-            <div class="prod_grid" id="blend_grid">
-
-                <!-- 7. CORIANDER CUMIN -->
-                <div class="pcard_wrap" data-cat="blended coriander">
-                    <a href="product-ccpowder.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge blend">BLEND</span></div>
-                            <img src="img/Coriander_powder_1.png" alt="Coriander Cumin Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-leaf\'></i><span>Coriander Cumin</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-leaf"></i> Blended Spice</div>
-                            <div class="pcard_name">Coriander Cumin Powder</div>
-                            <div class="pcard_hindi">धनिया-जीरा पावडर</div>
-                            <div class="pcard_desc">Perfect Blend of Aroma and Authentic Flavor. Coriander's citrusy
-                                warmth meets cumin's rich earthy aroma — a perfectly balanced blend loved in Indian
-                                kitchens.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire"></i> 436 Kcal/100g</span>
-                                <span class="chip"><i class="fa-solid fa-dumbbell"></i> 11.98g Protein</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">+more</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- 8. GARAM MASALA -->
-                <div class="pcard_wrap" data-cat="blended masala">
-                    <a href="product-garam.html" class="pcard">
-                        <div class="pcard_img">
-                            <div class="pcard_badges"><span class="badge top">TOP</span></div>
-                            <img src="img/Garam_masala_1.png" alt="Garam Masala Powder"
-                                onerror="this.parentNode.innerHTML='<div class=\'pcard_img_placeholder\'><i class=\'fa-solid fa-mortar-pestle\'></i><span>Garam Masala</span></div>'" />
-                        </div>
-                        <div class="pcard_body">
-                            <div class="pcard_cat"><i class="fa-solid fa-mortar-pestle"></i> Blended Spice</div>
-                            <div class="pcard_name">Garam Masala Powder</div>
-                            <div class="pcard_hindi">गरम मसाला पावडर · रजवाड़ी स्वाद</div>
-                            <div class="pcard_desc">Signature Blend of Rich Aroma & Authentic Flavor. Crafted with 14+
-                                whole spices — cloves, cardamom, cinnamon, star anise & mustard oil for bold Rajwadi
-                                taste.</div>
-                            <div class="pcard_chips">
-                                <span class="chip"><i class="fa-solid fa-fire"></i> 342 Kcal/100g</span>
-                                <span class="chip"><i class="fa-solid fa-star"></i> Rajwadi Taste</span>
-                            </div>
-                        </div>
-                        <div class="pcard_foot">
-                            <div class="wt_tags">
-                                <span class="wt">18g</span><span class="wt">50g</span><span class="wt">100g</span><span
-                                    class="wt">+more</span>
-                            </div>
-                            <span class="view_btn"><i class="fa-solid fa-circle-info"></i> View Details <i
-                                    class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-
-            </div><!-- /blend_grid -->
         </div>
     </section>
 
@@ -1932,6 +2233,21 @@
     </div>
 
     <script>
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const type = new URLSearchParams(window.location.search).get("type");
+
+            if (type) {
+                const btn = [...document.querySelectorAll(".ftab")].find(btn =>
+                    btn.getAttribute("onclick")?.includes(`'${type}'`)
+                );
+
+                if (btn) {
+                    doFilter(type, btn);
+                }
+            }
+        });
+
         /* FILTER — only all / pure / blended */
         function doFilter(cat, btn) {
             document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
